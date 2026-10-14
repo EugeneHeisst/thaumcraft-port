@@ -37,6 +37,15 @@ public final class TaintBiomes {
         level.getChunkSource().chunkMap.resendBiomesForChunks(changed);
     }
 
+    /**
+     * World generation: change only the quart column inside the chunk being decorated. Following the Voronoi neighbour into
+     * the next, not yet decorated chunk let Tainted Land decorations re-trigger there and spread over the whole world.
+     */
+    public static void setColumnInChunk(net.minecraft.world.level.WorldGenLevel world,BlockPos pos,net.minecraft.core.Holder<Biome> replacement){
+        var chunk=world.getChunk(pos);int x=QuartPos.fromBlock(pos.getX()),z=QuartPos.fromBlock(pos.getZ());
+        chunk.fillBiomesFromNoise((qx,qy,qz,sampler)->qx==x&&qz==z?replacement:chunk.getNoiseBiome(qx,qy,qz),world.getLevel().getChunkSource().randomState().sampler());chunk.setUnsaved(true);
+    }
+
     /** Same quart-column mutation during chunk generation, without requesting live server chunks. */
     public static void setColumn(net.minecraft.world.level.WorldGenLevel world,BlockPos pos,net.minecraft.core.Holder<Biome> replacement){
         if(world instanceof ServerLevel server){setColumn(server,pos,replacement);return;}

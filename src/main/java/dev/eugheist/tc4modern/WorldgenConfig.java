@@ -31,7 +31,7 @@ final class WorldgenConfig {
         SPECIAL_RARITY=builder.comment("One in N nodes may have a special type; modifier chance is one in floor(N/2).").defineInRange("special_node_rarity",18,3,1000000);
         builder.pop().push("Biomes");
         FOREST_WEIGHT=builder.comment("Original relative weight five, adapted to modern TerraBlender regions. Zero disables natural magical forest. Restart required.").worldRestart().defineInRange("magical_forest_biome_weight",5,0,1000);
-        TAINT_WEIGHT=builder.comment("Original relative weight two, adapted to modern TerraBlender regions. Zero disables natural tainted land. Restart required.").worldRestart().defineInRange("taint_biome_weight",2,0,1000);
+        TAINT_WEIGHT=builder.comment("TerraBlender region weight of natural Tainted Land (original relative weight two; tc4modern default one, about 0.7% of the world). Zero disables natural tainted land. Restart required.").worldRestart().defineInRange("taint_biome_weight",1,0,1000);
         builder.pop();
     }
     private static boolean loaded(){return WarpConfig.SPEC.isLoaded();}
@@ -51,5 +51,5 @@ final class WorldgenConfig {
     static int nodeRarity(){return loaded()?NODE_RARITY.get():36;}
     static int specialRarity(){return loaded()?SPECIAL_RARITY.get():18;}
     static int forestWeight(){return loaded()?FOREST_WEIGHT.get():5;}
-    static int taintWeight(){return loaded()?TAINT_WEIGHT.get():2;}
+    static int taintWeight(){return loaded()?TAINT_WEIGHT.get():1;}
 }

@@ -1,4 +1,1 @@
-{
-  "feature": "tc4modern:tainted_trees",
-  "placement": []
-}
+{"feature":"tc4modern:tainted_trees","placement":[{"type":"minecraft:biome"}]}

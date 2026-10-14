@@ -40,8 +40,8 @@ final class TaintedLandContent {
         }
         static java.util.List<com.mojang.datafixers.util.Pair<net.minecraft.world.level.biome.Climate.ParameterPoint,Boolean>> split(net.minecraft.world.level.biome.Climate.ParameterPoint p){
             var out=new java.util.ArrayList<com.mojang.datafixers.util.Pair<net.minecraft.world.level.biome.Climate.ParameterPoint,Boolean>>();
-            // tc4modern: only a narrow 10% humidity band (was the middle third) - 70% less Tainted Land.
-            var hum=slices(p.humidity(),Double.parseDouble(System.getProperty("tc4modern.taintBand",".1")));var weird=java.util.List.of(p.weirdness());
+            // Middle third of the host humidity range: patches about the size of a cherry grove.
+            var hum=slices(p.humidity(),Double.parseDouble(System.getProperty("tc4modern.taintBand",".3334")));var weird=java.util.List.of(p.weirdness());
             for(int h=0;h<hum.size();h++)for(int w=0;w<weird.size();w++){
                 var point=new net.minecraft.world.level.biome.Climate.ParameterPoint(p.temperature(),hum.get(h),p.continentalness(),p.erosion(),p.depth(),weird.get(w),p.offset());
                 boolean centre=hum.size()==3&&h==1;
@@ -94,7 +94,7 @@ final class TaintedLandContent {
                 // The legacy helper starts at 10 and finds the first uncovered space, including caves.
                 var pos=new BlockPos(x,Math.max(11,level.getMinBuildHeight()+1),z);
                 while(pos.getY()<level.getMaxBuildHeight()-1&&!level.isEmptyBlock(pos))pos=pos.above();
-                if(!level.getBiome(pos).is(TaintBiomes.TAINTED_LAND))TaintBiomes.setColumn(level,pos,biome);
+                if(!level.getBiome(pos).is(TaintBiomes.TAINTED_LAND))TaintBiomes.setColumnInChunk(level,pos,biome);
                 if(!level.isEmptyBlock(pos))continue;
                 for(var face:Direction.values())if(level.getBlockState(pos.relative(face)).isSolidRender(level,pos.relative(face))) {
                     placeFibre(level,pos);break;
