@@ -12,6 +12,8 @@ public final class AspectTable {
     public static Map<String, Integer> get(String objectId) {
         var addon=dev.eugheist.tc4modern.api.TC4Addons.objectTag(objectId);
         if(addon!=null){var map=new java.util.LinkedHashMap<String,Integer>();for(var aspect:addon.getAspects())map.put(aspect.getTag(),addon.getAmount(aspect));return map;}
+        // tc4modern deepslate ores scan like their stone originals.
+        if(objectId.startsWith("tc4modern:deepslate_")&&(objectId.endsWith("_infused_stone")||objectId.endsWith("cinnabar_ore")))objectId="tc4modern:"+objectId.substring("tc4modern:deepslate_".length());
         if(objectId.equals("tc4modern:taint"))return Map.of("arbor",1,"vitium",3);
         if(objectId.equals("tc4modern:taint_fibres"))return Map.of("victus",1,"vitium",2);
         objectId=switch(objectId){

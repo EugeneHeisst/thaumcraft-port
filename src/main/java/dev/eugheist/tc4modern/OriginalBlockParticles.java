@@ -100,7 +100,7 @@ public final class OriginalBlockParticles {
                     if (target instanceof BlockHitResult hit) sparkle(level, hit.getBlockPos(), colour);
                     return false;
                 }
-            }, TC4Modern.SHARD_ORES.get(i).get());
+            }, TC4Modern.SHARD_ORES.get(i).get(), TC4Modern.DEEPSLATE_SHARD_ORES.get(i).get());
         }
         // BlockAiry.addHitEffects: aura nodes sparkle (colour 0) on half of the hits.
         event.registerBlock(new IClientBlockExtensions() {

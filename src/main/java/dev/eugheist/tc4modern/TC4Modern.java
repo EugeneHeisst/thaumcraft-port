@@ -129,12 +129,16 @@ public class TC4Modern {
     public static final java.util.List<DeferredItem<Item>> SHARDS=new java.util.ArrayList<>();
     public static final java.util.List<net.neoforged.neoforge.registries.DeferredBlock<ShardOreBlock>> SHARD_ORES=new java.util.ArrayList<>();
     public static final java.util.List<net.neoforged.neoforge.registries.DeferredItem<net.minecraft.world.item.BlockItem>> SHARD_ORE_ITEMS=new java.util.ArrayList<>();
+    /** tc4modern: deepslate infused stones (same variants/drops) for the 1.21 depth range. */
+    public static final java.util.List<net.neoforged.neoforge.registries.DeferredBlock<ShardOreBlock>> DEEPSLATE_SHARD_ORES=new java.util.ArrayList<>();
     static {
         for(int i=0;i<SHARD_NAMES.length;i++){
             int variant=i;String name=SHARD_NAMES[i];
             SHARDS.add(ITEMS.register(name+"_shard",()->new Item(new Item.Properties())));
             var ore=BLOCKS.register(name+"_infused_stone",()->new ShardOreBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of().strength(1.5f,TC4SoundTypes.res(5)).requiresCorrectToolForDrops().sound(net.minecraft.world.level.block.SoundType.STONE),variant));
             SHARD_ORES.add(ore);SHARD_ORE_ITEMS.add(ITEMS.registerSimpleBlockItem(name+"_infused_stone",ore));
+            var deep=BLOCKS.register("deepslate_"+name+"_infused_stone",()->new ShardOreBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of().mapColor(net.minecraft.world.level.material.MapColor.DEEPSLATE).strength(3f,TC4SoundTypes.res(5)).requiresCorrectToolForDrops().sound(net.minecraft.world.level.block.SoundType.DEEPSLATE),variant));
+            DEEPSLATE_SHARD_ORES.add(deep);ITEMS.registerSimpleBlockItem("deepslate_"+name+"_infused_stone",deep);
         }
     }
     public static final DeferredRegister<net.minecraft.world.effect.MobEffect> EFFECTS=DeferredRegister.create(net.minecraft.core.registries.Registries.MOB_EFFECT,MODID);

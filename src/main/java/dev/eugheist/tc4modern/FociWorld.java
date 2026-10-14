@@ -545,6 +545,7 @@ public final class FociWorld {
                 for (var i : List.of(net.minecraft.world.item.Items.GOLD_ORE, net.minecraft.world.item.Items.DEEPSLATE_GOLD_ORE, net.minecraft.world.item.Items.NETHER_GOLD_ORE, net.minecraft.world.item.Items.RAW_GOLD)) SPECIAL.put(i, gold);
                 for (var i : List.of(net.minecraft.world.item.Items.COPPER_ORE, net.minecraft.world.item.Items.DEEPSLATE_COPPER_ORE, net.minecraft.world.item.Items.RAW_COPPER)) SPECIAL.put(i, copper);
                 SPECIAL.put(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(AlchemyContent.id("cinnabar_ore")), new Special("cinnabar_cluster", .9f, false));
+                SPECIAL.put(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(AlchemyContent.id("deepslate_cinnabar_ore")), new Special("cinnabar_cluster", .9f, false));
             }
             return SPECIAL;
         }

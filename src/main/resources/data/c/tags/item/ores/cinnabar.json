@@ -1,5 +1,6 @@
 {
- "values": [
-  "tc4modern:cinnabar_ore"
- ]
+  "values": [
+    "tc4modern:cinnabar_ore",
+    "tc4modern:deepslate_cinnabar_ore"
+  ]
 }

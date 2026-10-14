@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "ingredient": {
+  "item": "tc4modern:deepslate_cinnabar_ore"
+ },
+ "result": {
+  "id": "tc4modern:quicksilver"
+ },
+ "experience": 1.0,
+ "cookingtime": 200
+}

@@ -17,10 +17,14 @@ public final class CinnabarAmberFeature extends Feature<NoneFeatureConfiguration
     @Override public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
         var world = context.level(); var random = context.random(); var chunk = new ChunkPos(context.origin());
         boolean placed = false;
-        if(WorldgenConfig.cinnabar())for (int i = 0; i < 18; i++) {
-            int x = chunk.getMinBlockX() + random.nextInt(16), y = random.nextInt(LEGACY_HEIGHT / 5), z = chunk.getMinBlockZ() + random.nextInt(16);
-            var pos = new BlockPos(x, y, z);
-            if (world.getBlockState(pos).is(Blocks.STONE)) placed |= world.setBlock(pos, AlchemyContent.CINNABAR_ORE.get().defaultBlockState(), 2);
+        // tc4modern: the original 0..51 band extended down to the bottom of the 1.21 world (twice the attempts for the
+        // doubled band); deepslate gets the deepslate variant.
+        int minY = world.getMinBuildHeight();
+        if(WorldgenConfig.cinnabar())for (int i = 0; i < 36; i++) {
+            int x = chunk.getMinBlockX() + random.nextInt(16), y = minY + random.nextInt(LEGACY_HEIGHT / 5 - minY), z = chunk.getMinBlockZ() + random.nextInt(16);
+            var pos = new BlockPos(x, y, z);var state = world.getBlockState(pos);
+            if (state.is(Blocks.STONE)) placed |= world.setBlock(pos, AlchemyContent.CINNABAR_ORE.get().defaultBlockState(), 2);
+            else if (state.is(Blocks.DEEPSLATE)) placed |= world.setBlock(pos, AlchemyContent.DEEPSLATE_CINNABAR_ORE.get().defaultBlockState(), 2);
         }
         if(WorldgenConfig.amber())for (int i = 0; i < 20; i++) {
             int x = chunk.getMinBlockX() + random.nextInt(16), z = chunk.getMinBlockZ() + random.nextInt(16);

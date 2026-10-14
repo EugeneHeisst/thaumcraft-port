@@ -496,5 +496,12 @@
   "tc.research_name.ADVDECONSTRUCTOR": "Advanced Deconstruction Table",
   "tc.research_text.ADVDECONSTRUCTOR": "Knowledge without lifting a finger",
   "tc.research_page.ADVDECONSTRUCTOR.1": "Working a deconstruction table is tedious: you must stand by it and collect every scrap of knowledge by hand.<BR>By reinforcing the table with netherite tools you have bound it to your own mind. <BR>The advanced table breaks items down just like the ordinary one, but sends every aspect it recovers straight to its owner, wherever they are. No clicking and no need to open its interface.",
-  "tc.research_page.ADVDECONSTRUCTOR.2": "The table belongs to whoever placed it.<BR>Items can be fed in with hoppers or pipes, so the table can run entirely on its own.<BR>If the owner is not online, the recovered aspect waits on the table until they return."
+  "tc.research_page.ADVDECONSTRUCTOR.2": "The table belongs to whoever placed it.<BR>Items can be fed in with hoppers or pipes, so the table can run entirely on its own.<BR>If the owner is not online, the recovered aspect waits on the table until they return.",
+  "block.tc4modern.deepslate_air_infused_stone": "Deepslate Air Infused Stone",
+  "block.tc4modern.deepslate_fire_infused_stone": "Deepslate Fire Infused Stone",
+  "block.tc4modern.deepslate_water_infused_stone": "Deepslate Water Infused Stone",
+  "block.tc4modern.deepslate_earth_infused_stone": "Deepslate Earth Infused Stone",
+  "block.tc4modern.deepslate_order_infused_stone": "Deepslate Order Infused Stone",
+  "block.tc4modern.deepslate_entropy_infused_stone": "Deepslate Entropy Infused Stone",
+  "block.tc4modern.deepslate_cinnabar_ore": "Deepslate Cinnabar Ore"
 }

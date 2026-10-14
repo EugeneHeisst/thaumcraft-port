@@ -2230,5 +2230,47 @@
   "translation": "block.tc4modern.taint_spore",
   "original": "tile.blockTaintFibres.3.name",
   "order": 28
+ },
+ {
+  "id": "deepslate_cinnabar_ore",
+  "translation": "block.tc4modern.deepslate_cinnabar_ore",
+  "original": "",
+  "order": 4.5
+ },
+ {
+  "id": "deepslate_air_infused_stone",
+  "translation": "block.tc4modern.deepslate_air_infused_stone",
+  "original": "",
+  "order": 10.1
+ },
+ {
+  "id": "deepslate_fire_infused_stone",
+  "translation": "block.tc4modern.deepslate_fire_infused_stone",
+  "original": "",
+  "order": 10.2
+ },
+ {
+  "id": "deepslate_water_infused_stone",
+  "translation": "block.tc4modern.deepslate_water_infused_stone",
+  "original": "",
+  "order": 10.299999999999999
+ },
+ {
+  "id": "deepslate_earth_infused_stone",
+  "translation": "block.tc4modern.deepslate_earth_infused_stone",
+  "original": "",
+  "order": 10.4
+ },
+ {
+  "id": "deepslate_order_infused_stone",
+  "translation": "block.tc4modern.deepslate_order_infused_stone",
+  "original": "",
+  "order": 10.5
+ },
+ {
+  "id": "deepslate_entropy_infused_stone",
+  "translation": "block.tc4modern.deepslate_entropy_infused_stone",
+  "original": "",
+  "order": 10.6
  }
 ]

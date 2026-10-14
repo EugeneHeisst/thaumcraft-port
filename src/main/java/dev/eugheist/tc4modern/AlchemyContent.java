@@ -28,6 +28,7 @@ public final class AlchemyContent {
 
     // BlockCustomOre metadata 0 / 7: hardness 1.5, resistance 5, stone sound.
     public static final DeferredHolder<Block, Block> CINNABAR_ORE = block("cinnabar_ore");
+    public static final DeferredHolder<Block, Block> DEEPSLATE_CINNABAR_ORE = block("deepslate_cinnabar_ore");
     public static final DeferredHolder<Block, Block> AMBER_ORE = block("amber_ore");
     // BlockWoodenDevice metadata 6 / 7: hardness 2.5, resistance 10, wood.
     public static final DeferredHolder<Block, Block> GREATWOOD_PLANKS = block("greatwood_planks");
@@ -41,13 +42,15 @@ public final class AlchemyContent {
         event.register(Registries.BLOCK, helper -> {
             var ore = BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.5f, TC4SoundTypes.res(5)).sound(SoundType.STONE).requiresCorrectToolForDrops();
             helper.register(id("cinnabar_ore"), new Block(ore));
+            // tc4modern: deepslate variant for the 1.21 depth range below y=0.
+            helper.register(id("deepslate_cinnabar_ore"), new Block(BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).strength(3f, TC4SoundTypes.res(5)).sound(SoundType.DEEPSLATE).requiresCorrectToolForDrops()));
             helper.register(id("amber_ore"), new DropExperienceBlock(UniformInt.of(1, 4), ore));
             var planks = BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).strength(2.5f, TC4SoundTypes.res(10)).sound(SoundType.WOOD).ignitedByLava();
             helper.register(id("greatwood_planks"), new Block(planks));
             helper.register(id("silverwood_planks"), new Block(planks));
         });
         event.register(Registries.ITEM, helper -> {
-            for (var b : java.util.List.of(CINNABAR_ORE, AMBER_ORE, GREATWOOD_PLANKS, SILVERWOOD_PLANKS))
+            for (var b : java.util.List.of(CINNABAR_ORE, DEEPSLATE_CINNABAR_ORE, AMBER_ORE, GREATWOOD_PLANKS, SILVERWOOD_PLANKS))
                 helper.register(b.getId(), new BlockItem(b.get(), new Item.Properties()));
             helper.register(id("quicksilver"), new Item(new Item.Properties()));
             helper.register(id("amber"), new Item(new Item.Properties()));

@@ -68,6 +68,13 @@
     "tc4modern:obsidian_totem",
     "tc4modern:charged_obsidian_totem",
     "tc4modern:crusted_opening",
-    "tc4modern:runed_stone"
+    "tc4modern:runed_stone",
+    "tc4modern:deepslate_air_infused_stone",
+    "tc4modern:deepslate_fire_infused_stone",
+    "tc4modern:deepslate_water_infused_stone",
+    "tc4modern:deepslate_earth_infused_stone",
+    "tc4modern:deepslate_order_infused_stone",
+    "tc4modern:deepslate_entropy_infused_stone",
+    "tc4modern:deepslate_cinnabar_ore"
   ]
 }

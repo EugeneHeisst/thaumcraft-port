@@ -8,6 +8,13 @@
     "tc4modern:water_infused_stone",
     "tc4modern:earth_infused_stone",
     "tc4modern:order_infused_stone",
-    "tc4modern:entropy_infused_stone"
+    "tc4modern:entropy_infused_stone",
+    "tc4modern:deepslate_cinnabar_ore",
+    "tc4modern:deepslate_air_infused_stone",
+    "tc4modern:deepslate_fire_infused_stone",
+    "tc4modern:deepslate_water_infused_stone",
+    "tc4modern:deepslate_earth_infused_stone",
+    "tc4modern:deepslate_order_infused_stone",
+    "tc4modern:deepslate_entropy_infused_stone"
   ]
 }

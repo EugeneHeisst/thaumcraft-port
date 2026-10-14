@@ -41,6 +41,7 @@ public final class ClientMenus {
         for(var block:net.minecraft.core.registries.BuiltInRegistries.BLOCK)if(block instanceof ThaumicCandleBlock candle)event.register((state,world,pos,tint)->tint==0?candle.color:0xFFFFFF,block);
         event.register((state,world,pos,tint)->tint==0?GreatwoodColors.foliage(world,pos):0xFFFFFF,TC4Modern.GREATWOOD_LEAVES.get());
         for(var ore:TC4Modern.SHARD_ORES)event.register((state,world,pos,tint)->tint==0?thaumcraft.common.lib.vis.ShardPalette.color(((ShardOreBlock)state.getBlock()).variant):0xFFFFFF,ore.get());
+        for(var ore:TC4Modern.DEEPSLATE_SHARD_ORES)event.register((state,world,pos,tint)->tint==0?thaumcraft.common.lib.vis.ShardPalette.color(((ShardOreBlock)state.getBlock()).variant):0xFFFFFF,ore.get());
         event.register((state,world,pos,tint)->tint==0&&state.getValue(TaintBlock.VARIANT)==1?TaintColors.grass(world,pos):0xFFFFFF,TC4Modern.TAINT.get());
         // BlockTaintFibres.colorMultiplier: fibres, taint grass and spore stalks take the 3x3 averaged biome grass colour (purple in Tainted Land).
         event.register((state,world,pos,tint)->tint==0?TaintColors.grass(world,pos):0xFFFFFF,TC4Modern.TAINT_FIBRES.get());

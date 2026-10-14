@@ -16,7 +16,7 @@ public final class ShardOreBlock extends DropExperienceBlock {
         ItemStack tool=params.getOptionalParameter(LootContextParams.TOOL);
         if(tool==null)tool=ItemStack.EMPTY;
         var enchantments=params.getLevel().registryAccess().registryOrThrow(Registries.ENCHANTMENT);
-        if(EnchantmentHelper.getItemEnchantmentLevel(enchantments.getHolderOrThrow(Enchantments.SILK_TOUCH),tool)>0)return List.of(new ItemStack(TC4Modern.SHARD_ORE_ITEMS.get(variant).get()));
+        if(EnchantmentHelper.getItemEnchantmentLevel(enchantments.getHolderOrThrow(Enchantments.SILK_TOUCH),tool)>0)return List.of(new ItemStack(this.asItem()));
         int fortune=EnchantmentHelper.getItemEnchantmentLevel(enchantments.getHolderOrThrow(Enchantments.FORTUNE),tool);
         var source=params.getLevel().random;
         var random=new java.util.Random(){@Override public int nextInt(int bound){return source.nextInt(bound);}};
