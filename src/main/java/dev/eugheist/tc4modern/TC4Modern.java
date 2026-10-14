@@ -85,6 +85,7 @@ public class TC4Modern {
     public static final DeferredItem<ThaumometerItem> THAUMOMETER = ITEMS.register("thaumometer",
         () -> new ThaumometerItem(new Item.Properties().stacksTo(1)));
     // No research table item: like the original it only exists as two joined tables (ItemInkwell) and breaks back into tables.
+    public static final DeferredItem<ResonatorItem> RESONATOR = ITEMS.register("resonator", () -> new ResonatorItem(new Item.Properties()));
     public static final DeferredItem<ScribingToolsItem> SCRIBING_TOOLS = ITEMS.register("scribing_tools", () -> new ScribingToolsItem(new Item.Properties().durability(100)));
     public static final DeferredItem<ResearchNotesItem> RESEARCH_NOTES = ITEMS.register("research_notes", () -> new ResearchNotesItem(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<ThaumonomiconItem> THAUMONOMICON = ITEMS.register("thaumonomicon", () -> new ThaumonomiconItem(new Item.Properties().stacksTo(1).rarity(net.minecraft.world.item.Rarity.UNCOMMON)));

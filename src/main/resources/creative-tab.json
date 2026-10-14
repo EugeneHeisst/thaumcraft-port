@@ -2272,5 +2272,11 @@
   "translation": "block.tc4modern.deepslate_entropy_infused_stone",
   "original": "",
   "order": 10.6
+ },
+ {
+  "id": "resonator",
+  "translation": "item.tc4modern.resonator",
+  "original": "item.ItemResonator.name",
+  "order": 59.5
  }
 ]

@@ -93,7 +93,7 @@ public final class EssentiaTubes {
         }
         /** BlockTube.onBlockActivated, metadata 1 (valve) and 3 (filter). */
         @Override protected net.minecraft.world.ItemInteractionResult useItemOn(net.minecraft.world.item.ItemStack stack, BlockState state, Level level, BlockPos pos, net.minecraft.world.entity.player.Player player, net.minecraft.world.InteractionHand hand, net.minecraft.world.phys.BlockHitResult hit) {
-            if (kind == Kind.VALVE && (WandData.isWand(stack) || stack.is(asItem()) || BuiltInRegistries.ITEM.getKey(stack.getItem()).getPath().equals("essentia_resonator")))
+            if (kind == Kind.VALVE && (WandData.isWand(stack) || stack.is(asItem()) || BuiltInRegistries.ITEM.getKey(stack.getItem()).getPath().equals("resonator")))
                 return net.minecraft.world.ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
             if (kind == Kind.FILTER && level.getBlockEntity(pos) instanceof EssentiaTubeEntity tube && tube.state instanceof thaumcraft.common.tiles.essentia.TubeVariants.Filter filter) {
                 if (player.isShiftKeyDown() && filter.aspectFilter != null) {

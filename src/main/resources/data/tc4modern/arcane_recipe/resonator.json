@@ -1,0 +1,28 @@
+{
+  "key": "Resonator",
+  "research": "TUBES",
+  "pattern": [
+    "I I",
+    "INI",
+    " S "
+  ],
+  "key_items": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "N": {
+      "item": "minecraft:quartz"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "tc4modern:resonator",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 5,
+    "aer": 5
+  }
+}

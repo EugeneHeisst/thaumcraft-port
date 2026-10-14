@@ -503,5 +503,6 @@
   "block.tc4modern.deepslate_earth_infused_stone": "Глубинная руда земляного кристалла",
   "block.tc4modern.deepslate_order_infused_stone": "Глубинная руда кристалла порядка",
   "block.tc4modern.deepslate_entropy_infused_stone": "Глубинная энтропийная руда",
-  "block.tc4modern.deepslate_cinnabar_ore": "Глубинная киноварь"
+  "block.tc4modern.deepslate_cinnabar_ore": "Глубинная киноварь",
+  "item.tc4modern.resonator": "Резонатор"
 }
