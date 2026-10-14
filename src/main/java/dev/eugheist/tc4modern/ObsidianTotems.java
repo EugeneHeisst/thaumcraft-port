@@ -53,7 +53,7 @@ final class ObsidianTotems {
             if(!WorldgenConfig.structures())return false;
             var level=context.level();
             if(level.getLevel().getChunkSource().getGenerator() instanceof net.minecraft.world.level.levelgen.FlatLevelSource)return false;
-            if(!level.getLevel().dimension().equals(Level.OVERWORLD)||context.random().nextInt(WorldgenConfig.nodeRarity()*33)!=0)return false;
+            if(!level.getLevel().dimension().equals(Level.OVERWORLD)||context.random().nextInt(WorldgenConfig.nodeRarity()*16)!=0)return false;
             return placeOnSurface(level,context.origin(),context.random());
         }
         static boolean placeOnSurface(WorldGenLevel level,BlockPos origin,net.minecraft.util.RandomSource random) {
