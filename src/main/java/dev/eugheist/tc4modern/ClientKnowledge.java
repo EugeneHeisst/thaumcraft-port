@@ -17,7 +17,18 @@ public final class ClientKnowledge {
     }
     public static void receive(ScanPayload payload) {
         knowledge = payload.knowledge().copy();
-        status = payload.status();
+        String result = payload.status();
+        // ScanManager.validScan: scans report through the notification feed, never as an overlay line.
+        long now = System.nanoTime() / 1_000_000L;
+        if (result.startsWith("missing:")) {
+            var help = net.minecraft.network.chat.Component.translatable("tc.aspect.help." + result.substring(8)).getString();
+            notifications.add(net.minecraft.network.chat.Component.translatable("tc.discoveryerror", help).getString(), now);
+            result = "";
+        } else if (result.equals("unknown")) {
+            notifications.add(net.minecraft.network.chat.Component.translatable("tc.unknownobject").getString(), now);
+            result = "";
+        } else if (result.equals("scanned") || result.equals("already")) result = "";
+        status = result;
         messageUntil = System.nanoTime() + 2_500_000_000L;
     }
 }

@@ -39,8 +39,6 @@ public final class ThaumometerHud {
                     gui.drawString(mc.font, Integer.toString(entry.getValue()), x + 17, cy + 44, 0xFFFFFF);
                     x += 28;
                 }
-            } else {
-                gui.drawCenteredString(mc.font, Component.translatable("hud.tc4modern.hold"), cx, cy + 40, 0xC9B887);
             }
         }
         if (!device && mc.player.isUsingItem() && mc.player.getUseItem().is(TC4Modern.THAUMOMETER.get())) {

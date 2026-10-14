@@ -4974,6 +4974,267 @@
       "vacuos": 8,
       "alienis": 8,
       "sensus": 4
+    },
+    "tc4modern:aura_node": {
+      "auram": 8,
+      "praecantatio": 4
+    },
+    "tc4modern:wisp_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "auram": 2
+    },
+    "tc4modern:eldritch_crab_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "alienis": 2
+    },
+    "tc4modern:inhabited_zombie_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "alienis": 2
+    },
+    "tc4modern:pech_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "humanus": 2
+    },
+    "tc4modern:brainy_zombie_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "exanimis": 2
+    },
+    "tc4modern:giant_brainy_zombie_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "exanimis": 2
+    },
+    "tc4modern:cultist_knight_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "alienis": 2
+    },
+    "tc4modern:cultist_cleric_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "alienis": 2
+    },
+    "tc4modern:firebat_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "ignis": 2
+    },
+    "tc4modern:taint_chicken_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "vitium": 2
+    },
+    "tc4modern:taint_cow_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "vitium": 2
+    },
+    "tc4modern:taint_creeper_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "vitium": 2
+    },
+    "tc4modern:taint_pig_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "vitium": 2
+    },
+    "tc4modern:taint_sheep_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "vitium": 2
+    },
+    "tc4modern:taint_villager_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "vitium": 2
+    },
+    "tc4modern:taintacle_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "vitium": 2
+    },
+    "tc4modern:taintacle_small_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "vitium": 2
+    },
+    "tc4modern:taintacle_giant_spawn_egg": {
+      "praecantatio": 2,
+      "victus": 2,
+      "vitium": 2
+    },
+    "tc4modern:fire_arrow": {
+      "telum": 1,
+      "ignis": 1
+    },
+    "tc4modern:water_arrow": {
+      "telum": 1,
+      "aqua": 1
+    },
+    "tc4modern:earth_arrow": {
+      "telum": 1,
+      "terra": 1
+    },
+    "tc4modern:order_arrow": {
+      "telum": 1,
+      "ordo": 1
+    },
+    "tc4modern:entropy_arrow": {
+      "telum": 1,
+      "perditio": 1
+    },
+    "tc4modern:void_nugget": {
+      "metallum": 1,
+      "vacuos": 1
+    },
+    "tc4modern:warded_glass": {
+      "vitreus": 1,
+      "tutamen": 1,
+      "ordo": 1
+    },
+    "tc4modern:miners_ring": {
+      "metallum": 3,
+      "perfodio": 2,
+      "praecantatio": 2
+    },
+    "tc4modern:vis_amulet_lesser": {
+      "metallum": 3,
+      "praecantatio": 8,
+      "auram": 2,
+      "vacuos": 2,
+      "potentia": 4
+    },
+    "tc4modern:runic_ring_lesser": {
+      "metallum": 3,
+      "praecantatio": 4,
+      "tutamen": 2,
+      "potentia": 2
+    },
+    "tc4modern:loot_urn_common": {
+      "terra": 2,
+      "lucrum": 4
+    },
+    "tc4modern:loot_urn_uncommon": {
+      "terra": 2,
+      "lucrum": 8
+    },
+    "tc4modern:loot_urn_rare": {
+      "terra": 2,
+      "lucrum": 16
+    },
+    "tc4modern:loot_crate_common": {
+      "arbor": 4,
+      "lucrum": 4
+    },
+    "tc4modern:loot_crate_uncommon": {
+      "arbor": 4,
+      "lucrum": 8
+    },
+    "tc4modern:loot_crate_rare": {
+      "arbor": 4,
+      "lucrum": 16
+    },
+    "tc4modern:loot_bag_common": {
+      "lucrum": 8
+    },
+    "tc4modern:loot_bag_uncommon": {
+      "lucrum": 16
+    },
+    "tc4modern:loot_bag_rare": {
+      "lucrum": 32
+    },
+    "tc4modern:ancient_stone_no_spawn": {
+      "terra": 1,
+      "alienis": 1
+    },
+    "tc4modern:crusted_stone": {
+      "terra": 1,
+      "alienis": 1
+    },
+    "tc4modern:ancient_pedestal": {
+      "terra": 3,
+      "alienis": 2
+    },
+    "tc4modern:ancient_stone_stairs": {
+      "terra": 1,
+      "alienis": 1
+    },
+    "tc4modern:ancient_stone_slab": {
+      "terra": 1,
+      "alienis": 1
+    },
+    "tc4modern:obelisk_placer": {
+      "alienis": 8,
+      "tenebrae": 4,
+      "praecantatio": 4
+    },
+    "tc4modern:bucket_pure": {
+      "metallum": 8,
+      "vacuos": 1,
+      "sano": 4,
+      "praecantatio": 2
+    },
+    "tc4modern:primal_ring_terra": {
+      "praecantatio": 5
+    },
+    "tc4modern:primal_ring_ignis": {
+      "praecantatio": 5
+    },
+    "tc4modern:primal_ring_aqua": {
+      "praecantatio": 5
+    },
+    "tc4modern:primal_ring_ordo": {
+      "praecantatio": 5
+    },
+    "tc4modern:primal_ring_perditio": {
+      "praecantatio": 5
+    },
+    "tc4modern:charged_obsidian_totem": {
+      "terra": 4,
+      "tenebrae": 2,
+      "alienis": 2,
+      "potentia": 2
+    },
+    "guideme:guide": {
+      "cognitio": 3,
+      "pannus": 1
+    },
+    "thaumicenergistics:essentia_cell_creative": {
+      "vacuos": 8,
+      "praecantatio": 8,
+      "machina": 4
+    },
+    "ttinkerer:nether_shard": {
+      "ignis": 2,
+      "vitreus": 1,
+      "praecantatio": 1
+    },
+    "ttinkerer:ender_shard": {
+      "alienis": 2,
+      "vitreus": 1,
+      "iter": 1
+    },
+    "ttinkerer:legacy_crop_egg": {
+      "herba": 2,
+      "praecantatio": 1
+    },
+    "ttinkerer:share_tome": {
+      "cognitio": 4,
+      "praecantatio": 2
+    },
+    "tc4modern:flux_goo": {
+      "vitium": 2,
+      "limus": 1
+    },
+    "tc4modern:flux_gas": {
+      "vitium": 2,
+      "aer": 1
     }
   },
   "blocks": {
@@ -8778,6 +9039,148 @@
       "vacuos": 8,
       "alienis": 8,
       "sensus": 4
+    },
+    "tc4modern:eldritch_crystal": {
+      "vitreus": 4,
+      "alienis": 2,
+      "praecantatio": 2
+    },
+    "tc4modern:mana_pod": {
+      "herba": 2,
+      "praecantatio": 2
+    },
+    "tc4modern:electric_spark": {
+      "potentia": 1
+    },
+    "tc4modern:lamp_light": {
+      "lux": 1
+    },
+    "tc4modern:warding_barrier": {
+      "tutamen": 2,
+      "ordo": 2
+    },
+    "tc4modern:warded_glass": {
+      "vitreus": 1,
+      "tutamen": 1,
+      "ordo": 1
+    },
+    "tc4modern:eldritch_gate_barrier": {
+      "alienis": 4,
+      "vinculum": 4
+    },
+    "tc4modern:thaumatorium": {
+      "metallum": 8,
+      "praecantatio": 4,
+      "aqua": 4,
+      "fabrico": 4
+    },
+    "tc4modern:warded": {
+      "tutamen": 2,
+      "ordo": 2,
+      "praecantatio": 1
+    },
+    "tc4modern:hole": {
+      "vacuos": 2,
+      "alienis": 1
+    },
+    "tc4modern:eldritch_void": {
+      "vacuos": 8,
+      "alienis": 8,
+      "tenebrae": 4
+    },
+    "tc4modern:eldritch_field": {
+      "alienis": 4,
+      "vacuos": 4
+    },
+    "tc4modern:purifying_fluid": {
+      "aqua": 3,
+      "sano": 3,
+      "praecantatio": 2
+    },
+    "tc4modern:liquid_death": {
+      "aqua": 3,
+      "mortuus": 3,
+      "praecantatio": 2
+    },
+    "ttinkerer:bedrock_portal": {
+      "vacuos": 8,
+      "alienis": 4,
+      "iter": 4
+    },
+    "ttinkerer:forcefield": {
+      "tutamen": 4,
+      "praecantatio": 2
+    },
+    "ttinkerer:infused_grain": {
+      "messis": 2,
+      "praecantatio": 2,
+      "herba": 1
+    },
+    "ttinkerer:infused_farmland": {
+      "terra": 2,
+      "messis": 1,
+      "praecantatio": 1
+    },
+    "ttinkerer:gaseous_light": {
+      "lux": 2,
+      "aer": 1
+    },
+    "ttinkerer:gaseous_shadow": {
+      "tenebrae": 2,
+      "aer": 1
+    },
+    "ttinkerer:nitor_light": {
+      "lux": 2
+    },
+    "tc4modern:loot_urn_common": {
+      "terra": 2,
+      "lucrum": 4
+    },
+    "tc4modern:loot_urn_uncommon": {
+      "terra": 2,
+      "lucrum": 8
+    },
+    "tc4modern:loot_urn_rare": {
+      "terra": 2,
+      "lucrum": 16
+    },
+    "tc4modern:loot_crate_common": {
+      "arbor": 4,
+      "lucrum": 4
+    },
+    "tc4modern:loot_crate_uncommon": {
+      "arbor": 4,
+      "lucrum": 8
+    },
+    "tc4modern:loot_crate_rare": {
+      "arbor": 4,
+      "lucrum": 16
+    },
+    "tc4modern:ancient_stone_no_spawn": {
+      "terra": 1,
+      "alienis": 1
+    },
+    "tc4modern:crusted_stone": {
+      "terra": 1,
+      "alienis": 1
+    },
+    "tc4modern:ancient_pedestal": {
+      "terra": 3,
+      "alienis": 2
+    },
+    "tc4modern:ancient_stone_stairs": {
+      "terra": 1,
+      "alienis": 1
+    },
+    "tc4modern:ancient_stone_slab": {
+      "terra": 1,
+      "alienis": 1
+    },
+    "tc4modern:charged_obsidian_totem": {
+      "terra": 4,
+      "tenebrae": 2,
+      "alienis": 2,
+      "potentia": 2
     }
   },
   "entities": {
@@ -9247,6 +9650,94 @@
     "tc4modern:taint_creeper": {
       "vitium": 2,
       "ignis": 2
+    },
+    "tc4modern:wisp": {
+      "auram": 2,
+      "praecantatio": 1,
+      "aer": 1
+    },
+    "tc4modern:pech": {
+      "humanus": 2,
+      "praecantatio": 2,
+      "permutatio": 2
+    },
+    "tc4modern:primal_arrow": {
+      "telum": 1,
+      "volatus": 1,
+      "praecantatio": 1
+    },
+    "tc4modern:eldritch_crab": {
+      "alienis": 2,
+      "bestia": 2,
+      "tutamen": 2
+    },
+    "tc4modern:inhabited_zombie": {
+      "exanimis": 3,
+      "humanus": 1,
+      "alienis": 2
+    },
+    "tc4modern:explosive_orb": {
+      "potentia": 2,
+      "ignis": 2
+    },
+    "tc4modern:shock_orb": {
+      "potentia": 3,
+      "aer": 1
+    },
+    "tc4modern:bottle_taint": {
+      "vitium": 2,
+      "vitreus": 1
+    },
+    "tc4modern:pech_blast": {
+      "venenum": 2,
+      "perditio": 2,
+      "praecantatio": 1
+    },
+    "tc4modern:golem_dart": {
+      "telum": 1
+    },
+    "tc4modern:golem_bobber": {
+      "instrumentum": 1,
+      "vinculum": 1
+    },
+    "tc4modern:traveling_trunk": {
+      "arbor": 4,
+      "vacuos": 4,
+      "iter": 2,
+      "praecantatio": 2
+    },
+    "tc4modern:golem_orb": {
+      "alienis": 2,
+      "potentia": 2
+    },
+    "tc4modern:taintacle_giant": {
+      "vitium": 8,
+      "aqua": 4
+    },
+    "tc4modern:cultist_portal": {
+      "alienis": 8,
+      "iter": 4,
+      "vacuos": 4
+    },
+    "tc4modern:cultist_leader": {
+      "alienis": 2,
+      "humanus": 4,
+      "perditio": 2
+    },
+    "tc4modern:eldritch_warden": {
+      "alienis": 8,
+      "mortuus": 4,
+      "exanimis": 8
+    },
+    "tc4modern:eldritch_golem": {
+      "alienis": 8,
+      "metallum": 8,
+      "machina": 4
+    },
+    "ae2:tiny_tnt_primed": {
+      "potentia": 2,
+      "perditio": 2,
+      "ignis": 1
     }
   }
 }

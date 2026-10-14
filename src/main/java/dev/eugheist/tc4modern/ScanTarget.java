@@ -47,6 +47,7 @@ public record ScanTarget(String identity, String knowledgeKey, Map<String,Intege
         if(entity instanceof Creeper creeper && creeper.isPowered()) id="minecraft:charged_creeper";
         AspectList list=ModernAspectCatalog.entity(id);
         if(entity instanceof Wisp wisp && wisp.aspect()!=null)list=new AspectList().add(wisp.aspect(),2).add(Aspect.MAGIC,1).add(Aspect.AIR,1);
+        if(entity instanceof AspectOrb orb)list=new AspectList().add(orb.aspect(),Math.max(1,orb.value()));
         if(entity instanceof PechEntity pech){list=new AspectList().add(Aspect.MAN,2).add(Aspect.MAGIC,2).add(Aspect.EXCHANGE,2);switch(pech.variant()){case 0->list.add(Aspect.GREED,2);case 1->list.add(Aspect.WEAPON,2);case 2->list.add(Aspect.MAGIC,2);}}
         if(entity instanceof Player player) {
             String name=player.getGameProfile().getName();
