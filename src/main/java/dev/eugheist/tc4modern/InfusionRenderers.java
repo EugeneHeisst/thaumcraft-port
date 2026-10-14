@@ -121,7 +121,8 @@ public final class InfusionRenderers {
             if (tile.orientation == 3) pose.mulPose(Axis.ZP.rotationDegrees(90));
             else if (tile.orientation == 4) pose.mulPose(Axis.ZP.rotationDegrees(270));
             else if (tile.orientation == 5) pose.mulPose(Axis.ZP.rotationDegrees(180));
-            PILLAR.render("Box001", PILLAR_TEX, pose, buffers, light, overlay, 0xFFFFFFFF);
+            // Opaque stone: the translucent entity batch is drawn after particles, so essentia trails showed through it.
+            PILLAR.render("Box001", net.minecraft.client.renderer.RenderType.entityCutoutNoCull(PILLAR_TEX), pose, buffers, light, overlay, 0xFFFFFFFF);
             pose.popPose();
         }
         @Override public net.minecraft.world.phys.AABB getRenderBoundingBox(InfusionContent.PillarEntity t) { return new net.minecraft.world.phys.AABB(t.getBlockPos()).inflate(1).expandTowards(0, 1, 0); }

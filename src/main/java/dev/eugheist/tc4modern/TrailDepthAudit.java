@@ -13,14 +13,16 @@ final class TrailDepthAudit {
  static void spawn(net.minecraft.client.Minecraft mc,double dist){for(int i=0;i<12;i++){var start=new Vec3(eye.getX()-2.5+i*.45,eye.getY()+1.6,eye.getZ()+dist);var target=new Vec3(eye.getX()+3,eye.getY()+1.7,eye.getZ()+dist);mc.particleEngine.add(new InfusionFx.EssentiaTrail(mc.level,start,target,ticks+i,0xFF2020,1.5f));}}
  @SubscribeEvent static void tick(net.neoforged.neoforge.client.event.ClientTickEvent.Post e){if(!Boolean.getBoolean("tc4modern.trailDepthAuditOnly"))return;var mc=net.minecraft.client.Minecraft.getInstance();if(mc.player==null||mc.level==null)return;ticks++;
   var server=mc.getSingleplayerServer();var id=mc.player.getUUID();
-  String[] walls={"minecraft:stone","minecraft:oak_leaves","tc4modern:air_crystal_cluster","minecraft:glass","tc4modern:jar"};
+  String[] walls={"minecraft:stone","tc4modern:infusion_pillar"};
   int phase=(ticks-40)/120,t=(ticks-40)%120;
   if(ticks==30)eye=mc.player.blockPosition().above(60);
   if(mc.screen!=null&&ticks>30)mc.setScreen(null);
   if(ticks>=40&&phase<walls.length&&t==0){String wall=walls[phase];server.execute(()->{var p=server.getPlayerList().getPlayer(id);var l=p.serverLevel();l.setDayTime(6000);
    var state=net.minecraft.core.registries.BuiltInRegistries.BLOCK.get(net.minecraft.resources.ResourceLocation.parse(wall)).defaultBlockState();
    for(int x=-10;x<=10;x++)for(int y=-4;y<=8;y++)for(int z=-2;z<=12;z++)l.setBlock(eye.offset(x,y,z),Blocks.AIR.defaultBlockState(),2);
-   for(int x=-9;x<=9;x++)for(int y=-4;y<=8;y++)l.setBlock(eye.offset(x,y,5),state,2);
+   if(wall.equals("tc4modern:infusion_pillar")){var top=net.minecraft.core.registries.BuiltInRegistries.BLOCK.get(net.minecraft.resources.ResourceLocation.parse("tc4modern:infusion_pillar_top")).defaultBlockState();
+    for(int x=-9;x<=9;x++)for(int y=-4;y<=8;y+=2){l.setBlock(eye.offset(x,y+1,5),top,2);l.setBlock(eye.offset(x,y,5),state,2);}}
+   else for(int x=-9;x<=9;x++)for(int y=-4;y<=8;y++)l.setBlock(eye.offset(x,y,5),state,2);
    p.setGameMode(net.minecraft.world.level.GameType.SPECTATOR);p.teleportTo(l,eye.getX()+.5,eye.getY(),eye.getZ()+.5,0,0);});}
   if(ticks>=40&&phase<walls.length&&t>=50&&t<=80&&t%2==0)spawn(mc,9);
   if(ticks>=40&&phase<walls.length&&t==82){LiquidDeathAudit.shot(mc,"trail-behind-"+walls[phase].replace(':','_')+".png");System.out.println("TC4_TRAIL behind "+walls[phase]+" red="+red(mc));}
