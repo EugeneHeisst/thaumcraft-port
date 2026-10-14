@@ -26,7 +26,7 @@ final class TaintedLandContent {
         /**
          * The original Tainted Land was one ordinary biome among many. Replacing every plains/forest/taiga of the region made
          * whole regions tainted (3% of the world, 500+ block blobs), so only the middle third of those biomes' humidity range
-         * becomes Tainted Land: about 1% of the world in patches up to ~270 blocks, the size of a normal biome.
+         * becomes Tainted Land (tc4modern: narrowed to a 10% band after players found the third far too large).
          */
         @Override public void addBiomes(net.minecraft.core.Registry<net.minecraft.world.level.biome.Biome> registry,java.util.function.Consumer<com.mojang.datafixers.util.Pair<net.minecraft.world.level.biome.Climate.ParameterPoint,net.minecraft.resources.ResourceKey<net.minecraft.world.level.biome.Biome>>> mapper) {
             if(Boolean.getBoolean("tc4modern.taintLegacyRegion")){addModifiedVanillaOverworldBiomes(mapper,b->{b.replaceBiome(net.minecraft.world.level.biome.Biomes.PLAINS,TaintBiomes.TAINTED_LAND);b.replaceBiome(net.minecraft.world.level.biome.Biomes.FOREST,TaintBiomes.TAINTED_LAND);b.replaceBiome(net.minecraft.world.level.biome.Biomes.TAIGA,TaintBiomes.TAINTED_LAND);});return;}
@@ -40,7 +40,8 @@ final class TaintedLandContent {
         }
         static java.util.List<com.mojang.datafixers.util.Pair<net.minecraft.world.level.biome.Climate.ParameterPoint,Boolean>> split(net.minecraft.world.level.biome.Climate.ParameterPoint p){
             var out=new java.util.ArrayList<com.mojang.datafixers.util.Pair<net.minecraft.world.level.biome.Climate.ParameterPoint,Boolean>>();
-            var hum=slices(p.humidity(),3);var weird=java.util.List.of(p.weirdness());
+            // tc4modern: only a narrow 10% humidity band (was the middle third) - 70% less Tainted Land.
+            var hum=slices(p.humidity(),Double.parseDouble(System.getProperty("tc4modern.taintBand",".1")));var weird=java.util.List.of(p.weirdness());
             for(int h=0;h<hum.size();h++)for(int w=0;w<weird.size();w++){
                 var point=new net.minecraft.world.level.biome.Climate.ParameterPoint(p.temperature(),hum.get(h),p.continentalness(),p.erosion(),p.depth(),weird.get(w),p.offset());
                 boolean centre=hum.size()==3&&h==1;
@@ -49,9 +50,9 @@ final class TaintedLandContent {
             return out;
         }
         /** Three contiguous slices: the middle 1/parts..(parts-1)/parts band and the two edges; a degenerate range stays whole. */
-        static java.util.List<net.minecraft.world.level.biome.Climate.Parameter> slices(net.minecraft.world.level.biome.Climate.Parameter r,int parts){
-            long min=r.min(),max=r.max(),a=min+(max-min)/parts,b=max-(max-min)/parts;
-            if(max-min<parts||a>=b)return java.util.List.of(r);
+        static java.util.List<net.minecraft.world.level.biome.Climate.Parameter> slices(net.minecraft.world.level.biome.Climate.Parameter r,double middle){
+            long min=r.min(),max=r.max(),w=max-min,a=min+(long)(w*(1-middle)/2),b=max-(long)(w*(1-middle)/2);
+            if(w<3||a>=b)return java.util.List.of(r);
             return java.util.List.of(new net.minecraft.world.level.biome.Climate.Parameter(min,a),new net.minecraft.world.level.biome.Climate.Parameter(a,b),new net.minecraft.world.level.biome.Climate.Parameter(b,max));
         }
     }
