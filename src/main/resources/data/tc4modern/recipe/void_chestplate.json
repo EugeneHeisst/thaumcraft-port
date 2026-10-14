@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I I",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "tc4modern:void_ingot"
+    }
+  },
+  "result": {
+    "id": "tc4modern:void_chestplate",
+    "count": 1
+  }
+}

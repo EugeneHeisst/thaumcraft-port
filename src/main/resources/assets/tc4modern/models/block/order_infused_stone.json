@@ -1,0 +1,135 @@
+{
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "tc4modern:blocks/infusedorestone",
+    "stone": "tc4modern:blocks/infusedorestone",
+    "crystal": "tc4modern:blocks/infusedore",
+    "backing": "minecraft:block/stone"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#stone",
+          "cullface": "down"
+        },
+        "up": {
+          "texture": "#stone",
+          "cullface": "up"
+        },
+        "north": {
+          "texture": "#stone",
+          "cullface": "north"
+        },
+        "south": {
+          "texture": "#stone",
+          "cullface": "south"
+        },
+        "west": {
+          "texture": "#stone",
+          "cullface": "west"
+        },
+        "east": {
+          "texture": "#stone",
+          "cullface": "east"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "#crystal",
+          "cullface": "down",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#crystal",
+          "cullface": "up",
+          "tintindex": 0
+        },
+        "north": {
+          "texture": "#crystal",
+          "cullface": "north",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#crystal",
+          "cullface": "south",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#crystal",
+          "cullface": "west",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#crystal",
+          "cullface": "east",
+          "tintindex": 0
+        }
+      },
+      "neoforge_data": {
+        "block_light": 10
+      }
+    },
+    {
+      "from": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "to": [
+        15.92,
+        15.92,
+        15.92
+      ],
+      "faces": {
+        "down": {
+          "texture": "#backing",
+          "cullface": "down"
+        },
+        "up": {
+          "texture": "#backing",
+          "cullface": "up"
+        },
+        "north": {
+          "texture": "#backing",
+          "cullface": "north"
+        },
+        "south": {
+          "texture": "#backing",
+          "cullface": "south"
+        },
+        "west": {
+          "texture": "#backing",
+          "cullface": "west"
+        },
+        "east": {
+          "texture": "#backing",
+          "cullface": "east"
+        }
+      }
+    }
+  ],
+  "parent": "minecraft:block/block"
+}

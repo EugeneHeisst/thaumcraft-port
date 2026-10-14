@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "tc4modern:block/arcane_ear"
+    },
+    "active=true": {
+      "model": "tc4modern:block/arcane_ear_on"
+    }
+  }
+}

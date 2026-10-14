@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tc4modern:block/greatwood_slab"
+    },
+    "type=double": {
+      "model": "tc4modern:block/greatwood_planks"
+    },
+    "type=top": {
+      "model": "tc4modern:block/greatwood_slab_top"
+    }
+  }
+}

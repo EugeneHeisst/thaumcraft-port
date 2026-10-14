@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "axis=y": {
+   "model": "tc4modern:block/silverwood_log"
+  },
+  "axis=z": {
+   "model": "tc4modern:block/silverwood_log_horizontal",
+   "x": 90
+  },
+  "axis=x": {
+   "model": "tc4modern:block/silverwood_log_horizontal",
+   "x": 90,
+   "y": 90
+  }
+ }
+}

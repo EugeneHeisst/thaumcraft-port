@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:white_dye"
+    },
+    {
+      "tag": "tc4modern:thaumic_candles"
+    }
+  ],
+  "result": {
+    "id": "tc4modern:candle_0",
+    "count": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "feature": "tc4modern:cinderpearl",
+  "placement": [
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

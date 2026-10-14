@@ -1,0 +1,17 @@
+{
+  "targets": [
+    "swap"
+  ],
+  "passes": [
+    {
+      "name": "tc4modern:bloomcolor",
+      "intarget": "minecraft:main",
+      "outtarget": "swap"
+    },
+    {
+      "name": "tc4modern:bloom2",
+      "intarget": "swap",
+      "outtarget": "minecraft:main"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "tc4modern:configured_spawns",
+  "biomes": "#c:is_nether",
+  "spawners": {
+    "type": "tc4modern:firebat",
+    "weight": 10,
+    "minCount": 1,
+    "maxCount": 2
+  },
+  "setting": "spawn_fire_bats"
+}

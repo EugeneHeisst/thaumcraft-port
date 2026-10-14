@@ -1,0 +1,1 @@
+{"parent": "minecraft:block/cube", "textures": {"down": "tc4modern:blocks/arcane_stone", "up": "tc4modern:blocks/golem_stone_top_active", "north": "tc4modern:blocks/golem_stone_side", "south": "tc4modern:blocks/golem_stone_side", "east": "tc4modern:blocks/golem_stone_side", "west": "tc4modern:blocks/golem_stone_side", "particle": "tc4modern:blocks/golem_stone_side"}}

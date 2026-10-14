@@ -1,0 +1,24 @@
+{
+  "key": "WandRodObsidianStaff",
+  "research": "ROD_obsidian_staff",
+  "pattern": [
+    "  S",
+    " G ",
+    "G  "
+  ],
+  "key_items": {
+    "S": {
+      "item": "tc4modern:primal_charm"
+    },
+    "G": {
+      "item": "tc4modern:obsidian_rod"
+    }
+  },
+  "result": {
+    "id": "tc4modern:obsidian_staff_rod",
+    "count": 1
+  },
+  "aspects": {
+    "ordo": 14
+  }
+}

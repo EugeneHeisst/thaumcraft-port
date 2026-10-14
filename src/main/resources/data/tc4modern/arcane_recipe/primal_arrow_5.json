@@ -1,0 +1,24 @@
+{
+  "key": "PrimalArrow_5",
+  "research": "PRIMALARROW",
+  "pattern": [
+    "AAA",
+    "ASA",
+    "AAA"
+  ],
+  "key_items": {
+    "A": {
+      "item": "minecraft:arrow"
+    },
+    "S": {
+      "item": "tc4modern:entropy_shard"
+    }
+  },
+  "result": {
+    "id": "tc4modern:entropy_arrow",
+    "count": 8
+  },
+  "aspects": {
+    "perditio": 8
+  }
+}

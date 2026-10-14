@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shaped", "pattern": ["FFF", "FFF", "FFF"], "key": {"F": {"item": "minecraft:rotten_flesh"}}, "result": {"id": "tc4modern:flesh_block", "count": 1}}

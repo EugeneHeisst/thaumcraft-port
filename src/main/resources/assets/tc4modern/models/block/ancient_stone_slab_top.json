@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "tc4modern:blocks/es_1",
+    "top": "tc4modern:blocks/es_1",
+    "side": "tc4modern:blocks/es_1"
+  }
+}

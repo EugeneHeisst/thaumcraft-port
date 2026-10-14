@@ -1,0 +1,24 @@
+{
+  "key": "PrimalArrow_1",
+  "research": "PRIMALARROW",
+  "pattern": [
+    "AAA",
+    "ASA",
+    "AAA"
+  ],
+  "key_items": {
+    "A": {
+      "item": "minecraft:arrow"
+    },
+    "S": {
+      "item": "tc4modern:fire_shard"
+    }
+  },
+  "result": {
+    "id": "tc4modern:fire_arrow",
+    "count": 8
+  },
+  "aspects": {
+    "ignis": 8
+  }
+}

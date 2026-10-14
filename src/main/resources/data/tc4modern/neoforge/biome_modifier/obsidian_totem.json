@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#tc4modern:has_totems",
+  "features": "tc4modern:obsidian_totem",
+  "step": "surface_structures"
+}

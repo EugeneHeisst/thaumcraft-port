@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "#"
+ ],
+ "key": {
+  "#": {
+   "item": "tc4modern:quicksilver"
+  }
+ },
+ "result": {
+  "id": "tc4modern:quicksilver_drop",
+  "count": 9
+ }
+}

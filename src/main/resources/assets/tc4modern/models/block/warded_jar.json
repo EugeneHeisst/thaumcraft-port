@@ -1,0 +1,77 @@
+{
+ "parent": "minecraft:block/block",
+ "render_type": "minecraft:translucent",
+ "ambientocclusion": false,
+ "textures": {
+  "side": "tc4modern:blocks/jar_side",
+  "top": "tc4modern:blocks/jar_top",
+  "bottom": "tc4modern:blocks/jar_bottom",
+  "particle": "tc4modern:blocks/jar_side"
+ },
+ "elements": [
+  {
+   "from": [
+    3,
+    0,
+    3
+   ],
+   "to": [
+    13,
+    12,
+    13
+   ],
+   "faces": {
+    "down": {
+     "texture": "#bottom"
+    },
+    "up": {
+     "texture": "#top"
+    },
+    "north": {
+     "texture": "#side"
+    },
+    "south": {
+     "texture": "#side"
+    },
+    "west": {
+     "texture": "#side"
+    },
+    "east": {
+     "texture": "#side"
+    }
+   }
+  },
+  {
+   "from": [
+    5,
+    12,
+    5
+   ],
+   "to": [
+    11,
+    14,
+    11
+   ],
+   "faces": {
+    "down": {
+     "texture": "#bottom"
+    },
+    "up": {
+     "texture": "#top"
+    },
+    "north": {
+     "texture": "#side"
+    },
+    "south": {
+     "texture": "#side"
+    },
+    "west": {
+     "texture": "#side"
+    },
+    "east": {
+     "texture": "#side"
+    }
+   }
+  }
+ ]
+}

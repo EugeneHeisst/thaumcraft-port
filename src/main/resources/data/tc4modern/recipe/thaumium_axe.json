@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "II",
+  "SI",
+  "S "
+ ],
+ "key": {
+  "I": {
+   "item": "tc4modern:thaumium_ingot"
+  },
+  "S": {
+   "item": "minecraft:stick"
+  }
+ },
+ "result": {
+  "id": "tc4modern:thaumium_axe",
+  "count": 1
+ }
+}

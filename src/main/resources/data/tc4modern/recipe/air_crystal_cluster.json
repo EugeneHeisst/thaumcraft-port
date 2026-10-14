@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tc4modern:air_shard"
+    },
+    {
+      "item": "tc4modern:air_shard"
+    },
+    {
+      "item": "tc4modern:air_shard"
+    },
+    {
+      "item": "tc4modern:air_shard"
+    },
+    {
+      "item": "tc4modern:air_shard"
+    },
+    {
+      "item": "tc4modern:air_shard"
+    }
+  ],
+  "result": {
+    "id": "tc4modern:air_crystal_cluster",
+    "count": 1
+  }
+}

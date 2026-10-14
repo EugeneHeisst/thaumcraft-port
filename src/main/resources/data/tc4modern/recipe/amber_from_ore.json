@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "ingredient": {
+  "item": "tc4modern:amber_ore"
+ },
+ "result": {
+  "id": "tc4modern:amber"
+ },
+ "experience": 1.0,
+ "cookingtime": 200
+}

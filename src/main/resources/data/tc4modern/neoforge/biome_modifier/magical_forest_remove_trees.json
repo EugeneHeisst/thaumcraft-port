@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:remove_features",
+  "biomes": "tc4modern:magical_forest",
+  "features": [
+    "minecraft:trees_birch_and_oak"
+  ],
+  "steps": [
+    "vegetal_decoration"
+  ]
+}

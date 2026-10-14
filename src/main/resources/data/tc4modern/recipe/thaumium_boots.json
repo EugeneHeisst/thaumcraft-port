@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "I I",
+  "I I"
+ ],
+ "key": {
+  "I": {
+   "item": "tc4modern:thaumium_ingot"
+  }
+ },
+ "result": {
+  "id": "tc4modern:thaumium_boots",
+  "count": 1
+ }
+}

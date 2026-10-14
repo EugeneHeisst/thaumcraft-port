@@ -1,0 +1,29 @@
+{
+  "key": "MnemonicMatrix",
+  "research": "THAUMATORIUM",
+  "pattern": [
+    "IAI",
+    "ABA",
+    "IAI"
+  ],
+  "key_items": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "A": {
+      "item": "tc4modern:amber"
+    },
+    "B": {
+      "item": "tc4modern:zombie_brain"
+    }
+  },
+  "result": {
+    "id": "tc4modern:mnemonic_matrix",
+    "count": 1
+  },
+  "aspects": {
+    "ignis": 5,
+    "aqua": 5,
+    "ordo": 5
+  }
+}

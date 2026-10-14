@@ -1,0 +1,29 @@
+{
+  "key": "AdvAlchemyConstruct",
+  "research": "ADVALCHEMYFURNACE",
+  "pattern": [
+    "VAV",
+    "APA",
+    "VAV"
+  ],
+  "key_items": {
+    "V": {
+      "item": "tc4modern:void_ingot"
+    },
+    "A": {
+      "item": "tc4modern:alchemical_construct"
+    },
+    "P": {
+      "item": "tc4modern:primordial_pearl"
+    }
+  },
+  "result": {
+    "id": "tc4modern:advanced_alchemical_construct",
+    "count": 4
+  },
+  "aspects": {
+    "aqua": 10,
+    "ordo": 30,
+    "terra": 10
+  }
+}

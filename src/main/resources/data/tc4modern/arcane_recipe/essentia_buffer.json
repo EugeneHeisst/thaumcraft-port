@@ -1,0 +1,31 @@
+{
+  "key": "TubeBuffer",
+  "research": "CENTRIFUGE",
+  "pattern": [
+    "PVP",
+    "T T",
+    "PRP"
+  ],
+  "key_items": {
+    "P": {
+      "item": "tc4modern:phial"
+    },
+    "V": {
+      "item": "tc4modern:essentia_valve"
+    },
+    "T": {
+      "item": "tc4modern:essentia_tube"
+    },
+    "R": {
+      "item": "tc4modern:essentia_tube_restricted"
+    }
+  },
+  "result": {
+    "id": "tc4modern:essentia_buffer",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 5,
+    "ordo": 5
+  }
+}

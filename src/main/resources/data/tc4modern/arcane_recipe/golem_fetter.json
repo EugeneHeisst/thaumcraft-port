@@ -1,0 +1,1 @@
+{"key": "GolemFetter", "research": "GOLEMFETTER", "pattern": ["SSS", "IRI", "BBB"], "key_items": {"S": {"item": "tc4modern:arcane_stone"}, "B": {"item": "tc4modern:arcane_stone_bricks"}, "I": {"item": "minecraft:iron_ingot"}, "R": {"item": "minecraft:redstone_block"}}, "aspects": {"terra": 5, "ordo": 5}, "result": {"id": "tc4modern:golem_fetter", "count": 1}}

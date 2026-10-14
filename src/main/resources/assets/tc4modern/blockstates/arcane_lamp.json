@@ -1,0 +1,1 @@
+{"variants": {"lit=true": {"model": "tc4modern:block/arcane_lamp"}, "lit=false": {"model": "tc4modern:block/arcane_lamp_off"}}}

@@ -1,0 +1,6 @@
+package dev.eugheist.tc4modern;
+public final class CultistArmorExtension implements net.neoforged.neoforge.client.extensions.common.IClientItemExtensions {
+ private final CultistArmorModel outer,inner;
+ public CultistArmorExtension(boolean plate){outer=new CultistArmorModel(plate,false);inner=new CultistArmorModel(plate,true);}
+ @Override public net.minecraft.client.model.HumanoidModel<?> getHumanoidArmorModel(net.minecraft.world.entity.LivingEntity entity,net.minecraft.world.item.ItemStack stack,net.minecraft.world.entity.EquipmentSlot slot,net.minecraft.client.model.HumanoidModel<?> original){var model=slot==net.minecraft.world.entity.EquipmentSlot.LEGS?inner:outer;((net.minecraft.client.model.HumanoidModel)original).copyPropertiesTo(model);model.head.visible=original.head.visible;model.hat.visible=false;model.body.visible=original.body.visible;model.rightArm.visible=original.rightArm.visible;model.leftArm.visible=original.leftArm.visible;model.rightLeg.visible=original.rightLeg.visible;model.leftLeg.visible=original.leftLeg.visible;model.head.copyFrom(original.head);model.body.copyFrom(original.body);model.rightArm.copyFrom(original.rightArm);model.leftArm.copyFrom(original.leftArm);model.rightLeg.copyFrom(original.rightLeg);model.leftLeg.copyFrom(original.leftLeg);return model;}
+}

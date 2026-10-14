@@ -1,0 +1,25 @@
+package dev.eugheist.tc4modern;
+import net.minecraft.core.*;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.*;
+/** TileEldritchLock's four original arena transformations. */
+final class OuterBossRooms {
+ static void put(ServerLevel l,int x,int y,int z,BlockState s){l.setBlockAndUpdate(new BlockPos(x,y,z),s);}
+ static void obelisk(ServerLevel l,int x,int z){OuterGenCommon.genObelisk(l,x,54,z);put(l,x,52,z,CrimsonContent.CAP.get().defaultBlockState());}
+ static void pedestal(ServerLevel l,int x,int z){int[][] pattern={{2,2,2},{0,-1,1},{3,3,3}};for(int a=0;a<3;a++)for(int b=0;b<3;b++)put(l,x-1+b,52,z-1+a,pattern[a][b]<0?OuterContent.GLOWING.get().defaultBlockState():OuterGenCommon.stairs(pattern[a][b]));}
+ static void urn(ServerLevel l,int x,int z){float r=l.random.nextFloat();put(l,x,52,z,OuterLoot.URNS.get(r<.1?2:r<.3?1:0).get().defaultBlockState());}
+ static void spawn(ServerLevel l,Mob boss,double x,double y,double z,BlockPos lock){boss.moveTo(x,y,z,(float)Math.toDegrees(Math.atan2(lock.getZ()-z,lock.getX()-x))-90,0);boss.finalizeSpawn(l,l.getCurrentDifficultyAt(boss.blockPosition()),MobSpawnType.MOB_SUMMONED,null);l.addFreshEntity(boss);}
+ static void create(ServerLevel l,BlockPos lock,int cx,int cz,int exit,int kind){int x=cx*16+16,z=cz*16+16,dx=exit==3||exit==5?-8:8,dz=exit==4||exit==5?-8:8;String name=switch(kind){case 0->"golem";case 1->"warden";case 2->"crimson";default->"taint";};for(var p:l.players())if(p.distanceToSqr(lock.getX(),lock.getY(),lock.getZ())<300)p.sendSystemMessage(net.minecraft.network.chat.Component.translatable("tc.boss."+name));
+  switch(kind){
+   case 0->{obelisk(l,x+dx,z+dz);obelisk(l,x-dx,z+dz);obelisk(l,x+dx,z-dz);pedestal(l,x,z);for(int a=-10;a<=10;a++)for(int b=-10;b<=10;b++)if(Math.abs(a)>2&&Math.abs(b)>2&&l.random.nextFloat()<.15&&l.isEmptyBlock(new BlockPos(x+a,52,z+b))){float r=l.random.nextFloat();put(l,x+a,52,z+b,(l.random.nextFloat()<.3?OuterLoot.CRATES:OuterLoot.URNS).get(r<.05?2:r<.2?1:0).get().defaultBlockState());}spawn(l,OuterBossContent.GOLEM.get().create(l),x+.5,53,z+.5,lock);}
+   case 1->{obelisk(l,x+dx,z);obelisk(l,x,z+dz);for(int a=-1;a<=1;a++)for(int b=-1;b<=1;b++)if(a!=0&&b!=0){if(l.random.nextFloat()<.9)urn(l,x+dx+a,z+b);if(l.random.nextFloat()<.9)urn(l,x+a,z+dz+b);}for(int a:new int[]{-2,2})for(int b:new int[]{-2,2}){put(l,x+a,52,z+b,OuterContent.PEDESTAL.get().defaultBlockState());put(l,x+a,53,z+b,OuterDevices.TRAP.get().defaultBlockState());}pedestal(l,x+dx,z+dz);var boss=OuterBossContent.WARDEN.get().create(l);spawn(l,boss,x+dx+.5,53,z+dz+.5,lock);boss.restrictTo(new BlockPos(x,52,z),32);}
+   case 2->{for(int a=-4;a<=4;a++)for(int b=-4;b<=4;b++){if((Math.abs(a)==2||Math.abs(b)==2)&&l.random.nextBoolean()||(Math.abs(a)==3||Math.abs(b)==3)&&l.random.nextFloat()>.33||(Math.abs(a)==4||Math.abs(b)==4)&&l.random.nextFloat()>.25)continue;put(l,x+b,51,z+a,OuterGate.FRAME.get().defaultBlockState());}for(int a=0;a<5;a++)for(int b=0;b<5;b++)if(a==0||a==4||b==0||b==4){int px=x-8+b*4,pz=z-8+a*4;for(int y:new int[]{52,60})put(l,px,y,pz,OuterContent.STONE.get().defaultBlockState());for(int y:new int[]{53,59})put(l,px,y,pz,OuterContent.GLYPHED.get().defaultBlockState());put(l,px,54,pz,OuterContent.SLAB.get().defaultBlockState());put(l,px,58,pz,OuterContent.SLAB.get().defaultBlockState().setValue(BlockStateProperties.SLAB_TYPE,SlabType.TOP));}var portal=OuterBossContent.PORTAL.get().create(l);portal.moveTo(x+.5,52,z+.5,0,0);l.addFreshEntity(portal);}
+   default->taint(l,x,z);
+  }
+ }
+ static void taint(ServerLevel l,int x,int z){for(int a=-12;a<=12;a++)for(int b=-12;b<=12;b++){TaintBiomes.spread(l,new BlockPos(x+b,52,z+a));for(int c=0;c<9;c++){var p=new BlockPos(x+b,52+c,z+a);boolean adjacent=false;for(var d:Direction.values())if(l.getBlockState(p.relative(d)).isSolidRender(l,p.relative(d)))adjacent=true;if(l.isEmptyBlock(p)&&adjacent&&l.random.nextInt(3)!=0)l.setBlockAndUpdate(p,TC4Modern.TAINT_FIBRES.get().defaultBlockState().setValue(TaintFibresBlock.VARIANT,l.random.nextInt(4)==0?1:0));}if(l.random.nextFloat()<.15){put(l,x+b,52,z+a,TC4Modern.TAINT.get().defaultBlockState());if(l.random.nextFloat()<.2)put(l,x+b,53,z+a,TC4Modern.TAINT.get().defaultBlockState());}if((Math.abs(a)==4||Math.abs(b)==4)&&l.random.nextBoolean()||(Math.abs(a)>=5||Math.abs(b)>=5)&&l.random.nextFloat()>.33||(Math.abs(a)>=7||Math.abs(b)>=7)&&l.random.nextFloat()>.25)continue;put(l,x+b,51,z+a,TC4Modern.TAINT.get().defaultBlockState().setValue(TaintBlock.VARIANT,1));}
+  boolean second=l.random.nextBoolean(),fourth=l.random.nextBoolean();boolean[] giant={l.getDifficulty()==net.minecraft.world.Difficulty.HARD,second,!second,fourth,!fourth};double[][] positions={{.5,.5},{3.5,3.5},{-2.5,3.5},{3.5,-2.5},{-2.5,-2.5}};for(int i=0;i<5;i++){var mob=(giant[i]?TaintacleContent.GIANT:TaintacleContent.NORMAL).get().create(l);mob.moveTo(x+positions[i][0],53,z+positions[i][1],0,0);Champions.make(mob,l.random.nextInt(Champions.NAMES.length),true);mob.setPersistenceRequired();l.addFreshEntity(mob);}
+ }
+}

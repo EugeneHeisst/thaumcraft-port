@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "tc4modern:items/focus_trade_orn",
+  "layer1": "tc4modern:items/focus_trade"
+ }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "closed=false": {
+      "model": "tc4modern:block/grate"
+    },
+    "closed=true": {
+      "model": "tc4modern:block/grate_closed"
+    }
+  }
+}

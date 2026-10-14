@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "tc4modern:items/bonebow"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "tc4modern:pull": 1
+      },
+      "model": "tc4modern:item/bone_bow_pulling_0"
+    },
+    {
+      "predicate": {
+        "tc4modern:pull": 8
+      },
+      "model": "tc4modern:item/bone_bow_pulling_1"
+    },
+    {
+      "predicate": {
+        "tc4modern:pull": 13
+      },
+      "model": "tc4modern:item/bone_bow_pulling_2"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+package dev.eugheist.tc4modern;
+import net.minecraft.world.inventory.*;import net.minecraft.world.entity.player.*;import net.minecraft.world.*;import net.minecraft.world.item.ItemStack;import thaumcraft.api.aspects.Aspect;
+public final class DeconstructorMenu extends AbstractContainerMenu {
+ final Container input;private final ContainerLevelAccess access;private final DeconstructorEntity table;final DataSlot time=DataSlot.standalone(),result=DataSlot.standalone();
+ private static final java.util.List<Aspect> ASPECTS=Aspect.aspects.values().stream().sorted(java.util.Comparator.comparing(Aspect::getTag)).toList();
+ public DeconstructorMenu(int id,Inventory inv){this(id,inv,ContainerLevelAccess.NULL,null);}
+ public DeconstructorMenu(int id,Inventory inv,ContainerLevelAccess access,DeconstructorEntity table){super(BasicsContent.DECONSTRUCTOR_MENU.get(),id);this.table=table;this.access=access;input=table==null?new SimpleContainer(1):table;result.set(-1);addDataSlot(time);addDataSlot(result);addSlot(new Slot(input,0,64,16){@Override public boolean mayPlace(ItemStack stack){return table==null||table.canPlaceItem(0,stack);}});for(int row=0;row<3;row++)for(int col=0;col<9;col++)addSlot(new Slot(inv,9+row*9+col,8+col*18,84+row*18));for(int col=0;col<9;col++)addSlot(new Slot(inv,col,8+col*18,142));}
+ Aspect aspect(){int i=result.get();return i>=0&&i<ASPECTS.size()?ASPECTS.get(i):null;}
+ @Override public void broadcastChanges(){if(table!=null){time.set(table.state.breaktime);result.set(ASPECTS.indexOf(table.state.aspect));}super.broadcastChanges();}
+ @Override public boolean clickMenuButton(Player player,int button){if(button!=1||table==null||table.state.aspect==null||!stillValid(player)||player.level().isClientSide)return false;if(player instanceof net.minecraft.server.level.ServerPlayer server)table.give(server);broadcastChanges();return true;}
+ @Override public boolean stillValid(Player p){return access.evaluate((l,pos)->l.getBlockState(pos).getBlock() instanceof DeconstructorBlock&&p.distanceToSqr(pos.getCenter())<=64,true);}
+ @Override public ItemStack quickMoveStack(Player p,int i){if(i<0||i>=slots.size()||!slots.get(i).hasItem())return ItemStack.EMPTY;var slot=slots.get(i);var stack=slot.getItem();var copy=stack.copy();if(i==0){if(!moveItemStackTo(stack,1,slots.size(),true))return ItemStack.EMPTY;}else if(input.canPlaceItem(0,stack)){if(!moveItemStackTo(stack,0,1,false))return ItemStack.EMPTY;}else if(i<28){if(!moveItemStackTo(stack,28,37,false))return ItemStack.EMPTY;}else if(!moveItemStackTo(stack,1,28,false))return ItemStack.EMPTY;if(stack.isEmpty())slot.setByPlayer(ItemStack.EMPTY);else slot.setChanged();return copy;}
+}

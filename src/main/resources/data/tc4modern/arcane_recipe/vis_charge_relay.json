@@ -1,0 +1,29 @@
+{
+  "key": "NodeChargeRelay",
+  "research": "VISCHARGERELAY",
+  "pattern": [
+    " R ",
+    "W W",
+    "I I"
+  ],
+  "key_items": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "tc4modern:vis_relay"
+    },
+    "W": {
+      "item": "tc4modern:greatwood_rod"
+    }
+  },
+  "result": {
+    "id": "tc4modern:vis_charge_relay",
+    "count": 1
+  },
+  "aspects": {
+    "ignis": 16,
+    "ordo": 16,
+    "aer": 16
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "key": "JarVoid",
+  "research": "JARVOID",
+  "pattern": [
+    "O",
+    "J",
+    "P"
+  ],
+  "key_items": {
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "J": {
+      "item": "tc4modern:warded_jar"
+    },
+    "P": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "result": {
+    "id": "tc4modern:void_jar",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 5,
+    "perditio": 15
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "TTT",
+    "TTT",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "tc4modern:tallow"
+    }
+  },
+  "result": {
+    "id": "tc4modern:tallow_block",
+    "count": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "loader": "neoforge:obj",
+  "model": "tc4modern:models/book/node_jar.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "tc4modern:models/jar"
+  },
+  "render_type": "minecraft:translucent"
+}

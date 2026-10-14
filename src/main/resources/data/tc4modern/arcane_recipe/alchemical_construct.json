@@ -1,0 +1,31 @@
+{
+  "key": "AlchemicalConstruct",
+  "research": "DISTILESSENTIA",
+  "pattern": [
+    "VTF",
+    "TWT",
+    "FTV"
+  ],
+  "key_items": {
+    "V": {
+      "item": "tc4modern:essentia_valve"
+    },
+    "T": {
+      "item": "tc4modern:essentia_tube"
+    },
+    "F": {
+      "item": "tc4modern:vis_filter"
+    },
+    "W": {
+      "item": "tc4modern:greatwood_planks"
+    }
+  },
+  "result": {
+    "id": "tc4modern:alchemical_construct",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 5,
+    "ordo": 5
+  }
+}

@@ -1,0 +1,124 @@
+{
+ "parent": "tc4modern:block/research_table",
+ "display": {
+  "gui": {
+   "rotation": [
+    30,
+    315,
+    0
+   ],
+   "translation": [
+    -2.5456,
+    1.2728,
+    -2.2045
+   ],
+   "scale": [
+    0.44999999999999996,
+    0.44999999999999996,
+    0.44999999999999996
+   ]
+  },
+  "ground": {
+   "rotation": [
+    0,
+    90,
+    0
+   ],
+   "translation": [
+    -0.0,
+    3.0,
+    1.44
+   ],
+   "scale": [
+    0.18,
+    0.18,
+    0.18
+   ]
+  },
+  "fixed": {
+   "rotation": [
+    0,
+    90,
+    0
+   ],
+   "translation": [
+    -0.0,
+    0.0,
+    2.88
+   ],
+   "scale": [
+    0.36,
+    0.36,
+    0.36
+   ]
+  },
+  "thirdperson_righthand": {
+   "rotation": [
+    75,
+    135,
+    0
+   ],
+   "translation": [
+    1.5274,
+    1.0247,
+    0.3953
+   ],
+   "scale": [
+    0.27,
+    0.27,
+    0.27
+   ]
+  },
+  "thirdperson_lefthand": {
+   "rotation": [
+    75,
+    135,
+    0
+   ],
+   "translation": [
+    1.5274,
+    1.0247,
+    0.3953
+   ],
+   "scale": [
+    0.27,
+    0.27,
+    0.27
+   ]
+  },
+  "firstperson_righthand": {
+   "rotation": [
+    0,
+    135,
+    0
+   ],
+   "translation": [
+    1.6292,
+    0.0,
+    1.6292
+   ],
+   "scale": [
+    0.288,
+    0.288,
+    0.288
+   ]
+  },
+  "firstperson_lefthand": {
+   "rotation": [
+    0,
+    315,
+    0
+   ],
+   "translation": [
+    -1.6292,
+    0.0,
+    -1.6292
+   ],
+   "scale": [
+    0.288,
+    0.288,
+    0.288
+   ]
+  }
+ }
+}

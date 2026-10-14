@@ -1,0 +1,1 @@
+{"key": "TinyBowtie", "research": "TINYBOWTIE", "pattern": ["CSC", "C C"], "key_items": {"C": {"item": "minecraft:black_wool"}, "S": {"item": "minecraft:string"}}, "aspects": {"aer": 4, "ordo": 4}, "result": {"id": "tc4modern:golem_tiny_bowtie", "count": 1}}

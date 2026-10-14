@@ -1,0 +1,28 @@
+package dev.eugheist.tc4modern;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.core.*;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.*;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.phys.AABB;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+
+@EventBusSubscriber(modid=TC4Modern.MODID,value=Dist.CLIENT)
+public final class GolemLumberAudit {
+ static final BlockPos BASE=new BlockPos(230,121,-90),TREE=BASE.offset(3,0,0),FAR=BASE.offset(9,0,0);static StrawGolem golem;static int ticks;static volatile boolean done;static int drops;
+ static void check(boolean b,String s){if(!b)throw new IllegalStateException("TC4_LUMBER FAIL "+s);System.out.println("TC4_LUMBER PASS "+s);}
+ static void setup(ServerPlayer p){var l=p.serverLevel();p.removeAllEffects();p.setHealth(p.getMaxHealth());p.setGameMode(net.minecraft.world.level.GameType.CREATIVE);p.getInventory().clearContent();p.connection.teleport(BASE.getX()+6,BASE.getY()+3,BASE.getZ()-7,40,20);p.getAbilities().flying=true;p.onUpdateAbilities();l.setDayTime(6000);l.getGameRules().getRule(net.minecraft.world.level.GameRules.RULE_RANDOMTICKING).set(0,l.getServer());l.getGameRules().getRule(net.minecraft.world.level.GameRules.RULE_DOMOBSPAWNING).set(false,l.getServer());
+  l.getEntitiesOfClass(Entity.class,new AABB(BASE).inflate(25)).stream().filter(e->!(e instanceof net.minecraft.world.entity.player.Player)).forEach(Entity::discard);for(int x=-8;x<14;x++)for(int z=-8;z<9;z++)for(int y=-1;y<12;y++)l.setBlock(BASE.offset(x,y,z),(y==-1?Blocks.STONE:Blocks.AIR).defaultBlockState(),3);l.getEntitiesOfClass(ItemEntity.class,new AABB(BASE).inflate(25)).forEach(Entity::discard);
+  for(int y=0;y<8;y++)l.setBlock(TREE.above(y),Blocks.OAK_LOG.defaultBlockState(),3);l.setBlock(TREE.above(7).east(),Blocks.OAK_LOG.defaultBlockState(),3);l.setBlock(TREE.above(7).east(2),Blocks.BIRCH_LOG.defaultBlockState(),3);l.setBlock(FAR,Blocks.OAK_LOG.defaultBlockState(),3);l.setBlock(BASE.offset(-3,0,0),Blocks.OAK_PLANKS.defaultBlockState(),3);l.setBlock(TREE.above(8),Blocks.OAK_LEAVES.defaultBlockState().setValue(LeavesBlock.PERSISTENT,true),3);
+  check(ElementalTools.furthest(l,TREE,Blocks.OAK_LOG).equals(TREE.above(7).east()),"original furthest log search and species boundary");golem=GolemHarvestAudit.golem(p,GolemMaterial.IRON,BASE,7);golem.owner=p.getUUID();golem.paused=true;var tag=new CompoundTag();golem.addAdditionalSaveData(tag);var copy=new StrawGolem(Golemancy.ENTITY.get(),l);copy.readAdditionalSaveData(tag);check(copy.core()==7,"lumber core saves and restores");check(!new GolemLumberGoal(golem).canUse(),"paused lumberjack does not work");golem.paused=false;
+  var recipe=InfusionItemRecipes.all().stream().filter(r->r.key().equals("CoreLumber")).findFirst().orElseThrow();check(recipe.instability()==2&&recipe.central().get()==Golemancy.HARVEST.get()&&recipe.aspects().visSize()==48&&recipe.components().size()==4,"original lumber infusion ingredients and aspects");p.getInventory().setItem(0,new ItemStack(Golemancy.LUMBER.get()));p.getInventory().setItem(1,new ItemStack(Golemancy.GUARD.get()));p.getInventory().setItem(2,new ItemStack(Golemancy.BUTCHER.get()));p.setItemInHand(InteractionHand.MAIN_HAND,new ItemStack(Golemancy.LUMBER.get()));p.containerMenu.broadcastChanges();
+ }
+ @SubscribeEvent static void tick(net.neoforged.neoforge.client.event.ClientTickEvent.Post event){if(!Boolean.getBoolean("tc4modern.golemLumberAuditOnly"))return;var mc=Minecraft.getInstance();if(mc.player==null)return;ticks++;if(ticks==10&&mc.player.isDeadOrDying())mc.player.respawn();var server=mc.getSingleplayerServer();var id=mc.player.getUUID();if(ticks==40)server.execute(()->setup(server.getPlayerList().getPlayer(id)));if(ticks==160){for(var item:java.util.List.of(Golemancy.LUMBER.get(),Golemancy.GUARD.get(),Golemancy.BUTCHER.get())){var model=mc.getItemRenderer().getModel(new ItemStack(item),mc.level,mc.player,0);check(!model.isGui3d(),"flat inventory model "+item);var hand=model.getTransforms().getTransform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND).scale;check(hand.x<=1&&hand.y<=1&&hand.z<=1,"hand scale bounded "+item);}LiquidDeathAudit.shot(mc,"golem-lumber-hand.png");}if(ticks==200){mc.setScreen(new net.minecraft.client.gui.screens.inventory.InventoryScreen(mc.player));}if(ticks==220){LiquidDeathAudit.shot(mc,"golem-core-inventory.png");mc.player.closeContainer();}if(ticks==1800)server.execute(()->{var l=golem.level();for(int y=0;y<8;y++)check(l.isEmptyBlock(TREE.above(y)),"harvested trunk height "+y);check(l.isEmptyBlock(TREE.above(7).east()),"harvested high branch");check(l.getBlockState(TREE.above(7).east(2)).is(Blocks.BIRCH_LOG),"different-species high branch untouched");check(l.getBlockState(FAR).is(Blocks.OAK_LOG),"out of search range untouched");check(l.getBlockState(BASE.offset(-3,0,0)).is(Blocks.OAK_PLANKS),"planks untouched");check(l.getBlockState(TREE.above(8)).is(Blocks.OAK_LEAVES),"leaves not directly harvested");drops=l.getEntitiesOfClass(ItemEntity.class,new AABB(BASE).inflate(25)).stream().filter(e->e.getItem().is(Items.OAK_LOG)).mapToInt(e->e.getItem().getCount()).sum();check(drops==9,"nine actual log drops, no duplication");check(golem.carried().isEmpty(),"lumberjack leaves drops for gatherer");done=true;});if(ticks==1820){check(done,"server lumber checks completed");LiquidDeathAudit.shot(mc,"golem-lumber-finished.png");System.out.println("TC4_LUMBER ALL PASS");mc.stop();}}
+}

@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "W"
+ ],
+ "key": {
+  "W": {
+   "item": "tc4modern:greatwood_log"
+  }
+ },
+ "result": {
+  "id": "tc4modern:greatwood_planks",
+  "count": 4
+ }
+}

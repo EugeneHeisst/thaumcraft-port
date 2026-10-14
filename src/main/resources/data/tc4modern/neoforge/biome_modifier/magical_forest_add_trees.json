@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "tc4modern:magical_forest",
+  "features": [
+    "tc4modern:magical_forest_trees"
+  ],
+  "step": "vegetal_decoration"
+}

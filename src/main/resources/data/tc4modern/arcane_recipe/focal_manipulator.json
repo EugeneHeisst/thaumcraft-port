@@ -1,0 +1,42 @@
+{
+ "key": "FocalManipulator",
+ "research": "FOCALMANIPULATION",
+ "pattern": [
+  "IQI",
+  "SPS",
+  "GTG"
+ ],
+ "key_items": {
+  "Q": {
+   "item": "tc4modern:arcane_stone_slab"
+  },
+  "S": {
+   "item": "tc4modern:arcane_stone"
+  },
+  "T": {
+   "item": "tc4modern:table"
+  },
+  "I": {
+   "item": "minecraft:iron_ingot"
+  },
+  "G": {
+   "item": "minecraft:gold_ingot"
+  },
+  "P": {
+   "item": "tc4modern:primal_charm"
+  }
+ },
+ "result": {
+  "id": "tc4modern:focal_manipulator",
+  "count": 1
+ },
+ "aspects": {
+  "ignis": 32,
+  "aer": 32,
+  "perditio": 32,
+  "terra": 32,
+  "aqua": 32,
+  "ordo": 32
+ },
+ "mirrored": false
+}

@@ -1,0 +1,40 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:alternatives",
+     "children": [
+      {
+       "type": "minecraft:item",
+       "name": "tc4modern:silverwood_leaves",
+       "conditions": [
+        {
+         "condition": "minecraft:match_tool",
+         "predicate": {
+          "items": "minecraft:shears"
+         }
+        }
+       ]
+      },
+      {
+       "type": "minecraft:item",
+       "name": "tc4modern:silverwood_sapling",
+       "conditions": [
+        {
+         "condition": "minecraft:survives_explosion"
+        },
+        {
+         "condition": "minecraft:random_chance",
+         "chance": 0.004
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

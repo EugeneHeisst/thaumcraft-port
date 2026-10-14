@@ -1,0 +1,28 @@
+{
+  "key": "BoneBow",
+  "research": "BONEBOW",
+  "pattern": [
+    "SB ",
+    "SEB",
+    "SB "
+  ],
+  "key_items": {
+    "S": {
+      "item": "minecraft:string"
+    },
+    "B": {
+      "item": "minecraft:bone"
+    },
+    "E": {
+      "item": "tc4modern:entropy_shard"
+    }
+  },
+  "result": {
+    "id": "tc4modern:bone_bow",
+    "count": 1
+  },
+  "aspects": {
+    "aer": 16,
+    "perditio": 32
+  }
+}

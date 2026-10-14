@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "tc4modern:blocks/planks_silverwood",
+    "top": "tc4modern:blocks/planks_silverwood",
+    "side": "tc4modern:blocks/planks_silverwood"
+  }
+}

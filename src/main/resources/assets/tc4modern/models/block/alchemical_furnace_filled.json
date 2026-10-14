@@ -1,0 +1,12 @@
+{
+ "parent": "minecraft:block/cube",
+ "textures": {
+  "particle": "tc4modern:blocks/al_furnace_front_off",
+  "down": "tc4modern:blocks/al_furnace_side",
+  "up": "tc4modern:blocks/al_furnace_top_filled",
+  "north": "tc4modern:blocks/al_furnace_front_off",
+  "south": "tc4modern:blocks/al_furnace_front_off",
+  "west": "tc4modern:blocks/al_furnace_front_off",
+  "east": "tc4modern:blocks/al_furnace_front_off"
+ }
+}

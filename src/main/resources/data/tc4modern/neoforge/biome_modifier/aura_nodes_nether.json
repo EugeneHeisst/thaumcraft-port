@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "features": "tc4modern:aura_node_nether",
+  "step": "top_layer_modification"
+}

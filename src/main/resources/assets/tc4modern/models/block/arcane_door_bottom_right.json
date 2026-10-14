@@ -1,0 +1,8 @@
+{
+ "render_type": "minecraft:cutout",
+ "parent": "minecraft:block/door_bottom_right",
+ "textures": {
+  "top": "tc4modern:blocks/adoortop",
+  "bottom": "tc4modern:blocks/adoorbot"
+ }
+}

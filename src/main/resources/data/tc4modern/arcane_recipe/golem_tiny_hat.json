@@ -1,0 +1,1 @@
+{"key": "TinyHat", "research": "TINYHAT", "pattern": [" C ", " G ", "CCC"], "key_items": {"C": {"item": "minecraft:black_wool"}, "G": {"item": "minecraft:gold_ingot"}}, "aspects": {"ordo": 8, "ignis": 8}, "result": {"id": "tc4modern:golem_tiny_hat", "count": 1}}

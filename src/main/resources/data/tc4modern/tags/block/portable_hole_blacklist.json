@@ -1,0 +1,25 @@
+{
+  "values": [
+    "#minecraft:beds",
+    "minecraft:piston",
+    "minecraft:piston_head",
+    "minecraft:sticky_piston",
+    "minecraft:moving_piston",
+    "#minecraft:wooden_doors",
+    "minecraft:iron_door",
+    "tc4modern:eldritch_altar",
+    "tc4modern:eldritch_obelisk",
+    "tc4modern:eldritch_obelisk_body",
+    "tc4modern:eldritch_cap",
+    "tc4modern:glowing_crusted_stone",
+    "tc4modern:glyphed_stone",
+    "tc4modern:eldritch_gate_frame",
+    "tc4modern:eldritch_lock",
+    "tc4modern:crusted_opening",
+    "tc4modern:runed_stone",
+    "tc4modern:eldritch_portal",
+    "tc4modern:flux_goo",
+    "tc4modern:flux_gas",
+    "tc4modern:infernal_furnace"
+  ]
+}

@@ -1,0 +1,1 @@
+{"type":"tc4modern:configured_spawns","biomes":"#minecraft:is_overworld","spawners":{"type":"tc4modern:firebat","weight":5,"minCount":1,"maxCount":2},"setting":"spawn_fire_bats","halloween":true}

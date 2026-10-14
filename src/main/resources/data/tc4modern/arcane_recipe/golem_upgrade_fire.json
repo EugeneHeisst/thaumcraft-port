@@ -1,0 +1,1 @@
+{"key": "UpgradeFire", "research": "UPGRADEFIRE", "pattern": ["NNN", "NCN", "NNN"], "key_items": {"N": {"item": "minecraft:gold_nugget"}, "C": {"item": "tc4modern:fire_shard"}}, "aspects": {"ignis": 10}, "result": {"id": "tc4modern:golem_upgrade_fire", "count": 1}}

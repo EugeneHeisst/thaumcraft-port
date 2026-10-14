@@ -1,0 +1,73 @@
+{
+ "parent": "minecraft:block/block",
+ "textures": {
+  "pipe": "tc4modern:blocks/pipe_buffer",
+  "particle": "tc4modern:blocks/pipe_buffer"
+ },
+ "elements": [
+  {
+   "from": [
+    4,
+    4,
+    4
+   ],
+   "to": [
+    12,
+    12,
+    12
+   ],
+   "faces": {
+    "north": {
+     "texture": "#pipe"
+    },
+    "south": {
+     "texture": "#pipe"
+    },
+    "east": {
+     "texture": "#pipe"
+    },
+    "west": {
+     "texture": "#pipe"
+    },
+    "up": {
+     "texture": "#pipe"
+    },
+    "down": {
+     "texture": "#pipe"
+    }
+   }
+  },
+  {
+   "from": [
+    7,
+    0,
+    7
+   ],
+   "to": [
+    9,
+    16,
+    9
+   ],
+   "faces": {
+    "north": {
+     "texture": "#pipe"
+    },
+    "south": {
+     "texture": "#pipe"
+    },
+    "east": {
+     "texture": "#pipe"
+    },
+    "west": {
+     "texture": "#pipe"
+    },
+    "up": {
+     "texture": "#pipe"
+    },
+    "down": {
+     "texture": "#pipe"
+    }
+   }
+  }
+ ]
+}

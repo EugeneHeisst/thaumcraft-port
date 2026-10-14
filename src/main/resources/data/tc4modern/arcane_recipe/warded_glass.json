@@ -1,0 +1,30 @@
+{
+  "key": "WardedGlass",
+  "research": "WARDEDARCANA",
+  "pattern": [
+    "GGG",
+    "WBW",
+    "GGG"
+  ],
+  "key_items": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "W": {
+      "item": "tc4modern:greatwood_planks"
+    },
+    "B": {
+      "item": "tc4modern:zombie_brain"
+    }
+  },
+  "result": {
+    "id": "tc4modern:warded_glass",
+    "count": 8
+  },
+  "aspects": {
+    "aqua": 5,
+    "ordo": 10,
+    "terra": 5,
+    "ignis": 5
+  }
+}

@@ -1,0 +1,81 @@
+{
+ "render_type": "minecraft:cutout",
+ "parent": "minecraft:block/block",
+ "textures": {
+  "particle": "tc4modern:blocks/candle",
+  "all": "tc4modern:blocks/candle",
+  "wick": "tc4modern:blocks/candlestub"
+ },
+ "elements": [
+  {
+   "from": [
+    6,
+    0,
+    6
+   ],
+   "to": [
+    10,
+    8,
+    10
+   ],
+   "faces": {
+    "up": {
+     "texture": "#all",
+     "tintindex": 0
+    },
+    "down": {
+     "texture": "#all",
+     "tintindex": 0
+    },
+    "north": {
+     "texture": "#all",
+     "tintindex": 0
+    },
+    "south": {
+     "texture": "#all",
+     "tintindex": 0
+    },
+    "east": {
+     "texture": "#all",
+     "tintindex": 0
+    },
+    "west": {
+     "texture": "#all",
+     "tintindex": 0
+    }
+   }
+  },
+  {
+   "from": [
+    7.6,
+    8,
+    7.6
+   ],
+   "to": [
+    8.4,
+    10,
+    8.4
+   ],
+   "faces": {
+    "up": {
+     "texture": "#wick"
+    },
+    "down": {
+     "texture": "#wick"
+    },
+    "north": {
+     "texture": "#wick"
+    },
+    "south": {
+     "texture": "#wick"
+    },
+    "east": {
+     "texture": "#wick"
+    },
+    "west": {
+     "texture": "#wick"
+    }
+   }
+  }
+ ]
+}

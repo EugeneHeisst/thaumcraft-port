@@ -1,0 +1,1 @@
+{"key": "TinyGlasses", "research": "TINYGLASSES", "pattern": ["GIG"], "key_items": {"G": {"item": "minecraft:glass"}, "I": {"item": "minecraft:iron_ingot"}}, "aspects": {"aer": 4, "aqua": 4}, "result": {"id": "tc4modern:golem_tiny_glasses", "count": 1}}

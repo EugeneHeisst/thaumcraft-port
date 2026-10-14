@@ -1,0 +1,27 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tc4modern:items/golem_tallow"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "tc4modern:core": 1
+      },
+      "model": "tc4modern:item/golem_tallow_core"
+    },
+    {
+      "predicate": {
+        "tc4modern:advanced": 1
+      },
+      "model": "tc4modern:item/golem_tallow_adv"
+    },
+    {
+      "predicate": {
+        "tc4modern:advanced": 1,
+        "tc4modern:core": 1
+      },
+      "model": "tc4modern:item/golem_tallow_adv_core"
+    }
+  ]
+}

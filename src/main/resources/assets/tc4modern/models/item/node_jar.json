@@ -1,0 +1,26 @@
+{
+  "loader": "neoforge:obj",
+  "model": "tc4modern:models/book/node_jar.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "tc4modern:models/jar"
+  },
+  "render_type": "minecraft:translucent",
+  "display": {
+    "gui": {
+      "rotation": [
+        30,
+        225,
+        0
+      ],
+      "scale": [
+        0.625,
+        0.625,
+        0.625
+      ]
+    }
+  },
+  "parent": "minecraft:block/block"
+}

@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "tc4modern:thaumium_helmet",
+    "tc4modern:thaumium_chestplate",
+    "tc4modern:thaumium_leggings",
+    "tc4modern:thaumium_boots",
+    "tc4modern:thaumium_sword",
+    "tc4modern:thaumium_pickaxe",
+    "tc4modern:thaumium_axe",
+    "tc4modern:thaumium_shovel",
+    "tc4modern:thaumium_hoe",
+    "tc4modern:robe_chest",
+    "tc4modern:robe_legs",
+    "tc4modern:robe_boots",
+    "tc4modern:boots_traveller",
+    "tc4modern:hover_harness",
+    "tc4modern:elemental_axe",
+    "tc4modern:elemental_pickaxe",
+    "tc4modern:elemental_sword",
+    "tc4modern:elemental_shovel",
+    "tc4modern:elemental_hoe",
+    "tc4modern:fortress_helmet",
+    "tc4modern:fortress_chestplate",
+    "tc4modern:fortress_leggings"
+  ]
+}

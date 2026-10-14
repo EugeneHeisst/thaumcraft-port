@@ -1,0 +1,6 @@
+{
+ "type": "neoforge:add_features",
+ "biomes": "#tc4modern:silverwood",
+ "features": "tc4modern:silverwood",
+ "step": "vegetal_decoration"
+}

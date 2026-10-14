@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "filled=false,lit=false": {
+   "model": "tc4modern:block/alchemical_furnace"
+  },
+  "filled=true,lit=false": {
+   "model": "tc4modern:block/alchemical_furnace_filled"
+  },
+  "filled=false,lit=true": {
+   "model": "tc4modern:block/alchemical_furnace_lit"
+  },
+  "filled=true,lit=true": {
+   "model": "tc4modern:block/alchemical_furnace_lit_filled"
+  }
+ }
+}

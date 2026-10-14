@@ -1,0 +1,21 @@
+{
+ "key": "ArcanePedestal",
+ "research": "INFUSION",
+ "pattern": [
+  "SSS",
+  " S ",
+  "SSS"
+ ],
+ "key_items": {
+  "S": {
+   "item": "tc4modern:arcane_stone"
+  }
+ },
+ "result": {
+  "id": "tc4modern:arcane_pedestal",
+  "count": 2
+ },
+ "aspects": {
+  "aer": 5
+ }
+}

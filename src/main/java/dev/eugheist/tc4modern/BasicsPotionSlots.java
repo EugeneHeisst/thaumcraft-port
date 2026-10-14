@@ -1,0 +1,6 @@
+package dev.eugheist.tc4modern;
+import net.minecraft.core.Holder;import net.minecraft.world.effect.*;
+/** Original potion array extended to40 slots; TC4 fills the free31..39 slots. */
+final class BasicsPotionSlots {
+ static Holder<MobEffect> pick(int slot){return switch(slot){case 1->MobEffects.MOVEMENT_SPEED;case 2->MobEffects.MOVEMENT_SLOWDOWN;case 3->MobEffects.DIG_SPEED;case 4->MobEffects.DIG_SLOWDOWN;case 5->MobEffects.DAMAGE_BOOST;case 6->MobEffects.HEAL;case 7->MobEffects.HARM;case 8->MobEffects.JUMP;case 9->MobEffects.CONFUSION;case 10->MobEffects.REGENERATION;case 11->MobEffects.DAMAGE_RESISTANCE;case 12->MobEffects.FIRE_RESISTANCE;case 13->MobEffects.WATER_BREATHING;case 14->MobEffects.INVISIBILITY;case 15->MobEffects.BLINDNESS;case 16->MobEffects.NIGHT_VISION;case 17->MobEffects.HUNGER;case 18->MobEffects.WEAKNESS;case 19->MobEffects.POISON;case 20->MobEffects.WITHER;case 21->MobEffects.HEALTH_BOOST;case 22->MobEffects.ABSORPTION;case 23->MobEffects.SATURATION;case 31->TC4Modern.FLUX_TAINT;case 32->TC4Modern.VIS_EXHAUST;case 33->WarpEffects.INFECTIOUS_VIS_EXHAUST;case 34->WarpEffects.UNNATURAL_HUNGER;case 35->WarpEffects.WARP_WARD;case 36->WarpEffects.DEATH_GAZE;case 37->WarpEffects.BLURRED_VISION;case 38->WarpEffects.SUN_SCORNED;case 39->WarpEffects.THAUMARHIA;default->null;};}
+}

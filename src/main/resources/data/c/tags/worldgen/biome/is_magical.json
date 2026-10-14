@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tc4modern:magical_forest",
+    "tc4modern:eerie",
+    "tc4modern:tainted_land",
+    "tc4modern:outer_lands"
+  ]
+}

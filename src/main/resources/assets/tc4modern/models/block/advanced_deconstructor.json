@@ -1,0 +1,12 @@
+{
+  "loader": "neoforge:obj",
+  "model": "tc4modern:models/book/deconstructor.obj",
+  "mtl_override": "tc4modern:models/block/advanced_deconstructor.mtl",
+  "flip_v": true,
+  "automatic_culling": false,
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "tc4modern:models/decontable"
+  },
+  "render_type": "minecraft:solid"
+}

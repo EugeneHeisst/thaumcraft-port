@@ -1,0 +1,29 @@
+{
+ "key": "FocusExcavation",
+ "research": "FOCUSEXCAVATION",
+ "pattern": [
+  "CQC",
+  "Q#Q",
+  "CQC"
+ ],
+ "key_items": {
+  "#": {
+   "tag": "c:gems/emerald"
+  },
+  "Q": {
+   "item": "minecraft:quartz"
+  },
+  "C": {
+   "item": "tc4modern:earth_shard"
+  }
+ },
+ "result": {
+  "id": "tc4modern:focus_excavation",
+  "count": 1
+ },
+ "aspects": {
+  "terra": 20,
+  "perditio": 5,
+  "ordo": 5
+ }
+}

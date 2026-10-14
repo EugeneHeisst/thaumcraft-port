@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tc4modern:taint",
+    "tc4modern:dissolve",
+    "tc4modern:airarrow",
+    "tc4modern:orderarrow"
+  ]
+}

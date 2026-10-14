@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": {
+   "item": "tc4modern:void_nugget"
+  }
+ },
+ "result": {
+  "id": "tc4modern:void_ingot",
+  "count": 1
+ }
+}

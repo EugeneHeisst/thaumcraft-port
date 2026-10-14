@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tc4modern:phial"
+    },
+    {
+      "item": "minecraft:feather"
+    },
+    {
+      "tag": "tc4modern:dye_black"
+    }
+  ],
+  "result": {
+    "id": "tc4modern:scribing_tools",
+    "count": 1
+  }
+}

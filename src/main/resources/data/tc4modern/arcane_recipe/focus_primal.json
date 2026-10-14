@@ -1,0 +1,32 @@
+{
+  "key": "FocusPrimal",
+  "research": "FOCUSPRIMAL",
+  "pattern": [
+    "CQC",
+    "Q#Q",
+    "CQC"
+  ],
+  "key_items": {
+    "C": {
+      "item": "minecraft:diamond"
+    },
+    "Q": {
+      "item": "minecraft:quartz"
+    },
+    "#": {
+      "item": "tc4modern:primal_charm"
+    }
+  },
+  "result": {
+    "id": "tc4modern:focus_primal",
+    "count": 1
+  },
+  "aspects": {
+    "terra": 25,
+    "perditio": 25,
+    "ordo": 25,
+    "aer": 25,
+    "ignis": 25,
+    "aqua": 25
+  }
+}

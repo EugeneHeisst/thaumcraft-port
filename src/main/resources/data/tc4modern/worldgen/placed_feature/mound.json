@@ -1,0 +1,12 @@
+{
+  "feature": "tc4modern:mound",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 150
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

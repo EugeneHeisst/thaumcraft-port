@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:enchantable/foot_armor",
+    "tc4modern:hover_harness"
+  ]
+}

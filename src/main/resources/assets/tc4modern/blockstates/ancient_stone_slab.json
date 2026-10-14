@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tc4modern:block/ancient_stone_slab"
+    },
+    "type=double": {
+      "model": "tc4modern:block/ancient_stone"
+    },
+    "type=top": {
+      "model": "tc4modern:block/ancient_stone_slab_top"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "key": "Centrifuge",
+  "research": "CENTRIFUGE",
+  "pattern": [
+    " T ",
+    "ACP",
+    " T "
+  ],
+  "key_items": {
+    "T": {
+      "item": "tc4modern:essentia_tube"
+    },
+    "A": {
+      "item": "tc4modern:alembic"
+    },
+    "C": {
+      "item": "tc4modern:alchemical_construct"
+    },
+    "P": {
+      "item": "minecraft:piston"
+    }
+  },
+  "result": {
+    "id": "tc4modern:centrifuge",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 5,
+    "ordo": 5,
+    "perditio": 5
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "feature": "tc4modern:infused_stone",
+  "placement": [
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

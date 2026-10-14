@@ -1,0 +1,29 @@
+{
+  "variants": {
+    "facing=up": {
+      "model": "tc4modern:block/water_crystal_cluster"
+    },
+    "facing=down": {
+      "model": "tc4modern:block/water_crystal_cluster",
+      "x": 180
+    },
+    "facing=north": {
+      "model": "tc4modern:block/water_crystal_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "tc4modern:block/water_crystal_cluster",
+      "x": 270
+    },
+    "facing=east": {
+      "model": "tc4modern:block/water_crystal_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=west": {
+      "model": "tc4modern:block/water_crystal_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

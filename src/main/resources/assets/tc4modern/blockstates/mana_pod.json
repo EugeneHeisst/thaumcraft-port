@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "tc4modern:block/mana_pod_0"
+    },
+    "age=1": {
+      "model": "tc4modern:block/mana_pod_1"
+    },
+    "age=2": {
+      "model": "tc4modern:block/mana_pod_2"
+    },
+    "age=3": {
+      "model": "tc4modern:block/mana_pod_3"
+    },
+    "age=4": {
+      "model": "tc4modern:block/mana_pod_4"
+    },
+    "age=5": {
+      "model": "tc4modern:block/mana_pod_5"
+    },
+    "age=6": {
+      "model": "tc4modern:block/mana_pod_6"
+    },
+    "age=7": {
+      "model": "tc4modern:block/mana_pod_7"
+    }
+  }
+}

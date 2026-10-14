@@ -1,0 +1,2234 @@
+[
+ {
+  "id": "thaumometer",
+  "translation": "item.tc4modern.thaumometer",
+  "original": "item.ItemThaumometer.name",
+  "order": 313
+ },
+ {
+  "id": "scribing_tools",
+  "translation": "item.tc4modern.scribing_tools",
+  "original": "item.ItemInkwell.name",
+  "order": 311
+ },
+ {
+  "id": "research_notes",
+  "translation": "item.tc4modern.research_notes",
+  "original": "item.researchnotes.name",
+  "order": 310.1
+ },
+ {
+  "id": "thaumonomicon",
+  "translation": "item.tc4modern.thaumonomicon",
+  "original": "item.ItemThaumonomicon.name",
+  "order": 312
+ },
+ {
+  "id": "thaumonomicon_cheat",
+  "translation": "item.tc4modern.thaumonomicon_cheat",
+  "original": "item.ItemThaumonomicon.name",
+  "order": 312.0
+ },
+ {
+  "id": "table",
+  "translation": "block.tc4modern.table",
+  "original": "tile.blockTable.0.name",
+  "order": 109
+ },
+ {
+  "id": "iron_cap",
+  "translation": "item.tc4modern.iron_cap",
+  "original": "item.WandCap.0.name",
+  "order": 154
+ },
+ {
+  "id": "greatwood_log",
+  "translation": "block.tc4modern.greatwood_log",
+  "original": "tile.blockMagicalLog.greatwood.name",
+  "order": 12
+ },
+ {
+  "id": "greatwood_sapling",
+  "translation": "block.tc4modern.greatwood_sapling",
+  "original": "tile.blockCustomPlant.0.name",
+  "order": 16
+ },
+ {
+  "id": "greatwood_rod",
+  "translation": "item.tc4modern.greatwood_rod",
+  "original": "item.WandRod.0.name",
+  "order": 160
+ },
+ {
+  "id": "gold_cap",
+  "translation": "item.tc4modern.gold_cap",
+  "original": "item.WandCap.1.name",
+  "order": 155
+ },
+ {
+  "id": "iron_capped_wooden_wand",
+  "translation": "item.tc4modern.iron_capped_wooden_wand",
+  "original": "item.WandCasting.name",
+  "order": 150.0
+ },
+ {
+  "id": "gold_capped_greatwood_wand",
+  "translation": "item.tc4modern.gold_capped_greatwood_wand",
+  "original": "item.WandCasting.name",
+  "order": 151.0
+ },
+ {
+  "id": "vis_relay",
+  "translation": "block.tc4modern.vis_relay",
+  "original": "tile.blockMetalDevice.14.name",
+  "order": 70
+ },
+ {
+  "id": "aura_node",
+  "translation": "block.tc4modern.aura_node",
+  "original": "tile.blockAiry.0.name",
+  "order": 134
+ },
+ {
+  "id": "node_stabilizer",
+  "translation": "block.tc4modern.node_stabilizer",
+  "original": "tile.blockStoneDevice.9.name",
+  "order": 101
+ },
+ {
+  "id": "node_stabilizer_advanced",
+  "translation": "block.tc4modern.node_stabilizer_advanced",
+  "original": "tile.blockStoneDevice.10.name",
+  "order": 102
+ },
+ {
+  "id": "node_converter",
+  "translation": "block.tc4modern.node_converter",
+  "original": "tile.blockStoneDevice.11.name",
+  "order": 103
+ },
+ {
+  "id": "bellows",
+  "translation": "block.tc4modern.bellows",
+  "original": "tile.blockWoodenDevice.0.name",
+  "order": 72
+ },
+ {
+  "id": "crucible",
+  "translation": "block.tc4modern.crucible",
+  "original": "tile.blockMetalDevice.0.name",
+  "order": 61
+ },
+ {
+  "id": "alumentum",
+  "translation": "item.tc4modern.alumentum",
+  "original": "item.ItemResource.0.name",
+  "order": 286
+ },
+ {
+  "id": "nitor",
+  "translation": "block.tc4modern.nitor",
+  "original": "tile.blockAiry.1.name",
+  "order": 287.0
+ },
+ {
+  "id": "chicken_nugget",
+  "translation": "item.tc4modern.chicken_nugget",
+  "original": "item.ItemNuggetChicken.name",
+  "order": 333
+ },
+ {
+  "id": "beef_nugget",
+  "translation": "item.tc4modern.beef_nugget",
+  "original": "item.ItemNuggetBeef.name",
+  "order": 334
+ },
+ {
+  "id": "pork_nugget",
+  "translation": "item.tc4modern.pork_nugget",
+  "original": "item.ItemNuggetPork.name",
+  "order": 335
+ },
+ {
+  "id": "fish_nugget",
+  "translation": "item.tc4modern.fish_nugget",
+  "original": "item.ItemNuggetFish.name",
+  "order": 336
+ },
+ {
+  "id": "triple_meat_treat",
+  "translation": "item.tc4modern.triple_meat_treat",
+  "original": "item.TripleMeatTreat.name",
+  "order": 337
+ },
+ {
+  "id": "thaumium_ingot",
+  "translation": "item.tc4modern.thaumium_ingot",
+  "original": "item.ItemResource.2.name",
+  "order": 288
+ },
+ {
+  "id": "tallow",
+  "translation": "item.tc4modern.tallow",
+  "original": "item.ItemResource.4.name",
+  "order": 290
+ },
+ {
+  "id": "balanced_shard",
+  "translation": "item.tc4modern.balanced_shard",
+  "original": "item.ItemShard.6.name",
+  "order": 310
+ },
+ {
+  "id": "enchanted_fabric",
+  "translation": "item.tc4modern.enchanted_fabric",
+  "original": "item.ItemResource.7.name",
+  "order": 292
+ },
+ {
+  "id": "arcane_stone",
+  "translation": "block.tc4modern.arcane_stone",
+  "original": "tile.blockCosmeticSolid.6.name",
+  "order": 38
+ },
+ {
+  "id": "arcane_stone_bricks",
+  "translation": "block.tc4modern.arcane_stone_bricks",
+  "original": "tile.blockCosmeticSolid.7.name",
+  "order": 39
+ },
+ {
+  "id": "arcane_stone_stairs",
+  "translation": "block.tc4modern.arcane_stone_stairs",
+  "original": "tile.blockStairsArcaneStone.name",
+  "order": 136
+ },
+ {
+  "id": "arcane_stone_slab",
+  "translation": "block.tc4modern.arcane_stone_slab",
+  "original": "tile.blockCosmeticSlabStone.arcane.name",
+  "order": 142
+ },
+ {
+  "id": "goggles",
+  "translation": "item.tc4modern.goggles",
+  "original": "item.ItemGoggles.name",
+  "order": 314
+ },
+ {
+  "id": "robe_chest",
+  "translation": "item.tc4modern.robe_chest",
+  "original": "item.ItemChestplateRobe.name",
+  "order": 343
+ },
+ {
+  "id": "robe_legs",
+  "translation": "item.tc4modern.robe_legs",
+  "original": "item.ItemLeggingsRobe.name",
+  "order": 344
+ },
+ {
+  "id": "robe_boots",
+  "translation": "item.tc4modern.robe_boots",
+  "original": "item.ItemBootsRobe.name",
+  "order": 345
+ },
+ {
+  "id": "air_shard",
+  "translation": "item.tc4modern.air_shard",
+  "original": "item.ItemShard.0.name",
+  "order": 304
+ },
+ {
+  "id": "air_infused_stone",
+  "translation": "block.tc4modern.air_infused_stone",
+  "original": "tile.blockCustomOre.1.name",
+  "order": 5
+ },
+ {
+  "id": "fire_shard",
+  "translation": "item.tc4modern.fire_shard",
+  "original": "item.ItemShard.1.name",
+  "order": 305
+ },
+ {
+  "id": "fire_infused_stone",
+  "translation": "block.tc4modern.fire_infused_stone",
+  "original": "tile.blockCustomOre.2.name",
+  "order": 6
+ },
+ {
+  "id": "water_shard",
+  "translation": "item.tc4modern.water_shard",
+  "original": "item.ItemShard.2.name",
+  "order": 306
+ },
+ {
+  "id": "water_infused_stone",
+  "translation": "block.tc4modern.water_infused_stone",
+  "original": "tile.blockCustomOre.3.name",
+  "order": 7
+ },
+ {
+  "id": "earth_shard",
+  "translation": "item.tc4modern.earth_shard",
+  "original": "item.ItemShard.3.name",
+  "order": 307
+ },
+ {
+  "id": "earth_infused_stone",
+  "translation": "block.tc4modern.earth_infused_stone",
+  "original": "tile.blockCustomOre.4.name",
+  "order": 8
+ },
+ {
+  "id": "order_shard",
+  "translation": "item.tc4modern.order_shard",
+  "original": "item.ItemShard.4.name",
+  "order": 308
+ },
+ {
+  "id": "order_infused_stone",
+  "translation": "block.tc4modern.order_infused_stone",
+  "original": "tile.blockCustomOre.5.name",
+  "order": 9
+ },
+ {
+  "id": "entropy_shard",
+  "translation": "item.tc4modern.entropy_shard",
+  "original": "item.ItemShard.5.name",
+  "order": 309
+ },
+ {
+  "id": "entropy_infused_stone",
+  "translation": "block.tc4modern.entropy_infused_stone",
+  "original": "tile.blockCustomOre.6.name",
+  "order": 10
+ },
+ {
+  "id": "tainted_goo",
+  "translation": "item.tc4modern.tainted_goo",
+  "original": "item.ItemResource.11.name",
+  "order": 296
+ },
+ {
+  "id": "tainted_tendril",
+  "translation": "item.tc4modern.tainted_tendril",
+  "original": "item.ItemResource.12.name",
+  "order": 297
+ },
+ {
+  "id": "essentia_reservoir",
+  "translation": "block.tc4modern.essentia_reservoir",
+  "original": "tile.blockEssentiaReservoir.name",
+  "order": 135
+ },
+ {
+  "id": "wisp_spawn_egg",
+  "translation": "item.tc4modern.wisp_spawn_egg",
+  "original": "",
+  "order": 1054
+ },
+ {
+  "id": "mirror",
+  "translation": "block.tc4modern.mirror",
+  "original": "tile.blockMirror.0.name",
+  "order": 107
+ },
+ {
+  "id": "mirror_essentia",
+  "translation": "block.tc4modern.mirror_essentia",
+  "original": "tile.blockMirror.6.name",
+  "order": 108
+ },
+ {
+  "id": "hand_mirror",
+  "translation": "item.tc4modern.hand_mirror",
+  "original": "item.HandMirror.name",
+  "order": 348
+ },
+ {
+  "id": "bone_bow",
+  "translation": "item.tc4modern.bone_bow",
+  "original": "item.ItemBowBone.name",
+  "order": 387
+ },
+ {
+  "id": "air_arrow",
+  "translation": "item.tc4modern.air_arrow",
+  "original": "item.ItemPrimalArrow.0.name",
+  "order": 388
+ },
+ {
+  "id": "fire_arrow",
+  "translation": "item.tc4modern.fire_arrow",
+  "original": "item.ItemPrimalArrow.1.name",
+  "order": 389
+ },
+ {
+  "id": "water_arrow",
+  "translation": "item.tc4modern.water_arrow",
+  "original": "item.ItemPrimalArrow.2.name",
+  "order": 390
+ },
+ {
+  "id": "earth_arrow",
+  "translation": "item.tc4modern.earth_arrow",
+  "original": "item.ItemPrimalArrow.3.name",
+  "order": 391
+ },
+ {
+  "id": "order_arrow",
+  "translation": "item.tc4modern.order_arrow",
+  "original": "item.ItemPrimalArrow.4.name",
+  "order": 392
+ },
+ {
+  "id": "entropy_arrow",
+  "translation": "item.tc4modern.entropy_arrow",
+  "original": "item.ItemPrimalArrow.5.name",
+  "order": 393
+ },
+ {
+  "id": "eldritch_crab_spawn_egg",
+  "translation": "item.tc4modern.eldritch_crab_spawn_egg",
+  "original": "",
+  "order": 1065
+ },
+ {
+  "id": "inhabited_zombie_spawn_egg",
+  "translation": "item.tc4modern.inhabited_zombie_spawn_egg",
+  "original": "",
+  "order": 1066
+ },
+ {
+  "id": "essentia_tube",
+  "translation": "block.tc4modern.essentia_tube",
+  "original": "tile.blockTube.0.name",
+  "order": 53
+ },
+ {
+  "id": "essentia_valve",
+  "translation": "block.tc4modern.essentia_valve",
+  "original": "tile.blockTube.1.name",
+  "order": 54
+ },
+ {
+  "id": "essentia_tube_filter",
+  "translation": "block.tc4modern.essentia_tube_filter",
+  "original": "tile.blockTube.3.name",
+  "order": 56
+ },
+ {
+  "id": "essentia_buffer",
+  "translation": "block.tc4modern.essentia_buffer",
+  "original": "tile.blockTube.4.name",
+  "order": 57
+ },
+ {
+  "id": "essentia_tube_restricted",
+  "translation": "block.tc4modern.essentia_tube_restricted",
+  "original": "tile.blockTube.5.name",
+  "order": 58
+ },
+ {
+  "id": "essentia_tube_oneway",
+  "translation": "block.tc4modern.essentia_tube_oneway",
+  "original": "tile.blockTube.6.name",
+  "order": 59
+ },
+ {
+  "id": "flux_scrubber",
+  "translation": "block.tc4modern.flux_scrubber",
+  "original": "tile.blockStoneDevice.14.name",
+  "order": 106
+ },
+ {
+  "id": "arcane_ear",
+  "translation": "block.tc4modern.arcane_ear",
+  "original": "tile.blockWoodenDevice.1.name",
+  "order": 73
+ },
+ {
+  "id": "advanced_alchemical_construct",
+  "translation": "block.tc4modern.advanced_alchemical_construct",
+  "original": "tile.blockMetalDevice.3.name",
+  "order": 68
+ },
+ {
+  "id": "cinderpearl",
+  "translation": "block.tc4modern.cinderpearl",
+  "original": "tile.blockCustomPlant.3.name",
+  "order": 19
+ },
+ {
+  "id": "mana_bean",
+  "translation": "item.tc4modern.mana_bean",
+  "original": "item.ItemManaBean.name",
+  "order": 237
+ },
+ {
+  "id": "wisp_essence",
+  "translation": "item.tc4modern.wisp_essence",
+  "original": "item.ItemWispEssence.name",
+  "order": 238
+ },
+ {
+  "id": "deconstructor",
+  "translation": "block.tc4modern.deconstructor",
+  "original": "tile.blockTable.14.name",
+  "order": 110
+ },
+ {
+  "id": "arcane_workbench",
+  "translation": "block.tc4modern.arcane_workbench",
+  "original": "tile.blockTable.15.name",
+  "order": 110.2
+ },
+ {
+  "id": "advanced_deconstructor",
+  "translation": "block.tc4modern.advanced_deconstructor",
+  "original": "",
+  "order": 110.5
+ },
+ {
+  "id": "node_jar",
+  "translation": "block.tc4modern.node_jar",
+  "original": "tile.blockJar.2.name",
+  "order": 349.5
+ },
+ {
+  "id": "air_crystal_cluster",
+  "translation": "block.tc4modern.air_crystal_cluster",
+  "original": "tile.blockCrystal.0.name",
+  "order": 46
+ },
+ {
+  "id": "fire_crystal_cluster",
+  "translation": "block.tc4modern.fire_crystal_cluster",
+  "original": "tile.blockCrystal.1.name",
+  "order": 47
+ },
+ {
+  "id": "water_crystal_cluster",
+  "translation": "block.tc4modern.water_crystal_cluster",
+  "original": "tile.blockCrystal.2.name",
+  "order": 48
+ },
+ {
+  "id": "earth_crystal_cluster",
+  "translation": "block.tc4modern.earth_crystal_cluster",
+  "original": "tile.blockCrystal.3.name",
+  "order": 49
+ },
+ {
+  "id": "order_crystal_cluster",
+  "translation": "block.tc4modern.order_crystal_cluster",
+  "original": "tile.blockCrystal.4.name",
+  "order": 50
+ },
+ {
+  "id": "entropy_crystal_cluster",
+  "translation": "block.tc4modern.entropy_crystal_cluster",
+  "original": "tile.blockCrystal.5.name",
+  "order": 51
+ },
+ {
+  "id": "mixed_crystal_cluster",
+  "translation": "block.tc4modern.mixed_crystal_cluster",
+  "original": "tile.blockCrystal.6.name",
+  "order": 52
+ },
+ {
+  "id": "knowledge_fragment",
+  "translation": "item.tc4modern.knowledge_fragment",
+  "original": "item.ItemResource.9.name",
+  "order": 294
+ },
+ {
+  "id": "fragment_notes",
+  "translation": "item.tc4modern.fragment_notes",
+  "original": "",
+  "order": 310.2
+ },
+ {
+  "id": "crimson_rites",
+  "translation": "item.tc4modern.crimson_rites",
+  "original": "item.ItemEldritchObject.1.name",
+  "order": 418
+ },
+ {
+  "id": "elemental_hoe",
+  "translation": "item.tc4modern.elemental_hoe",
+  "original": "item.ItemHoeElemental.name",
+  "order": 342
+ },
+ {
+  "id": "elemental_shovel",
+  "translation": "item.tc4modern.elemental_shovel",
+  "original": "item.ItemShovelElemental.name",
+  "order": 339
+ },
+ {
+  "id": "elemental_sword",
+  "translation": "item.tc4modern.elemental_sword",
+  "original": "item.ItemSwordElemental.name",
+  "order": 338
+ },
+ {
+  "id": "elemental_axe",
+  "translation": "item.tc4modern.elemental_axe",
+  "original": "item.ItemAxeElemental.name",
+  "order": 341
+ },
+ {
+  "id": "elemental_pickaxe",
+  "translation": "item.tc4modern.elemental_pickaxe",
+  "original": "item.ItemPickaxeElemental.name",
+  "order": 340
+ },
+ {
+  "id": "levitator",
+  "translation": "block.tc4modern.levitator",
+  "original": "tile.blockLifter.name",
+  "order": 113
+ },
+ {
+  "id": "vis_charge_relay",
+  "translation": "block.tc4modern.vis_charge_relay",
+  "original": "tile.blockMetalDevice.2.name",
+  "order": 71
+ },
+ {
+  "id": "primal_crusher",
+  "translation": "item.tc4modern.primal_crusher",
+  "original": "item.ItemPrimalCrusher.name",
+  "order": 452
+ },
+ {
+  "id": "bottle_taint",
+  "translation": "item.tc4modern.bottle_taint",
+  "original": "item.ItemBottleTaint.name",
+  "order": 436
+ },
+ {
+  "id": "silverwood_log",
+  "translation": "block.tc4modern.silverwood_log",
+  "original": "tile.blockMagicalLog.silverwood.name",
+  "order": 13
+ },
+ {
+  "id": "silverwood_knot",
+  "translation": "block.tc4modern.silverwood_knot",
+  "original": "tile.blockMagicalLog.silverwood.name",
+  "order": 13
+ },
+ {
+  "id": "silverwood_leaves",
+  "translation": "block.tc4modern.silverwood_leaves",
+  "original": "tile.blockMagicalLeaves.silverwood.name",
+  "order": 15
+ },
+ {
+  "id": "silverwood_sapling",
+  "translation": "block.tc4modern.silverwood_sapling",
+  "original": "tile.blockCustomPlant.1.name",
+  "order": 17
+ },
+ {
+  "id": "shimmerleaf",
+  "translation": "block.tc4modern.shimmerleaf",
+  "original": "tile.blockCustomPlant.2.name",
+  "order": 18
+ },
+ {
+  "id": "wand",
+  "translation": "item.tc4modern.wand",
+  "original": "item.WandCasting.name",
+  "order": 150
+ },
+ {
+  "id": "copper_cap",
+  "translation": "item.tc4modern.copper_cap",
+  "original": "item.WandCap.3.name",
+  "order": 163.5
+ },
+ {
+  "id": "thaumium_cap_inert",
+  "translation": "item.tc4modern.thaumium_cap_inert",
+  "original": "item.WandCap.6.name",
+  "order": 157
+ },
+ {
+  "id": "thaumium_cap",
+  "translation": "item.tc4modern.thaumium_cap",
+  "original": "item.WandCap.2.name",
+  "order": 156
+ },
+ {
+  "id": "copper_nugget",
+  "translation": "item.tc4modern.copper_nugget",
+  "original": "item.ItemNugget.1.name",
+  "order": 325.5
+ },
+ {
+  "id": "void_nugget",
+  "translation": "item.tc4modern.void_nugget",
+  "original": "item.ItemNugget.7.name",
+  "order": 329
+ },
+ {
+  "id": "void_cap_inert",
+  "translation": "item.tc4modern.void_cap_inert",
+  "original": "item.WandCap.8.name",
+  "order": 159
+ },
+ {
+  "id": "void_cap",
+  "translation": "item.tc4modern.void_cap",
+  "original": "item.WandCap.7.name",
+  "order": 158
+ },
+ {
+  "id": "obsidian_rod",
+  "translation": "item.tc4modern.obsidian_rod",
+  "original": "item.WandRod.1.name",
+  "order": 161
+ },
+ {
+  "id": "ice_rod",
+  "translation": "item.tc4modern.ice_rod",
+  "original": "item.WandRod.3.name",
+  "order": 163
+ },
+ {
+  "id": "quartz_rod",
+  "translation": "item.tc4modern.quartz_rod",
+  "original": "item.WandRod.4.name",
+  "order": 164
+ },
+ {
+  "id": "reed_rod",
+  "translation": "item.tc4modern.reed_rod",
+  "original": "item.WandRod.5.name",
+  "order": 165
+ },
+ {
+  "id": "blaze_rod",
+  "translation": "item.tc4modern.blaze_rod",
+  "original": "item.WandRod.6.name",
+  "order": 166
+ },
+ {
+  "id": "bone_rod",
+  "translation": "item.tc4modern.bone_rod",
+  "original": "item.WandRod.7.name",
+  "order": 167
+ },
+ {
+  "id": "silverwood_rod",
+  "translation": "item.tc4modern.silverwood_rod",
+  "original": "item.WandRod.2.name",
+  "order": 162
+ },
+ {
+  "id": "greatwood_staff_rod",
+  "translation": "item.tc4modern.greatwood_staff_rod",
+  "original": "item.WandRod.50.name",
+  "order": 168
+ },
+ {
+  "id": "obsidian_staff_rod",
+  "translation": "item.tc4modern.obsidian_staff_rod",
+  "original": "item.WandRod.51.name",
+  "order": 169
+ },
+ {
+  "id": "ice_staff_rod",
+  "translation": "item.tc4modern.ice_staff_rod",
+  "original": "item.WandRod.53.name",
+  "order": 171
+ },
+ {
+  "id": "quartz_staff_rod",
+  "translation": "item.tc4modern.quartz_staff_rod",
+  "original": "item.WandRod.54.name",
+  "order": 172
+ },
+ {
+  "id": "reed_staff_rod",
+  "translation": "item.tc4modern.reed_staff_rod",
+  "original": "item.WandRod.55.name",
+  "order": 173
+ },
+ {
+  "id": "blaze_staff_rod",
+  "translation": "item.tc4modern.blaze_staff_rod",
+  "original": "item.WandRod.56.name",
+  "order": 174
+ },
+ {
+  "id": "bone_staff_rod",
+  "translation": "item.tc4modern.bone_staff_rod",
+  "original": "item.WandRod.57.name",
+  "order": 175
+ },
+ {
+  "id": "silverwood_staff_rod",
+  "translation": "item.tc4modern.silverwood_staff_rod",
+  "original": "item.WandRod.52.name",
+  "order": 170
+ },
+ {
+  "id": "primal_staff_rod",
+  "translation": "item.tc4modern.primal_staff_rod",
+  "original": "item.WandRod.100.name",
+  "order": 176
+ },
+ {
+  "id": "arcane_lamp",
+  "translation": "block.tc4modern.arcane_lamp",
+  "original": "tile.blockMetalDevice.7.name",
+  "order": 64
+ },
+ {
+  "id": "lamp_growth",
+  "translation": "block.tc4modern.lamp_growth",
+  "original": "tile.blockMetalDevice.8.name",
+  "order": 65
+ },
+ {
+  "id": "lamp_fertility",
+  "translation": "block.tc4modern.lamp_fertility",
+  "original": "tile.blockMetalDevice.13.name",
+  "order": 66
+ },
+ {
+  "id": "amber_block",
+  "translation": "block.tc4modern.amber_block",
+  "original": "tile.blockCosmeticOpaque.0.name",
+  "order": 29
+ },
+ {
+  "id": "amber_bricks",
+  "translation": "block.tc4modern.amber_bricks",
+  "original": "tile.blockCosmeticOpaque.1.name",
+  "order": 30
+ },
+ {
+  "id": "focus_fire",
+  "translation": "item.tc4modern.focus_fire",
+  "original": "item.FocusFire.name",
+  "order": 178
+ },
+ {
+  "id": "focus_frost",
+  "translation": "item.tc4modern.focus_frost",
+  "original": "item.FocusFrost.name",
+  "order": 181
+ },
+ {
+  "id": "focus_shock",
+  "translation": "item.tc4modern.focus_shock",
+  "original": "item.FocusShock.name",
+  "order": 179
+ },
+ {
+  "id": "mirror_glass",
+  "translation": "item.tc4modern.mirror_glass",
+  "original": "item.ItemResource.10.name",
+  "order": 295
+ },
+ {
+  "id": "grate",
+  "translation": "block.tc4modern.grate",
+  "original": "tile.blockMetalDevice.5.name",
+  "order": 63
+ },
+ {
+  "id": "paving_stone_travel",
+  "translation": "block.tc4modern.paving_stone_travel",
+  "original": "tile.blockCosmeticSolid.2.name",
+  "order": 34
+ },
+ {
+  "id": "paving_stone_warding",
+  "translation": "block.tc4modern.paving_stone_warding",
+  "original": "tile.blockCosmeticSolid.3.name",
+  "order": 35
+ },
+ {
+  "id": "boots_traveller",
+  "translation": "item.tc4modern.boots_traveller",
+  "original": "item.BootsTraveller.name",
+  "order": 332
+ },
+ {
+  "id": "focus_pech",
+  "translation": "item.tc4modern.focus_pech",
+  "original": "item.FocusPech.name",
+  "order": 185.0
+ },
+ {
+  "id": "pech_spawn_egg",
+  "translation": "item.tc4modern.pech_spawn_egg",
+  "original": "",
+  "order": 1143
+ },
+ {
+  "id": "hungry_chest",
+  "translation": "block.tc4modern.hungry_chest",
+  "original": "tile.blockChestHungry.name",
+  "order": 112.0
+ },
+ {
+  "id": "arcane_door",
+  "translation": "block.tc4modern.arcane_door",
+  "original": "item.ItemArcaneDoor.name",
+  "order": 324
+ },
+ {
+  "id": "arcane_pressure_plate",
+  "translation": "block.tc4modern.arcane_pressure_plate",
+  "original": "tile.blockWoodenDevice.2.name",
+  "order": 74
+ },
+ {
+  "id": "warded_glass",
+  "translation": "block.tc4modern.warded_glass",
+  "original": "tile.blockCosmeticOpaque.2.name",
+  "order": 31
+ },
+ {
+  "id": "iron_key",
+  "translation": "item.tc4modern.iron_key",
+  "original": "item.ArcaneDoorKey.0.name",
+  "order": 346
+ },
+ {
+  "id": "gold_key",
+  "translation": "item.tc4modern.gold_key",
+  "original": "item.ArcaneDoorKey.1.name",
+  "order": 347
+ },
+ {
+  "id": "void_ingot",
+  "translation": "item.tc4modern.void_ingot",
+  "original": "item.ItemResource.16.name",
+  "order": 301.0
+ },
+ {
+  "id": "void_helmet",
+  "translation": "item.tc4modern.void_helmet",
+  "original": "item.ItemHelmetVoid.name",
+  "order": 422
+ },
+ {
+  "id": "void_chestplate",
+  "translation": "item.tc4modern.void_chestplate",
+  "original": "item.ItemChestplateVoid.name",
+  "order": 423
+ },
+ {
+  "id": "void_leggings",
+  "translation": "item.tc4modern.void_leggings",
+  "original": "item.ItemLeggingsVoid.name",
+  "order": 424
+ },
+ {
+  "id": "void_boots",
+  "translation": "item.tc4modern.void_boots",
+  "original": "item.ItemBootsVoid.name",
+  "order": 425
+ },
+ {
+  "id": "void_sword",
+  "translation": "item.tc4modern.void_sword",
+  "original": "item.ItemSwordVoid.name",
+  "order": 429
+ },
+ {
+  "id": "void_pickaxe",
+  "translation": "item.tc4modern.void_pickaxe",
+  "original": "item.ItemPickVoid.name",
+  "order": 427
+ },
+ {
+  "id": "void_axe",
+  "translation": "item.tc4modern.void_axe",
+  "original": "item.ItemAxeVoid.name",
+  "order": 428
+ },
+ {
+  "id": "void_shovel",
+  "translation": "item.tc4modern.void_shovel",
+  "original": "item.ItemShovelVoid.name",
+  "order": 426
+ },
+ {
+  "id": "void_hoe",
+  "translation": "item.tc4modern.void_hoe",
+  "original": "item.ItemHoeVoid.name",
+  "order": 430
+ },
+ {
+  "id": "miners_ring",
+  "translation": "item.tc4modern.miners_ring",
+  "original": "",
+  "order": 408.5
+ },
+ {
+  "id": "golem_core_liquid",
+  "translation": "item.tc4modern.golem_core_liquid",
+  "original": "item.ItemGolemCore.5.name",
+  "order": 365
+ },
+ {
+  "id": "golem_core_essentia",
+  "translation": "item.tc4modern.golem_core_essentia",
+  "original": "item.ItemGolemCore.6.name",
+  "order": 366
+ },
+ {
+  "id": "golem_core_use",
+  "translation": "item.tc4modern.golem_core_use",
+  "original": "item.ItemGolemCore.8.name",
+  "order": 368
+ },
+ {
+  "id": "golem_core_sorting",
+  "translation": "item.tc4modern.golem_core_sorting",
+  "original": "item.ItemGolemCore.10.name",
+  "order": 370
+ },
+ {
+  "id": "golem_core_fishing",
+  "translation": "item.tc4modern.golem_core_fishing",
+  "original": "item.ItemGolemCore.11.name",
+  "order": 371
+ },
+ {
+  "id": "golem_tiny_hat",
+  "translation": "item.tc4modern.golem_tiny_hat",
+  "original": "item.ItemGolemDecoration.0.name",
+  "order": 379.0
+ },
+ {
+  "id": "golem_tiny_glasses",
+  "translation": "item.tc4modern.golem_tiny_glasses",
+  "original": "item.ItemGolemDecoration.1.name",
+  "order": 380.0
+ },
+ {
+  "id": "golem_tiny_bowtie",
+  "translation": "item.tc4modern.golem_tiny_bowtie",
+  "original": "item.ItemGolemDecoration.2.name",
+  "order": 381.0
+ },
+ {
+  "id": "golem_tiny_fez",
+  "translation": "item.tc4modern.golem_tiny_fez",
+  "original": "item.ItemGolemDecoration.3.name",
+  "order": 382.0
+ },
+ {
+  "id": "golem_tiny_dart",
+  "translation": "item.tc4modern.golem_tiny_dart",
+  "original": "item.ItemGolemDecoration.4.name",
+  "order": 383.0
+ },
+ {
+  "id": "golem_tiny_visor",
+  "translation": "item.tc4modern.golem_tiny_visor",
+  "original": "item.ItemGolemDecoration.5.name",
+  "order": 384.0
+ },
+ {
+  "id": "golem_tiny_armor",
+  "translation": "item.tc4modern.golem_tiny_armor",
+  "original": "item.ItemGolemDecoration.6.name",
+  "order": 385.0
+ },
+ {
+  "id": "golem_tiny_hammer",
+  "translation": "item.tc4modern.golem_tiny_hammer",
+  "original": "item.ItemGolemDecoration.7.name",
+  "order": 386.0
+ },
+ {
+  "id": "golem_core_lumber",
+  "translation": "item.tc4modern.golem_core_lumber",
+  "original": "item.ItemGolemCore.7.name",
+  "order": 367
+ },
+ {
+  "id": "golem_core_guard",
+  "translation": "item.tc4modern.golem_core_guard",
+  "original": "item.ItemGolemCore.4.name",
+  "order": 364
+ },
+ {
+  "id": "golem_core_butcher",
+  "translation": "item.tc4modern.golem_core_butcher",
+  "original": "item.ItemGolemCore.9.name",
+  "order": 369
+ },
+ {
+  "id": "golem_straw",
+  "translation": "item.tc4modern.golem_straw",
+  "original": "item.ItemGolemPlacer.0.name",
+  "order": 351.0
+ },
+ {
+  "id": "golem_wood",
+  "translation": "item.tc4modern.golem_wood",
+  "original": "item.ItemGolemPlacer.1.name",
+  "order": 352.0
+ },
+ {
+  "id": "golem_tallow",
+  "translation": "item.tc4modern.golem_tallow",
+  "original": "item.ItemGolemPlacer.2.name",
+  "order": 353.0
+ },
+ {
+  "id": "golem_clay",
+  "translation": "item.tc4modern.golem_clay",
+  "original": "item.ItemGolemPlacer.3.name",
+  "order": 354.0
+ },
+ {
+  "id": "golem_flesh",
+  "translation": "item.tc4modern.golem_flesh",
+  "original": "item.ItemGolemPlacer.4.name",
+  "order": 355.0
+ },
+ {
+  "id": "golem_stone",
+  "translation": "item.tc4modern.golem_stone",
+  "original": "item.ItemGolemPlacer.5.name",
+  "order": 356.0
+ },
+ {
+  "id": "golem_iron",
+  "translation": "item.tc4modern.golem_iron",
+  "original": "item.ItemGolemPlacer.6.name",
+  "order": 357.0
+ },
+ {
+  "id": "golem_thaumium",
+  "translation": "item.tc4modern.golem_thaumium",
+  "original": "item.ItemGolemPlacer.7.name",
+  "order": 358.0
+ },
+ {
+  "id": "golem_core_harvest",
+  "translation": "item.tc4modern.golem_core_harvest",
+  "original": "item.ItemGolemCore.3.name",
+  "order": 363
+ },
+ {
+  "id": "golem_upgrade_air",
+  "translation": "item.tc4modern.golem_upgrade_air",
+  "original": "item.ItemGolemUpgrade.0.name",
+  "order": 372
+ },
+ {
+  "id": "golem_upgrade_earth",
+  "translation": "item.tc4modern.golem_upgrade_earth",
+  "original": "item.ItemGolemUpgrade.1.name",
+  "order": 373
+ },
+ {
+  "id": "golem_upgrade_water",
+  "translation": "item.tc4modern.golem_upgrade_water",
+  "original": "item.ItemGolemUpgrade.3.name",
+  "order": 375
+ },
+ {
+  "id": "golem_upgrade_fire",
+  "translation": "item.tc4modern.golem_upgrade_fire",
+  "original": "item.ItemGolemUpgrade.2.name",
+  "order": 374
+ },
+ {
+  "id": "golem_upgrade_order",
+  "translation": "item.tc4modern.golem_upgrade_order",
+  "original": "item.ItemGolemUpgrade.4.name",
+  "order": 376
+ },
+ {
+  "id": "golem_upgrade_entropy",
+  "translation": "item.tc4modern.golem_upgrade_entropy",
+  "original": "item.ItemGolemUpgrade.5.name",
+  "order": 377
+ },
+ {
+  "id": "golem_core_fill",
+  "translation": "item.tc4modern.golem_core_fill",
+  "original": "item.ItemGolemCore.0.name",
+  "order": 360
+ },
+ {
+  "id": "golem_core_empty",
+  "translation": "item.tc4modern.golem_core_empty",
+  "original": "item.ItemGolemCore.1.name",
+  "order": 361
+ },
+ {
+  "id": "flesh_block",
+  "translation": "block.tc4modern.flesh_block",
+  "original": "tile.blockTaint.2.name",
+  "order": 24.0
+ },
+ {
+  "id": "golem_core_blank",
+  "translation": "item.tc4modern.golem_core_blank",
+  "original": "item.ItemGolemCore.100.name",
+  "order": 359
+ },
+ {
+  "id": "golem_core_gather",
+  "translation": "item.tc4modern.golem_core_gather",
+  "original": "item.ItemGolemCore.2.name",
+  "order": 362
+ },
+ {
+  "id": "golem_bell",
+  "translation": "item.tc4modern.golem_bell",
+  "original": "item.GolemBell.name",
+  "order": 378
+ },
+ {
+  "id": "focus_pouch",
+  "translation": "item.tc4modern.focus_pouch",
+  "original": "item.FocusPouch.name",
+  "order": 177.5
+ },
+ {
+  "id": "vis_amulet_lesser",
+  "translation": "item.tc4modern.vis_amulet_lesser",
+  "original": "item.ItemAmuletVis.0.name",
+  "order": 406
+ },
+ {
+  "id": "runic_ring_lesser",
+  "translation": "item.tc4modern.runic_ring_lesser",
+  "original": "item.ItemRingRunic.0.name",
+  "order": 400
+ },
+ {
+  "id": "iron_cluster",
+  "translation": "item.tc4modern.iron_cluster",
+  "original": "item.ItemNugget.16.name",
+  "order": 330
+ },
+ {
+  "id": "gold_cluster",
+  "translation": "item.tc4modern.gold_cluster",
+  "original": "item.ItemNugget.31.name",
+  "order": 331
+ },
+ {
+  "id": "cinnabar_cluster",
+  "translation": "item.tc4modern.cinnabar_cluster",
+  "original": "item.ItemNugget.21.name",
+  "order": 327
+ },
+ {
+  "id": "copper_cluster",
+  "translation": "item.tc4modern.copper_cluster",
+  "original": "item.ItemNugget.17.name",
+  "order": 330.5
+ },
+ {
+  "id": "coin",
+  "translation": "item.tc4modern.coin",
+  "original": "item.ItemResource.18.name",
+  "order": 303.0
+ },
+ {
+  "id": "void_seed",
+  "translation": "item.tc4modern.void_seed",
+  "original": "item.ItemResource.17.name",
+  "order": 302.0
+ },
+ {
+  "id": "candle_0",
+  "translation": "block.tc4modern.candle_0",
+  "original": "tile.blockCandle.0.name",
+  "order": 117
+ },
+ {
+  "id": "candle_1",
+  "translation": "block.tc4modern.candle_1",
+  "original": "tile.blockCandle.1.name",
+  "order": 118
+ },
+ {
+  "id": "candle_2",
+  "translation": "block.tc4modern.candle_2",
+  "original": "tile.blockCandle.2.name",
+  "order": 119
+ },
+ {
+  "id": "candle_3",
+  "translation": "block.tc4modern.candle_3",
+  "original": "tile.blockCandle.3.name",
+  "order": 120
+ },
+ {
+  "id": "candle_4",
+  "translation": "block.tc4modern.candle_4",
+  "original": "tile.blockCandle.4.name",
+  "order": 121
+ },
+ {
+  "id": "candle_5",
+  "translation": "block.tc4modern.candle_5",
+  "original": "tile.blockCandle.5.name",
+  "order": 122
+ },
+ {
+  "id": "candle_6",
+  "translation": "block.tc4modern.candle_6",
+  "original": "tile.blockCandle.6.name",
+  "order": 123
+ },
+ {
+  "id": "candle_7",
+  "translation": "block.tc4modern.candle_7",
+  "original": "tile.blockCandle.7.name",
+  "order": 124
+ },
+ {
+  "id": "candle_8",
+  "translation": "block.tc4modern.candle_8",
+  "original": "tile.blockCandle.8.name",
+  "order": 125
+ },
+ {
+  "id": "candle_9",
+  "translation": "block.tc4modern.candle_9",
+  "original": "tile.blockCandle.9.name",
+  "order": 126
+ },
+ {
+  "id": "candle_10",
+  "translation": "block.tc4modern.candle_10",
+  "original": "tile.blockCandle.10.name",
+  "order": 127
+ },
+ {
+  "id": "candle_11",
+  "translation": "block.tc4modern.candle_11",
+  "original": "tile.blockCandle.11.name",
+  "order": 128
+ },
+ {
+  "id": "candle_12",
+  "translation": "block.tc4modern.candle_12",
+  "original": "tile.blockCandle.12.name",
+  "order": 129
+ },
+ {
+  "id": "candle_13",
+  "translation": "block.tc4modern.candle_13",
+  "original": "tile.blockCandle.13.name",
+  "order": 130
+ },
+ {
+  "id": "candle_14",
+  "translation": "block.tc4modern.candle_14",
+  "original": "tile.blockCandle.14.name",
+  "order": 131
+ },
+ {
+  "id": "candle_15",
+  "translation": "block.tc4modern.candle_15",
+  "original": "tile.blockCandle.15.name",
+  "order": 132
+ },
+ {
+  "id": "brainy_zombie_spawn_egg",
+  "translation": "item.tc4modern.brainy_zombie_spawn_egg",
+  "original": "",
+  "order": 1223
+ },
+ {
+  "id": "giant_brainy_zombie_spawn_egg",
+  "translation": "item.tc4modern.giant_brainy_zombie_spawn_egg",
+  "original": "",
+  "order": 1224
+ },
+ {
+  "id": "mnemonic_matrix",
+  "translation": "block.tc4modern.mnemonic_matrix",
+  "original": "tile.blockMetalDevice.12.name",
+  "order": 69.0
+ },
+ {
+  "id": "focus_warding",
+  "translation": "item.tc4modern.focus_warding",
+  "original": "item.FocusWarding.name",
+  "order": 186
+ },
+ {
+  "id": "focus_excavation",
+  "translation": "item.tc4modern.focus_excavation",
+  "original": "item.FocusExcavation.name",
+  "order": 183
+ },
+ {
+  "id": "focus_trade",
+  "translation": "item.tc4modern.focus_trade",
+  "original": "item.FocusTrade.name",
+  "order": 182
+ },
+ {
+  "id": "focus_portable_hole",
+  "translation": "item.tc4modern.focus_portable_hole",
+  "original": "item.FocusPortableHole.name",
+  "order": 184
+ },
+ {
+  "id": "wand_pedestal",
+  "translation": "block.tc4modern.wand_pedestal",
+  "original": "tile.blockStoneDevice.5.name",
+  "order": 99
+ },
+ {
+  "id": "wand_pedestal_focus",
+  "translation": "block.tc4modern.wand_pedestal_focus",
+  "original": "tile.blockStoneDevice.8.name",
+  "order": 100
+ },
+ {
+  "id": "primal_charm",
+  "translation": "item.tc4modern.primal_charm",
+  "original": "item.ItemResource.15.name",
+  "order": 300
+ },
+ {
+  "id": "mundane_amulet",
+  "translation": "item.tc4modern.mundane_amulet",
+  "original": "item.ItemBaubleBlanks.0.name",
+  "order": 395
+ },
+ {
+  "id": "mundane_ring",
+  "translation": "item.tc4modern.mundane_ring",
+  "original": "item.ItemBaubleBlanks.1.name",
+  "order": 396
+ },
+ {
+  "id": "mundane_belt",
+  "translation": "item.tc4modern.mundane_belt",
+  "original": "item.ItemBaubleBlanks.2.name",
+  "order": 397
+ },
+ {
+  "id": "vis_amulet",
+  "translation": "item.tc4modern.vis_amulet",
+  "original": "item.ItemAmuletVis.1.name",
+  "order": 407
+ },
+ {
+  "id": "trunk_spawner",
+  "translation": "item.tc4modern.trunk_spawner",
+  "original": "item.TrunkSpawner.name",
+  "order": 350.0
+ },
+ {
+  "id": "void_robe_helm",
+  "translation": "item.tc4modern.void_robe_helm",
+  "original": "item.ItemHelmetVoidRobe.name",
+  "order": 431
+ },
+ {
+  "id": "void_robe_chest",
+  "translation": "item.tc4modern.void_robe_chest",
+  "original": "item.ItemChestplateVoidRobe.name",
+  "order": 432
+ },
+ {
+  "id": "void_robe_legs",
+  "translation": "item.tc4modern.void_robe_legs",
+  "original": "item.ItemLeggingsVoidRobe.name",
+  "order": 433
+ },
+ {
+  "id": "loot_urn_common",
+  "translation": "block.tc4modern.loot_urn_common",
+  "original": "tile.blockLootUrn.name",
+  "order": 144
+ },
+ {
+  "id": "loot_urn_uncommon",
+  "translation": "block.tc4modern.loot_urn_uncommon",
+  "original": "tile.blockLootUrn.name",
+  "order": 145
+ },
+ {
+  "id": "loot_urn_rare",
+  "translation": "block.tc4modern.loot_urn_rare",
+  "original": "tile.blockLootUrn.name",
+  "order": 146
+ },
+ {
+  "id": "loot_crate_common",
+  "translation": "block.tc4modern.loot_crate_common",
+  "original": "tile.blockLootCrate.name",
+  "order": 147
+ },
+ {
+  "id": "loot_crate_uncommon",
+  "translation": "block.tc4modern.loot_crate_uncommon",
+  "original": "tile.blockLootCrate.name",
+  "order": 148
+ },
+ {
+  "id": "loot_crate_rare",
+  "translation": "block.tc4modern.loot_crate_rare",
+  "original": "tile.blockLootCrate.name",
+  "order": 149
+ },
+ {
+  "id": "ancient_stone",
+  "translation": "block.tc4modern.ancient_stone",
+  "original": "tile.blockCosmeticSolid.11.name",
+  "order": 42
+ },
+ {
+  "id": "ancient_rock",
+  "translation": "block.tc4modern.ancient_rock",
+  "original": "tile.blockCosmeticSolid.12.name",
+  "order": 43
+ },
+ {
+  "id": "ancient_stone_no_spawn",
+  "translation": "block.tc4modern.ancient_stone_no_spawn",
+  "original": "tile.blockCosmeticSolid.13.name",
+  "order": 42.0
+ },
+ {
+  "id": "crusted_stone",
+  "translation": "block.tc4modern.crusted_stone",
+  "original": "tile.blockCosmeticSolid.14.name",
+  "order": 44
+ },
+ {
+  "id": "ancient_pedestal",
+  "translation": "block.tc4modern.ancient_pedestal",
+  "original": "tile.blockCosmeticSolid.15.name",
+  "order": 45
+ },
+ {
+  "id": "glowing_crusted_stone",
+  "translation": "block.tc4modern.glowing_crusted_stone",
+  "original": "tile.blockEldritch.4.name",
+  "order": 133
+ },
+ {
+  "id": "ancient_stone_stairs",
+  "translation": "block.tc4modern.ancient_stone_stairs",
+  "original": "tile.blockStairsEldritch.name",
+  "order": 139
+ },
+ {
+  "id": "ancient_stone_slab",
+  "translation": "block.tc4modern.ancient_stone_slab",
+  "original": "tile.blockCosmeticSlabStone.eldritch.name",
+  "order": 143
+ },
+ {
+  "id": "brain_jar",
+  "translation": "block.tc4modern.brain_jar",
+  "original": "tile.blockJar.1.name",
+  "order": 115
+ },
+ {
+  "id": "cultist_knight_spawn_egg",
+  "translation": "item.tc4modern.cultist_knight_spawn_egg",
+  "original": "",
+  "order": 1256
+ },
+ {
+  "id": "cultist_cleric_spawn_egg",
+  "translation": "item.tc4modern.cultist_cleric_spawn_egg",
+  "original": "",
+  "order": 1257
+ },
+ {
+  "id": "cultist_plate_helmet",
+  "translation": "item.tc4modern.cultist_plate_helmet",
+  "original": "item.ItemHelmetCultistPlate.name",
+  "order": 441
+ },
+ {
+  "id": "cultist_plate_chestplate",
+  "translation": "item.tc4modern.cultist_plate_chestplate",
+  "original": "item.ItemChestplateCultistPlate.name",
+  "order": 442
+ },
+ {
+  "id": "cultist_plate_leggings",
+  "translation": "item.tc4modern.cultist_plate_leggings",
+  "original": "item.ItemLeggingsCultistPlate.name",
+  "order": 443
+ },
+ {
+  "id": "cultist_robe_helmet",
+  "translation": "item.tc4modern.cultist_robe_helmet",
+  "original": "item.ItemHelmetCultistRobe.name",
+  "order": 437
+ },
+ {
+  "id": "cultist_robe_chestplate",
+  "translation": "item.tc4modern.cultist_robe_chestplate",
+  "original": "item.ItemChestplateCultistRobe.name",
+  "order": 438
+ },
+ {
+  "id": "cultist_robe_leggings",
+  "translation": "item.tc4modern.cultist_robe_leggings",
+  "original": "item.ItemLeggingsCultistRobe.name",
+  "order": 439
+ },
+ {
+  "id": "cultist_boots",
+  "translation": "item.tc4modern.cultist_boots",
+  "original": "item.ItemBootsCultist.name",
+  "order": 440
+ },
+ {
+  "id": "obsidian_tile",
+  "translation": "block.tc4modern.obsidian_tile",
+  "original": "tile.blockCosmeticSolid.1.name",
+  "order": 33
+ },
+ {
+  "id": "crimson_banner",
+  "translation": "block.tc4modern.crimson_banner",
+  "original": "tile.blockWoodenDevice.8.name",
+  "order": 79
+ },
+ {
+  "id": "alchemical_furnace",
+  "translation": "block.tc4modern.alchemical_furnace",
+  "original": "tile.blockStoneDevice.0.name",
+  "order": 96
+ },
+ {
+  "id": "alembic",
+  "translation": "block.tc4modern.alembic",
+  "original": "tile.blockMetalDevice.1.name",
+  "order": 62
+ },
+ {
+  "id": "warded_jar",
+  "translation": "block.tc4modern.warded_jar",
+  "original": "tile.blockJar.0.name",
+  "order": 114
+ },
+ {
+  "id": "phial",
+  "translation": "item.tc4modern.phial",
+  "original": "item.ItemEssence.0.name",
+  "order": 188
+ },
+ {
+  "id": "essentia_phial",
+  "translation": "item.tc4modern.essentia_phial",
+  "original": "item.ItemEssence.1.name",
+  "order": 189
+ },
+ {
+  "id": "jar_label",
+  "translation": "item.tc4modern.jar_label",
+  "original": "item.ItemResource.13.name",
+  "order": 298
+ },
+ {
+  "id": "vis_filter",
+  "translation": "item.tc4modern.vis_filter",
+  "original": "item.ItemResource.8.name",
+  "order": 293
+ },
+ {
+  "id": "hover_harness",
+  "translation": "item.tc4modern.hover_harness",
+  "original": "item.HoverHarness.name",
+  "order": 349
+ },
+ {
+  "id": "hover_girdle",
+  "translation": "item.tc4modern.hover_girdle",
+  "original": "item.ItemGirdleHover.name",
+  "order": 408
+ },
+ {
+  "id": "obelisk_placer",
+  "translation": "item.tc4modern.obelisk_placer",
+  "original": "item.ItemEldritchObject.4.name",
+  "order": 421
+ },
+ {
+  "id": "runed_tablet",
+  "translation": "item.tc4modern.runed_tablet",
+  "original": "item.ItemEldritchObject.2.name",
+  "order": 419
+ },
+ {
+  "id": "ethereal_bloom",
+  "translation": "block.tc4modern.ethereal_bloom",
+  "original": "tile.blockCustomPlant.4.name",
+  "order": 20
+ },
+ {
+  "id": "sinister_stone",
+  "translation": "item.tc4modern.sinister_stone",
+  "original": "item.ItemCompassStone.name",
+  "order": 451
+ },
+ {
+  "id": "eldritch_eye",
+  "translation": "item.tc4modern.eldritch_eye",
+  "original": "item.ItemEldritchObject.0.name",
+  "order": 417
+ },
+ {
+  "id": "cultist_leader_helmet",
+  "translation": "item.tc4modern.cultist_leader_helmet",
+  "original": "item.ItemHelmetCultistLeaderPlate.name",
+  "order": 444
+ },
+ {
+  "id": "cultist_leader_chestplate",
+  "translation": "item.tc4modern.cultist_leader_chestplate",
+  "original": "item.ItemChestplateCultistLeaderPlate.name",
+  "order": 445
+ },
+ {
+  "id": "cultist_leader_leggings",
+  "translation": "item.tc4modern.cultist_leader_leggings",
+  "original": "item.ItemLeggingsCultistLeaderPlate.name",
+  "order": 446
+ },
+ {
+  "id": "crimson_blade",
+  "translation": "item.tc4modern.crimson_blade",
+  "original": "item.ItemSwordCrimson.name",
+  "order": 447
+ },
+ {
+  "id": "thaumium_helmet",
+  "translation": "item.tc4modern.thaumium_helmet",
+  "original": "item.ItemHelmetThaumium.name",
+  "order": 315
+ },
+ {
+  "id": "thaumium_chestplate",
+  "translation": "item.tc4modern.thaumium_chestplate",
+  "original": "item.ItemChestplateThaumium.name",
+  "order": 316
+ },
+ {
+  "id": "thaumium_leggings",
+  "translation": "item.tc4modern.thaumium_leggings",
+  "original": "item.ItemLeggingsThaumium.name",
+  "order": 317
+ },
+ {
+  "id": "thaumium_boots",
+  "translation": "item.tc4modern.thaumium_boots",
+  "original": "item.ItemBootsThaumium.name",
+  "order": 318
+ },
+ {
+  "id": "thaumium_sword",
+  "translation": "item.tc4modern.thaumium_sword",
+  "original": "item.ItemSwordThaumium.name",
+  "order": 322
+ },
+ {
+  "id": "thaumium_pickaxe",
+  "translation": "item.tc4modern.thaumium_pickaxe",
+  "original": "item.ItemPickThaumium.name",
+  "order": 320
+ },
+ {
+  "id": "thaumium_axe",
+  "translation": "item.tc4modern.thaumium_axe",
+  "original": "item.ItemAxeThaumium.name",
+  "order": 321
+ },
+ {
+  "id": "thaumium_shovel",
+  "translation": "item.tc4modern.thaumium_shovel",
+  "original": "item.ItemShovelThaumium.name",
+  "order": 319
+ },
+ {
+  "id": "thaumium_hoe",
+  "translation": "item.tc4modern.thaumium_hoe",
+  "original": "item.ItemHoeThaumium.name",
+  "order": 323
+ },
+ {
+  "id": "thaumium_nugget",
+  "translation": "item.tc4modern.thaumium_nugget",
+  "original": "item.ItemNugget.6.name",
+  "order": 328
+ },
+ {
+  "id": "thaumium_block",
+  "translation": "block.tc4modern.thaumium_block",
+  "original": "tile.blockCosmeticSolid.4.name",
+  "order": 36
+ },
+ {
+  "id": "bath_salts",
+  "translation": "item.tc4modern.bath_salts",
+  "original": "item.ItemBathSalts.name",
+  "order": 410
+ },
+ {
+  "id": "sanity_soap",
+  "translation": "item.tc4modern.sanity_soap",
+  "original": "item.ItemSanitySoap.name",
+  "order": 434
+ },
+ {
+  "id": "arcane_spa",
+  "translation": "block.tc4modern.arcane_spa",
+  "original": "tile.blockStoneDevice.12.name",
+  "order": 104
+ },
+ {
+  "id": "tallow_block",
+  "translation": "block.tc4modern.tallow_block",
+  "original": "tile.blockCosmeticSolid.5.name",
+  "order": 37
+ },
+ {
+  "id": "centrifuge",
+  "translation": "block.tc4modern.centrifuge",
+  "original": "tile.blockTube.2.name",
+  "order": 55.0
+ },
+ {
+  "id": "essentia_crystalizer",
+  "translation": "block.tc4modern.essentia_crystalizer",
+  "original": "tile.blockTube.7.name",
+  "order": 60.0
+ },
+ {
+  "id": "alchemical_construct",
+  "translation": "block.tc4modern.alchemical_construct",
+  "original": "tile.blockMetalDevice.9.name",
+  "order": 67.0
+ },
+ {
+  "id": "void_jar",
+  "translation": "block.tc4modern.void_jar",
+  "original": "tile.blockJar.3.name",
+  "order": 116.0
+ },
+ {
+  "id": "bucket_pure",
+  "translation": "item.tc4modern.bucket_pure",
+  "original": "item.ItemBucketPure.name",
+  "order": 413
+ },
+ {
+  "id": "taint_chicken_spawn_egg",
+  "translation": "item.tc4modern.taint_chicken_spawn_egg",
+  "original": "",
+  "order": 1305
+ },
+ {
+  "id": "taint_cow_spawn_egg",
+  "translation": "item.tc4modern.taint_cow_spawn_egg",
+  "original": "",
+  "order": 1306
+ },
+ {
+  "id": "taint_creeper_spawn_egg",
+  "translation": "item.tc4modern.taint_creeper_spawn_egg",
+  "original": "",
+  "order": 1307
+ },
+ {
+  "id": "taint_pig_spawn_egg",
+  "translation": "item.tc4modern.taint_pig_spawn_egg",
+  "original": "",
+  "order": 1308
+ },
+ {
+  "id": "taint_sheep_spawn_egg",
+  "translation": "item.tc4modern.taint_sheep_spawn_egg",
+  "original": "",
+  "order": 1309
+ },
+ {
+  "id": "taint_villager_spawn_egg",
+  "translation": "item.tc4modern.taint_villager_spawn_egg",
+  "original": "",
+  "order": 1310
+ },
+ {
+  "id": "zombie_brain",
+  "translation": "item.tc4modern.zombie_brain",
+  "original": "item.ItemZombieBrain.name",
+  "order": 409
+ },
+ {
+  "id": "runic_ring",
+  "translation": "item.tc4modern.runic_ring",
+  "original": "item.ItemRingRunic.1.name",
+  "order": 401
+ },
+ {
+  "id": "runic_ring_charged",
+  "translation": "item.tc4modern.runic_ring_charged",
+  "original": "item.ItemRingRunic.2.name",
+  "order": 402
+ },
+ {
+  "id": "runic_ring_regen",
+  "translation": "item.tc4modern.runic_ring_regen",
+  "original": "item.ItemRingRunic.3.name",
+  "order": 403
+ },
+ {
+  "id": "runic_amulet",
+  "translation": "item.tc4modern.runic_amulet",
+  "original": "item.ItemAmuletRunic.0.name",
+  "order": 398
+ },
+ {
+  "id": "runic_amulet_emergency",
+  "translation": "item.tc4modern.runic_amulet_emergency",
+  "original": "item.ItemAmuletRunic.1.name",
+  "order": 399
+ },
+ {
+  "id": "runic_girdle",
+  "translation": "item.tc4modern.runic_girdle",
+  "original": "item.ItemGirdleRunic.0.name",
+  "order": 404
+ },
+ {
+  "id": "runic_girdle_kinetic",
+  "translation": "item.tc4modern.runic_girdle_kinetic",
+  "original": "item.ItemGirdleRunic.1.name",
+  "order": 405
+ },
+ {
+  "id": "arcane_bore_base",
+  "translation": "block.tc4modern.arcane_bore_base",
+  "original": "tile.blockWoodenDevice.4.name",
+  "order": 75
+ },
+ {
+  "id": "arcane_bore",
+  "translation": "block.tc4modern.arcane_bore",
+  "original": "tile.blockWoodenDevice.5.name",
+  "order": 76
+ },
+ {
+  "id": "primordial_pearl",
+  "translation": "item.tc4modern.primordial_pearl",
+  "original": "item.ItemEldritchObject.3.name",
+  "order": 420.0
+ },
+ {
+  "id": "taintacle_spawn_egg",
+  "translation": "item.tc4modern.taintacle_spawn_egg",
+  "original": "",
+  "order": 1322
+ },
+ {
+  "id": "taintacle_small_spawn_egg",
+  "translation": "item.tc4modern.taintacle_small_spawn_egg",
+  "original": "",
+  "order": 1323
+ },
+ {
+  "id": "taintacle_giant_spawn_egg",
+  "translation": "item.tc4modern.taintacle_giant_spawn_egg",
+  "original": "",
+  "order": 1324
+ },
+ {
+  "id": "focal_manipulator",
+  "translation": "block.tc4modern.focal_manipulator",
+  "original": "tile.blockStoneDevice.13.name",
+  "order": 105
+ },
+ {
+  "id": "loot_bag_common",
+  "translation": "item.tc4modern.loot_bag_common",
+  "original": "item.ItemLootBag.0.name",
+  "order": 448
+ },
+ {
+  "id": "loot_bag_uncommon",
+  "translation": "item.tc4modern.loot_bag_uncommon",
+  "original": "item.ItemLootBag.1.name",
+  "order": 449
+ },
+ {
+  "id": "loot_bag_rare",
+  "translation": "item.tc4modern.loot_bag_rare",
+  "original": "item.ItemLootBag.2.name",
+  "order": 450
+ },
+ {
+  "id": "primal_ring_aer",
+  "translation": "item.tc4modern.primal_ring_aer",
+  "original": "",
+  "order": 1329
+ },
+ {
+  "id": "primal_ring_terra",
+  "translation": "item.tc4modern.primal_ring_terra",
+  "original": "",
+  "order": 1330
+ },
+ {
+  "id": "primal_ring_ignis",
+  "translation": "item.tc4modern.primal_ring_ignis",
+  "original": "",
+  "order": 1331
+ },
+ {
+  "id": "primal_ring_aqua",
+  "translation": "item.tc4modern.primal_ring_aqua",
+  "original": "",
+  "order": 1332
+ },
+ {
+  "id": "primal_ring_ordo",
+  "translation": "item.tc4modern.primal_ring_ordo",
+  "original": "",
+  "order": 1333
+ },
+ {
+  "id": "primal_ring_perditio",
+  "translation": "item.tc4modern.primal_ring_perditio",
+  "original": "",
+  "order": 1334
+ },
+ {
+  "id": "arcane_pedestal",
+  "translation": "block.tc4modern.arcane_pedestal",
+  "original": "tile.blockStoneDevice.1.name",
+  "order": 97
+ },
+ {
+  "id": "runic_matrix",
+  "translation": "block.tc4modern.runic_matrix",
+  "original": "tile.blockStoneDevice.2.name",
+  "order": 98
+ },
+ {
+  "id": "salis_mundus",
+  "translation": "item.tc4modern.salis_mundus",
+  "original": "item.ItemResource.14.name",
+  "order": 299
+ },
+ {
+  "id": "golem_fetter",
+  "translation": "block.tc4modern.golem_fetter",
+  "original": "tile.blockCosmeticSolid.9.name",
+  "order": 41
+ },
+ {
+  "id": "focus_hellbat",
+  "translation": "item.tc4modern.focus_hellbat",
+  "original": "item.FocusHellbat.name",
+  "order": 180
+ },
+ {
+  "id": "firebat_spawn_egg",
+  "translation": "item.tc4modern.firebat_spawn_egg",
+  "original": "",
+  "order": 1340
+ },
+ {
+  "id": "fortress_helmet",
+  "translation": "item.tc4modern.fortress_helmet",
+  "original": "item.ItemHelmetFortress.name",
+  "order": 414
+ },
+ {
+  "id": "fortress_chestplate",
+  "translation": "item.tc4modern.fortress_chestplate",
+  "original": "item.ItemChestplateFortress.name",
+  "order": 415
+ },
+ {
+  "id": "fortress_leggings",
+  "translation": "item.tc4modern.fortress_leggings",
+  "original": "item.ItemLeggingsFortress.name",
+  "order": 416
+ },
+ {
+  "id": "sanity_checker",
+  "translation": "item.tc4modern.sanity_checker",
+  "original": "item.ItemSanityChecker.name",
+  "order": 435.0
+ },
+ {
+  "id": "bucket_death",
+  "translation": "item.tc4modern.bucket_death",
+  "original": "item.ItemBucketDeath.name",
+  "order": 412
+ },
+ {
+  "id": "crystal_essence",
+  "translation": "item.tc4modern.crystal_essence",
+  "original": "item.ItemCrystalEssence.name",
+  "order": 411
+ },
+ {
+  "id": "obsidian_totem",
+  "translation": "block.tc4modern.obsidian_totem",
+  "original": "tile.blockCosmeticSolid.0.name",
+  "order": 32
+ },
+ {
+  "id": "charged_obsidian_totem",
+  "translation": "block.tc4modern.charged_obsidian_totem",
+  "original": "tile.blockCosmeticSolid.8.name",
+  "order": 40
+ },
+ {
+  "id": "cinnabar_ore",
+  "translation": "block.tc4modern.cinnabar_ore",
+  "original": "tile.blockCustomOre.0.name",
+  "order": 4
+ },
+ {
+  "id": "amber_ore",
+  "translation": "block.tc4modern.amber_ore",
+  "original": "tile.blockCustomOre.7.name",
+  "order": 11
+ },
+ {
+  "id": "greatwood_planks",
+  "translation": "block.tc4modern.greatwood_planks",
+  "original": "tile.blockWoodenDevice.6.name",
+  "order": 77
+ },
+ {
+  "id": "silverwood_planks",
+  "translation": "block.tc4modern.silverwood_planks",
+  "original": "tile.blockWoodenDevice.7.name",
+  "order": 78
+ },
+ {
+  "id": "quicksilver",
+  "translation": "item.tc4modern.quicksilver",
+  "original": "item.ItemResource.3.name",
+  "order": 289
+ },
+ {
+  "id": "amber",
+  "translation": "item.tc4modern.amber",
+  "original": "item.ItemResource.6.name",
+  "order": 291
+ },
+ {
+  "id": "quicksilver_drop",
+  "translation": "item.tc4modern.quicksilver_drop",
+  "original": "item.ItemNugget.5.name",
+  "order": 326
+ },
+ {
+  "id": "focus_primal",
+  "translation": "item.tc4modern.focus_primal",
+  "original": "item.FocusPrimal.name",
+  "order": 187
+ },
+ {
+  "id": "greatwood_stairs",
+  "translation": "block.tc4modern.greatwood_stairs",
+  "original": "tile.blockStairsGreatwood.name",
+  "order": 137
+ },
+ {
+  "id": "silverwood_stairs",
+  "translation": "block.tc4modern.silverwood_stairs",
+  "original": "tile.blockStairsSilverwood.name",
+  "order": 138
+ },
+ {
+  "id": "greatwood_slab",
+  "translation": "block.tc4modern.greatwood_slab",
+  "original": "tile.blockCosmeticSlabWood.greatwood.name",
+  "order": 140
+ },
+ {
+  "id": "silverwood_slab",
+  "translation": "block.tc4modern.silverwood_slab",
+  "original": "tile.blockCosmeticSlabWood.silverwood.name",
+  "order": 141
+ },
+ {
+  "id": "greatwood_leaves",
+  "translation": "block.tc4modern.greatwood_leaves",
+  "original": "tile.blockMagicalLeaves.greatwood.name",
+  "order": 14
+ },
+ {
+  "id": "flux_goo",
+  "translation": "block.tc4modern.flux_goo",
+  "original": "tile.blockFluxGoo.name",
+  "order": 0
+ },
+ {
+  "id": "flux_gas",
+  "translation": "block.tc4modern.flux_gas",
+  "original": "tile.blockFluxGas.name",
+  "order": 1
+ },
+ {
+  "id": "taint",
+  "translation": "block.tc4modern.taint",
+  "original": "tile.blockTaint.0.name",
+  "order": 22
+ },
+ {
+  "id": "taint_soil",
+  "translation": "block.tc4modern.taint_soil",
+  "original": "tile.blockTaint.1.name",
+  "order": 23
+ },
+ {
+  "id": "taint_fibres",
+  "translation": "block.tc4modern.taint_fibres",
+  "original": "tile.blockTaintFibres.0.name",
+  "order": 25
+ },
+ {
+  "id": "taint_grass",
+  "translation": "block.tc4modern.taint_grass",
+  "original": "tile.blockTaintFibres.1.name",
+  "order": 26
+ },
+ {
+  "id": "taint_plant",
+  "translation": "block.tc4modern.taint_plant",
+  "original": "tile.blockTaintFibres.2.name",
+  "order": 27
+ },
+ {
+  "id": "taint_spore",
+  "translation": "block.tc4modern.taint_spore",
+  "original": "tile.blockTaintFibres.3.name",
+  "order": 28
+ }
+]

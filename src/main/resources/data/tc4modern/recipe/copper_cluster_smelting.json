@@ -1,0 +1,1 @@
+{"type": "minecraft:smelting", "ingredient": {"item": "tc4modern:copper_cluster"}, "result": {"id": "minecraft:copper_ingot", "count": 2}, "experience": 0.7, "cookingtime": 200}

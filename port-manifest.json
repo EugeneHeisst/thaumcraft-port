@@ -1,0 +1,740 @@
+{
+  "source_jar": "Thaumcraft-1.7.10-4.2.3.5.jar",
+  "source_sha256": "3dba9786966974701578a658d1bb369bf35bdf5f363079f5ac9c4910a39113be",
+  "target": "Minecraft 1.21.1 / NeoForge",
+  "local_adapted_sources": [
+    {
+      "class": "dev.eugheist.tc4modern.ShardOreFeature",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/dev/eugheist/tc4modern/ShardOreFeature.java",
+      "sha256": "10dc021cc8611540d06a3a8e9e0a0fbe03670ffc5458411ff52231d4d757aeb4"
+    },
+    {
+      "class": "thaumcraft.api.IGoggles",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/IGoggles.java",
+      "sha256": "12548c12ebee4ba07af802165dd79998b2effc1ccd52e27feedbd75797e524fc"
+    },
+    {
+      "class": "thaumcraft.api.IRunicArmor",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/IRunicArmor.java",
+      "sha256": "74ecd9d37eadcb048da10a7f2711d790199b688b3a5d8fbdd28cd1a551fc6ff4"
+    },
+    {
+      "class": "thaumcraft.api.IVisDiscountGear",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/IVisDiscountGear.java",
+      "sha256": "719460841f12f13b9fd3a6dd48737bdfb610bdae80445734fc57e6cedbabe21a"
+    },
+    {
+      "class": "thaumcraft.api.ThaumcraftApiHelper",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/ThaumcraftApiHelper.java",
+      "sha256": "0d2f69dc2a4fd736c5dc64bb6c98e3fb277e6d8b455997cae97f4fb206c746ec"
+    },
+    {
+      "class": "thaumcraft.api.aspects.Aspect",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/aspects/Aspect.java",
+      "sha256": "1324a5e43ab021d6d9038a62b204bc058af089524f5deaacd253f78552c5860f"
+    },
+    {
+      "class": "thaumcraft.api.aspects.AspectList",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/aspects/AspectList.java",
+      "sha256": "62c6583b8180d952a2d289dcfa529be7ee54fb6a2a22f7afb34ebda27b967b0d"
+    },
+    {
+      "class": "thaumcraft.api.crafting.ArcanePattern",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/crafting/ArcanePattern.java",
+      "sha256": "b5bb314ed9ad206526bc4a83e9e87f3dd9fa4d4845fdd83ec5500ea211538064"
+    },
+    {
+      "class": "thaumcraft.api.crafting.CrucibleRecipe",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/crafting/CrucibleRecipe.java",
+      "sha256": "a6daea157ed22a4b93150601968077b5e4e8d422a91ba051e48f458de15daf6e"
+    },
+    {
+      "class": "thaumcraft.api.entities.ITaintedMob",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/entities/ITaintedMob.java",
+      "sha256": "d4339b8aaf0b06d3db2462beec5e5de16e3e59588c72669f08769df9ad9aa9ea"
+    },
+    {
+      "class": "thaumcraft.api.nodes.IRevealer",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/nodes/IRevealer.java",
+      "sha256": "04ac379aacbeee00d38435a39150b913515b5c178046c1e206ed7d26a7303f60"
+    },
+    {
+      "class": "thaumcraft.api.nodes.NodeModifier",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/nodes/NodeModifier.java",
+      "sha256": "b5aaab58d8b9944d3de145440e1f4cb81d7b461db2d6c7ce5af1f17afc29a6ca"
+    },
+    {
+      "class": "thaumcraft.api.nodes.NodeType",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/nodes/NodeType.java",
+      "sha256": "13ebc4dda9bd7932b578da3c4c04a708264d6711f2e8968003bd8118e7afdf3d"
+    },
+    {
+      "class": "thaumcraft.api.potions.PotionFluxTaint",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/potions/PotionFluxTaint.java",
+      "sha256": "ea36fcd9b84f7af627c7c12c42c406a487fe6907344a83c3857d1894011d4fd6"
+    },
+    {
+      "class": "thaumcraft.api.potions.PotionVisExhaust",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/potions/PotionVisExhaust.java",
+      "sha256": "8f495a261590067eb691af86e23bac9c3f4a910560483798ee3e32f4028b8a60"
+    },
+    {
+      "class": "thaumcraft.api.research.ResearchCategories",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/research/ResearchCategories.java",
+      "sha256": "84154852f84cb540798dd84b4559abdfa7e27989f7f806fda240e569f37b098c"
+    },
+    {
+      "class": "thaumcraft.api.research.ResearchCategoryList",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/research/ResearchCategoryList.java",
+      "sha256": "582d76d518e6d4a22900d1b3219d5801c2811b22d21072df81ac134f15997bbb"
+    },
+    {
+      "class": "thaumcraft.api.research.ResearchItem",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/research/ResearchItem.java",
+      "sha256": "38dc5eba87993c23ef254119f98eec551257147689e3da25af396d5805283815"
+    },
+    {
+      "class": "thaumcraft.api.research.ResearchPage",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/api/research/ResearchPage.java",
+      "sha256": "5d6a34e94e72a6dc6af2080f7cb78e2e683ad0533450684b5675aaede59b4aee"
+    },
+    {
+      "class": "thaumcraft.client.fx.particles.AlumentumSparkle",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/client/fx/particles/AlumentumSparkle.java",
+      "sha256": "6552f7c73244a0757b611723ca6aa61594488b3067cd3879f09c5722136cd896"
+    },
+    {
+      "class": "thaumcraft.client.fx.particles.FXBubble",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/client/fx/particles/FXBubble.java",
+      "sha256": "a40989f54252e518a61af04a26b8cd8ad3c2d964873881aeb1f405d8da907d88"
+    },
+    {
+      "class": "thaumcraft.client.fx.particles.SwarmBuzz",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/client/fx/particles/SwarmBuzz.java",
+      "sha256": "425d53ec92c8720ad0e77e2045a99b61673b9e55d5d8b85e61bc7c60524c431c"
+    },
+    {
+      "class": "thaumcraft.client.fx.particles.SwarmEscape",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/client/fx/particles/SwarmEscape.java",
+      "sha256": "7b380cdc4e5572f241ff78638ed3cca63c35a251c33c2139ba5bb477703be4a6"
+    },
+    {
+      "class": "thaumcraft.client.fx.particles.SwarmMotion",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/client/fx/particles/SwarmMotion.java",
+      "sha256": "a2fc4ee22c5ff008477c9d80a6b9baabe1acdd86e696b23bb45fa87b67967505"
+    },
+    {
+      "class": "thaumcraft.client.renderers.models.BellowsGeometry",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/client/renderers/models/BellowsGeometry.java",
+      "sha256": "1da218c8dabb767e9345d2f2b90fb03a18df9b6ba7bc42b6e3ae749034179da5"
+    },
+    {
+      "class": "thaumcraft.client.renderers.models.entities.ModelTaintSpore",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/client/renderers/models/entities/ModelTaintSpore.java",
+      "sha256": "2f6269ad77424e2fba5bfafcd6b5ef430dbff9e60d06c545601a5fdb5657a866"
+    },
+    {
+      "class": "thaumcraft.client.renderers.models.entities.TaintSpiderGeometry",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/client/renderers/models/entities/TaintSpiderGeometry.java",
+      "sha256": "b0e3ce77dd0820fb5d7562aa39e13a56d3a272df2f0267cb995ef6c62269b6fb"
+    },
+    {
+      "class": "thaumcraft.client.renderers.models.gear.ModelRobe",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/client/renderers/models/gear/ModelRobe.java",
+      "sha256": "fc80d0b11be4ccbb90a5a02cbbbdc5a34a8665d145b44b0c873420ca492acc7d"
+    },
+    {
+      "class": "thaumcraft.common.blocks.CrucibleFlux",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/CrucibleFlux.java",
+      "sha256": "b522c82a096478a877b428597c137c1d2e0e485ec47f7b875612c356b68e9df2"
+    },
+    {
+      "class": "thaumcraft.common.blocks.FiniteFlux",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/FiniteFlux.java",
+      "sha256": "812ffdebdcdc7b11065341400c3d2ffe5a8578e4181a952fad6769ab673754b7"
+    },
+    {
+      "class": "thaumcraft.common.blocks.FluxGooDecay",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/FluxGooDecay.java",
+      "sha256": "efded38d522e47fecf304102d68c01db7a297b6577f75e2827baa5e8b68cbcc1"
+    },
+    {
+      "class": "thaumcraft.common.blocks.TaintBlockDecay",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/TaintBlockDecay.java",
+      "sha256": "7580b06b1c7ba5f589d4abfe93fa1c0e418e5236275d6262316b8dd857e3c0fd"
+    },
+    {
+      "class": "thaumcraft.common.blocks.TaintBlockState",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/TaintBlockState.java",
+      "sha256": "973338c509b2257f54046fc6afbde2b36be06d861cc582d30f612d8bed51bc4e"
+    },
+    {
+      "class": "thaumcraft.common.blocks.TaintFallingRules",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/TaintFallingRules.java",
+      "sha256": "0895a9f903150c25b81db5fed374a02e2a67fc30347c68ada0adbe6e4b519f37"
+    },
+    {
+      "class": "thaumcraft.common.blocks.TaintFibresSpread",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/TaintFibresSpread.java",
+      "sha256": "b49808e9affc5ed665847d6331c3ef67dbd9552b1c7add275981f2b0e37ad0dc"
+    },
+    {
+      "class": "thaumcraft.common.blocks.TaintRules",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/TaintRules.java",
+      "sha256": "48beaa496323b4a30742279d4f25802997f3c2939827e1b3233460e942af2131"
+    },
+    {
+      "class": "thaumcraft.common.config.ConfigAspects",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/config/ConfigAspects.java",
+      "sha256": "8642567eb00e039994cbda01c4b5b1a5880b645d28ded678d50c947d074b6a75"
+    },
+    {
+      "class": "thaumcraft.common.config.ConfigComplexAspects",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/config/ConfigComplexAspects.java",
+      "sha256": "2d714bb5ceded8a55a7820f8149c3f93d56d0503f8b99362778053070fe83423"
+    },
+    {
+      "class": "thaumcraft.common.config.ConfigCrucibleRecipes",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/config/ConfigCrucibleRecipes.java",
+      "sha256": "6a86a32d70acb438e7a9f95b5c85495da946bf1984fea75c79f4a1da2f64840e"
+    },
+    {
+      "class": "thaumcraft.common.config.ConfigEntityAspects",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/config/ConfigEntityAspects.java",
+      "sha256": "c578cb6007d7df08d1f4bc738a387d343592d1723095e3380c8ddaa6a000061f"
+    },
+    {
+      "class": "thaumcraft.common.config.ConfigOreAspects",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/config/ConfigOreAspects.java",
+      "sha256": "274e2c4c47caac542f2ee20af8030045ab279f72b387187a99ee5a7f152af031"
+    },
+    {
+      "class": "thaumcraft.common.config.ConfigResearchData",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/config/ConfigResearchData.java",
+      "sha256": "66394b6209a9d9c5ffcbd104d79cfe337311e76f8cf4fdab5dae8e4e89fbe4b7"
+    },
+    {
+      "class": "thaumcraft.common.entities.EntityFallingTaint",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/entities/EntityFallingTaint.java",
+      "sha256": "9ec6e73c41865eba574451d782bde52c4a02a6c0f4a1e1613530b5c74f285fce"
+    },
+    {
+      "class": "thaumcraft.common.entities.EntitySpecialItem",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/entities/EntitySpecialItem.java",
+      "sha256": "065f73a1bfa8608d62c4730b39f1403f16b728194d5ef8d975eae10632c237ee"
+    },
+    {
+      "class": "thaumcraft.common.entities.LegacyBlockEscape",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/entities/LegacyBlockEscape.java",
+      "sha256": "51ff85bc04b2e685522f204fd462a19867eafa805d592f1db8474b28aefef778"
+    },
+    {
+      "class": "thaumcraft.common.entities.monster.EntityTaintSpider",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/EntityTaintSpider.java",
+      "sha256": "6f9d0dfae2eaad9e079b3c3574f8b27be258ae7b4d9b014869e17b83a0e070a0"
+    },
+    {
+      "class": "thaumcraft.common.entities.monster.EntityTaintSpore",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/EntityTaintSpore.java",
+      "sha256": "700e8331e91b831157b82ce9307d6a21372e8afbfe1141e9ce63b298f75d057c"
+    },
+    {
+      "class": "thaumcraft.common.entities.monster.EntityTaintSporeSwarmer",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/EntityTaintSporeSwarmer.java",
+      "sha256": "0cacb473c83219a9999c5287c8b26a337bf92ac55a364d81cb2fb681b217ab50"
+    },
+    {
+      "class": "thaumcraft.common.entities.monster.EntityTaintSwarm",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/EntityTaintSwarm.java",
+      "sha256": "d80536ab9c079d9b35550a6bb41d8278092fef70196ff1aa7ba205d337dedf47"
+    },
+    {
+      "class": "thaumcraft.common.entities.monster.EntityThaumicSlime",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/EntityThaumicSlime.java",
+      "sha256": "945a5e329f7bf9fe112c1f6da97fe2402fac0f3b6dbe20cd6715efc966135fa1"
+    },
+    {
+      "class": "thaumcraft.common.entities.monster.TaintSwarmFlight",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/TaintSwarmFlight.java",
+      "sha256": "72b345b225e2aece20c62d13d4615fae4439daa54ce5ca486fee25134efd3401"
+    },
+    {
+      "class": "thaumcraft.common.entities.monster.ThaumicSlimeState",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/ThaumicSlimeState.java",
+      "sha256": "fd3d3f1d7b84166bee9da04c44ac992101e6b3502cdf362c3aa0881e392feca9"
+    },
+    {
+      "class": "thaumcraft.common.entities.projectile.EntityAlumentum",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/entities/projectile/EntityAlumentum.java",
+      "sha256": "ef8ab9849dbe8db3d3a2f72ffbbcd31fa8c343bc6fc845a44df4b5e797f4395e"
+    },
+    {
+      "class": "thaumcraft.common.items.ItemAlumentum",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/items/ItemAlumentum.java",
+      "sha256": "43744e900271f8148294a73af8c3d1c50fd70235191aa341813d76024a3c2936"
+    },
+    {
+      "class": "thaumcraft.common.items.ItemNitor",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/items/ItemNitor.java",
+      "sha256": "9ccb668b275a06f30ee1aa7ca2a44e58f5d3614beb720d45a6c9dbec37b865ac"
+    },
+    {
+      "class": "thaumcraft.common.items.armor.ItemGoggles",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/items/armor/ItemGoggles.java",
+      "sha256": "305e427d6a22e62a9a84a451e3231ac085ade1f01140e64480976fe3869151cf"
+    },
+    {
+      "class": "thaumcraft.common.items.armor.ItemRobeArmor",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/items/armor/ItemRobeArmor.java",
+      "sha256": "f62401aecaabb3fc02218f0be5c371af1a4ce384756ee8efeff0ee759fc59dec"
+    },
+    {
+      "class": "thaumcraft.common.items.armor.RecipesRobeArmorDyes",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/items/armor/RecipesRobeArmorDyes.java",
+      "sha256": "4fdefd7406ded15e9cd4770cc6e0cbaac372c00efe9244e0f7341a7b17877083"
+    },
+    {
+      "class": "thaumcraft.common.items.armor.RobeDyeColors",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/items/armor/RobeDyeColors.java",
+      "sha256": "fddf3f2ec301560cff7575b5834769cdd659178885bed270d35901e48275343d"
+    },
+    {
+      "class": "thaumcraft.common.lib.crafting.RecipeAspectMath",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/crafting/RecipeAspectMath.java",
+      "sha256": "cf28936a98decd42a6cd832301c2e853ad7ae9052d703328bd076827d72159d5"
+    },
+    {
+      "class": "thaumcraft.common.lib.research.PlayerKnowledge",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/research/PlayerKnowledge.java",
+      "sha256": "867eff909c798647d200877e996d3af4cd59fa5c112181fb9febe85807417403"
+    },
+    {
+      "class": "thaumcraft.common.lib.research.ResearchManager",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/research/ResearchManager.java",
+      "sha256": "57c0d6a9ecdce56d06059fbc985dc01389959ac1f7a8b5447a0291c4887fd743"
+    },
+    {
+      "class": "thaumcraft.common.lib.research.ResearchNoteData",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/research/ResearchNoteData.java",
+      "sha256": "a00af7fb9f0cecd563372ec0546eca96323987270053f55f232eb2291ce34903"
+    },
+    {
+      "class": "thaumcraft.common.lib.research.ScanManager",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/research/ScanManager.java",
+      "sha256": "a2850c79a9e415a76cf0b4814c292203d1a60ad017c0e8e55d682c8348f0a050"
+    },
+    {
+      "class": "thaumcraft.common.lib.utils.HexUtils",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/utils/HexUtils.java",
+      "sha256": "1f3594fad3b3043257ccc9ae559a05f710d6c42c0c0220b82d90f4a74cb47463"
+    },
+    {
+      "class": "thaumcraft.common.lib.vis.ArcaneCostVisuals",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/ArcaneCostVisuals.java",
+      "sha256": "fd81571dc31f3d1a1031b4400a4b023bcdc7978f8dda16493321acbcf975206d"
+    },
+    {
+      "class": "thaumcraft.common.lib.vis.BiomeAura",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/BiomeAura.java",
+      "sha256": "423b8b97b4d1ab6e8f624035e34721ec9a4efee0143cae4031d13d1d630c98b7"
+    },
+    {
+      "class": "thaumcraft.common.lib.vis.NodeBeam",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/NodeBeam.java",
+      "sha256": "eb351fa9cc99846416f0a04b50993162e37a23b2c9b77a36c9d07585d1f3212b"
+    },
+    {
+      "class": "thaumcraft.common.lib.vis.NodeGenerator",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/NodeGenerator.java",
+      "sha256": "6e27cd9718217637e7fab25f77af58c3518d21caf0b5b5f358708d558d672302"
+    },
+    {
+      "class": "thaumcraft.common.lib.vis.NodeReservoir",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/NodeReservoir.java",
+      "sha256": "7771a483a8ccf26a0ca44ab514959f2783c53afe251d6bc275b4b459b4c341bc"
+    },
+    {
+      "class": "thaumcraft.common.lib.vis.NodeVisuals",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/NodeVisuals.java",
+      "sha256": "731f90a167371f29a0c7b539b2291f6cb1ab5878b1f964f3fbcfb5a1dd617200"
+    },
+    {
+      "class": "thaumcraft.common.lib.vis.ShardPalette",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/ShardPalette.java",
+      "sha256": "36e1bef42d8948442ce85720d5f96f7bf0af1cc74b36b581c1fd1fde664978c6"
+    },
+    {
+      "class": "thaumcraft.common.lib.vis.VisGearDiscount",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/VisGearDiscount.java",
+      "sha256": "916b65b31cee6d3dcb67f9882ad85b732737c3a0130f9a3a2a981d1fdbb2c869"
+    },
+    {
+      "class": "thaumcraft.common.lib.vis.VisStorage",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/VisStorage.java",
+      "sha256": "516bc57393af32b375a63575ea241746f9c3f8025c8fb74623841777b3949d9f"
+    },
+    {
+      "class": "thaumcraft.common.tiles.BellowsState",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/BellowsState.java",
+      "sha256": "876e1bc1f01adf3a93f3dda94ca05b76e7d6b4a31c127d43ae9fd75a178eeddb"
+    },
+    {
+      "class": "thaumcraft.common.tiles.CrucibleState",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/CrucibleState.java",
+      "sha256": "a022972c6a4c87107edbf2bab8c75a0df340f01b04abc5dc13ab2eb7a72cf1f0"
+    },
+    {
+      "class": "thaumcraft.common.tiles.NitorWisp",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/NitorWisp.java",
+      "sha256": "6978a7c937dcdb797fe5dd459d6c18ba5e3f716c436a57bac9d3ef74e7800b03"
+    },
+    {
+      "class": "thaumcraft.common.tiles.ResearchTableBonus",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/ResearchTableBonus.java",
+      "sha256": "0f252d90a719f77fc3468939388201bf87d0391140a2df50ccb40883328e11bb"
+    },
+    {
+      "class": "thaumcraft.common.lib.crafting.StackAspectRules",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/crafting/StackAspectRules.java",
+      "sha256": "05fae1ad574343ce0758ee665e5c58cb6f1aaf6cff4fb0d2a4da4f85b70a5c61"
+    },
+    {
+      "class": "thaumcraft.client.lib.ResearchBookLayout",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/client/lib/ResearchBookLayout.java",
+      "sha256": "655377ba0f722df36b06be2991f32b4a918835fe5d1b711fdd61b8faa885353b"
+    },
+    {
+      "class": "thaumcraft.common.lib.events.CommandThaumcraft",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/events/CommandThaumcraft.java",
+      "sha256": "5781713d52084eafe100513369f54cc36ccf6009c06c6c3c4dd3560bda9c5ade"
+    },
+    {
+      "class": "thaumcraft.common.tiles.DeconstructionState",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/DeconstructionState.java",
+      "sha256": "e7961791ea8e549c12d9f11304a53f4db0a62d2d10ab48419bb2c1aafa5e816c"
+    },
+    {
+      "class": "thaumcraft.common.lib.world.BigMagicTreeGenerator",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/lib/world/BigMagicTreeGenerator.java",
+      "sha256": "6c3774a0f5ea4281d9c5850c299a2201244292945ebc5f8c151e384d388cc053"
+    },
+    {
+      "class": "thaumcraft.common.tiles.essentia.JarState",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/essentia/JarState.java",
+      "sha256": "8c9a15774d947a00c795587a0a852767bb14398146e569758e921a3d1815035b"
+    },
+    {
+      "class": "thaumcraft.common.tiles.essentia.VoidJarState",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/essentia/VoidJarState.java",
+      "sha256": "b0423acd45c100e5e4020265eb150e377709221a42212d079836fe752c13404e"
+    },
+    {
+      "class": "thaumcraft.common.tiles.essentia.AlchemyMachineState",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/essentia/AlchemyMachineState.java",
+      "sha256": "5870d4722c57c51e175e082b1a538cb204c3c2b8aae6f8760a7e460cf81336ef"
+    },
+    {
+      "class": "thaumcraft.common.tiles.essentia.ThaumatoriumState",
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/essentia/ThaumatoriumState.java",
+      "sha256": "f04bfc24487e7dceacbaf9a1f4bf32d65fd987ca15a488f0663f8b6e8c49f03a"
+    }
+  ],
+  "local_adapted_resources": [
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/bellows.json",
+      "sha256": "9270dfb1192253d5137e66c367a3b8f7bfb30bc5467e4444b8c79c48a78abdf0"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/crucible.json",
+      "sha256": "2cf74d7a5e4d1ecba4bcc92c02622dd43c40e9e0de999ca553d9f173e37e8463"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/flux_gas.json",
+      "sha256": "e876f57e677adc20b8bdd73cf08a1fcc70995c78a49d45ec835df9101461dab2"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/flux_goo.json",
+      "sha256": "777ba525980b4092b63195b2c3bd77d125d23313b3f6c4c4eb6aaab0756b8d8a"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/nitor.json",
+      "sha256": "d9b0f6954e755c820fe41ef7ecfe168fb80eaa2416ca517a571ac73be9190124"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/taint.json",
+      "sha256": "626d385740d121cdd087f048ca9962a7cd2f4dafb1f7f730ecf43e9e566fc3e7"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/taint_fibres.json",
+      "sha256": "02ed5791aa68e2769cdac94ba7e2510b355937eb4c9347b8394e59d7cfdc0bd2"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/bellows.json",
+      "sha256": "608542d517b67779297ee9edf00f8669b03b207d2b4208a45f736edaf32fd010"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/crucible.json",
+      "sha256": "0637b42a0b60ba8cfc8bc9e00f602f708f6dc982e5775f3e2322f2d0ace58dc2"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_1.json",
+      "sha256": "23f3a39f63298ccd56f470c9b19b4a95d47ae8f7212480db9f79f45200a1dd3c"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_2.json",
+      "sha256": "cfd6018e598d803775da49b606e7c178e89c9a9d0d41491209c848ff13935e80"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_3.json",
+      "sha256": "327f44c3384a527cd4085422f8ce3194fd5144d97da30edf7d36bbd4e7753e48"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_4.json",
+      "sha256": "fa4f59a006a8b325bb62c259a8e4522f6c1e5f77bc42fe76316ff8335130459d"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_5.json",
+      "sha256": "1a7ad69cca7862244de7e426f69e381585f5b348db9e851ad3155b64b53b809f"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_6.json",
+      "sha256": "4b2883c1b19b88920f92a20a787100873981cdd27a33993bbe61a3c23c6a4061"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_7.json",
+      "sha256": "33c94823c0dbc7734770979d1f1d8af7084f2477b264369a1b8dd7c1ac8f8d44"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_8.json",
+      "sha256": "99b96a8da475b0f3c1cbd9208d1945ee5f990732f85af8615d2eae2aa0a08a69"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_1.json",
+      "sha256": "edf49369c824a77b0f3b5f9a5fc72fec9865aac73a81914b32718986d3f75807"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_2.json",
+      "sha256": "a92bd859b944f2b66a5f453baf26b3db93cf92b51d563277a2e49c899c0cc411"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_3.json",
+      "sha256": "243173c0c2b113a7843e07fba84fa3c743a822c86b7a3290c94adf92e93f321b"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_4.json",
+      "sha256": "0245b98eda26fb4342fcb7981ca21184c5edf206ce39e6bcc6577220c4cf9a56"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_5.json",
+      "sha256": "0fb79385208f316145647f47a57ff4cf690e37adfe92078f7cd5569e17dcd76c"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_6.json",
+      "sha256": "3dd46e409eb31489d9ee630addeff80a0f798dcb468751a5006fabe1c31329f8"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_7.json",
+      "sha256": "76da7ad62607d3a14427cbc86b53ebfbb2e7bc3cb0a9cf0e16c66854ddb5da39"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_8.json",
+      "sha256": "f96aad7ee4c99c0171a709d20822379cbc338b184dc505cc665508913afed3e6"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/nitor.json",
+      "sha256": "b20b4be20e3e23b67eb53f4ab7a86039ac19d4a6e5a4924959b6d3392a339d40"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_0.json",
+      "sha256": "fcc1c03d193261961e57ecf4cdf7181c78d0e98892417c0f1ccdbedae88a777b"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_1.json",
+      "sha256": "a7a140289a3901bd3441af26119a1e3a05c438b4d2825cc35e9128720c364640"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_2.json",
+      "sha256": "77f1c9d484952d03d2db0a6b71f6ffeca302504c770093088d9444e640a50298"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_1.json",
+      "sha256": "767f0f99a738589f26017280df1436256bcd0b775bf333105ed1fe4ff06d09af"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_2.json",
+      "sha256": "c79da87b0f66f69177bc1a9b6b3f858579b90a95bd1aa5d03bb2aec8068a6774"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_3.json",
+      "sha256": "4f56094e7dbbe37058a000a9980ac38d81c2fb5987cc78ff8bcc4cfe0b8253f8"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_4.json",
+      "sha256": "8ad62ad2a05fd6b35536eb69de7dda71d3f6d81179994cab8af3dd4760b02487"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_down.json",
+      "sha256": "d4f4908c89e495905ac8c5675d65cab6500733c5b9cf330abe6421d7663c2697"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_east.json",
+      "sha256": "6c5ae233091d667e135161f24709491af69002fd9b4162f4f64cfbe35ce01874"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_north.json",
+      "sha256": "d84b5d1febd23be23eec666f6ab9a99650a128e67160e9a97b098630a8fe6c83"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_south.json",
+      "sha256": "d3732935f4979b31c482f7f9411113bc028090b61db4e04f919f7dadfbe033c3"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_up.json",
+      "sha256": "d2fc9a84fc321bcdefc4cf66c733a5d71a72d4337a1cd3a3247c3c6fe41035cf"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_west.json",
+      "sha256": "58a546f8891a02a7152839ebaff7c85c2813b6f7a1af6813de4203246092f60c"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/alumentum.json",
+      "sha256": "28af65e75aa6a7a7833ad2949bf315e98e76ee057c490b7840e07f18179f3f33"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/balanced_shard.json",
+      "sha256": "2f586895aba65d5c5f2a1c78f27670b8792c7310417fd776027cee23afa33a5c"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/bellows.json",
+      "sha256": "766d3c104835513aa53d283a482f71f6021077f527444e3d5f21f0d6ad23d54e"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/crucible.json",
+      "sha256": "3663e7ba9d3d26d5f275431728e7b96307b8d9ea5a3698d8afcdcb61e93c2153"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/nitor.json",
+      "sha256": "fbc436a4e5211078b3481ec414bb56dea026bd99588043e93bae9b37055e90cf"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/tainted_goo.json",
+      "sha256": "b081bacf0e8abf87d501ae06b6ff82a647135454b268df35d6c3f7fcb9516fd8"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/tainted_tendril.json",
+      "sha256": "c756379a6f461e8fc18f54a0f3a47c42e8ebc793be0c0db7130b38830418a43d"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/tallow.json",
+      "sha256": "76e02ad0ac05f5a865480c720f27a6af637a938f8dce0282ed22b9b75e064b04"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/thaumium_ingot.json",
+      "sha256": "6f30c1cb498f8019016c1da300d0d97da17ea2e5e49e4a46a87ed65a7ea55dbb"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/minecraft/tags/damage_type/bypasses_armor.json",
+      "sha256": "0e115332c00c554ad1ce7233e1b6d60e49abee732ffa4d3b463b2f15053960fa"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/minecraft/tags/damage_type/bypasses_shield.json",
+      "sha256": "0e115332c00c554ad1ce7233e1b6d60e49abee732ffa4d3b463b2f15053960fa"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/minecraft/tags/damage_type/witch_resistant_to.json",
+      "sha256": "0e115332c00c554ad1ce7233e1b6d60e49abee732ffa4d3b463b2f15053960fa"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/arcane_stone.json",
+      "sha256": "13ab892c1ee63af573433dbea8dc0e4480a3610061b91f1fdca8703c02fd6888"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/bellows.json",
+      "sha256": "c14f4520570568db33db5123ac6f5f33ff4754bfc27a185ca4a342d7f94f1c25"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/enchanted_fabric.json",
+      "sha256": "d8017f25a552749fcc7592e407c4e31e35fa8bf5fc66135982abe39230c71671"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/goggles.json",
+      "sha256": "c2458d35f517572016bac6276c4f924bd19627ad8f90bf95ec576dee7e22494b"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/robe_boots.json",
+      "sha256": "203ace719b5842b6e2bd3d952d283919fb667c75b501f2e91d9078082d567987"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/robe_chest.json",
+      "sha256": "568d188bdbcc980b6fd9e9e71eabdd2a5f7defd17d92f9f828aa3308c7a531bb"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/robe_legs.json",
+      "sha256": "905e4e833b360ea325e6fb9caa867394e6b88b02a571a87bfbcbecf0da324f55"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/damage_type/taint.json",
+      "sha256": "df36a1298a74e099d1d6b9da83ebbc365a2e28690922a19cc9d289b1083680ed"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/loot_table/blocks/bellows.json",
+      "sha256": "bea1ccecdd916ea2a0fe57c5a2309bf8edffa4c08ba8a7583779e9142b9b3134"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/loot_table/blocks/nitor.json",
+      "sha256": "490c33d6cfeeace0846217d4b3e2c6693a1a4a8acd9297f64c5633976e3ac929"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/loot_table/blocks/taint.json",
+      "sha256": "7c849ec13b90b70c932ebdf0b47c1c8b541bcc7b4a6475a607b431881872c650"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/arcane_stone_bricks.json",
+      "sha256": "1e7406f49df374f02903516fa886073aa0b78752656bc95339903e251d3a1c80"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/arcane_stone_slab.json",
+      "sha256": "756fe403d566caf7f02985dbd092b87d674ca60de32875e688fc6b5220682286"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/arcane_stone_stairs.json",
+      "sha256": "4ab8b4ac207fc1ade76c04c843b40a2444ee65abec43a4d58ad6fcce2f8bfe12"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/iron_cap.json",
+      "sha256": "3f1fa6a850b3292a5e6b0c8ff3c779b9ae7bb0652bc1472b47f41f5ba9eddff0"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/iron_capped_wooden_wand.json",
+      "sha256": "4bbcd0372f968d33207b979addac9a7758feb84b1a88df57db781fcac1160d3e"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/robe_dye.json",
+      "sha256": "0222e82d3883b16a544f18da7aa95899be5c10a9642f115bdd1c49d3fdecb0c5"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/scribing_tools.json",
+      "sha256": "c2af9eedff8b95572073740370ab07fb61b1d56364f0300cf08546e43251cf81"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/scribing_tools_refill.json",
+      "sha256": "d92bc3ded9fce3711725f768bbbcb79690b10edd2496a714e682283c34a2de9e"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/table.json",
+      "sha256": "acc686eb433b1c594dcad3c6808b07fd5531f9cc8a2ff672b4752239be3739e0"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/thaumometer.json",
+      "sha256": "feb50f2daac989c189d4a920e0b027cba5ba3eddb7cf87e493e928c2c9048a7f"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/worldgen/biome/tainted_land.json",
+      "sha256": "f442d3a0711f5fc5b770e0ecfad200e922276de9364a8e4725d4e71b4860133a"
+    },
+    {
+      "local_path": "/home/eugheist/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/deconstructor.json",
+      "sha256": "18f73bfd6baebd17254d2367f4cb10d16e277376421e549531c044e345972cdb"
+    }
+  ]
+}

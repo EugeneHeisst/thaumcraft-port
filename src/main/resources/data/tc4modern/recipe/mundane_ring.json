@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "misc",
+ "pattern": [
+  " N ",
+  "N N",
+  " N "
+ ],
+ "key": {
+  "N": {
+   "item": "minecraft:gold_nugget"
+  }
+ },
+ "result": {
+  "id": "tc4modern:mundane_ring",
+  "count": 1
+ }
+}

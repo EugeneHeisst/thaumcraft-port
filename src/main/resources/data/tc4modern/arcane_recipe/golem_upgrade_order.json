@@ -1,0 +1,1 @@
+{"key": "UpgradeOrder", "research": "UPGRADEORDER", "pattern": ["NNN", "NCN", "NNN"], "key_items": {"N": {"item": "minecraft:gold_nugget"}, "C": {"item": "tc4modern:order_shard"}}, "aspects": {"ordo": 10}, "result": {"id": "tc4modern:golem_upgrade_order", "count": 1}}

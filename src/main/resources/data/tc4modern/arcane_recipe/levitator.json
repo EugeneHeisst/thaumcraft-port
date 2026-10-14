@@ -1,0 +1,34 @@
+{
+  "key": "Levitator",
+  "research": "LEVITATOR",
+  "pattern": [
+    "WEW",
+    "BNB",
+    "WAW"
+  ],
+  "key_items": {
+    "W": {
+      "item": "tc4modern:greatwood_planks"
+    },
+    "E": {
+      "item": "tc4modern:earth_shard"
+    },
+    "A": {
+      "item": "tc4modern:air_shard"
+    },
+    "N": {
+      "item": "tc4modern:nitor"
+    },
+    "B": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "id": "tc4modern:levitator",
+    "count": 1
+  },
+  "aspects": {
+    "aer": 10,
+    "terra": 5
+  }
+}

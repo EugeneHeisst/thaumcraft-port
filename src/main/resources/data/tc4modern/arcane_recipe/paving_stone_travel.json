@@ -1,0 +1,27 @@
+{
+  "key": "PaveTravel",
+  "research": "PAVETRAVEL",
+  "pattern": [
+    "SAS",
+    "SBS"
+  ],
+  "key_items": {
+    "S": {
+      "item": "tc4modern:arcane_stone_bricks"
+    },
+    "A": {
+      "item": "tc4modern:air_shard"
+    },
+    "B": {
+      "item": "tc4modern:earth_shard"
+    }
+  },
+  "result": {
+    "id": "tc4modern:paving_stone_travel",
+    "count": 4
+  },
+  "aspects": {
+    "terra": 10,
+    "aer": 10
+  }
+}

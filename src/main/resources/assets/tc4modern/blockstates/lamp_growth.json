@@ -1,0 +1,1 @@
+{"variants": {"lit=true": {"model": "tc4modern:block/lamp_growth"}, "lit=false": {"model": "tc4modern:block/lamp_growth_off"}}}

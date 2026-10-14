@@ -1,0 +1,24 @@
+{
+  "key": "PrimalArrow_2",
+  "research": "PRIMALARROW",
+  "pattern": [
+    "AAA",
+    "ASA",
+    "AAA"
+  ],
+  "key_items": {
+    "A": {
+      "item": "minecraft:arrow"
+    },
+    "S": {
+      "item": "tc4modern:water_shard"
+    }
+  },
+  "result": {
+    "id": "tc4modern:water_arrow",
+    "count": 8
+  },
+  "aspects": {
+    "aqua": 8
+  }
+}

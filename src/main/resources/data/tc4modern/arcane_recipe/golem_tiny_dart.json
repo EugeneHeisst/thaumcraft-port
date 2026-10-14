@@ -1,0 +1,1 @@
+{"key": "TinyDart", "research": "TINYDART", "pattern": ["AIA", "ADA", "AIA"], "key_items": {"I": {"item": "minecraft:iron_ingot"}, "D": {"item": "minecraft:dispenser"}, "A": {"item": "minecraft:arrow"}}, "aspects": {"aer": 4, "ignis": 4}, "result": {"id": "tc4modern:golem_tiny_dart", "count": 1}}

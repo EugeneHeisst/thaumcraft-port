@@ -1,0 +1,1 @@
+{"key": "TinyArmor", "research": "TINYARMOR", "pattern": ["I I", "IAI"], "key_items": {"I": {"item": "minecraft:iron_ingot"}, "A": {"item": "minecraft:iron_chestplate"}}, "aspects": {"terra": 8}, "result": {"id": "tc4modern:golem_tiny_armor", "count": 1}}

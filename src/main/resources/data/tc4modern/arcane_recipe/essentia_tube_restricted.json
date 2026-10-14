@@ -1,0 +1,24 @@
+{
+  "key": "TubeRestrict",
+  "research": "TUBEFILTER",
+  "shapeless": true,
+  "pattern": [
+    "TS"
+  ],
+  "key_items": {
+    "T": {
+      "item": "tc4modern:essentia_tube"
+    },
+    "S": {
+      "tag": "c:stones"
+    }
+  },
+  "result": {
+    "id": "tc4modern:essentia_tube_restricted",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 5,
+    "terra": 16
+  }
+}

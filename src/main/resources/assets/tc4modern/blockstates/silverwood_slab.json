@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "tc4modern:block/silverwood_slab"
+    },
+    "type=double": {
+      "model": "tc4modern:block/silverwood_planks"
+    },
+    "type=top": {
+      "model": "tc4modern:block/silverwood_slab_top"
+    }
+  }
+}

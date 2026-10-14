@@ -1,0 +1,24 @@
+{
+  "key": "GoldKey",
+  "research": "WARDEDARCANA",
+  "pattern": [
+    "NNI",
+    "N  "
+  ],
+  "key_items": {
+    "N": {
+      "item": "minecraft:gold_nugget"
+    },
+    "I": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "id": "tc4modern:gold_key",
+    "count": 2
+  },
+  "aspects": {
+    "aqua": 5,
+    "ordo": 5
+  }
+}

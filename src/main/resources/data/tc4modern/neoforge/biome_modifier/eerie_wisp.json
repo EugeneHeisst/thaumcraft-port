@@ -1,0 +1,11 @@
+{
+  "type": "tc4modern:configured_spawns",
+  "biomes": "tc4modern:eerie",
+  "spawners": {
+    "type": "tc4modern:wisp",
+    "weight": 3,
+    "minCount": 1,
+    "maxCount": 1
+  },
+  "setting": "spawn_wisps"
+}

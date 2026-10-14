@@ -1,0 +1,1 @@
+{"type": "minecraft:crafting_shaped", "pattern": ["AA", "AA"], "key": {"A": {"item": "tc4modern:amber"}}, "result": {"id": "tc4modern:amber_block", "count": 1}}

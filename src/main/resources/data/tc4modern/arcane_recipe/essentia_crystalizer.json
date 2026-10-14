@@ -1,0 +1,38 @@
+{
+  "key": "EssentiaCrystalizer",
+  "research": "ESSENTIACRYSTAL",
+  "pattern": [
+    "IDI",
+    "QCQ",
+    "WTW"
+  ],
+  "key_items": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "D": {
+      "item": "minecraft:dispenser"
+    },
+    "Q": {
+      "item": "tc4modern:balanced_shard"
+    },
+    "C": {
+      "item": "tc4modern:alchemical_construct"
+    },
+    "W": {
+      "tag": "minecraft:planks"
+    },
+    "T": {
+      "item": "tc4modern:essentia_tube"
+    }
+  },
+  "result": {
+    "id": "tc4modern:essentia_crystalizer",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 5,
+    "terra": 15,
+    "ordo": 5
+  }
+}

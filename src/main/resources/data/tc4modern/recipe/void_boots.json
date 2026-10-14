@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I I",
+    "I I"
+  ],
+  "key": {
+    "I": {
+      "item": "tc4modern:void_ingot"
+    }
+  },
+  "result": {
+    "id": "tc4modern:void_boots",
+    "count": 1
+  }
+}

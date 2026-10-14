@@ -1,0 +1,24 @@
+{
+  "key": "PrimalArrow_0",
+  "research": "PRIMALARROW",
+  "pattern": [
+    "AAA",
+    "ASA",
+    "AAA"
+  ],
+  "key_items": {
+    "A": {
+      "item": "minecraft:arrow"
+    },
+    "S": {
+      "item": "tc4modern:air_shard"
+    }
+  },
+  "result": {
+    "id": "tc4modern:air_arrow",
+    "count": 8
+  },
+  "aspects": {
+    "aer": 8
+  }
+}

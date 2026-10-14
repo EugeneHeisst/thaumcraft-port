@@ -1,0 +1,24 @@
+{
+  "key": "WandRodGreatwoodStaff",
+  "research": "ROD_greatwood_staff",
+  "pattern": [
+    "  S",
+    " G ",
+    "G  "
+  ],
+  "key_items": {
+    "S": {
+      "item": "tc4modern:primal_charm"
+    },
+    "G": {
+      "item": "tc4modern:greatwood_rod"
+    }
+  },
+  "result": {
+    "id": "tc4modern:greatwood_staff_rod",
+    "count": 1
+  },
+  "aspects": {
+    "ordo": 8
+  }
+}

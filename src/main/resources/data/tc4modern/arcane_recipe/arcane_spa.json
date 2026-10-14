@@ -1,0 +1,35 @@
+{
+  "key": "ArcaneSpa",
+  "research": "ARCANESPA",
+  "pattern": [
+    "QIQ",
+    "SJS",
+    "SPS"
+  ],
+  "key_items": {
+    "Q": {
+      "item": "minecraft:quartz_block"
+    },
+    "I": {
+      "item": "minecraft:iron_bars"
+    },
+    "S": {
+      "item": "tc4modern:arcane_stone"
+    },
+    "J": {
+      "item": "tc4modern:warded_jar"
+    },
+    "P": {
+      "item": "minecraft:piston"
+    }
+  },
+  "result": {
+    "id": "tc4modern:arcane_spa",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 16,
+    "ordo": 8,
+    "terra": 4
+  }
+}

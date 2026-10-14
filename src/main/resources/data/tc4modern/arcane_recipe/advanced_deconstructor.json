@@ -1,0 +1,29 @@
+{
+  "key": "AdvancedDeconstructor",
+  "research": "ADVDECONSTRUCTOR",
+  "pattern": [
+    " T ",
+    "awb"
+  ],
+  "key_items": {
+    "T": {
+      "item": "tc4modern:thaumometer"
+    },
+    "a": {
+      "item": "minecraft:netherite_axe"
+    },
+    "w": {
+      "item": "tc4modern:table"
+    },
+    "b": {
+      "item": "minecraft:netherite_pickaxe"
+    }
+  },
+  "result": {
+    "id": "tc4modern:advanced_deconstructor",
+    "count": 1
+  },
+  "aspects": {
+    "perditio": 60
+  }
+}

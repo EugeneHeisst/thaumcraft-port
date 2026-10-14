@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tc4modern:thaumium_chestplate",
+    "tc4modern:robe_chest",
+    "tc4modern:hover_harness",
+    "tc4modern:fortress_chestplate"
+  ]
+}

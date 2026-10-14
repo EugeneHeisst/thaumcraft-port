@@ -1,0 +1,27 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tc4modern:items/golem_iron"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "tc4modern:core": 1
+      },
+      "model": "tc4modern:item/golem_iron_core"
+    },
+    {
+      "predicate": {
+        "tc4modern:advanced": 1
+      },
+      "model": "tc4modern:item/golem_iron_adv"
+    },
+    {
+      "predicate": {
+        "tc4modern:advanced": 1,
+        "tc4modern:core": 1
+      },
+      "model": "tc4modern:item/golem_iron_adv_core"
+    }
+  ]
+}

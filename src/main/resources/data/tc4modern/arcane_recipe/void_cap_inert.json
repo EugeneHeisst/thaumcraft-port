@@ -1,0 +1,23 @@
+{
+ "key": "WandCapVoidInert",
+ "research": "CAP_void",
+ "pattern": [
+  "NNN",
+  "N N"
+ ],
+ "key_items": {
+  "N": {
+   "item": "tc4modern:void_nugget"
+  }
+ },
+ "result": {
+  "id": "tc4modern:void_cap_inert",
+  "count": 1
+ },
+ "aspects": {
+  "perditio": 27,
+  "ordo": 27,
+  "ignis": 18,
+  "aer": 18
+ }
+}

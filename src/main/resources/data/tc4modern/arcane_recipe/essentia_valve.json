@@ -1,0 +1,24 @@
+{
+  "key": "TubeValve",
+  "research": "TUBES",
+  "shapeless": true,
+  "pattern": [
+    "TL"
+  ],
+  "key_items": {
+    "T": {
+      "item": "tc4modern:essentia_tube"
+    },
+    "L": {
+      "item": "minecraft:lever"
+    }
+  },
+  "result": {
+    "id": "tc4modern:essentia_valve",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 5,
+    "ordo": 5
+  }
+}

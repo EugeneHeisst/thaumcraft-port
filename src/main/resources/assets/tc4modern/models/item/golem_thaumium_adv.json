@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tc4modern:items/golem_thaumium",
+    "layer1": "tc4modern:items/golem_over_adv"
+  }
+}

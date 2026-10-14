@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "tc4modern:blocks/es_1",
+    "side": "tc4modern:blocks/es_p"
+  }
+}

@@ -1,0 +1,8 @@
+{
+ "feature": "tc4modern:silverwood",
+ "placement": [
+  {
+   "type": "minecraft:biome"
+  }
+ ]
+}

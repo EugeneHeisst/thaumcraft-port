@@ -1,0 +1,25 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.eugheist.tc4modern.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "TravellerAirSpeedMixin",
+    "HoverFloatCounterAccessor",
+    "BoneArrowKnockbackMixin",
+    "ElementalAxeBreakMixin",
+    "ElementalSwordBlockMixin",
+    "FortressArmorMixin",
+    "VillagePoolAccessor",
+    "VillagePieceLimitMixin",
+    "WardedHardnessMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "ElementalAxeClientBreakMixin",
+    "HoverLandingMixin",
+    "MagicalForestColorMixin"
+  ]
+}

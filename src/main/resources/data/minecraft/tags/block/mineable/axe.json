@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "tc4modern:table",
+    "tc4modern:research_table",
+    "tc4modern:arcane_workbench",
+    "tc4modern:greatwood_log",
+    "tc4modern:greatwood_planks",
+    "tc4modern:silverwood_planks",
+    "tc4modern:silverwood_log",
+    "tc4modern:silverwood_knot",
+    "tc4modern:bellows",
+    "tc4modern:arcane_ear",
+    "tc4modern:deconstructor",
+    "tc4modern:advanced_deconstructor",
+    "tc4modern:levitator",
+    "tc4modern:crimson_banner",
+    "tc4modern:arcane_bore_base",
+    "tc4modern:arcane_bore",
+    "tc4modern:greatwood_slab",
+    "tc4modern:greatwood_stairs",
+    "tc4modern:silverwood_slab",
+    "tc4modern:silverwood_stairs"
+  ]
+}

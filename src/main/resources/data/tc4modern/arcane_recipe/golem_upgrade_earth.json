@@ -1,0 +1,1 @@
+{"key": "UpgradeEarth", "research": "UPGRADEEARTH", "pattern": ["NNN", "NCN", "NNN"], "key_items": {"N": {"item": "minecraft:gold_nugget"}, "C": {"item": "tc4modern:earth_shard"}}, "aspects": {"terra": 10}, "result": {"id": "tc4modern:golem_upgrade_earth", "count": 1}}

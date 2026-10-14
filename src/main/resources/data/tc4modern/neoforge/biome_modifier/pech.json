@@ -1,0 +1,11 @@
+{
+  "type": "tc4modern:configured_spawns",
+  "biomes": "#tc4modern:greatwood/magical",
+  "spawners": {
+    "type": "tc4modern:pech",
+    "weight": 10,
+    "minCount": 1,
+    "maxCount": 1
+  },
+  "setting": "spawn_pechs"
+}

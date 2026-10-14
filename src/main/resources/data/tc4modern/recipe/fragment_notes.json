@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FFF",
+    "FFF",
+    "FFF"
+  ],
+  "key": {
+    "F": {
+      "item": "tc4modern:knowledge_fragment"
+    }
+  },
+  "result": {
+    "id": "tc4modern:fragment_notes",
+    "count": 1
+  }
+}

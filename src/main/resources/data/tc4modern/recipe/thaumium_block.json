@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "KKK",
+  "KKK",
+  "KKK"
+ ],
+ "key": {
+  "K": {
+   "item": "tc4modern:thaumium_ingot"
+  }
+ },
+ "result": {
+  "id": "tc4modern:thaumium_block",
+  "count": 1
+ }
+}

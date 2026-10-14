@@ -1,0 +1,29 @@
+{
+  "key": "FocusPouch",
+  "research": "FOCUSPOUCH",
+  "pattern": [
+    "LGL",
+    "LBL",
+    "LLL"
+  ],
+  "key_items": {
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "B": {
+      "item": "tc4modern:mundane_belt"
+    }
+  },
+  "result": {
+    "id": "tc4modern:focus_pouch",
+    "count": 1
+  },
+  "aspects": {
+    "terra": 10,
+    "ordo": 10,
+    "perditio": 10
+  }
+}

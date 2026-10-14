@@ -1,0 +1,1 @@
+{"parent": "minecraft:item/generated", "textures": {"layer0": "tc4modern:blocks/mirrorframe", "layer1": "tc4modern:blocks/mirrorpane"}, "overrides": [{"predicate": {"tc4modern:linked": 1}, "model": "tc4modern:item/mirror_linked"}]}

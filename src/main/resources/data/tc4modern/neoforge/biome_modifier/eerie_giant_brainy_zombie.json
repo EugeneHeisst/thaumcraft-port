@@ -1,0 +1,11 @@
+{
+  "type": "tc4modern:configured_spawns",
+  "biomes": "tc4modern:eerie",
+  "spawners": {
+    "type": "tc4modern:giant_brainy_zombie",
+    "weight": 8,
+    "minCount": 1,
+    "maxCount": 1
+  },
+  "setting": "spawn_angry_zombies"
+}

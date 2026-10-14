@@ -1,0 +1,27 @@
+{
+  "key": "PaveWard",
+  "research": "PAVEWARD",
+  "pattern": [
+    "SAS",
+    "SBS"
+  ],
+  "key_items": {
+    "S": {
+      "item": "tc4modern:arcane_stone_bricks"
+    },
+    "A": {
+      "item": "tc4modern:fire_shard"
+    },
+    "B": {
+      "item": "tc4modern:order_shard"
+    }
+  },
+  "result": {
+    "id": "tc4modern:paving_stone_warding",
+    "count": 4
+  },
+  "aspects": {
+    "ignis": 10,
+    "ordo": 10
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "loader": "neoforge:obj",
+  "model": "tc4modern:models/block/cluster_3.obj",
+  "automatic_culling": false,
+  "flip_v": true,
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "tc4modern:models/book_crystal_ffff7e"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tc4modern:air_shard"
+    },
+    {
+      "item": "tc4modern:fire_shard"
+    },
+    {
+      "item": "tc4modern:water_shard"
+    },
+    {
+      "item": "tc4modern:earth_shard"
+    },
+    {
+      "item": "tc4modern:order_shard"
+    },
+    {
+      "item": "tc4modern:entropy_shard"
+    }
+  ],
+  "result": {
+    "id": "tc4modern:mixed_crystal_cluster",
+    "count": 1
+  }
+}

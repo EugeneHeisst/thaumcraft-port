@@ -1,0 +1,11 @@
+{
+ "type": "minecraft:smelting",
+ "ingredient": {
+  "item": "tc4modern:balanced_shard"
+ },
+ "result": {
+  "id": "tc4modern:salis_mundus"
+ },
+ "experience": 1.0,
+ "cookingtime": 200
+}

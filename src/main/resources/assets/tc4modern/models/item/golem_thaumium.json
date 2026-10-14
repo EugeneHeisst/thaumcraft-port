@@ -1,0 +1,27 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tc4modern:items/golem_thaumium"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "tc4modern:core": 1
+      },
+      "model": "tc4modern:item/golem_thaumium_core"
+    },
+    {
+      "predicate": {
+        "tc4modern:advanced": 1
+      },
+      "model": "tc4modern:item/golem_thaumium_adv"
+    },
+    {
+      "predicate": {
+        "tc4modern:advanced": 1,
+        "tc4modern:core": 1
+      },
+      "model": "tc4modern:item/golem_thaumium_adv_core"
+    }
+  ]
+}

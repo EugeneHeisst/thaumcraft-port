@@ -1,0 +1,30 @@
+{
+  "key": "ArcaneDoor",
+  "research": "WARDEDARCANA",
+  "pattern": [
+    "TDT",
+    "DBD",
+    "TDT"
+  ],
+  "key_items": {
+    "T": {
+      "item": "tc4modern:thaumium_ingot"
+    },
+    "D": {
+      "item": "tc4modern:greatwood_planks"
+    },
+    "B": {
+      "item": "tc4modern:zombie_brain"
+    }
+  },
+  "result": {
+    "id": "tc4modern:arcane_door",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 20,
+    "ordo": 10,
+    "terra": 10,
+    "ignis": 5
+  }
+}

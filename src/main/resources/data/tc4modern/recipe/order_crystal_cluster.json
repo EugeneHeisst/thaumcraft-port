@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tc4modern:order_shard"
+    },
+    {
+      "item": "tc4modern:order_shard"
+    },
+    {
+      "item": "tc4modern:order_shard"
+    },
+    {
+      "item": "tc4modern:order_shard"
+    },
+    {
+      "item": "tc4modern:order_shard"
+    },
+    {
+      "item": "tc4modern:order_shard"
+    }
+  ],
+  "result": {
+    "id": "tc4modern:order_crystal_cluster",
+    "count": 1
+  }
+}

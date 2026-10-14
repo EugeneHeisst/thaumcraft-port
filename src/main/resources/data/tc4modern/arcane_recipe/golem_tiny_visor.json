@@ -1,0 +1,1 @@
+{"key": "TinyVisor", "research": "TINYVISOR", "pattern": ["IHI"], "key_items": {"I": {"item": "minecraft:iron_ingot"}, "H": {"item": "minecraft:iron_helmet"}}, "aspects": {"terra": 4, "aqua": 4}, "result": {"id": "tc4modern:golem_tiny_visor", "count": 1}}

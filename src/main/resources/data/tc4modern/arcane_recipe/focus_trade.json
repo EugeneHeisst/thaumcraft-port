@@ -1,0 +1,32 @@
+{
+ "key": "FocusTrade",
+ "research": "FOCUSTRADE",
+ "pattern": [
+  "CQE",
+  "Q#Q",
+  "CQE"
+ ],
+ "key_items": {
+  "#": {
+   "item": "tc4modern:quicksilver"
+  },
+  "Q": {
+   "item": "minecraft:quartz"
+  },
+  "C": {
+   "item": "tc4modern:balanced_shard"
+  },
+  "E": {
+   "item": "tc4modern:balanced_shard"
+  }
+ },
+ "result": {
+  "id": "tc4modern:focus_trade",
+  "count": 1
+ },
+ "aspects": {
+  "ordo": 15,
+  "perditio": 15,
+  "terra": 10
+ }
+}

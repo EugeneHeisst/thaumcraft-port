@@ -1,0 +1,1 @@
+{"key": "UpgradeEntropy", "research": "UPGRADEENTROPY", "pattern": ["NNN", "NCN", "NNN"], "key_items": {"N": {"item": "minecraft:gold_nugget"}, "C": {"item": "tc4modern:entropy_shard"}}, "aspects": {"perditio": 10}, "result": {"id": "tc4modern:golem_upgrade_entropy", "count": 1}}

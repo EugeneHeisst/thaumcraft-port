@@ -1,0 +1,13 @@
+package dev.eugheist.tc4modern;
+import net.minecraft.core.*;import net.minecraft.world.level.*;import net.minecraft.world.level.block.*;import net.minecraft.world.level.block.state.*;import net.minecraft.world.level.block.state.properties.*;import net.minecraft.world.phys.shapes.*;
+public final class CrystalClusterBlock extends Block {
+ public static final DirectionProperty FACING=BlockStateProperties.FACING;public final int variant;
+ public CrystalClusterBlock(Properties p,int v){super(p);variant=v;registerDefaultState(stateDefinition.any().setValue(FACING,Direction.UP));}
+ @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block,BlockState> b){b.add(FACING);}
+ @Override public BlockState getStateForPlacement(net.minecraft.world.item.context.BlockPlaceContext c){var s=defaultBlockState().setValue(FACING,c.getClickedFace());return s.canSurvive(c.getLevel(),c.getClickedPos())?s:null;}
+ @Override protected boolean canSurvive(BlockState s,LevelReader l,BlockPos p){var face=s.getValue(FACING);var at=p.relative(face.getOpposite());return l.getBlockState(at).isFaceSturdy(l,at,face);}
+ @Override protected BlockState updateShape(BlockState s,Direction d,BlockState n,LevelAccessor l,BlockPos p,BlockPos np){if(!s.canSurvive(l,p)){if(l instanceof Level level)dropResources(s,level,p);return Blocks.AIR.defaultBlockState();}return s;}
+ @Override protected VoxelShape getShape(BlockState s,BlockGetter l,BlockPos p,CollisionContext c){return Block.box(2,0,2,14,14,14);}
+ @Override protected java.util.List<net.minecraft.world.item.ItemStack> getDrops(BlockState s,net.minecraft.world.level.storage.loot.LootParams.Builder b){var tool=b.getOptionalParameter(net.minecraft.world.level.storage.loot.parameters.LootContextParams.TOOL);if(tool!=null&&net.minecraft.world.item.enchantment.EnchantmentHelper.getItemEnchantmentLevel(b.getLevel().registryAccess().lookupOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT).getOrThrow(net.minecraft.world.item.enchantment.Enchantments.SILK_TOUCH),tool)>0)return java.util.List.of(new net.minecraft.world.item.ItemStack(this));var result=new java.util.ArrayList<net.minecraft.world.item.ItemStack>();if(variant<6)result.add(new net.minecraft.world.item.ItemStack(TC4Modern.SHARDS.get(variant).get(),6));else for(int i=0;i<6;i++)result.add(new net.minecraft.world.item.ItemStack(TC4Modern.SHARDS.get(i).get()));return result;}
+ @Override public void animateTick(BlockState s,Level l,BlockPos p,net.minecraft.util.RandomSource r){if(r.nextInt(17)==0)l.addParticle(net.minecraft.core.particles.ParticleTypes.END_ROD,p.getX()+r.nextDouble(),p.getY()+r.nextDouble(),p.getZ()+r.nextDouble(),0,.01,0);}
+}

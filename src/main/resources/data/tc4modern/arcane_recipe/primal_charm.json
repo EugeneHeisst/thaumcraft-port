@@ -1,0 +1,48 @@
+{
+ "key": "PrimalCharm",
+ "research": "BASICARTIFACE",
+ "pattern": [
+  "123",
+  "ISI",
+  "456"
+ ],
+ "key_items": {
+  "S": {
+   "item": "tc4modern:balanced_shard"
+  },
+  "I": {
+   "item": "minecraft:gold_ingot"
+  },
+  "1": {
+   "item": "tc4modern:air_shard"
+  },
+  "2": {
+   "item": "tc4modern:fire_shard"
+  },
+  "3": {
+   "item": "tc4modern:water_shard"
+  },
+  "4": {
+   "item": "tc4modern:earth_shard"
+  },
+  "5": {
+   "item": "tc4modern:order_shard"
+  },
+  "6": {
+   "item": "tc4modern:entropy_shard"
+  }
+ },
+ "result": {
+  "id": "tc4modern:primal_charm",
+  "count": 1
+ },
+ "aspects": {
+  "terra": 25,
+  "ignis": 25,
+  "aer": 25,
+  "aqua": 25,
+  "ordo": 25,
+  "perditio": 25
+ },
+ "mirrored": false
+}

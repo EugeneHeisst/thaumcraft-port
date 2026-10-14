@@ -1,0 +1,1 @@
+{"key": "HungryChest", "research": "HUNGRYCHEST", "pattern": ["WTW", "W W", "WWW"], "key_items": {"W": {"tag": "minecraft:planks"}, "T": {"item": "minecraft:oak_trapdoor"}}, "aspects": {"aer": 5, "ordo": 3, "perditio": 3}, "result": {"id": "tc4modern:hungry_chest", "count": 1}}

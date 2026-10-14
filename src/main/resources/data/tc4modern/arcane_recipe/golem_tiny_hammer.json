@@ -1,0 +1,1 @@
+{"key": "TinyHammer", "research": "TINYHAMMER", "pattern": ["III", "III", " I "], "key_items": {"I": {"item": "minecraft:iron_ingot"}}, "aspects": {"terra": 4, "ignis": 4}, "result": {"id": "tc4modern:golem_tiny_hammer", "count": 1}}

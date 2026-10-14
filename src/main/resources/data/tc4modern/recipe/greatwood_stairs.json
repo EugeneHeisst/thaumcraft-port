@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "K  ",
+    "KK ",
+    "KKK"
+  ],
+  "key": {
+    "K": {
+      "item": "tc4modern:greatwood_planks"
+    }
+  },
+  "result": {
+    "id": "tc4modern:greatwood_stairs",
+    "count": 4
+  }
+}

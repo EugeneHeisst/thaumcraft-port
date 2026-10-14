@@ -1,0 +1,1 @@
+{"key": "UpgradeAir", "research": "UPGRADEAIR", "pattern": ["NNN", "NCN", "NNN"], "key_items": {"N": {"item": "minecraft:gold_nugget"}, "C": {"item": "tc4modern:air_shard"}}, "aspects": {"aer": 10}, "result": {"id": "tc4modern:golem_upgrade_air", "count": 1}}

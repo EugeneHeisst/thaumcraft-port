@@ -1,0 +1,35 @@
+{
+  "key": "FluxScrubber",
+  "research": "FLUXSCRUB",
+  "pattern": [
+    " B ",
+    "GOG",
+    "STS"
+  ],
+  "key_items": {
+    "B": {
+      "item": "tc4modern:bellows"
+    },
+    "G": {
+      "item": "minecraft:iron_bars"
+    },
+    "O": {
+      "item": "tc4modern:vis_filter"
+    },
+    "T": {
+      "item": "tc4modern:essentia_tube"
+    },
+    "S": {
+      "item": "tc4modern:arcane_stone_bricks"
+    }
+  },
+  "result": {
+    "id": "tc4modern:flux_scrubber",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 16,
+    "ordo": 16,
+    "aer": 8
+  }
+}

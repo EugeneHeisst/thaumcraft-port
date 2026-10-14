@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "I",
+    "T"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_bars"
+    },
+    "T": {
+      "item": "minecraft:oak_trapdoor"
+    }
+  },
+  "result": {
+    "id": "tc4modern:grate",
+    "count": 1
+  }
+}

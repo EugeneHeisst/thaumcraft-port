@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tc4modern:items/golem_straw",
+    "layer1": "tc4modern:items/golem_over_adv",
+    "layer2": "tc4modern:items/golem_over_core"
+  }
+}

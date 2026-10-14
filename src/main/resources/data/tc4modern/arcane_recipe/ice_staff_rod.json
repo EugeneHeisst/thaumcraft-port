@@ -1,0 +1,24 @@
+{
+  "key": "WandRodIceStaff",
+  "research": "ROD_ice_staff",
+  "pattern": [
+    "  S",
+    " G ",
+    "G  "
+  ],
+  "key_items": {
+    "S": {
+      "item": "tc4modern:primal_charm"
+    },
+    "G": {
+      "item": "tc4modern:ice_rod"
+    }
+  },
+  "result": {
+    "id": "tc4modern:ice_staff_rod",
+    "count": 1
+  },
+  "aspects": {
+    "ordo": 14
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "tc4modern:blocks/arcane_stone",
+    "top": "tc4modern:blocks/arcane_stone",
+    "side": "tc4modern:blocks/arcane_stone"
+  }
+}

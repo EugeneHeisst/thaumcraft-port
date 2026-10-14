@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": {
+   "item": "tc4modern:copper_nugget"
+  }
+ },
+ "result": {
+  "id": "minecraft:copper_ingot",
+  "count": 1
+ }
+}

@@ -1,0 +1,14 @@
+package dev.eugheist.tc4modern;
+import net.minecraft.core.*;import net.minecraft.world.level.*;import net.minecraft.world.level.block.*;import net.minecraft.world.level.block.state.*;import net.minecraft.world.level.block.state.properties.*;import net.minecraft.world.level.block.entity.*;import net.minecraft.world.phys.shapes.*;
+public final class ManaPodBlock extends BaseEntityBlock {
+ public static final IntegerProperty AGE=BlockStateProperties.AGE_7;public static final com.mojang.serialization.MapCodec<ManaPodBlock> CODEC=simpleCodec(ManaPodBlock::new);
+ public ManaPodBlock(Properties p){super(p);registerDefaultState(stateDefinition.any().setValue(AGE,0));}@Override protected com.mojang.serialization.MapCodec<? extends BaseEntityBlock> codec(){return CODEC;}@Override protected RenderShape getRenderShape(BlockState s){return RenderShape.MODEL;}
+ @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block,BlockState> b){b.add(AGE);}@Override public BlockEntity newBlockEntity(BlockPos p,BlockState s){return new ManaPodEntity(p,s);}
+ public static boolean magical(LevelReader l,BlockPos p){return l.getBiome(p).is(net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.BIOME,AlchemyContent.id("greatwood/magical")));}
+ @Override protected boolean canSurvive(BlockState s,LevelReader l,BlockPos p){return magical(l,p)&&l.getBlockState(p.above()).is(net.minecraft.tags.BlockTags.LOGS);}
+ @Override protected BlockState updateShape(BlockState s,Direction d,BlockState n,LevelAccessor l,BlockPos p,BlockPos np){if(!s.canSurvive(l,p)){if(l instanceof Level level)dropResources(s,level,p,level.getBlockEntity(p));return Blocks.AIR.defaultBlockState();}return s;}
+ @Override protected void randomTick(BlockState s,net.minecraft.server.level.ServerLevel l,BlockPos p,net.minecraft.util.RandomSource r){if(!s.canSurvive(l,p)){l.destroyBlock(p,true);return;}if(r.nextInt(30)==0&&l.getBlockEntity(p) instanceof ManaPodEntity pod)pod.grow();}
+ @Override protected VoxelShape getShape(BlockState s,BlockGetter l,BlockPos p,CollisionContext c){int[] y={12,10,8,6,5,4,3,2};return Block.box(4,y[s.getValue(AGE)],4,12,16,12);}
+ @Override public float getDestroyProgress(BlockState s,net.minecraft.world.entity.player.Player p,BlockGetter l,BlockPos pos){return super.getDestroyProgress(s,p,l,pos)*(8-s.getValue(AGE));/* original hardness 0.5/(8-meta) */}
+ @Override protected java.util.List<net.minecraft.world.item.ItemStack> getDrops(BlockState s,net.minecraft.world.level.storage.loot.LootParams.Builder b){int age=s.getValue(AGE);if(age<2)return java.util.List.of();var tile=b.getOptionalParameter(net.minecraft.world.level.storage.loot.parameters.LootContextParams.BLOCK_ENTITY);var a=tile instanceof ManaPodEntity pod&&pod.aspect!=null?pod.aspect:thaumcraft.api.aspects.Aspect.PLANT;return java.util.List.of(ManaBeanItem.of(a,age==7&&b.getLevel().random.nextFloat()>.33f?2:1));}
+}

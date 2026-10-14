@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "###",
+  "###",
+  "###"
+ ],
+ "key": {
+  "#": {
+   "item": "tc4modern:quicksilver_drop"
+  }
+ },
+ "result": {
+  "id": "tc4modern:quicksilver",
+  "count": 1
+ }
+}

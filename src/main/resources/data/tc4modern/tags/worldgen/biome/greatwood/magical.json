@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "tc4modern:magical_forest",
+    {
+      "id": "#c:is_magical",
+      "required": false
+    }
+  ]
+}

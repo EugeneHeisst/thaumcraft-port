@@ -1,0 +1,24 @@
+{
+  "key": "IronKey",
+  "research": "WARDEDARCANA",
+  "pattern": [
+    "NNI",
+    "N  "
+  ],
+  "key_items": {
+    "N": {
+      "item": "minecraft:iron_nugget"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "id": "tc4modern:iron_key",
+    "count": 2
+  },
+  "aspects": {
+    "aqua": 5,
+    "ordo": 5
+  }
+}

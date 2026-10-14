@@ -1,0 +1,29 @@
+{
+  "key": "Banner_10",
+  "research": "BANNERS",
+  "pattern": [
+    "WS",
+    "WS",
+    "WB"
+  ],
+  "key_items": {
+    "W": {
+      "item": "minecraft:purple_wool"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    },
+    "B": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "result": {
+    "id": "tc4modern:crimson_banner",
+    "count": 1,
+    "color": 10
+  },
+  "aspects": {
+    "aqua": 5,
+    "terra": 5
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tc4modern:items/golem_stone"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "tc4modern:core": 1
+      },
+      "model": "tc4modern:item/golem_stone_core"
+    },
+    {
+      "predicate": {
+        "tc4modern:advanced": 1
+      },
+      "model": "tc4modern:item/golem_stone_adv"
+    },
+    {
+      "predicate": {
+        "tc4modern:advanced": 1,
+        "tc4modern:core": 1
+      },
+      "model": "tc4modern:item/golem_stone_adv_core"
+    }
+  ]
+}

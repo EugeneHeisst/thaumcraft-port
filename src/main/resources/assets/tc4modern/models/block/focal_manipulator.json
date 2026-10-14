@@ -1,0 +1,11 @@
+{
+  "loader": "neoforge:obj",
+  "model": "tc4modern:models/block/focal_manipulator.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "tc4modern:models/wandtable"
+  },
+  "render_type": "minecraft:solid"
+}

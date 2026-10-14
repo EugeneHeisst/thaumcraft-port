@@ -1,0 +1,27 @@
+{
+ "key": "InfusionMatrix",
+ "research": "INFUSION",
+ "pattern": [
+  "SBS",
+  "BEB",
+  "SBS"
+ ],
+ "key_items": {
+  "S": {
+   "item": "tc4modern:arcane_stone"
+  },
+  "E": {
+   "item": "minecraft:ender_pearl"
+  },
+  "B": {
+   "tag": "tc4modern:shards"
+  }
+ },
+ "result": {
+  "id": "tc4modern:runic_matrix",
+  "count": 1
+ },
+ "aspects": {
+  "ordo": 40
+ }
+}
