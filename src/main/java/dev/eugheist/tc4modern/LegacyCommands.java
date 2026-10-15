@@ -20,7 +20,11 @@ public final class LegacyCommands {
                 .then(Commands.literal("debug").then(Commands.literal("all")
                     .executes(ctx -> debugAll(ctx.getSource(), ctx.getSource().getPlayerOrException()))
                     .then(Commands.argument("player", net.minecraft.commands.arguments.EntityArgument.player())
-                        .executes(ctx -> debugAll(ctx.getSource(), net.minecraft.commands.arguments.EntityArgument.getPlayer(ctx,"player"))))))
+                        .executes(ctx -> debugAll(ctx.getSource(), net.minecraft.commands.arguments.EntityArgument.getPlayer(ctx,"player")))))
+                    .then(Commands.literal("scanitems")
+                    .executes(ctx -> scanItems(ctx.getSource(), ctx.getSource().getPlayerOrException()))
+                    .then(Commands.argument("player", net.minecraft.commands.arguments.EntityArgument.player())
+                        .executes(ctx -> scanItems(ctx.getSource(), net.minecraft.commands.arguments.EntityArgument.getPlayer(ctx,"player"))))))
                 .then(Commands.argument("arguments", StringArgumentType.greedyString())
                     .suggests(LegacyCommands::suggest)
                     .executes(ctx -> CommandThaumcraft.execute(ctx.getSource(),
@@ -32,10 +36,41 @@ public final class LegacyCommands {
         // Debug convenience: unlock knowledge without awarding gameplay research warp.
         CommandThaumcraft.grantAllResearch(player.getPersistentData(), key -> {});
         ResearchKnowledge.grantAll(player.getPersistentData());
+        // Forget earlier debug item marks so every item is scanned for real and pays its aspect points again.
+        var knowledge = player.getPersistentData().getCompound(ResearchKnowledge.KEY); var scanned = knowledge.getCompound("scanned");
+        for (var item : net.minecraft.core.registries.BuiltInRegistries.ITEM) scanned.remove(ScanTarget.item(new net.minecraft.world.item.ItemStack(item), player.level()).knowledgeKey());
+        knowledge.remove("debugAllItemScans"); knowledge.put("scanned", scanned); player.getPersistentData().put(ResearchKnowledge.KEY, knowledge);
+        var gained = scanAllItems(player);
         ResearchKnowledge.grantAllItemScans(player.getPersistentData());
         ThaumometerItem.sync(player, "");
-        source.sendSuccess(() -> net.minecraft.network.chat.Component.literal("Все исследования, аспекты и сканирования предметов открыты: " + player.getGameProfile().getName()), true);
+        source.sendSuccess(() -> net.minecraft.network.chat.Component.literal("Все исследования, аспекты и сканирования предметов открыты: " + player.getGameProfile().getName() + " (просканировано " + gained[0] + " предметов, +" + gained[1] + " очков аспектов)"), true);
         return 1;
+    }
+    static int scanItems(net.minecraft.commands.CommandSourceStack source, net.minecraft.server.level.ServerPlayer player) {
+        var gained = scanAllItems(player);
+        ThaumometerItem.sync(player, "");
+        source.sendSuccess(() -> net.minecraft.network.chat.Component.literal(player.getGameProfile().getName() + ": просканировано " + gained[0] + " предметов, +" + gained[1] + " очков аспектов"), true);
+        return gained[0];
+    }
+    /**
+     * A real thaumometer scan of every registered item: points into the aspect pool, newly discovered aspects and research clues,
+     * exactly as ThaumometerItem does. Repeats until nothing new scans, since compound aspects need their parents discovered first.
+     * Returns {items scanned, aspect points gained}.
+     */
+    static int[] scanAllItems(net.minecraft.server.level.ServerPlayer player) {
+        var data = player.getPersistentData(); int items = 0, points = 0; boolean progress = true;
+        while (progress) {
+            progress = false;
+            for (var item : net.minecraft.core.registries.BuiltInRegistries.ITEM) {
+                if (item == net.minecraft.world.item.Items.AIR) continue;
+                var target = ScanTarget.item(new net.minecraft.world.item.ItemStack(item), player.level());
+                var awarded = new thaumcraft.api.aspects.AspectList();
+                if (!ResearchKnowledge.scan(data, target.knowledgeKey(), target.aspects(), awarded::add).equals("scanned")) continue;
+                items++; progress = true; points += awarded.visSize();
+                if (awarded.size() > 0) ResearchClues.revealClue(player, null, target.knowledgeKey(), awarded);
+            }
+        }
+        return new int[]{items, points};
     }
     static java.util.concurrent.CompletableFuture<com.mojang.brigadier.suggestion.Suggestions> suggest(
             com.mojang.brigadier.context.CommandContext<net.minecraft.commands.CommandSourceStack> ctx,
