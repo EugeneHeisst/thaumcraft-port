@@ -37,6 +37,15 @@ public final class TC4Addons {
         default void removed(dev.eugheist.tc4modern.StrawGolem golem, net.minecraft.world.entity.player.Player player, boolean dismantled) {}
     }
     private static final List<GolemHook> GOLEM_HOOKS = new CopyOnWriteArrayList<>();
+    /** Block entities holding a wand a vis charge relay above them may recharge (the arcane workbench is built in). */
+    @FunctionalInterface public interface WandHolder { @Nullable ItemStack wand(net.minecraft.world.level.block.entity.BlockEntity tile); }
+    private static final List<WandHolder> WAND_HOLDERS = new CopyOnWriteArrayList<>();
+    public static void registerWandHolder(WandHolder holder) { WAND_HOLDERS.add(holder); }
+    /** The live wand stack of a registered holder, or null. */
+    @Nullable public static ItemStack heldWand(net.minecraft.world.level.block.entity.BlockEntity tile) {
+        for (var holder : WAND_HOLDERS) { var wand = holder.wand(tile); if (wand != null && !wand.isEmpty()) return wand; }
+        return null;
+    }
     public static void registerGolemHook(GolemHook hook) { GOLEM_HOOKS.add(hook); }
     private static final Map<String, String> ICON_ALIASES = new ConcurrentHashMap<>();
     /** Book icon of a research taken from another research (addon stubs mirroring an entry of another tab). */

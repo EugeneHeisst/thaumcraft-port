@@ -41,15 +41,19 @@ public final class VisChargeRelay {
   public Entity(BlockPos p,BlockState s){super(ENTITY.get(),p,s);}
   public static void tick(Level l,BlockPos p,BlockState s,Entity tile){
    VisRelayEntity.tick(l,p,s,tile);
-   if(l.isClientSide||!(l.getBlockEntity(p.below()) instanceof ArcaneWorkbenchEntity table))return;
-   var wand=table.inventory.getItem(9);if(!WandData.isWand(wand))return;boolean changed=false;
+   if(l.isClientSide)return;var below=l.getBlockEntity(p.below());if(below==null)return;
+   // Addon wand holders (Thaumic Tinkerer osmotic enchanter) charge like the original workbench slot.
+   var wand=below instanceof ArcaneWorkbenchEntity table?table.inventory.getItem(9):dev.eugheist.tc4modern.api.TC4Addons.heldWand(below);
+   if(wand==null||!WandData.isWand(wand))return;boolean changed=false;
    for(var aspect:Aspect.getPrimalAspects()){
     int drain=Math.min(5,WandData.capacity(wand)-WandData.get(wand,aspect));if(drain<=0)continue;
     int taken=tile.consumeVis(aspect,drain);if(taken<=0)continue;
     var tag=NoteData.tag(wand);thaumcraft.common.lib.vis.VisStorage.addRealVis(tag,aspect,taken,true,WandData.capacity(wand));
     wand.set(net.minecraft.core.component.DataComponents.CUSTOM_DATA,net.minecraft.world.item.component.CustomData.of(tag));changed=true;
    }
-   if(changed)table.inventory.setChanged();
+   if(!changed)return;
+   if(below instanceof ArcaneWorkbenchEntity table)table.inventory.setChanged();
+   else{below.setChanged();l.sendBlockUpdated(below.getBlockPos(),below.getBlockState(),below.getBlockState(),3);}
   }
  }
 }
