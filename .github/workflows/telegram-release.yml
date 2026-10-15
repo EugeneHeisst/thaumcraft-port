@@ -1,0 +1,58 @@
+name: Telegram release announcement
+
+on:
+  release:
+    types: [published]
+
+permissions: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Post release to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        shell: python
+        run: |
+          import json
+          import os
+          import urllib.error
+          import urllib.request
+
+          token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+          chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+          if not token or not chat_id:
+              raise SystemExit("Set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in repository secrets.")
+
+          with open(os.environ["GITHUB_EVENT_PATH"], encoding="utf-8") as event_file:
+              release = json.load(event_file)["release"]
+
+          title = (release.get("name") or release["tag_name"])[:200]
+          notes = (release.get("body") or "").strip()
+          if len(notes) > 1200:
+              notes = notes[:1200] + "\n… Полное описание — по ссылке ниже."
+          parts = ["Новый релиз: " + title, notes, release["html_url"]]
+          payload = {
+              "chat_id": chat_id,
+              "text": "\n\n".join(part for part in parts if part),
+              "link_preview_options": {"is_disabled": True},
+          }
+          request = urllib.request.Request(
+              "https://api.telegram.org/bot" + token + "/sendMessage",
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json"},
+              method="POST",
+          )
+          try:
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  result = json.load(response)
+          except urllib.error.HTTPError as error:
+              raise SystemExit("Telegram rejected the message (HTTP " + str(error.code) + ").") from None
+          except urllib.error.URLError:
+              raise SystemExit("Could not connect to Telegram.") from None
+          if not result.get("ok"):
+              raise SystemExit("Telegram did not confirm message delivery.")
+          print("Release announcement sent.")
