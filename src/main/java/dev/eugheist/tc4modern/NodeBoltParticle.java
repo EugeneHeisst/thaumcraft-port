@@ -10,7 +10,7 @@ public final class NodeBoltParticle extends Particle {
  private final int pass,type;private final float width;
  private static final ParticleRenderType[] TYPES={type("p_large",false),type("p_small",false),type("p_large",true),type("p_small",true)};
  private static ParticleRenderType type(String texture,boolean translucent){return new ParticleRenderType(){
-  public BufferBuilder begin(Tesselator tessellator,net.minecraft.client.renderer.texture.TextureManager textures){
+  public BufferBuilder begin(Tesselator tessellator,net.minecraft.client.renderer.texture.TextureManager textures){com.mojang.blaze3d.systems.RenderSystem.enableDepthTest();com.mojang.blaze3d.systems.RenderSystem.depthFunc(515);
    RenderSystem.setShader(net.minecraft.client.renderer.GameRenderer::getParticleShader);
    RenderSystem.setShaderTexture(0,net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID,"textures/misc/"+texture+".png"));
    RenderSystem.disableCull();RenderSystem.enableBlend();RenderSystem.blendFunc(770,translucent?771:1);RenderSystem.depthMask(false);

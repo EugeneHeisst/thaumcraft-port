@@ -6,7 +6,7 @@ import net.minecraft.client.particle.*;
 public final class NodeConversionBurst extends Particle {
     private final float radius;
     private static final ParticleRenderType TYPE=new ParticleRenderType(){
-        public BufferBuilder begin(Tesselator tessellator,net.minecraft.client.renderer.texture.TextureManager textures){
+        public BufferBuilder begin(Tesselator tessellator,net.minecraft.client.renderer.texture.TextureManager textures){com.mojang.blaze3d.systems.RenderSystem.enableDepthTest();com.mojang.blaze3d.systems.RenderSystem.depthFunc(515);
             RenderSystem.setShader(net.minecraft.client.renderer.GameRenderer::getParticleShader);
             RenderSystem.setShaderTexture(0,net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID,"textures/misc/nodes.png"));
             RenderSystem.enableBlend();RenderSystem.blendFunc(770,1);RenderSystem.depthMask(false);

@@ -6,5 +6,6 @@
   "ambientocclusion": false,
   "textures": {
     "particle": "tc4modern:models/book_crystal_ffff7e"
-  }
+  },
+  "render_type": "minecraft:translucent"
 }

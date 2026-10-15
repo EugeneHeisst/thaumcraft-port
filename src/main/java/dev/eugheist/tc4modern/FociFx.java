@@ -23,7 +23,7 @@ public final class FociFx {
 
     /** ParticleEngine layer 0: particles.png with additive blending, no depth writes. */
     static final ParticleRenderType ADDITIVE = new ParticleRenderType() {
-        @Override public BufferBuilder begin(Tesselator tessellator, net.minecraft.client.renderer.texture.TextureManager textures) {
+        @Override public BufferBuilder begin(Tesselator tessellator, net.minecraft.client.renderer.texture.TextureManager textures) {com.mojang.blaze3d.systems.RenderSystem.enableDepthTest();com.mojang.blaze3d.systems.RenderSystem.depthFunc(515);
             RenderSystem.setShader(net.minecraft.client.renderer.GameRenderer::getParticleShader);
             RenderSystem.setShaderTexture(0, PARTICLES);
             RenderSystem.enableBlend();
@@ -178,7 +178,7 @@ public final class FociFx {
     static final ResourceLocation PARTICLES2 = AlchemyContent.id("textures/misc/particles2.png");
     /** ParticleEngine layer 2: particles2.png, additive. */
     static final ParticleRenderType ADDITIVE2 = new ParticleRenderType() {
-        @Override public BufferBuilder begin(Tesselator tessellator, net.minecraft.client.renderer.texture.TextureManager textures) {
+        @Override public BufferBuilder begin(Tesselator tessellator, net.minecraft.client.renderer.texture.TextureManager textures) {com.mojang.blaze3d.systems.RenderSystem.enableDepthTest();com.mojang.blaze3d.systems.RenderSystem.depthFunc(515);
             RenderSystem.setShader(net.minecraft.client.renderer.GameRenderer::getParticleShader);
             RenderSystem.setShaderTexture(0, PARTICLES2);
             RenderSystem.enableBlend();

@@ -16,7 +16,7 @@ final class PrimalWisp extends Particle {
     private final float initialSize,gravityValue;
     private final boolean clip,dark;
     private static final ParticleRenderType NORMAL=new ParticleRenderType(){
-        @Override public BufferBuilder begin(Tesselator t,net.minecraft.client.renderer.texture.TextureManager textures){
+        @Override public BufferBuilder begin(Tesselator t,net.minecraft.client.renderer.texture.TextureManager textures){com.mojang.blaze3d.systems.RenderSystem.enableDepthTest();com.mojang.blaze3d.systems.RenderSystem.depthFunc(515);
             RenderSystem.setShader(net.minecraft.client.renderer.GameRenderer::getParticleShader);RenderSystem.setShaderTexture(0,FociFx.PARTICLES);
             RenderSystem.enableBlend();RenderSystem.defaultBlendFunc();RenderSystem.depthMask(false);
             return t.begin(VertexFormat.Mode.QUADS,DefaultVertexFormat.PARTICLE);

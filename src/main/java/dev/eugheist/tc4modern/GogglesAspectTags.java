@@ -111,7 +111,7 @@ public final class GogglesAspectTags {
         static RenderType tag(ResourceLocation texture) {
             return CACHE.computeIfAbsent(texture, t -> create("tc4_goggles_tag", DefaultVertexFormat.POSITION_TEX_COLOR, VertexFormat.Mode.QUADS, 256, false, true,
                 CompositeState.builder().setShaderState(new ShaderStateShard(GameRenderer::getPositionTexColorShader)).setTextureState(new TextureStateShard(t, false, false))
-                    .setTransparencyState(TRANSLUCENT_TRANSPARENCY).setDepthTestState(NO_DEPTH_TEST).setCullState(NO_CULL)
+                    .setTransparencyState(TRANSLUCENT_TRANSPARENCY).setDepthTestState(NodeRenderTypes.SEE_THROUGH).setCullState(NO_CULL)
                     .setWriteMaskState(COLOR_WRITE).createCompositeState(false)));
         }
     }

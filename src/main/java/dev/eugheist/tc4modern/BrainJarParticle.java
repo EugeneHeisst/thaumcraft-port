@@ -10,7 +10,7 @@ import net.minecraft.client.renderer.GameRenderer;
 /** Minecraft 1.7.10 EntitySpellParticleFX used by the full brain jar. */
 public final class BrainJarParticle extends Particle {
     private static final ParticleRenderType TYPE = new ParticleRenderType() {
-        public BufferBuilder begin(Tesselator tessellator, net.minecraft.client.renderer.texture.TextureManager textures) {
+        public BufferBuilder begin(Tesselator tessellator, net.minecraft.client.renderer.texture.TextureManager textures) {com.mojang.blaze3d.systems.RenderSystem.enableDepthTest();com.mojang.blaze3d.systems.RenderSystem.depthFunc(515);
             RenderSystem.setShader(GameRenderer::getParticleShader);
             RenderSystem.setShaderTexture(0, AlchemyContent.id("textures/misc/legacy_spell_particles.png"));
             RenderSystem.enableBlend(); RenderSystem.blendFunc(770, 771); RenderSystem.depthMask(false);

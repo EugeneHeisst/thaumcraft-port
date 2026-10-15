@@ -40,6 +40,8 @@ public final class InfusionFx {
     private static final class Source { final BlockPos start, end; final int color; int ticks; Source(BlockPos s, BlockPos e, int c, int t) { start = s; end = e; color = c; ticks = t; } }
     private static final Map<String, Source> ESSENTIA = new LinkedHashMap<>(), INFUSION = new LinkedHashMap<>();
     private static int tickCount;
+    /** Highest point any essentia trail bubble reached (audits). */
+    static double trailMaxY=-1e9;
     static int trailsSpawned, itemBitsSpawned, sparklesSpawned, finishSparkles, boreStuck, boreReached, boreInsideAtDeath, boreLingering;
 
     static void handle(InfusionContent.FxPayload p) {
@@ -160,6 +162,9 @@ public final class InfusionFx {
                 var v = Entity.collideBoundingBox(null, new Vec3(dx, dy, dz), getBoundingBox(), level, java.util.List.of());
                 dx = v.x; dy = v.y; dz = v.z;
             }
+            // 1.7 Entity.moveEntity never let a free particle enter a block; the 1.21 sweep can leave it a hair inside, and
+            // pushOut then ejected it through the far face (trails from jars climbing through a solid floor).
+            if (hasPhysics && (dx != 0 || dy != 0 || dz != 0) && level.noCollision(null, getBoundingBox()) && !level.noCollision(null, getBoundingBox().move(dx, dy, dz))) { dx = 0; dy = 0; dz = 0; }
             if (dx != 0 || dy != 0 || dz != 0) { setBoundingBox(getBoundingBox().move(dx, dy, dz)); setLocationFromBoundingbox(); }
             onGround = oy != dy && oy < 0;
             if (ox != dx) xd = 0;
@@ -306,6 +311,7 @@ public final class InfusionFx {
         @Override public void tick() {
             xo = x; yo = y; zo = z;
             if (age++ >= lifetime) { remove(); return; }
+            trailMaxY = Math.max(trailMaxY, y);
             yd += .01 * gravity; // original adds "gravity" upwards
             pushOut(true);
             move(xd, yd, zd);
@@ -326,7 +332,7 @@ public final class InfusionFx {
 
     /** ParticleEngine layer 1: particles.png with SRC_ALPHA/ONE_MINUS_SRC_ALPHA. */
     static final ParticleRenderType TRANSLUCENT = new ParticleRenderType() {
-        @Override public BufferBuilder begin(Tesselator tessellator, net.minecraft.client.renderer.texture.TextureManager textures) {
+        @Override public BufferBuilder begin(Tesselator tessellator, net.minecraft.client.renderer.texture.TextureManager textures) {com.mojang.blaze3d.systems.RenderSystem.enableDepthTest();com.mojang.blaze3d.systems.RenderSystem.depthFunc(515);
             RenderSystem.setShader(net.minecraft.client.renderer.GameRenderer::getParticleShader);
             RenderSystem.setShaderTexture(0, AlchemyContent.id("textures/misc/particles.png"));
             RenderSystem.enableBlend();

@@ -32,10 +32,24 @@ public final class MagicMirrorsClient {
    // The generated item mesh supplies the original alpha-cut frame and its 1/16 extrusion.
    pose.pushPose();pose.translate(0,0,.03125);mc.getItemRenderer().render(new ItemStack(t.getBlockState().getBlock()),ItemDisplayContext.NONE,false,pose,buffers,light,overlay,mc.getModelManager().getModel(net.minecraft.client.resources.model.ModelResourceLocation.standalone(AlchemyContent.id(t.essentia()?"item/mirror_essentia_frame":"item/mirror_frame"))));pose.popPose();
    float jitter=t.instability>0?t.getLevel().random.nextFloat()*t.instability/10000f:0;pose.translate(0,0,.07+jitter);
-   if(t.linked){var random=new Random(31100L);var camera=mc.gameRenderer.getMainCamera().getPosition();var relative=camera.subtract(t.getBlockPos().getX()+.5,t.getBlockPos().getY()+.5,t.getBlockPos().getZ()+.5);double depth=Math.max(.01,Math.abs(relative.x*d.getStepX()+relative.y*d.getStepY()+relative.z*d.getStepZ()));double viewU=d.getAxis()==Direction.Axis.X?relative.z:relative.x,viewV=d.getAxis()==Direction.Axis.Y?relative.z:relative.y;
-    for(int i=0;i<16;i++){float height=i==0?65:16-i,scale=i==0?.125f:i==1?.5f:.0625f,brightness=i==0?.1f:1f/(height+1),r=random.nextFloat()*.5f+.1f,g=random.nextFloat()*.5f+.4f,b=random.nextFloat()*.5f+.5f;if(i==0)r=g=b=1;var texture=AlchemyContent.id(i==0?"textures/misc/tunnel.png":"textures/misc/particlefield.png");var out=buffers.getBuffer(i==0?NodeRenderTypes.translucent(texture):NodeRenderTypes.additive(texture));float angle=(float)Math.toRadians((i*i*4321+i*9)*2f);float[][] points={{-.3125f,-.3125f},{.3125f,-.3125f},{.3125f,.3125f},{-.3125f,.3125f}};
-     for(var p:points){double x=(p[0]+viewU*height/depth)*scale,y=(p[1]+viewV*height/depth)*scale;float u=(float)(x*Math.cos(angle)-y*Math.sin(angle)+.5),v=(float)(x*Math.sin(angle)+y*Math.cos(angle)+.5+System.currentTimeMillis()%700000L/250000.0);out.addVertex(pose.last().pose(),p[0],p[1],0).setColor(r*brightness,g*brightness,b*brightness,1).setUv(u,v).setOverlay(overlay).setLight(0x00b400b4).setNormal(pose.last(),0,0,1);}
+   if(t.linked){var random=new Random(31100L);var camera=mc.gameRenderer.getMainCamera().getPosition();
+    // TileMirrorRenderer.drawPlane*: object-linear plane coordinates with an eye-linear q, i.e. per vertex
+    // s = (w - cam)(1 + depth/dist) - cam on the two in-plane world axes, then the layer's time/scale/rotation texture matrix.
+    var axis=d.getAxis();double camA=axis==Direction.Axis.X?camera.z:camera.x,camB=axis==Direction.Axis.Y?camera.z:camera.y;
+    float[][] points={{-.3125f,-.3125f},{.3125f,-.3125f},{.3125f,.3125f},{-.3125f,.3125f}};var world=new double[4][3];
+    for(int k=0;k<4;k++){var w=pose.last().pose().transformPosition(points[k][0],points[k][1],0,new org.joml.Vector3f());world[k][0]=camera.x+w.x;world[k][1]=camera.y+w.y;world[k][2]=camera.z+w.z;}
+    double planeN=axis==Direction.Axis.X?world[0][0]:axis==Direction.Axis.Y?world[0][1]:world[0][2],camN=axis==Direction.Axis.X?camera.x:axis==Direction.Axis.Y?camera.y:camera.z;
+    double dist=Math.max(.01,Math.abs(planeN-camN));double time=System.currentTimeMillis()%700000L/250000.0;
+    for(int i=0;i<16;i++){float height=i==0?65:16-i,scale=i==0?.125f:i==1?.5f:.0625f,brightness=i==0?.1f:1f/(height+1),r=random.nextFloat()*.5f+.1f,g=random.nextFloat()*.5f+.4f,b=random.nextFloat()*.5f+.5f;if(i==0)r=g=b=1;var texture=AlchemyContent.id(i==0?"textures/misc/tunnel.png":"textures/misc/particlefield.png");var out=buffers.getBuffer(i==0?NodeRenderTypes.translucent(texture):NodeRenderTypes.additive(texture));double angle=Math.toRadians((i*i*4321+i*9)*2.0),cos=Math.cos(angle),sin=Math.sin(angle);
+     double[][] uv=new double[4][2];
+     for(int k=0;k<4;k++){double wa=axis==Direction.Axis.X?world[k][2]:world[k][0],wb=axis==Direction.Axis.Y?world[k][2]:world[k][1];
+      double s=(wa-camA)*(1+height/dist)-camA,q=(wb-camB)*(1+height/dist)-camB;
+      uv[k][0]=(cos*(s-.5)-sin*(q-.5)+.5)*scale;uv[k][1]=(sin*(s-.5)+cos*(q-.5)+.5)*scale+time;}
+     // Repeating texture: drop whole tiles once per quad so large world coordinates keep float precision.
+     double fu=Math.floor(uv[0][0]),fv=Math.floor(uv[0][1]);
+     for(int k=0;k<4;k++)out.addVertex(pose.last().pose(),points[k][0],points[k][1],0).setColor(r*brightness,g*brightness,b*brightness,1).setUv((float)(uv[k][0]-fu),(float)(uv[k][1]-fv));
     }
+    var seal=buffers.getBuffer(NodeRenderTypes.depthOnly());for(var p:points)seal.addVertex(pose.last().pose(),p[0],p[1],-.002f);
    }
    var out=buffers.getBuffer(RenderType.entityTranslucent(AlchemyContent.id(t.linked?"textures/blocks/mirrorpanetrans.png":"textures/blocks/mirrorpane.png")));float[][] pts={{-.5f,-.5f,0,1},{.5f,-.5f,1,1},{.5f,.5f,1,0},{-.5f,.5f,0,0}};for(var p:pts)out.addVertex(pose.last().pose(),p[0],p[1],.001f).setColor(-1).setUv(p[2],p[3]).setOverlay(overlay).setLight(light).setNormal(pose.last(),0,0,1);pose.popPose();
   }

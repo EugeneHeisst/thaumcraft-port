@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 public final class EssentiaVentParticle extends Particle {
     public static net.minecraft.client.renderer.ShaderInstance shader;
     private static final ParticleRenderType TYPE = new ParticleRenderType() {
-        public BufferBuilder begin(Tesselator tessellator, net.minecraft.client.renderer.texture.TextureManager textures) {
+        public BufferBuilder begin(Tesselator tessellator, net.minecraft.client.renderer.texture.TextureManager textures) {com.mojang.blaze3d.systems.RenderSystem.enableDepthTest();com.mojang.blaze3d.systems.RenderSystem.depthFunc(515);
             RenderSystem.setShader(() -> shader);
             RenderSystem.setShaderTexture(0, ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID, "textures/misc/particles.png"));
             RenderSystem.enableBlend(); RenderSystem.blendFunc(770, 771); RenderSystem.depthMask(false);

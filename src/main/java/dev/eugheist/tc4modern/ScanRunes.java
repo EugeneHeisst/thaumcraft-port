@@ -12,7 +12,7 @@ import net.minecraft.world.entity.player.Player;
 /** Modern submission of the original FXBlockRunes scan particle and the thaumometer's client scan feedback. */
 public final class ScanRunes extends Particle {
     private static final ParticleRenderType TYPE=new ParticleRenderType(){
-        public BufferBuilder begin(Tesselator tessellator,net.minecraft.client.renderer.texture.TextureManager textures){
+        public BufferBuilder begin(Tesselator tessellator,net.minecraft.client.renderer.texture.TextureManager textures){com.mojang.blaze3d.systems.RenderSystem.enableDepthTest();com.mojang.blaze3d.systems.RenderSystem.depthFunc(515);
             RenderSystem.setShader(net.minecraft.client.renderer.GameRenderer::getParticleShader);
             RenderSystem.setShaderTexture(0,ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID,"textures/misc/particles.png"));
             // ParticleEngine layer 0: additive, no depth writes.

@@ -30,7 +30,7 @@ public final class LiquidDeathClient {
   };
   BottleTaint.burst=p->{LiquidDeathAudit.impacts++;burst(p);};
  });}
- static final ParticleRenderType BUBBLE_TYPE=new ParticleRenderType(){public BufferBuilder begin(Tesselator t,net.minecraft.client.renderer.texture.TextureManager textures){RenderSystem.setShader(GameRenderer::getParticleShader);RenderSystem.setShaderTexture(0,FociFx.PARTICLES);RenderSystem.enableBlend();RenderSystem.defaultBlendFunc();RenderSystem.depthMask(false);return t.begin(VertexFormat.Mode.QUADS,DefaultVertexFormat.PARTICLE);}};
+ static final ParticleRenderType BUBBLE_TYPE=new ParticleRenderType(){public BufferBuilder begin(Tesselator t,net.minecraft.client.renderer.texture.TextureManager textures){com.mojang.blaze3d.systems.RenderSystem.enableDepthTest();com.mojang.blaze3d.systems.RenderSystem.depthFunc(515);RenderSystem.setShader(GameRenderer::getParticleShader);RenderSystem.setShaderTexture(0,FociFx.PARTICLES);RenderSystem.enableBlend();RenderSystem.defaultBlendFunc();RenderSystem.depthMask(false);return t.begin(VertexFormat.Mode.QUADS,DefaultVertexFormat.PARTICLE);}};
  /** Exact FXSlimyBubble frames 144..150, including its five-tick jump and late damping. */
  static final class Bubble extends Particle {
   final float size;int frame=144;
