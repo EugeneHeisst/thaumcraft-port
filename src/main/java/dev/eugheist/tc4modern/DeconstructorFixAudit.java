@@ -22,13 +22,13 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.research.ResearchCategories;
 
 /**
- * Reported 0.17.136 issues and the advanced deconstruction table: research pulse in the browser and on unaffordable aspects,
+ * Reported 0.17.136 issues: research pulse in the browser and on unaffordable aspects,
  * the deconstructor ghost vanishing on the client once its last item is split, the ghost drawn after opaque block entities
- * (hungry chest behind it), the original thaumonomicon creation effect, and the advanced table's recipe and click-free delivery.
+ * (hungry chest behind it), the original thaumonomicon creation effect, and the removed advanced table id mapping to the ordinary table.
  */
 @EventBusSubscriber(modid=TC4Modern.MODID,value=Dist.CLIENT)
 public final class DeconstructorFixAudit {
- static final BlockPos BASE=new BlockPos(520,121,-90),SINGLE=BASE.offset(3,0,0),ADVANCED=BASE.offset(-3,0,0),SHELF=BASE.offset(1,0,-1);
+ static final BlockPos BASE=new BlockPos(520,121,-90),SINGLE=BASE.offset(3,0,0),SHELF=BASE.offset(1,0,-1);
  static int ticks,consumedBefore,poolBefore;static volatile boolean ready;static Aspect richest;static float bright=-1,dim=-1,missingBright,missingDim,enoughBright,enoughDim;static thaumcraft.api.research.ResearchItem study;
  static void check(boolean b,String s){if(!b)throw new IllegalStateException("TC4_DECONFIX FAIL "+s);System.out.println("TC4_DECONFIX PASS "+s);}
  static thaumcraft.common.lib.research.PlayerKnowledge knowledge(net.minecraft.server.level.ServerPlayer p){return ResearchKnowledge.load(p.getPersistentData());}
@@ -42,29 +42,16 @@ public final class DeconstructorFixAudit {
    l.getEntitiesOfClass(Entity.class,new AABB(BASE).inflate(16)).stream().filter(e->!(e instanceof net.minecraft.world.entity.player.Player)).forEach(Entity::discard);
    for(int x=-8;x<=8;x++)for(int z=-6;z<=6;z++)for(int y=-1;y<7;y++)l.setBlock(BASE.offset(x,y,z),(y==-1?Blocks.STONE:Blocks.AIR).defaultBlockState(),3);
    for(var at:java.util.List.of(BASE,SINGLE))l.setBlock(at,BasicsContent.DECONSTRUCTOR.get().defaultBlockState(),3);
-   var adv=BasicsContent.ADVANCED_DECONSTRUCTOR.get().defaultBlockState();l.setBlock(ADVANCED,adv,3);adv.getBlock().setPlacedBy(l,ADVANCED,adv,p,new ItemStack(adv.getBlock()));
    l.setBlock(BASE.offset(0,0,1),Blocks.STONE.defaultBlockState(),3);l.setBlock(BASE.offset(0,1,1),HungryChest.BLOCK.get().defaultBlockState(),3);
    table(l,BASE).setItem(0,new ItemStack(Items.COBBLESTONE,64));table(l,SINGLE).setItem(0,new ItemStack(Items.OAK_LOG));
    var data=p.getPersistentData();ResearchKnowledge.discoverAll(data);DevCommands.grant(data,"DECONSTRUCTOR",new java.util.HashSet<>());
    study=ResearchCategories.getResearch("GOLEMWOOD");var k=knowledge(p);var sorted=study.tags.getAspectsSortedAmount();for(var a:Aspect.aspects.values())k.setAspectPool("current",a,(short)0);k.setAspectPool("current",sorted[0],(short)100);ResearchKnowledge.save(data,k);
    ThaumometerItem.sync(p,"");p.connection.teleport(BASE.getX()+.5,BASE.getY(),BASE.getZ()-2.6,0,14);ready=true;});
   if(ticks==60){check(ready,"fixture built");server.execute(()->{var p=server.getPlayerList().getPlayer(id);var l=p.serverLevel();
-   check(table(l,ADVANCED).advanced()&&id.equals(table(l,ADVANCED).owner),"advanced table records the player who placed it");check(!table(l,BASE).advanced(),"ordinary table stays ordinary");
-   var done=ResearchProgress.completed(p.getPersistentData());check(done.contains("DECONSTRUCTOR")&&!done.contains("ADVDECONSTRUCTOR"),"ADVDECONSTRUCTOR available after DECONSTRUCTOR, not yet complete");
-   var research=ResearchCategories.getResearch("ADVDECONSTRUCTOR");check(research!=null&&research.category.equals("BASICS")&&research.parents[0].equals("DECONSTRUCTOR"),"ADVDECONSTRUCTOR is a BASICS child of DECONSTRUCTOR");
-   var netherite=grid(Items.NETHERITE_AXE,Items.NETHERITE_PICKAXE);var entry=ArcaneRecipes.find(netherite,java.util.Set.of("ADVDECONSTRUCTOR"));
-   check(entry!=null&&entry.output().is(BasicsContent.ADVANCED_DECONSTRUCTOR.get().asItem())&&entry.cost().getAmount(Aspect.ENTROPY)==60&&entry.cost().size()==1,"netherite recipe gives advanced table for perditio 60 (3x20)");
-   check(ArcaneRecipes.find(netherite,java.util.Set.of("DECONSTRUCTOR"))==null,"advanced recipe locked without its research");
-   var gold=ArcaneRecipes.find(grid(Items.GOLDEN_AXE,Items.GOLDEN_PICKAXE),java.util.Set.of("DECONSTRUCTOR","ADVDECONSTRUCTOR"));check(gold!=null&&gold.output().is(BasicsContent.DECONSTRUCTOR.get().asItem())&&gold.cost().getAmount(Aspect.ENTROPY)==20,"golden tools still make the ordinary table for 20");
-   check(BasicsBookRecipes.researchIcon("ADVDECONSTRUCTOR")!=null,"book icon for ADVDECONSTRUCTOR");
-   // Deterministic delivery: a split-off aspect leaves the advanced table on the next tick without any click.
-   poolBefore=knowledge(p).getAspectPoolFor("current",Aspect.ORDER);table(l,ADVANCED).state.aspect=Aspect.ORDER;});}
-  if(ticks==66)server.execute(()->{var p=server.getPlayerList().getPlayer(id);var l=p.serverLevel();check(table(l,ADVANCED).state.aspect==null&&knowledge(p).getAspectPoolFor("current",Aspect.ORDER)==poolBefore+1,"advanced table sent ordo to its owner without GUI");
-   table(l,ADVANCED).owner=java.util.UUID.randomUUID();table(l,ADVANCED).state.aspect=Aspect.FIRE;});
-  if(ticks==76)server.execute(()->{var p=server.getPlayerList().getPlayer(id);var l=p.serverLevel();check(table(l,ADVANCED).state.aspect==Aspect.FIRE,"aspect waits on the table while its owner is offline");poolBefore=knowledge(p).getAspectPoolFor("current",Aspect.FIRE);table(l,ADVANCED).owner=id;});
-  if(ticks==82)server.execute(()->{var p=server.getPlayerList().getPlayer(id);var l=p.serverLevel();check(table(l,ADVANCED).state.aspect==null&&knowledge(p).getAspectPoolFor("current",Aspect.FIRE)==poolBefore+1,"waiting aspect delivered once the owner is back");
-   var t=table(l,ADVANCED);int best=-1;for(var item:java.util.List.of(Items.BEACON,Items.NETHER_STAR,Items.ENCHANTING_TABLE,Items.DIAMOND_BLOCK,Items.END_CRYSTAL)){int vis=thaumcraft.common.lib.research.ResearchManager.reduceToPrimals(DeconstructorEntity.tags(new ItemStack(item),l)).visSize();System.out.println("TC4_DECONFIX primals "+item+" "+vis);if(vis>best){best=vis;t.setItem(0,new ItemStack(item,16));}}
-   System.out.println("TC4_DECONFIX natural run "+t.getItem(0)+" chance "+Math.min(80,best)+"/80");consumedBefore=t.getItem(0).getCount();poolBefore=pool(p);});
+    var old=AlchemyContent.id("advanced_deconstructor");check(net.minecraft.core.registries.BuiltInRegistries.BLOCK.get(old)==BasicsContent.DECONSTRUCTOR.get()&&net.minecraft.core.registries.BuiltInRegistries.ITEM.get(old)==BasicsContent.DECONSTRUCTOR.get().asItem(),"removed advanced table id loads as the ordinary table");
+    check(ResearchCategories.getResearch("ADVDECONSTRUCTOR")==null&&ArcaneRecipes.find(grid(Items.NETHERITE_AXE,Items.NETHERITE_PICKAXE),java.util.Set.of("DECONSTRUCTOR"))==null,"advanced table research and recipe removed");
+   var gold=ArcaneRecipes.find(grid(Items.GOLDEN_AXE,Items.GOLDEN_PICKAXE),java.util.Set.of("DECONSTRUCTOR"));check(gold!=null&&gold.output().is(BasicsContent.DECONSTRUCTOR.get().asItem())&&gold.cost().getAmount(Aspect.ENTROPY)==20,"golden tools still make the ordinary table for 20");
+    });}
   if(ticks==200){var client=(DeconstructorEntity)mc.level.getBlockEntity(SINGLE);check(client!=null&&client.getItem(0).isEmpty(),"client copy of the table drops its last item (hologram gone)");}
   if(ticks==210)LiquidDeathAudit.shot(mc,"deconfix-hologram-hungry-chest.png");
   if(ticks==220)server.execute(()->{var p=server.getPlayerList().getPlayer(id);var l=p.serverLevel();p.setGameMode(net.minecraft.world.level.GameType.SURVIVAL);l.setBlock(SHELF,Blocks.BOOKSHELF.defaultBlockState(),3);var wand=new ItemStack(TC4Modern.BASIC_WAND.get());p.setItemInHand(InteractionHand.MAIN_HAND,wand);
@@ -74,16 +61,14 @@ public final class DeconstructorFixAudit {
   if(ticks==223)LiquidDeathAudit.shot(mc,"deconfix-thaumonomicon-sparkles.png");
   if(ticks==240){var inv=mc.player.getInventory();var book=new ThaumonomiconScreen(new ThaumonomiconMenu(0,inv),inv,Component.empty());book.auditBrowser("BASICS",6,3);mc.setScreen(book);}
   if(ticks>=250&&ticks<300&&mc.screen instanceof ThaumonomiconScreen){float pulse=ThaumonomiconScreen.pulse();if(bright<0&&pulse>.96f){bright=pulse;LiquidDeathAudit.shot(mc,"deconfix-book-pulse-bright.png");}if(dim<0&&pulse<.54f){dim=pulse;LiquidDeathAudit.shot(mc,"deconfix-book-pulse-dim.png");}}
-  if(ticks==300){check(bright>.96f&&dim<.54f,"available research pulses 0.5..1.0 like GuiResearchBrowser bright="+bright+" dim="+dim);var book=(ThaumonomiconScreen)mc.screen;book.auditOpen(ResearchCategories.getResearch("ADVDECONSTRUCTOR"),0);}
-  if(ticks==310)LiquidDeathAudit.shot(mc,"deconfix-advanced-page.png");
+  if(ticks==300){check(bright>.96f&&dim<.54f,"available research pulses 0.5..1.0 like GuiResearchBrowser bright="+bright+" dim="+dim);var book=(ThaumonomiconScreen)mc.screen;book.auditOpen(ResearchCategories.getResearch("DECONSTRUCTOR"),0);}
+  if(ticks==310)LiquidDeathAudit.shot(mc,"deconfix-deconstructor-page.png");
   if(ticks==320){bright=dim=-1;mc.setScreen(new Tooltip());}
   if(ticks>=330&&ticks<400&&mc.screen instanceof Tooltip){float pulse=ThaumonomiconScreen.pulse();if((bright<0&&pulse>.96f)||(dim<0&&pulse<.54f)){var shot=net.minecraft.client.Screenshot.takeScreenshot(mc.getMainRenderTarget());double scale=mc.getWindow().getGuiScale();float enough=luma(shot,Tooltip.X,Tooltip.Y,scale),missing=luma(shot,Tooltip.X+18,Tooltip.Y,scale);shot.close();
    if(pulse>.96f){bright=pulse;enoughBright=enough;missingBright=missing;LiquidDeathAudit.shot(mc,"deconfix-tooltip-bright.png");}else{dim=pulse;enoughDim=enough;missingDim=missing;LiquidDeathAudit.shot(mc,"deconfix-tooltip-dim.png");}}}
   if(ticks==400){System.out.println("TC4_DECONFIX tooltip enough "+enoughBright+"/"+enoughDim+" missing "+missingBright+"/"+missingDim);check(bright>0&&dim>0,"tooltip captured at both pulse extremes");
    check(Math.abs(enoughBright-enoughDim)<=enoughBright*.03f,"affordable aspect stays steady");check(missingDim<missingBright*.8f,"unaffordable aspect blinks like the original");mc.setScreen(null);}
-  if(ticks==760)server.execute(()->{var p=server.getPlayerList().getPlayer(id);var l=p.serverLevel();var t=table(l,ADVANCED);int consumed=consumedBefore-t.getItem(0).getCount(),gained=pool(p)-poolBefore;System.out.println("TC4_DECONFIX natural consumed "+consumed+" gained "+gained);
-   check(consumed>=10,"advanced table keeps splitting fed items consumed="+consumed);check(gained>=1&&t.state.aspect==null,"split aspects reached the owner with no clicks gained="+gained);ready=false;});
-  if(ticks==770){check(!ready,"natural run checked");System.out.println("TC4_DECONFIX ALL PASS");mc.stop();}
+   if(ticks==410){System.out.println("TC4_DECONFIX ALL PASS");mc.stop();}
  }
  /** Mean r+g+b over a 16x16 GUI icon in the captured frame. */
  static float luma(com.mojang.blaze3d.platform.NativeImage im,int x,int y,double scale){long sum=0;int n=0;for(int px=(int)(x*scale);px<(int)((x+16)*scale);px++)for(int py=(int)(y*scale);py<(int)((y+16)*scale);py++){int c=im.getPixelRGBA(px,py);sum+=(c&255)+(c>>8&255)+(c>>16&255);n++;}return n==0?0:sum/(float)n;}

@@ -183,9 +183,8 @@ public class ThaumonomiconScreen extends AbstractContainerScreen<ThaumonomiconMe
         if(!icon.stack().isEmpty())key=switch(net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(icon.stack().getItem()).getPath()){case "scribing_tools"->"RESEARCH";case "thaumometer"->"RESEARCH";case "thaumonomicon"->"THAUMONOMICON";case "greatwood_planks","silverwood_planks"->"PLANTS";default->null;};
         else if("knowledgefragment".equals(icon.texture()==null?null:icon.texture().replace("textures/items/","").replace(".png","")))key="KNOWFRAG";
         else if("deconstructor".equals(icon.model()))key="DECONSTRUCTOR";
-        else if("advanced_deconstructor".equals(icon.model()))key="ADVDECONSTRUCTOR";
         if(key==null||!completed().contains(key))return null;var research=ResearchCategories.getResearch(key);
-        String recipeKey=!icon.stack().isEmpty()?switch(net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(icon.stack().getItem()).getPath()){case "thaumometer"->"Thaumometer";case "scribing_tools"->"Scribe1";case "greatwood_planks"->"PlankGreatwood";case "silverwood_planks"->"PlankSilverwood";case "thaumonomicon"->"Thaumonomicon";default->null;}:"deconstructor".equals(icon.model())?"Deconstructor":"advanced_deconstructor".equals(icon.model())?"AdvancedDeconstructor":null;
+        String recipeKey=!icon.stack().isEmpty()?switch(net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(icon.stack().getItem()).getPath()){case "thaumometer"->"Thaumometer";case "scribing_tools"->"Scribe1";case "greatwood_planks"->"PlankGreatwood";case "silverwood_planks"->"PlankSilverwood";case "thaumonomicon"->"Thaumonomicon";default->null;}:"deconstructor".equals(icon.model())?"Deconstructor":null;
         if(recipeKey!=null)for(int i=0;i<research.getPages().length;i++)if(recipeKey.equals(research.getPages()[i].recipeKey)){index=i;break;}
         return new Previous(research,index);
     }
@@ -244,7 +243,7 @@ public class ThaumonomiconScreen extends AbstractContainerScreen<ThaumonomiconMe
         var icon=BasicsBookRecipes.researchIcon(source.key);
         if(icon!=null){
             if(!icon.stack().isEmpty())return mc.getItemRenderer().getModel(icon.stack(),mc.level,mc.player,0)==mc.getModelManager().getMissingModel()?"missing item model "+icon.stack():null;
-            if(icon.model()!=null&&java.util.Set.of("aura_node","deconstructor","advanced_deconstructor").contains(icon.model()))return null;
+            if(icon.model()!=null&&java.util.Set.of("aura_node","deconstructor").contains(icon.model()))return null;
             if(icon.model()!=null)return mc.getModelManager().getModel(BookDisplayModels.id(icon.model()))==mc.getModelManager().getMissingModel()?"missing block model "+icon.model():null;
             if(icon.texture()!=null)return mc.getResourceManager().getResource(ResearchBookText.texture(icon.texture())).isPresent()?null:"missing sprite "+icon.texture();
             return "empty book icon";

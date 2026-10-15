@@ -13,7 +13,7 @@ import thaumcraft.api.aspects.Aspect;
 /** Original BASICS recipe presentations, including content whose gameplay port is still pending. */
 final class BasicsBookRecipes {
     private static final ResourceLocation OVERLAY=ResearchBookText.texture("textures/gui/gui_researchbook_overlay.png");
-    static final Set<String> KEYS=Set.of("Thaumometer","Scribe1","Scribe2","Scribe3","KnowFrag","Thaumonomicon","Clusters","PlankGreatwood","PlankSilverwood","NodeJar","Deconstructor","AdvancedDeconstructor");
+    static final Set<String> KEYS=Set.of("Thaumometer","Scribe1","Scribe2","Scribe3","KnowFrag","Thaumonomicon","Clusters","PlankGreatwood","PlankSilverwood","NodeJar","Deconstructor");
     record Icon(ItemStack stack,String texture,String name,int count,String model) {
         static Icon item(String id,int count){return new Icon(new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse(id)),count),null,null,count,null);}
         static Icon sprite(String path,String name){return new Icon(ItemStack.EMPTY,"textures/items/"+path+".png",name,1,null);}
@@ -70,7 +70,7 @@ final class BasicsBookRecipes {
         case "RESEARCH"->item("scribing_tools");case "KNOWFRAG"->Icon.sprite("knowledgefragment","item.ItemResource.9.name");
         case "THAUMONOMICON"->item("thaumonomicon");case "PLANTS"->item("greatwood_sapling");
         case "ORE"->item(new String[]{"cinnabar_ore","air_infused_stone","fire_infused_stone","water_infused_stone","earth_infused_stone","order_infused_stone","entropy_infused_stone","amber_ore"}[(int)(System.currentTimeMillis()/1000%8)]);
-        case "NODEJAR"->Icon.model("node_jar","item.ItemJarNode.name");case "DECONSTRUCTOR"->Icon.model("deconstructor","tile.blockTable.14.name");case "ADVDECONSTRUCTOR"->Icon.model("advanced_deconstructor","block.tc4modern.advanced_deconstructor");
+        case "NODEJAR"->Icon.model("node_jar","item.ItemJarNode.name");case "DECONSTRUCTOR"->Icon.model("deconstructor","tile.blockTable.14.name");
         case "CRIMSON"->Icon.sprite("crimson_rites","item.ItemEldritchObject.1.name");default->null;};}
     static boolean draw(GuiGraphics gui,String key,int x,int y){
         if(key.equals("AdvAlchemyFurnace")){advancedFurnace(gui,x,y);return true;}
@@ -79,7 +79,7 @@ final class BasicsBookRecipes {
         if(!KEYS.contains(key))return false;
         com.mojang.blaze3d.systems.RenderSystem.enableBlend();com.mojang.blaze3d.systems.RenderSystem.defaultBlendFunc();
         if(key.equals("Thaumonomicon")||key.equals("NodeJar")||key.equals("Crucible")){construct(gui,key,x,y);return true;}
-        boolean advanced=key.equals("AdvancedDeconstructor"),arcane=key.equals("Deconstructor")||advanced,shapeless=key.startsWith("Scribe")||key.equals("Clusters");
+        boolean arcane=key.equals("Deconstructor"),shapeless=key.startsWith("Scribe")||key.equals("Clusters");
         center(gui,Component.translatable(arcane?"recipe.type.arcane":shapeless?"recipe.type.workbenchshapeless":"recipe.type.workbench"),x+56,y);
         com.mojang.blaze3d.systems.RenderSystem.enableBlend();com.mojang.blaze3d.systems.RenderSystem.defaultBlendFunc();
         gui.pose().pushPose();gui.pose().translate(x,y,0);gui.pose().scale(2,2,1);
@@ -91,13 +91,12 @@ final class BasicsBookRecipes {
             case "KnowFrag"->{output=Icon.sprite("researchnotes","item.ItemResearchNotes.name");for(int i=0;i<9;i++)input.add(Icon.sprite("knowledgefragment","item.ItemResource.9.name"));}
             case "PlankGreatwood","PlankSilverwood"->{width=1;String wood=key.equals("PlankGreatwood")?"greatwood":"silverwood";input.add(item(wood+"_log"));output=Icon.item("tc4modern:"+wood+"_planks",4);}
             case "Clusters"->{int variant=(int)(System.currentTimeMillis()/1000%7);String[] elements={"air","fire","water","earth","order","entropy"};for(int i=0;i<6;i++)input.add(item(elements[variant==6?i:variant]+"_shard"));output=Icon.model("cluster_"+variant,"tile.blockCrystal."+variant+".name");}
-            case "AdvancedDeconstructor"->{input.add(null);input.add(item("thaumometer"));input.add(null);input.add(item("minecraft:netherite_axe"));input.add(item("table"));input.add(item("minecraft:netherite_pickaxe"));output=Icon.model("advanced_deconstructor","block.tc4modern.advanced_deconstructor");}
             case "Deconstructor"->{input.add(null);input.add(item("thaumometer"));input.add(null);input.add(item("minecraft:golden_axe"));input.add(item("table"));input.add(item("minecraft:golden_pickaxe"));output=Icon.model("deconstructor","tile.blockTable.14.name");}
             default->{String[] elements={"air","fire","water","earth","order","entropy","balanced"};var shard=item(elements[(int)(System.currentTimeMillis()/1000%7)]+"_shard");input.add(null);input.add(shard);input.add(null);input.add(item("minecraft:gold_ingot"));input.add(item("minecraft:glass"));input.add(item("minecraft:gold_ingot"));input.add(null);input.add(shard);input.add(null);output=item("thaumometer");}
         }
         icon(gui,output,x+48,y+(arcane?22:32));
         for(int i=0;i<input.size();i++)if(input.get(i)!=null)icon(gui,input.get(i),x+16+i%width*32,y+(arcane?66:76)+i/width*32);
-        if(arcane){wandCost(gui,x,y+164);aspect(gui,Aspect.ENTROPY,advanced?60:20,x+46,y+172);}
+        if(arcane){wandCost(gui,x,y+164);aspect(gui,Aspect.ENTROPY,20,x+46,y+172);}
         return true;
     }
     private static void construct(GuiGraphics gui,String key,int x,int y){

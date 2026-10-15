@@ -486,12 +486,6 @@
   "order": 110.2
  },
  {
-  "id": "advanced_deconstructor",
-  "translation": "block.tc4modern.advanced_deconstructor",
-  "original": "",
-  "order": 110.5
- },
- {
   "id": "node_jar",
   "translation": "block.tc4modern.node_jar",
   "original": "tile.blockJar.2.name",

@@ -18,7 +18,6 @@ final class BookDisplayModels {
         if(name.equals("aura_node")){node(gui,x+8,y+8,12);return;}
         // BlockTableRenderer.renderInventoryBlock draws the whole TileDeconstructionTable, thaumometer included: use the real item (its BEWLR).
         if(name.equals("deconstructor")){gui.renderItem(new ItemStack(BasicsContent.DECONSTRUCTOR.get()),x,y);return;}
-        if(name.equals("advanced_deconstructor")){gui.renderItem(new ItemStack(BasicsContent.ADVANCED_DECONSTRUCTOR.get()),x,y);return;}
         var mc=Minecraft.getInstance();var model=mc.getModelManager().getModel(id(name));
         gui.pose().pushPose();gui.pose().translate(x+8,y+8,150);gui.pose().scale(16,-16,16);
         com.mojang.blaze3d.platform.Lighting.setupFor3DItems();

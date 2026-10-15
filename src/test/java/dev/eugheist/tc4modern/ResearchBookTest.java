@@ -12,11 +12,10 @@ public final class ResearchBookTest {
         String[] keys={"ASPECTS","PECH","NODES","WARP","RESEARCH","KNOWFRAG","THAUMONOMICON","ORE","PLANTS","ENCHANT","NODETAPPER1","NODEPRESERVE","NODEJAR","NODETAPPER2","RESEARCHER1","DECONSTRUCTOR","RESEARCHER2","RESEARCHDUPE","CRIMSON"};
         int[] lengths={3,2,3,3,16,2,2,5,8,2,1,1,3,1,1,3,1,1,1};
         int[][] positions={{0,0},{-4,-4},{-2,0},{0,2},{2,0},{3,-2},{1,-2},{-2,-2},{-2,-4},{-4,-2},{-4,1},{-6,2},{-7,4},{-3,3},{4,1},{6,2},{3,3},{4,5},{0,4}};
-        var category=ResearchCategories.getResearchList("BASICS");var originals=new ArrayList<>(category.research.keySet());originals.remove("ADVDECONSTRUCTOR");require(category.research.size()==20&&originals.size()==19,"All original BASICS entries plus ADVDECONSTRUCTOR");require(originals.equals(List.of(keys)),"Original registration order");
-        var advanced=category.research.get("ADVDECONSTRUCTOR");require(advanced.displayColumn==6&&advanced.displayRow==4&&advanced.parents[0].equals("DECONSTRUCTOR")&&advanced.getPages().length==3&&"AdvancedDeconstructor".equals(advanced.getPages()[1].recipeKey),"Advanced deconstruction table follows DECONSTRUCTOR");
+        var category=ResearchCategories.getResearchList("BASICS");var originals=new ArrayList<>(category.research.keySet());require(category.research.size()==19,"All original BASICS entries");require(originals.equals(List.of(keys)),"Original registration order");
         Set<String> recipes=new HashSet<>();
         for(int i=0;i<keys.length;i++){var item=category.research.get(keys[i]);require(item.displayColumn==positions[i][0]&&item.displayRow==positions[i][1],"Original map position: "+item.key);require(item.getPages().length==lengths[i],"Original page boundaries: "+item.key);for(var page:item.getPages())if(page.recipeKey!=null){require(BasicsBookRecipes.KEYS.contains(page.recipeKey),"Complete BASICS recipe display: "+page.recipeKey);recipes.add(page.recipeKey);}else require(page.text!=null&&!page.text.isBlank(),"Text key present: "+item.key);}
-        recipes.add(advanced.getPages()[1].recipeKey);require(recipes.equals(BasicsBookRecipes.KEYS),"Every BASICS recipe page is reachable");
+        require(recipes.equals(BasicsBookRecipes.KEYS),"Every BASICS recipe page is reachable");
         require(ResearchCategories.getResearch("NODEJAR").getPages()[1].type==ResearchPage.PageType.COMPOUND_CRAFTING,"Jar is a construction, not a crafting recipe");
         require(ResearchCategories.getResearch("DECONSTRUCTOR").getPages()[1].type==ResearchPage.PageType.ARCANE_CRAFTING,"Deconstructor arcane recipe");
         byte[] metrics=new byte[65536];Arrays.fill(metrics,(byte)7);metrics['\n']=0;var layout=new ResearchBookLayout(metrics);

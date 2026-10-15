@@ -25,7 +25,7 @@ public final class DeconstructorRenderer implements BlockEntityRenderer<Deconstr
         event.registerBlockEntityRenderer(BasicsContent.DECONSTRUCTOR_ENTITY.get(), DeconstructorRenderer::new);
     }
     @SubscribeEvent static void items(RegisterClientExtensionsEvent event) {
-        for (var block : java.util.List.of(BasicsContent.DECONSTRUCTOR.get(), BasicsContent.ADVANCED_DECONSTRUCTOR.get()))
+        for (var block : java.util.List.of(BasicsContent.DECONSTRUCTOR.get()))
             event.registerItem(new IClientItemExtensions() {
                 private BlockEntityWithoutLevelRenderer renderer;
                 /** BlockTableRenderer.renderInventoryBlock metadata 14: the whole table renderer, thaumometer included. */
