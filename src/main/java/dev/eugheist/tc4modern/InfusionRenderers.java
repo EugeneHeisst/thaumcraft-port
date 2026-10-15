@@ -55,7 +55,9 @@ public final class InfusionRenderers {
             pose.mulPose(Axis.YP.rotationDegrees(ticks % 360f * is.startUp));
             pose.mulPose(Axis.XP.rotationDegrees(35f * is.startUp));
             pose.mulPose(Axis.ZP.rotationDegrees(45f * is.startUp));
-            float instability = Math.min(6f, 1f + is.logic.instability * .66f * (Math.min(is.craftCount, 50) / 50f));
+            // DEVIATION: the original only capped this at 6. A large stabiliser field drives symmetry (and so instability) far
+            // below zero, and the negative factor made the eight cubes fly apart; bound it symmetrically.
+            float instability = Mth.clamp(1f + is.logic.instability * .66f * (Math.min(is.craftCount, 50) / 50f), -6f, 6f);
             for (int pass = 0; pass < (is.logic.active ? 2 : 1); pass++) {
                 for (int a = 0; a < 2; ++a) for (int b = 0; b < 2; ++b) for (int c = 0; c < 2; ++c) {
                     float b1 = 0, b2 = 0, b3 = 0;
