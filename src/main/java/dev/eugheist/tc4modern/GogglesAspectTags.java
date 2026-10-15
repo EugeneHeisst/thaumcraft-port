@@ -33,6 +33,8 @@ public final class GogglesAspectTags {
         if (tile instanceof WardedJarEntity jar) return jar.state.aspect != null && jar.state.amount > 0 ? new AspectList().add(jar.state.aspect, jar.state.amount) : null;
         if (tile instanceof AlembicEntity alembic) return alembic.state.aspect != null ? new AspectList().add(alembic.state.aspect, alembic.state.amount) : null;
         if (tile instanceof EssentiaReservoir.ReservoirEntity reservoir) return reservoir.getAspects();
+        // TileInfusionMatrix.getAspects: essentia the running infusion still has to draw.
+        if (tile instanceof InfusionContent.MatrixEntity matrix) return matrix.logic.recipeEssentia;
         if (tile instanceof CrucibleEntity crucible) return crucible.crucible.aspects;
         if (tile instanceof ManaPodEntity pod) return pod.aspect != null && pod.getBlockState().getValue(ManaPodBlock.AGE) == 7 ? new AspectList().add(pod.aspect, 1) : null;
         return null;
