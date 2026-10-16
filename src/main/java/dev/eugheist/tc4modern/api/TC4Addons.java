@@ -51,6 +51,11 @@ public final class TC4Addons {
     private static final List<BoreTool> BORE_TOOLS = new CopyOnWriteArrayList<>();
     public static void registerBoreTool(BoreTool hook) { BORE_TOOLS.add(hook); }
     @Nullable public static BoreTool boreTool(ItemStack stack) { for (var hook : BORE_TOOLS) if (hook.accepts(stack)) return hook; return null; }
+    /** Native ore-dowsing/arcane-bore conversion; probability is the native fortune chance times the supplied factor. */
+    public record NativeCluster(net.minecraft.world.item.crafting.Ingredient input,java.util.function.Supplier<net.minecraft.world.item.Item> output,float factor,boolean perBlock) {}
+    private static final List<NativeCluster> NATIVE_CLUSTERS=new CopyOnWriteArrayList<>();
+    public static void registerNativeCluster(NativeCluster cluster){NATIVE_CLUSTERS.add(cluster);}
+    @Nullable public static NativeCluster nativeCluster(ItemStack stack){for(var cluster:NATIVE_CLUSTERS)if(cluster.input().test(stack))return cluster;return null;}
     /** Block entities holding a wand a vis charge relay above them may recharge (the arcane workbench is built in). */
     @FunctionalInterface public interface WandHolder { @Nullable ItemStack wand(net.minecraft.world.level.block.entity.BlockEntity tile); }
     private static final List<WandHolder> WAND_HOLDERS = new CopyOnWriteArrayList<>();

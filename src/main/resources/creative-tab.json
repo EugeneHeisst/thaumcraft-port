@@ -2272,5 +2272,23 @@
   "translation": "item.tc4modern.resonator",
   "original": "item.ItemResonator.name",
   "order": 59.5
+ },
+ {
+  "id": "tin_cluster",
+  "translation": "item.tc4modern.tin_cluster",
+  "original": "item.ItemNugget.18.name",
+  "order": 330.6
+ },
+ {
+  "id": "silver_cluster",
+  "translation": "item.tc4modern.silver_cluster",
+  "original": "item.ItemNugget.19.name",
+  "order": 330.70000000000005
+ },
+ {
+  "id": "lead_cluster",
+  "translation": "item.tc4modern.lead_cluster",
+  "original": "item.ItemNugget.20.name",
+  "order": 330.8
  }
 ]

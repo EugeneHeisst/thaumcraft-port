@@ -549,5 +549,8 @@
   "tc.aspect.help.machina": "mechanical things",
   "tc.aspect.help.vinculum": "things that entrap",
   "tc.aspect.help.permutatio": "trading and bartering",
-  "tc.aspect.help.corpus": "flesh"
+  "tc.aspect.help.corpus": "flesh",
+  "item.tc4modern.tin_cluster": "Native Tin Cluster",
+  "item.tc4modern.silver_cluster": "Native Silver Cluster",
+  "item.tc4modern.lead_cluster": "Native Lead Cluster"
 }

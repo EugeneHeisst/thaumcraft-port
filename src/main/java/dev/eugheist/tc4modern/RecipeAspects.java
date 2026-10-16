@@ -61,7 +61,7 @@ public final class RecipeAspects {
                 var ingredients=new ArrayList<Ingredient>();
                 ingredients.add(Ingredient.of(recipe.central().get()));
                 for(var component:recipe.components())ingredients.add(Ingredient.of(component.get()));
-                infusion.put(recipe.output().get(),new Candidate(List.copyOf(ingredients),1,recipe.aspects()));
+                infusion.put(recipe.output().get(),new Candidate(List.copyOf(ingredients),Math.max(1,recipe.outputStack(new ItemStack(recipe.central().get())).getCount()),recipe.aspects()));
             }
             // Original complex registrations run in order before scanning begins.
             for(var entry:thaumcraft.common.config.ConfigComplexAspects.ENTRIES){

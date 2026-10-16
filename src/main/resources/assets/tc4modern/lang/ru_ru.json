@@ -549,5 +549,8 @@
   "tc.aspect.help.machina": "механические вещи",
   "tc.aspect.help.vinculum": "ловушки",
   "tc.aspect.help.permutatio": "обмен и продажу",
-  "tc.aspect.help.corpus": "плоть"
+  "tc.aspect.help.corpus": "плоть",
+  "item.tc4modern.tin_cluster": "Самородное олово",
+  "item.tc4modern.silver_cluster": "Самородное серебро",
+  "item.tc4modern.lead_cluster": "Самородный свинец"
 }

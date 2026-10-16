@@ -549,6 +549,8 @@ public final class FociWorld {
             }
             return SPECIAL;
         }
+        static Special resolve(ItemStack stack){var base=special().get(stack.getItem());if(base!=null)return base;var addon=dev.eugheist.tc4modern.api.TC4Addons.nativeCluster(stack);return addon==null?null:new Special(net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(addon.output().get()).toString(),addon.factor(),addon.perBlock());}
+        static Item clusterItem(Special result){var key=result.cluster().contains(":")?net.minecraft.resources.ResourceLocation.parse(result.cluster()):AlchemyContent.id(result.cluster());return net.minecraft.core.registries.BuiltInRegistries.ITEM.get(key);}
         @SubscribeEvent static void drops(net.neoforged.neoforge.event.level.BlockDropsEvent event) {
             if (!(event.getBreaker() instanceof Player player) || event.getDrops().isEmpty()) return;
             var held = player.getMainHandItem();
@@ -559,9 +561,9 @@ public final class FociWorld {
             var level = event.getLevel();
             for (var drop : event.getDrops()) {
                 var is = drop.getItem();
-                var result = special().get(is.getItem());
+                var result = resolve(is);
                 if (result == null || level.random.nextFloat() > chance * result.chance) continue;
-                var cluster = net.minecraft.core.registries.BuiltInRegistries.ITEM.get(AlchemyContent.id(result.cluster));
+                var cluster = clusterItem(result);
                 drop.setItem(new ItemStack(cluster, result.perBlock ? 1 : is.getCount()));
                 level.playSound(null, event.getPos(), SoundEvents.EXPERIENCE_ORB_PICKUP, SoundSource.BLOCKS, .2f, .7f + level.random.nextFloat() * .2f);
             }

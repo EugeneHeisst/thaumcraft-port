@@ -6,8 +6,12 @@ import thaumcraft.api.research.*;
 // CAP_silver is omitted as in ConfigResearch: the original registers it only when
 // a silver ingot exists. This port currently has no silver material or silver caps.
 public final class ConfigResearchData {
- public static void init() {
- if (!ResearchCategories.researchCategories.isEmpty()) return;
+ private static boolean initialized;
+ public static synchronized void init() {
+ // Addons can register their category before the first native research lookup.
+ // Their presence must not suppress all six native categories.
+ if (initialized) return;
+ initialized = true;
 
 ResearchCategories.registerCategory("BASICS", ResourceLocation.fromNamespaceAndPath("tc4modern", "textures/items/thaumonomiconcheat.png"), ResourceLocation.fromNamespaceAndPath("tc4modern", "textures/gui/gui_researchback.png"));
 ResearchCategories.registerCategory("THAUMATURGY", ResourceLocation.fromNamespaceAndPath("tc4modern", "textures/misc/r_thaumaturgy.png"), ResourceLocation.fromNamespaceAndPath("tc4modern", "textures/gui/gui_researchback.png"));
