@@ -26,7 +26,7 @@ public final class InfusionItemRecipes {
             else data.putInt("mask",switch(key){case "MaskGrinningDevil"->0;case "MaskAngryGhost"->1;default->2;});
             result.set(net.minecraft.core.component.DataComponents.CUSTOM_DATA,net.minecraft.world.item.component.CustomData.of(data));return result;
         }
-        public List<ItemStack> componentStacks(){var stacks=new ArrayList<ItemStack>();for(var c:components)stacks.add(new ItemStack(c.get()));
+        public List<ItemStack> componentStacks(){var addon=dev.eugheist.tc4modern.api.TC4Addons.infusionComponents(key);if(addon!=null)return addon;var stacks=new ArrayList<ItemStack>();for(var c:components)stacks.add(new ItemStack(c.get()));
             var potion=switch(key){case "RunicRingCharged"->net.minecraft.world.item.alchemy.Potions.STRONG_SWIFTNESS;case "RunicRingHealing"->net.minecraft.world.item.alchemy.Potions.LONG_REGENERATION;case "RunicAmuletEmergency"->net.minecraft.world.item.alchemy.Potions.STRONG_STRENGTH;case "RunicGirdleKinetic"->net.minecraft.world.item.alchemy.Potions.STRONG_HARMING;default->null;};
             if(key.equals("BootsTraveller")){var data=new net.minecraft.nbt.CompoundTag();data.putBoolean("TC4AnyRawFish",true);stacks.get(5).set(net.minecraft.core.component.DataComponents.CUSTOM_DATA,net.minecraft.world.item.component.CustomData.of(data));}
             if(key.equals("CoreAlchemy"))for(int i=1;i<4;i++)stacks.set(i,net.minecraft.world.item.alchemy.PotionContents.createItemStack(Items.POTION,net.minecraft.world.item.alchemy.Potions.WATER));

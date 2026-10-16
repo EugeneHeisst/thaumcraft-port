@@ -30,7 +30,13 @@ public final class InfusionMatrixLogic {
     public int symmetry, instability, count, countDelay = 10, itemCount;
     public AspectList recipeEssentia = new AspectList();
     /** Legacy potion identity was metadata; modern potion contents must survive the consumption check too. */
-    public static boolean sameIngredient(ItemStack actual,ItemStack expected){return (dev.eugheist.tc4modern.NoteData.tag(expected).getBoolean("TC4AnyRawFish")?java.util.Set.of(net.minecraft.world.item.Items.COD,net.minecraft.world.item.Items.SALMON,net.minecraft.world.item.Items.TROPICAL_FISH,net.minecraft.world.item.Items.PUFFERFISH).contains(actual.getItem()):ItemStack.isSameItem(actual,expected))&&(!expected.has(net.minecraft.core.component.DataComponents.POTION_CONTENTS)||java.util.Objects.equals(actual.get(net.minecraft.core.component.DataComponents.POTION_CONTENTS),expected.get(net.minecraft.core.component.DataComponents.POTION_CONTENTS)));}
+    public static boolean sameIngredient(ItemStack actual,ItemStack expected){
+        var data=dev.eugheist.tc4modern.NoteData.tag(expected);boolean item;
+        if(data.contains("TC4IngredientTag")){var id=net.minecraft.resources.ResourceLocation.tryParse(data.getString("TC4IngredientTag"));item=id!=null&&actual.is(net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM,id));}
+        else if(data.getBoolean("TC4AnyRawFish"))item=java.util.Set.of(net.minecraft.world.item.Items.COD,net.minecraft.world.item.Items.SALMON,net.minecraft.world.item.Items.TROPICAL_FISH,net.minecraft.world.item.Items.PUFFERFISH).contains(actual.getItem());
+        else item=ItemStack.isSameItem(actual,expected);
+        return item&&(!expected.has(net.minecraft.core.component.DataComponents.POTION_CONTENTS)||java.util.Objects.equals(actual.get(net.minecraft.core.component.DataComponents.POTION_CONTENTS),expected.get(net.minecraft.core.component.DataComponents.POTION_CONTENTS)));
+    }
     public List<ItemStack> recipeIngredients;
     public ItemStack recipeOutput;
     public Holder<Enchantment> recipeEnchantment;

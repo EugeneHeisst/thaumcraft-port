@@ -73,6 +73,11 @@ public final class TC4Addons {
     /** Addon infusion results with components (charge, dye or state) beyond a plain item. */
     public static void registerInfusionOutput(String key, java.util.function.Function<ItemStack,ItemStack> output) { INFUSION_OUTPUTS.put(key,output); }
     @Nullable public static ItemStack infusionOutput(String key, ItemStack central) { var output=INFUSION_OUTPUTS.get(key);return output==null?null:output.apply(central); }
+    private static final Map<String,java.util.function.Supplier<List<ItemStack>>> INFUSION_COMPONENTS = new ConcurrentHashMap<>();
+    /** Addon ingredients with tag alternatives; expected stacks persist through the native matrix crafting lifecycle. */
+    public static void registerInfusionComponents(String key, java.util.function.Supplier<List<ItemStack>> components) { INFUSION_COMPONENTS.put(key,components); }
+    @Nullable public static List<ItemStack> infusionComponents(String key) { var source=INFUSION_COMPONENTS.get(key);return source==null?null:source.get().stream().map(ItemStack::copy).toList(); }
+    public static ItemStack tagIngredient(ItemStack display, ResourceLocation tag) { var copy=display.copyWithCount(1);net.minecraft.world.item.component.CustomData.update(net.minecraft.core.component.DataComponents.CUSTOM_DATA,copy,data->data.putString("TC4IngredientTag",tag.toString()));return copy; }
     public static void addInfusionRecipe(InfusionItemRecipes.Recipe recipe) { INFUSION.add(recipe); }
     private static final Map<String, thaumcraft.api.crafting.CrucibleRecipe> CRUCIBLE = new java.util.concurrent.ConcurrentHashMap<>();
     /** ThaumcraftApi.addCrucibleRecipe under a book page key; usable by crucibles, the Thaumatorium, JEI and research pages. */

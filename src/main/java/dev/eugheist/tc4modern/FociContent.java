@@ -230,7 +230,8 @@ public final class FociContent {
         if (!focus.onFocusRightClick(wand, level, player)) return null;
         return InteractionResultHolder.sidedSuccess(wand, level.isClientSide);
     }
-    static void startUsing(Player player, InteractionHand hand) { FOCUS_USERS.add(player.getId() * 2 + (player.level().isClientSide ? 1 : 0)); player.startUsingItem(hand); setCooldown(player, -1); }
+    /** Addon focus entry point; keeps the native wand use/tick/release lifecycle and cooldown. */
+    public static void startUsing(Player player, InteractionHand hand) { FOCUS_USERS.add(player.getId() * 2 + (player.level().isClientSide ? 1 : 0)); player.startUsingItem(hand); setCooldown(player, -1); }
     public static boolean usingFocus(LivingEntity e) { return FOCUS_USERS.contains(e.getId() * 2 + (e.level().isClientSide ? 1 : 0)); }
     public static void useTick(ItemStack wand, Player player, int count) {
         Focus focus = getFocus(wand);

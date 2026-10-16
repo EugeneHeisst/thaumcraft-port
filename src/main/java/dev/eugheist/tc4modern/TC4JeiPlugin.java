@@ -57,6 +57,8 @@ public final class TC4JeiPlugin implements IModPlugin {
             var input=new ItemStack(recipe.central().get());var components=new ArrayList<List<ItemStack>>();
             for(var part:recipe.componentStacks()){
                 // Production matcher accepts all four original raw-fish equivalents.
+                var marker=NoteData.tag(part).getString("TC4IngredientTag");
+                if(!marker.isEmpty()){var id=net.minecraft.resources.ResourceLocation.tryParse(marker);var variants=new ArrayList<ItemStack>();if(id!=null)BuiltInRegistries.ITEM.getTag(net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM,id)).ifPresent(tag->tag.forEach(holder->variants.add(new ItemStack(holder.value()))));components.add(variants.isEmpty()?List.of(part):List.copyOf(variants));continue;}
                 components.add(NoteData.tag(part).getBoolean("TC4AnyRawFish")?List.of(new ItemStack(Items.COD),new ItemStack(Items.SALMON),new ItemStack(Items.PUFFERFISH),new ItemStack(Items.TROPICAL_FISH)):List.of(part));
             }
             result.add(new InfusionDisplay(recipe.key(),recipe.research(),input,components,recipe.outputStack(input),recipe.aspects(),recipe.instability()));
