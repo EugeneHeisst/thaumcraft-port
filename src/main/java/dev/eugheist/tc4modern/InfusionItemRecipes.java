@@ -18,6 +18,7 @@ public final class InfusionItemRecipes {
     public record Recipe(String key, String research, Supplier<Item> output, int instability, AspectList aspects, Supplier<Item> central, List<Supplier<Item>> components) {
         public boolean augment(){return key.equals("HelmGoggles")||key.startsWith("Mask")||key.equals("AdvancedGolem");}
         public ItemStack outputStack(ItemStack input){
+            var addon=dev.eugheist.tc4modern.api.TC4Addons.infusionOutput(key,input);if(addon!=null)return addon.copy();
             if(!augment())return new ItemStack(output.get());
             var result=input.copyWithCount(1);var data=NoteData.tag(result);
             if(key.equals("AdvancedGolem"))data.putByte("advanced",(byte)1);

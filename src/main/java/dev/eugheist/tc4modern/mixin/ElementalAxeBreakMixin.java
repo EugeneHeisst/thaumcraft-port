@@ -10,5 +10,5 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class ElementalAxeBreakMixin {
  @Shadow protected ServerPlayer player;
  @Inject(method="destroyBlock",at=@At("HEAD"),cancellable=true)
- private void tc4modern$axe(BlockPos pos,CallbackInfoReturnable<Boolean> ci){var stack=player.getMainHandItem();if(stack.getItem() instanceof dev.eugheist.tc4modern.ElementalShovel shovel)shovel.capture(player,pos);if(stack.getItem() instanceof ElementalTools.Axe axe&&axe.onBlockStartBreak(stack,pos,player))ci.setReturnValue(false);}
+ private void tc4modern$axe(BlockPos pos,CallbackInfoReturnable<Boolean> ci){var stack=player.getMainHandItem();if(dev.eugheist.tc4modern.api.TC4Addons.beginBlockBreak(stack,pos,player)){ci.setReturnValue(false);return;}if(stack.getItem() instanceof dev.eugheist.tc4modern.ElementalShovel shovel)shovel.capture(player,pos);if(stack.getItem() instanceof ElementalTools.Axe axe&&axe.onBlockStartBreak(stack,pos,player))ci.setReturnValue(false);}
 }

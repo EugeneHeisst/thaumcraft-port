@@ -37,6 +37,20 @@ public final class TC4Addons {
         default void removed(dev.eugheist.tc4modern.StrawGolem golem, net.minecraft.world.entity.player.Player player, boolean dismantled) {}
     }
     private static final List<GolemHook> GOLEM_HOOKS = new CopyOnWriteArrayList<>();
+    /** 1.7.10 Item.onBlockStartBreak, invoked before modern ServerPlayerGameMode removes a block. True handles the break. */
+    @FunctionalInterface public interface BlockBreakHook { boolean start(ItemStack stack, net.minecraft.core.BlockPos pos, net.minecraft.server.level.ServerPlayer player); }
+    private static final List<BlockBreakHook> BLOCK_BREAK_HOOKS = new CopyOnWriteArrayList<>();
+    public static void registerBlockBreakHook(BlockBreakHook hook) { BLOCK_BREAK_HOOKS.add(hook); }
+    public static boolean beginBlockBreak(ItemStack stack, net.minecraft.core.BlockPos pos, net.minecraft.server.level.ServerPlayer player) { for (var hook:BLOCK_BREAK_HOOKS) if(hook.start(stack,pos,player)) return true;return false; }
+    /** Energy-backed pickaxes accepted by the arcane bore; payment runs once per protected, successful mining attempt. */
+    public interface BoreTool {
+        boolean accepts(ItemStack stack);
+        boolean canUse(ItemStack stack);
+        boolean consume(ItemStack stack, net.minecraft.server.level.ServerLevel level, net.minecraft.world.entity.LivingEntity actor);
+    }
+    private static final List<BoreTool> BORE_TOOLS = new CopyOnWriteArrayList<>();
+    public static void registerBoreTool(BoreTool hook) { BORE_TOOLS.add(hook); }
+    @Nullable public static BoreTool boreTool(ItemStack stack) { for (var hook : BORE_TOOLS) if (hook.accepts(stack)) return hook; return null; }
     /** Block entities holding a wand a vis charge relay above them may recharge (the arcane workbench is built in). */
     @FunctionalInterface public interface WandHolder { @Nullable ItemStack wand(net.minecraft.world.level.block.entity.BlockEntity tile); }
     private static final List<WandHolder> WAND_HOLDERS = new CopyOnWriteArrayList<>();
@@ -55,6 +69,10 @@ public final class TC4Addons {
     public static void registerObjectTag(ResourceLocation item, AspectList tags) { OBJECT_TAGS.put(item.toString(), tags.copy()); }
     public static void registerAspectProvider(AspectProvider provider) { PROVIDERS.add(provider); }
     public static void addArcaneRecipe(ArcaneRecipes.Entry recipe) { ARCANE.add(recipe); }
+    private static final Map<String, java.util.function.Function<ItemStack,ItemStack>> INFUSION_OUTPUTS = new ConcurrentHashMap<>();
+    /** Addon infusion results with components (charge, dye or state) beyond a plain item. */
+    public static void registerInfusionOutput(String key, java.util.function.Function<ItemStack,ItemStack> output) { INFUSION_OUTPUTS.put(key,output); }
+    @Nullable public static ItemStack infusionOutput(String key, ItemStack central) { var output=INFUSION_OUTPUTS.get(key);return output==null?null:output.apply(central); }
     public static void addInfusionRecipe(InfusionItemRecipes.Recipe recipe) { INFUSION.add(recipe); }
     private static final Map<String, thaumcraft.api.crafting.CrucibleRecipe> CRUCIBLE = new java.util.concurrent.ConcurrentHashMap<>();
     /** ThaumcraftApi.addCrucibleRecipe under a book page key; usable by crucibles, the Thaumatorium, JEI and research pages. */
