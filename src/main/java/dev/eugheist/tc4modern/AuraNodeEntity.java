@@ -13,7 +13,9 @@ public class AuraNodeEntity extends BlockEntity {
     public long drainUntil;
     public void drain(net.minecraft.world.entity.player.Player player,int color){drainEntityId=player.getId();drainColor=color;drainUntil=level.getGameTime()+6;}
     public String nodeId=java.util.UUID.randomUUID().toString();
-    public AuraNodeEntity(BlockPos pos,BlockState state){super(TC4Modern.AURA_NODE_ENTITY.get(),pos,state);}
+    public AuraNodeEntity(BlockPos pos,BlockState state){this(TC4Modern.AURA_NODE_ENTITY.get(),pos,state);}
+    /** Addon node subclasses retain their registered block entity type when saved and reloaded. */
+    protected AuraNodeEntity(net.minecraft.world.level.block.entity.BlockEntityType<?> type,BlockPos pos,BlockState state){super(type,pos,state);}
     public void changed(){setChanged();if(level!=null)level.sendBlockUpdated(worldPosition,getBlockState(),getBlockState(),3);}
     @Override protected void saveAdditional(CompoundTag tag,HolderLookup.Provider registries){
         super.saveAdditional(tag,registries);reservoir.aspects.writeToNBT(tag);tag.putString("nodeId",nodeId);tag.putByte("type",(byte)nodeType.ordinal());
