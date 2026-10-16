@@ -523,6 +523,8 @@ tasks.named('processResources', ProcessResources).configure {
     from(zipTree(bundledTc4Pack)) {
         include 'assets/**'
         exclude 'assets/tc4modern/lang/en_us.json', 'assets/tc4modern/lang/ru_ru.json'
+        // stray "name - copy.png" duplicates in the pack: invalid resource paths (spaces) that Minecraft logs as errors
+        exclude '**/* - copy.*'
         // The imported pack previously had top priority over these few base models/lang files.
         duplicatesStrategy = DuplicatesStrategy.INCLUDE
     }

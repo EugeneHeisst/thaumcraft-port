@@ -70,7 +70,8 @@ public final class BaublesScreen extends EffectRenderingInventoryScreen<BaublesM
             setX(screen.getGuiLeft() + 66);
             setY(screen.getGuiTop() + 9);
             com.mojang.blaze3d.systems.RenderSystem.enableBlend();
-            if (isHovered()) gui.blit(BACKGROUND, getX(), getY(), 200, 48, 10, 10);
+            // Original GuiBaublesButton: hover state 1 (not hovered) draws the plain icon; hovered draws the lit icon and the label under it.
+            if (!isHovered()) gui.blit(BACKGROUND, getX(), getY(), 200, 48, 10, 10);
             else {
                 gui.blit(BACKGROUND, getX(), getY(), 210, 48, 10, 10);
                 gui.drawCenteredString(Minecraft.getInstance().font, getMessage(), getX() + 5, getY() + height, 0xFFFFFF);
