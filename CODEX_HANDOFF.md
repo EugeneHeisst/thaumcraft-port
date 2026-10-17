@@ -33,3 +33,6 @@ New PortableHoleRenderAudit uses native BER collection and screenshots in an iso
 
 
 Final validation/deployment 2026-10-17 19:54 Moscow: final filtered starfield54/54PASS; real FociAudit3×3×9andrestorationPASS, native image compared with genuine original. Cleanbuild then finalbuildPASS; finalJARSHA22c67c732de81bfb422bfb8ed505a2525227ece8c5b334503313a60871b4d1e1. ExactfinalJAR fullpackdedicated29/29+hiddenclientJEI14/14, noERROR. Installedserver+Prism,oldTC178backedupatmod-backups/codex-hole-20261017-195300,offlineworldbackup209007537bytesCRCverified. FreshDone19:53:44/1.568s,0ERROR,20TPS/1.9ms. All5portsSHAidenticalbothplaces. Currentmanifest ../compat-test/CODEX_HOLE_DEPLOY_STATE.json and CURRENT_DEPLOY_STATE.json. Sourcecommitd5e3d2d. Release/issueclosureawaitspecificuserreview; noGitHubwrites.
+
+
+User review complete: «проверил все четко». This answers the pending review/publication question; publish TC4 0.17.179 and close issue#1. Release notes accurately scope manual verification to the Portable Hole fix; other tests remain automated. Other ports’ pending releases are separate.
