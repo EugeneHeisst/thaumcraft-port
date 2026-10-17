@@ -28,6 +28,7 @@ public final class FociClient {
     static final class ModEvents {
         @SubscribeEvent static void keys(RegisterKeyMappingsEvent e) { e.register(KEY_F); }
         @SubscribeEvent static void renderers(EntityRenderersEvent.RegisterRenderers e) {
+            e.registerBlockEntityRenderer(FociWorld.HOLE_ENTITY.get(), PortableHoleRenderer::new);
             e.registerEntityRenderer(FociContent.EMBER.get(), EmberRenderer::new);
             e.registerEntityRenderer(FociContent.FROST_SHARD.get(), FrostShardRenderer::new);
             e.registerEntityRenderer(FocusProjectiles.EXPLOSIVE_ORB.get(), ExplosiveOrbRenderer::new);

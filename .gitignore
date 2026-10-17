@@ -120,3 +120,6 @@ run-spawn-config-audit/
 # Reference sources, local server and work copies moved inside the project (not tracked)
 related/
 versions/
+/run-hole-render-audit/
+/audits/issue-1-original/
+/audits/issue-1-hole/

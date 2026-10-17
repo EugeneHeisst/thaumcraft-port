@@ -231,6 +231,12 @@ neoForge {
             programArgument "--nogui"
             systemProperty "tc4modern.chestLootAudit", "true"
         }
+        holeRenderAudit {
+            client()
+            gameDirectory = project.file("run-hole-render-audit")
+            systemProperty "tc4modern.holeRenderAuditOnly", "true"
+            programArguments.addAll("--width", "1280", "--height", "960", "--quickPlaySingleplayer", "HoleRenderInspection")
+        }
         portableHoleAudit {
             server()
             gameDirectory = project.file("run-portable-hole-audit")
