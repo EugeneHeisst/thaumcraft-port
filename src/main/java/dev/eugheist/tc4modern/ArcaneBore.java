@@ -105,8 +105,10 @@ public final class ArcaneBore {
   }
   void mine(){var l=(ServerLevel)level;var state=l.getBlockState(dig);var electric=dev.eugheist.tc4modern.api.TC4Addons.boreTool(items.get(1));if(!state.isAir()){
     var event=new net.neoforged.neoforge.event.level.BlockEvent.BreakEvent(l,dig,state,fake);net.neoforged.neoforge.common.NeoForge.EVENT_BUS.post(event);if(event.isCanceled())return;
+    // Snapshot before paying: gameplay enchantments can depend on the tool still holding the last operation's EU.
+    var tool=items.get(1).copy();boolean silk=silk();
     if(electric!=null&&!electric.consume(items.get(1),l,fake))return;
-    var tool=items.get(1).copy();tool.set(net.minecraft.core.component.DataComponents.ENCHANTMENTS,net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);var ench=l.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);boolean silk=silk();if(silk)tool.enchant(ench.getOrThrow(Enchantments.SILK_TOUCH),1);else if(fortune>0)tool.enchant(ench.getOrThrow(Enchantments.FORTUNE),fortune);
+    tool.set(net.minecraft.core.component.DataComponents.ENCHANTMENTS,net.minecraft.world.item.enchantment.ItemEnchantments.EMPTY);var ench=l.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);if(silk)tool.enchant(ench.getOrThrow(Enchantments.SILK_TOUCH),1);else if(fortune>0)tool.enchant(ench.getOrThrow(Enchantments.FORTUNE),fortune);
     var drops=new ArrayList<>(Block.getDrops(state,l,dig,l.getBlockEntity(dig),fake,tool));for(var old:l.getEntitiesOfClass(ItemEntity.class,new AABB(dig).inflate(1))){drops.add(old.getItem().copy());old.discard();}
     l.levelEvent(2001,dig,Block.getId(state));for(var stack:drops){if(!silk&&clusters()){var special=FociWorld.Dowsing.resolve(stack);if(special!=null&&l.random.nextFloat()<(.2f+fortune*.075f)*special.chance())stack=new ItemStack(FociWorld.Dowsing.clusterItem(special),special.perBlock()?1:stack.getCount());}output(stack);}
    }if(electric==null)items.get(1).hurtAndBreak(1,l,fake,item->{});l.removeBlock(dig,false);placeLight();setChanged();

@@ -14,3 +14,10 @@ Next EMT armor→remainingEMT→Gravi Suit→combined compatibility. TC4 product
 
 
 2026-10-16 23:45 Moscow: LOCAL0.17.176 for EMT0.1.7. Native tin/silver/lead clusters (original aspects/models), typed TC4Addons native-cluster input/output/factor/perBlock bridge shared by Dowsing elemental-pick drops and ArcaneBore. RecipeAspects divides infusion aspect estimates by actual addon output count. ConfigResearchData now guards its own initialization, rather than assuming any addon category means native research loaded. Validated EMT355/355 including genuine pick/bore harvest and native INFUSION research presence, isolated startup disabled config, hidden82item/3cluster/book/JEI client, build. Archived versions/0.17.176; production still172. No publish/install.
+
+
+## Codex 2026-10-17 — LOCAL 0.17.178 (production stays177)
+
+ArcaneBore copies its effective enchanted tool after protection and before EU debit. VirtualSilkVajra with exactly3333EU now dropsstone rather than losingSilk after payment; ownSilk/Unbreaking retained. NativeBoreAudit5/5 (lastEU, ownenchants, off,3332, canceledprotection), realnetwork26/26/118272EU conserved, archivedversions/0.17.178. No install/publication for178 yet. Latest installedset/approval/Claudehandoff: /home/eugheist/Project/CLAUDE_CONTINUE_PORTS.md.
+
+Final local-next full production-pack regression: dedicated29/29, hidden client/JEI14/14 (2026-10-17 04:51 Moscow); exact EMT.10+TC178 with IC2.23/ASP.12/Gravi.14. Archived full-pack-server.log/full-pack-client.log. Production unchanged.
