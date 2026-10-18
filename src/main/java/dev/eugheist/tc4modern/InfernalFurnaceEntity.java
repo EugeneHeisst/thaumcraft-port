@@ -45,8 +45,8 @@ public final class InfernalFurnaceEntity extends BlockEntity {
         if(input.is(Items.BEEF))return new ItemStack(TC4Modern.BEEF_NUGGET.get());
         if(input.is(Items.PORKCHOP))return new ItemStack(TC4Modern.PORK_NUGGET.get());
         if(input.is(Items.COD)||input.is(Items.SALMON))return new ItemStack(TC4Modern.FISH_NUGGET.get());
-        if(input.is(net.minecraft.tags.ItemTags.create(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("c","ores/gold"))))return new ItemStack(Items.GOLD_NUGGET);
-        if(input.is(net.minecraft.tags.ItemTags.create(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("c","ores/iron"))))return new ItemStack(Items.IRON_NUGGET);
+        if(input.is(net.minecraft.tags.ItemTags.create(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("c","ores/gold")))||input.is(net.minecraft.tags.ItemTags.create(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("c","raw_materials/gold"))))return new ItemStack(Items.GOLD_NUGGET);
+        if(input.is(net.minecraft.tags.ItemTags.create(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("c","ores/iron")))||input.is(net.minecraft.tags.ItemTags.create(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("c","raw_materials/iron"))))return new ItemStack(Items.IRON_NUGGET);
         return ItemStack.EMPTY;
     }
     private static boolean meatBonus(ItemStack input){
