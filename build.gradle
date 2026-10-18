@@ -54,6 +54,13 @@ neoForge {
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
     runs {
+        featureLocateAudit {
+            server()
+            gameDirectory = file(providers.gradleProperty('locateAuditDir').getOrElse('run-feature-locate-audit'))
+            programArgument '--nogui'
+            systemProperty 'tc4modern.featureLocateAudit', 'true'
+            systemProperty 'tc4modern.featureLocateResults', providers.gradleProperty('locateAuditResults').getOrElse(layout.buildDirectory.file('feature-locate-results.properties').get().asFile.absolutePath)
+        }
         creativeScanSurvivalRegression {
             client()
             gameDirectory = project.file("run-creative-gameplay-audit")
