@@ -1,4 +1,4 @@
-Thaumcraft PORT is an unofficial port of Thaumcraft 4.2.3.5 to Minecraft 1.21.1 (NeoForge).
+Thaumcraft UNOFFICIAL PORT is an unofficial port of Thaumcraft 4.2.3.5 to Minecraft 1.21.1 (NeoForge).
 
 Thaumcraft and all of its original code, textures, models, sounds and texts are made by Azanor.
 All rights to the original belong to Azanor (original license: All Rights Reserved).
