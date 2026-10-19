@@ -1,4 +1,4 @@
-# Thaumcraft PORT
+# Thaumcraft UNOFFICIAL PORT
 
 Неофициальный порт **Thaumcraft 4.2.3.5** (автор оригинала — Azanor) на **Minecraft 1.21.1 / NeoForge**.
 
@@ -17,8 +17,8 @@
 
 ## Связанные моды
 
-- [Thaumic Tinkerer PORT](https://github.com/EugeneHeisst/thaumic-tinkerer-port)
-- [Thaumic Energistics PORT](https://github.com/EugeneHeisst/thaumic-energistics-port)
+- [Thaumic Tinkerer UNOFFICIAL PORT](https://github.com/EugeneHeisst/thaumic-tinkerer-port)
+- [Thaumic Energistics UNOFFICIAL PORT](https://github.com/EugeneHeisst/thaumic-energistics-port)
 
 ## Сборка
 
