@@ -24,8 +24,11 @@ final class VillageBuildings {
         for(int y=-1;origin.getY()+y>world.getMinBuildHeight()+1;y--){var state=world.getBlockState(pos(x,y,z));if(!state.isAir()&&state.getFluidState().isEmpty())break;set(x,y,z,Blocks.COBBLESTONE.defaultBlockState());}
     }
     void door(int x,int z){var state=Blocks.OAK_DOOR.defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING,Direction.SOUTH);set(x,1,z,state);set(x,2,z,state.setValue(BlockStateProperties.DOUBLE_BLOCK_HALF,DoubleBlockHalf.UPPER));}
-    void stairs(int x,int z){if(world.isEmptyBlock(pos(x,0,z))&&!world.isEmptyBlock(pos(x,-1,z)))set(x,0,z,Blocks.COBBLESTONE_STAIRS.defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING,Direction.NORTH));}
-    void villager(boolean wizard,int x,int z){var p=pos(x,1,z);if(!clip.isInside(p))return;var villager=(wizard?VillageContent.WIZARD:VillageContent.BANKER).get().create(world.getLevel());if(villager!=null){villager.moveTo(p.getX()+.5,p.getY(),p.getZ()+.5,0,0);villager.finalizeSpawn(world,world.getCurrentDifficultyAt(p),net.minecraft.world.entity.MobSpawnType.STRUCTURE,null);world.addFreshEntity(villager);}}
+    /** Original getMetadataWithOffset(stairs,3): the step rises towards the door, not away from it. */
+    void stairs(int x,int z){if(world.isEmptyBlock(pos(x,0,z))&&!world.isEmptyBlock(pos(x,-1,z)))set(x,0,z,Blocks.COBBLESTONE_STAIRS.defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING,Direction.SOUTH));}
+    void villager(boolean wizard,int x,int z){var p=pos(x,1,z);if(clip.isInside(p))spawn(world,wizard,p);}
+    /** A vanilla villager with the Thaumcraft profession; it claims the nearby job site like any modern villager. */
+    static void spawn(WorldGenLevel world,boolean wizard,BlockPos p){var villager=VillageContent.villager(world.getLevel(),wizard);if(villager!=null){villager.moveTo(p.getX()+.5,p.getY(),p.getZ()+.5,0,0);villager.finalizeSpawn(world,world.getCurrentDifficultyAt(p),net.minecraft.world.entity.MobSpawnType.STRUCTURE,null);villager.setVillagerXp(1);world.addFreshEntity(villager);}}
     void wizard(RandomSource random){
         var air=Blocks.AIR.defaultBlockState();var planks=Blocks.OAK_PLANKS.defaultBlockState();var cobble=Blocks.COBBLESTONE.defaultBlockState();
         fill(2,1,2,4,11,4,air);for(int y:new int[]{0,5,10})fill(2,y,2,4,y,4,planks);
@@ -35,6 +38,8 @@ final class VillageBuildings {
         for(int y=1;y<=9;y++)set(4,y,3,Blocks.LADDER.defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING,Direction.WEST));
         set(4,10,3,Blocks.OAK_TRAPDOOR.defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING,Direction.SOUTH).setValue(BlockStateProperties.OPEN,true));
         set(3,5,3,Blocks.GLOWSTONE.defaultBlockState());
+        // Issue #4: the wizard's modern job site.
+        set(2,1,4,TC4Modern.CRUCIBLE.get().defaultBlockState());
         var chestPos=pos(2,6,2);if(clip.isInside(chestPos)){
             set(2,6,2,Blocks.CHEST.defaultBlockState());if(world.getBlockEntity(chestPos) instanceof net.minecraft.world.level.block.entity.ChestBlockEntity chest){
                 chest.clearContent();for(int roll=4+random.nextInt(5);roll>0;roll--){int choice=random.nextInt(81),index=0;int[] weights={3,10,5,5,3,20,5,5,5,20};while(choice>=weights[index])choice-=weights[index++];

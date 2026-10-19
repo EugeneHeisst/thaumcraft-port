@@ -4,9 +4,11 @@ import com.google.gson.GsonBuilder;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.List;
 import java.util.TreeMap;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -199,6 +201,28 @@ public final class AspectCoverageAudit {
             if(!tags.equals(Map.of("praecantatio",8,"aqua",8,"fabrico",8)))throw new IllegalStateException("Original advanced furnace part lost wildcard aspects: "+part);
             variants.put("tc4modern:advanced_alchemical_furnace#part="+part,tags);
         }
+        // Issue #5: a placed powder snow block is scanned as the block, not as its bucket item.
+        var snow=net.minecraft.world.level.block.Blocks.POWDER_SNOW.defaultBlockState();
+        if(!BlockAspectBridge.bucketForm(new ItemStack(snow.getBlock()))||!BlockAspectBridge.stack(snow).isEmpty())throw new IllegalStateException("Powder snow block still resolves to its bucket item");
+        if(!BlockAspectBridge.key(snow).equals("minecraft:powder_snow"))throw new IllegalStateException("Powder snow block shares the bucket scan key");
+        if(!BlockAspectBridge.get(snow,level).equals(ModernAspectCatalog.get("blocks","minecraft:powder_snow")))throw new IllegalStateException("Powder snow block lost its block aspects: "+BlockAspectBridge.get(snow,level));
+        for(var block:java.util.List.of(net.minecraft.world.level.block.Blocks.STONE,net.minecraft.world.level.block.Blocks.SNOW_BLOCK,net.minecraft.world.level.block.Blocks.OAK_LOG))if(BlockAspectBridge.stack(block.defaultBlockState()).isEmpty())throw new IllegalStateException("Ordinary block lost its item form: "+block);
+        System.out.println("TC4_POWDER_SNOW_SCAN ALL PASS block key/aspects "+BlockAspectBridge.get(snow,level)+", name source block, bucket separate");
+        // Issue #8: every wood family carries the original oak bonus; warped and nether wart blocks match.
+        var woods=new java.util.TreeMap<String,Map<String,Integer>>();
+        for(String kind:List.of("door","trapdoor","pressure_plate","fence_gate","button","boat")){
+            var oakTags=RecipeAspects.get(new ItemStack(BuiltInRegistries.ITEM.get(net.minecraft.resources.ResourceLocation.withDefaultNamespace("oak_"+kind))),level);
+            for(String wood:List.of("spruce","birch","jungle","acacia","dark_oak","mangrove","cherry","bamboo","crimson","warped")){
+                String id=wood.equals("bamboo")&&kind.equals("boat")?"bamboo_raft":wood+"_"+kind;var item=BuiltInRegistries.ITEM.get(net.minecraft.resources.ResourceLocation.withDefaultNamespace(id));
+                if(item==Items.AIR)continue;var tags=RecipeAspects.get(new ItemStack(item),level);woods.put(id,tags);
+                for(var aspect:oakTags.keySet())if(!aspect.equals("arbor")&&!tags.containsKey(aspect))throw new IllegalStateException(id+" lacks the original oak "+kind+" bonus "+aspect+": "+tags+" vs oak "+oakTags);
+                var block=net.minecraft.world.level.block.Block.byItem(item);if(block!=net.minecraft.world.level.block.Blocks.AIR&&!BlockAspectBridge.get(block.defaultBlockState(),level).equals(tags))throw new IllegalStateException("placed "+id+" differs from its item: "+BlockAspectBridge.get(block.defaultBlockState(),level)+" vs "+tags);
+            }
+        }
+        if(!RecipeAspects.get(new ItemStack(Items.IRON_DOOR),level).containsKey("metallum")||RecipeAspects.get(new ItemStack(Items.STONE_BUTTON),level).containsKey("arbor"))throw new IllegalStateException("non-wood doors/buttons changed");
+        var nether=RecipeAspects.get(new ItemStack(Items.NETHER_WART_BLOCK),level);var warped=RecipeAspects.get(new ItemStack(Items.WARPED_WART_BLOCK),level);
+        if(!nether.equals(warped))throw new IllegalStateException("wart blocks differ: nether "+nether+" warped "+warped);
+        System.out.println("TC4_WOOD_VARIANT_ASPECTS ALL PASS "+woods.size()+" wood variants carry oak bonuses, e.g. spruce_door="+woods.get("spruce_door")+" birch_boat="+woods.get("birch_boat")+"; wart blocks "+warped);
         System.out.println("TC4_FURNACE_RING_ASPECTS ALL PASS original wildcard tags for five furnace parts and metadata-three air ring");
         System.out.println("TC4_ORIGINAL_ITEM_ASPECTS ALL PASS: static items, 48 filled wisp essences and five obelisk/device blocks");
     }

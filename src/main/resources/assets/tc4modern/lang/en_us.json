@@ -552,5 +552,7 @@
   "tc.aspect.help.corpus": "flesh",
   "item.tc4modern.tin_cluster": "Native Tin Cluster",
   "item.tc4modern.silver_cluster": "Native Silver Cluster",
-  "item.tc4modern.lead_cluster": "Native Lead Cluster"
+  "item.tc4modern.lead_cluster": "Native Lead Cluster",
+  "entity.minecraft.villager.wizard": "Wizard",
+  "entity.minecraft.villager.banker": "Banker"
 }

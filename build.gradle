@@ -238,6 +238,12 @@ neoForge {
             programArgument "--nogui"
             systemProperty "tc4modern.chestLootAudit", "true"
         }
+        villagerLookAudit {
+            client()
+            gameDirectory = project.file("run-villager-look-audit")
+            systemProperty "tc4modern.villagerLookAuditOnly", "true"
+            programArguments.addAll("--width", "1280", "--height", "960", "--quickPlaySingleplayer", "VillagerLook")
+        }
         holeRenderAudit {
             client()
             gameDirectory = project.file("run-hole-render-audit")
@@ -540,6 +546,14 @@ tasks.named('processResources', ProcessResources).configure {
         exclude '**/* - copy.*'
         // The imported pack previously had top priority over these few base models/lang files.
         duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    }
+    // Issue #4: the modern villager profession layers reuse the original wizard and moneychanger skins.
+    ['villager', 'zombie_villager'].each { kind ->
+        from(zipTree(bundledTc4Pack)) {
+            include 'assets/tc4modern/textures/models/wizard.png', 'assets/tc4modern/textures/models/moneychanger.png'
+            eachFile { it.path = "assets/tc4modern/textures/entity/${kind}/profession/" + (it.name == 'wizard.png' ? 'wizard.png' : 'banker.png') }
+            includeEmptyDirs = false
+        }
     }
     from(mergeBundledLanguages) { duplicatesStrategy = DuplicatesStrategy.INCLUDE }
 }

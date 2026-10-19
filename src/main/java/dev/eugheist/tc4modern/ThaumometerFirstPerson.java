@@ -221,7 +221,7 @@ public final class ThaumometerFirstPerson {
                 BlockPos pos = ScanTarget.blockPos(id);
                 var state = player.level().getBlockState(pos);
                 ItemStack stack = state.getCloneItemStack(new net.minecraft.world.phys.BlockHitResult(pos.getCenter(), net.minecraft.core.Direction.UP, pos, false), player.level(), pos, player);
-                return stack.isEmpty() ? state.getBlock().getName().getString() : stack.getHoverName().getString();
+                return stack.isEmpty() || BlockAspectBridge.bucketForm(stack) ? state.getBlock().getName().getString() : stack.getHoverName().getString();
             }
             if (id.startsWith("node:") && mc.hitResult instanceof net.minecraft.world.phys.BlockHitResult hit)
                 return player.level().getBlockState(hit.getBlockPos()).getBlock().getName().getString();

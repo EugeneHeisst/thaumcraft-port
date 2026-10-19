@@ -13,6 +13,12 @@ final class BlockAspectBridge {
         if(state.getBlock() instanceof TaintFibresBlock)return state.getValue(TaintFibresBlock.VARIANT);
         return 0;
     }
+    /** Item form of a placed block; powder snow (and any block whose item is a bucket) is not its bucket. */
+    static ItemStack stack(BlockState state) {
+        var stack=new ItemStack(state.getBlock());
+        return bucketForm(stack) ? ItemStack.EMPTY : stack;
+    }
+    static boolean bucketForm(ItemStack stack){return stack.getItem() instanceof net.minecraft.world.item.DispensibleContainerItem;}
     static String key(BlockState state) {
         String id=BuiltInRegistries.BLOCK.getKey(state.getBlock()).toString();
         int variant=variant(state);
@@ -23,7 +29,7 @@ final class BlockAspectBridge {
         String key=key(state);
         var tags=AspectTable.get(key);
         if(tags.isEmpty())tags=AspectTable.get(id);
-        if(tags.isEmpty())tags=RecipeAspects.block(id,new ItemStack(state.getBlock()),level);
+        if(tags.isEmpty())tags=RecipeAspects.block(id,stack(state),level);
         if(tags.isEmpty())tags=ModernAspectCatalog.get("blocks",key);
         if(tags.isEmpty())tags=ModernAspectCatalog.get("blocks",id);
         return tags;

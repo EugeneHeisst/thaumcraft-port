@@ -24,7 +24,7 @@ public final class RecipeAspects {
         Map<String,Integer> result=new LinkedHashMap<>();for(var aspect:tags.getAspects())if(tags.getAmount(aspect)>0)result.put(aspect.getTag(),tags.getAmount(aspect));return result;
     }
     public static synchronized Map<String,Integer> block(String id,ItemStack stack,Level level){
-        var complex=thaumcraft.common.config.ConfigComplexAspects.get(id);
+        var complex=complex(id);
         if(stack.isEmpty() && complex!=null && !complex.inherited().isEmpty()){
             var inherited=BuiltInRegistries.ITEM.get(net.minecraft.resources.ResourceLocation.parse(complex.inherited()));
             var tags=RESOLVERS.computeIfAbsent(level.getRecipeManager(),manager->new Resolver(level)).generate(inherited,new ArrayList<>());
@@ -32,6 +32,19 @@ public final class RecipeAspects {
             Map<String,Integer> map=new LinkedHashMap<>();for(var aspect:result.getAspects())map.put(aspect.getTag(),Math.min(64,result.getAmount(aspect)));return map;
         }
         return get(stack,level);
+    }
+    /**
+     * Original complex bonus for an id. TC4 only knew oak, so modern wood variants of its doors, trapdoors, plates,
+     * gates, buttons and boats share the oak bonus, and the warped wart block matches the nether wart block (issue #8).
+     */
+    static thaumcraft.common.config.ConfigComplexAspects.Entry complex(String id){
+        var own=thaumcraft.common.config.ConfigComplexAspects.get(id);if(own!=null)return own;
+        if(id.equals("minecraft:warped_wart_block"))return new thaumcraft.common.config.ConfigComplexAspects.Entry(id,"minecraft:nether_wart_block",new thaumcraft.api.aspects.AspectList());
+        var key=net.minecraft.resources.ResourceLocation.tryParse(id);if(key==null||!BuiltInRegistries.ITEM.containsKey(key))return null;
+        var stack=new ItemStack(BuiltInRegistries.ITEM.get(key));
+        String oak=stack.is(net.minecraft.tags.ItemTags.WOODEN_DOORS)?"door":stack.is(net.minecraft.tags.ItemTags.WOODEN_TRAPDOORS)?"trapdoor":stack.is(net.minecraft.tags.ItemTags.WOODEN_PRESSURE_PLATES)?"pressure_plate":
+            stack.is(net.minecraft.tags.ItemTags.FENCE_GATES)?"fence_gate":stack.is(net.minecraft.tags.ItemTags.WOODEN_BUTTONS)?"button":stack.is(net.minecraft.tags.ItemTags.BOATS)&&!stack.is(net.minecraft.tags.ItemTags.CHEST_BOATS)?"boat":null;
+        return oak==null?null:thaumcraft.common.config.ConfigComplexAspects.get("minecraft:oak_"+oak);
     }
     public static synchronized void clear(){RESOLVERS.clear();}
     @SubscribeEvent public static void tags(net.neoforged.neoforge.event.TagsUpdatedEvent event){clear();}
@@ -111,7 +124,7 @@ public final class RecipeAspects {
                     if(possible.visSize()>0 && possible.visSize()<value){result=possible;value=possible.visSize();}
                 }
             }
-            var complex=thaumcraft.common.config.ConfigComplexAspects.get(BuiltInRegistries.ITEM.getKey(item).toString());
+            var complex=complex(BuiltInRegistries.ITEM.getKey(item).toString());
             if(complex!=null){
                 var extra=complex.additional().copy();
                 if(!complex.inherited().isEmpty()){

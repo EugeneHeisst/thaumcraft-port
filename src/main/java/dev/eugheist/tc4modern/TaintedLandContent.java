@@ -63,6 +63,9 @@ final class TaintedLandContent {
             for(int i=0;i<count;i++) {
                 var pos=level.getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,c.origin().offset(rng.nextInt(16),0,rng.nextInt(16)));
                 if(rng.nextInt(8)==0)placed|=MagicalForestTrees.growBigOak(level,rng,pos);
+                // The heightmap stops on water; the vanilla oak feature has no soil check and would lay its own dirt block
+                // there. The original WorldGenTrees needed sustaining soil below the trunk.
+                else if(!level.getBlockState(pos.below()).is(net.minecraft.tags.BlockTags.DIRT)||!level.getFluidState(pos).isEmpty())continue;
                 else placed|=level.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE).getOrThrow(net.minecraft.data.worldgen.features.TreeFeatures.OAK).place(level,c.chunkGenerator(),rng,pos);
             }
             return placed;

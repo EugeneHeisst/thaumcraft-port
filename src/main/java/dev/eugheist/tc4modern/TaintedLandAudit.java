@@ -38,6 +38,16 @@ final class TaintedLandAudit {
             check(crust>0&&fibres>0&&attached+unsupported==fibres&&attached>fibres*.95,"natural crust blobs and visible attached fibres generate: "+crust+" / "+fibres+" / "+attached);
             check(logs>0,"ordinary/big oak trees generate in tainted terrain");
             check(ores>0,"overworld shard ores remain in naturally placed tainted biome");
+            // Issue #6: trees must not stand on a single generated dirt block over water.
+            var gen=level.getChunkSource().getGenerator();int waterLogs=0,grassLogs=0;var pond=new BlockPos(24000,0,24000);
+            for(int pass=0;pass<2;pass++){var base=pond.offset(pass*64,0,0);boolean water=pass==0;
+                for(int x=-8;x<40;x++)for(int z=-8;z<40;z++){level.getChunkAt(base.offset(x,0,z));
+                    for(int y=50;y<120;y++)level.setBlock(base.offset(x,y,z),y<60?Blocks.STONE.defaultBlockState():y<64&&water?Blocks.WATER.defaultBlockState():y==63?Blocks.GRASS_BLOCK.defaultBlockState():y<63?Blocks.DIRT.defaultBlockState():Blocks.AIR.defaultBlockState(),2);}
+                for(int seed=0;seed<40;seed++)new TaintedLandContent.Trees().place(new net.minecraft.world.level.levelgen.feature.FeaturePlaceContext<>(java.util.Optional.empty(),level,gen,net.minecraft.util.RandomSource.create(seed),base.offset(8,64,8),net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration.INSTANCE));
+                int n=0;for(int x=-8;x<40;x++)for(int z=-8;z<40;z++)for(int y=60;y<120;y++)if(level.getBlockState(base.offset(x,y,z)).is(Blocks.OAK_LOG))n++;
+                if(water)waterLogs=n;else grassLogs=n;}
+            check(waterLogs==0,"no tainted-land trees placed on open water: "+waterLogs+" logs");
+            check(grassLogs>0,"control: tainted-land trees still grow on grass: "+grassLogs+" logs");
             var text="TC4_TAINTED_LAND ALL PASS natural climate/25 chunks at "+center+" crust="+crust+" fibres="+fibres+" attached="+attached+" oakLogs="+logs+" shardOres="+ores+" original colours/spawns\n";
             java.nio.file.Files.writeString(java.nio.file.Path.of("tainted-land-audit.txt"),text);System.out.print(text);
         }catch(Exception ex){throw new IllegalStateException("Natural tainted land audit failed",ex);}finally{server.halt(false);}

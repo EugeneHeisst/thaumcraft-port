@@ -1,64 +1,54 @@
 package dev.eugheist.tc4modern;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 
-/** Every original VillageWizardManager / VillageBankerManager offer, in original random-call order. */
+/**
+ * Every original VillageWizardManager / VillageBankerManager offer, spread over the five modern profession levels
+ * (issue #4): trading earns experience and each new level unlocks the next original offers. Counts keep the original ranges.
+ */
+@EventBusSubscriber(modid=TC4Modern.MODID)
 final class VillageTrades {
+    static final int[] XP={2,10,20,30,30};
     static ItemStack mod(String key,int count){return PechTrades.mod(key).copyWithCount(count);}
     static MerchantOffer trade(ItemStack buy,ItemStack sell){return new MerchantOffer(new ItemCost(buy.getItem(),buy.getCount()),sell,7,0,0);}
-    static void add(List<MerchantOffer> list,ItemStack buy,ItemStack sell){list.add(trade(buy,sell));}
-    static List<MerchantOffer> candidates(boolean wizard,RandomSource random){
-        var list=new ArrayList<MerchantOffer>();
-        add(list,mod("coin",20+random.nextInt(3)),new ItemStack(Items.EMERALD));
-        if(wizard){
-            add(list,new ItemStack(Items.EMERALD),mod("knowledge_fragment",1));
-            add(list,mod("tallow",4+random.nextInt(3)),new ItemStack(Items.EMERALD));
-            add(list,new ItemStack(Items.EMERALD),mod("alumentum",1));
-            add(list,mod("amber",4+random.nextInt(3)),new ItemStack(Items.EMERALD));
-            add(list,new ItemStack(Items.EMERALD),mod("nitor",1));
-            add(list,mod("chicken_nugget",24+random.nextInt(8)),new ItemStack(Items.EMERALD));
-            add(list,new ItemStack(Items.BOOK,4+random.nextInt(3)),mod("knowledge_fragment",1));
-            add(list,mod("beef_nugget",24+random.nextInt(8)),new ItemStack(Items.EMERALD));
-            int shards=2+random.nextInt(2);add(list,new ItemStack(Items.EMERALD),new ItemStack(TC4Modern.SHARDS.get(random.nextInt(6)).get(),shards));
-            add(list,new ItemStack(Items.EMERALD),mod("mana_bean",1+random.nextInt(2)));
-            add(list,new ItemStack(Items.EMERALD,5+random.nextInt(3)),mod("bath_salts",1));
-            add(list,new ItemStack(Items.EMERALD,5+random.nextInt(3)),mod("runic_ring_lesser",1));
-            add(list,new ItemStack(Items.EMERALD,5+random.nextInt(3)),mod("vis_amulet_lesser",1));
-            int rings=5+random.nextInt(3);add(list,new ItemStack(Items.EMERALD,rings),mod("primal_ring_"+thaumcraft.api.aspects.Aspect.getPrimalAspects().get(random.nextInt(6)).getTag(),1));
-        }else{
-            add(list,mod("coin",2+random.nextInt(2)),new ItemStack(Items.ARROW));
-            add(list,mod("coin",6+random.nextInt(3)),new ItemStack(Items.WHITE_WOOL));
-            add(list,mod("coin",3+random.nextInt(2)),new ItemStack(Items.PAPER));
-            add(list,mod("coin",7+random.nextInt(3)),new ItemStack(Items.BOOK));
-            add(list,mod("coin",16+random.nextInt(5)),new ItemStack(Items.EXPERIENCE_BOTTLE));
-            add(list,mod("coin",9+random.nextInt(4)),new ItemStack(Items.GLOWSTONE));
-            add(list,mod("coin",2+random.nextInt(2)),new ItemStack(Items.COAL));
-            add(list,mod("coin",22+random.nextInt(3)),new ItemStack(Items.DIAMOND));
-            add(list,mod("coin",6+random.nextInt(3)),new ItemStack(Items.IRON_INGOT));
-            add(list,mod("coin",10+random.nextInt(3)),mod("thaumium_ingot",1));
-            add(list,mod("coin",25+random.nextInt(8)),new ItemStack(Items.SADDLE));
+    /** One offer whose stacks are rolled per villager, like the original random ranges. */
+    record Offer(int level,Function<RandomSource,ItemStack> buy,Function<RandomSource,ItemStack> sell) implements VillagerTrades.ItemListing {
+        @Override public MerchantOffer getOffer(net.minecraft.world.entity.Entity trader,RandomSource random){
+            var cost=buy.apply(random);return new MerchantOffer(new ItemCost(cost.getItem(),cost.getCount()),sell.apply(random),12,XP[level-1],.05f);
         }
-        return list;
     }
-    /** Legacy MerchantRecipe compares item identities but ignores metadata and NBT. */
-    static String family(ItemStack stack){
-        var id=net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(stack.getItem());
-        if(!id.getNamespace().equals(TC4Modern.MODID))return id.toString();
-        String name=id.getPath();
-        if(java.util.Set.of("coin","knowledge_fragment","tallow","alumentum","amber","nitor","thaumium_ingot").contains(name))return "legacy:ItemResource";
-        if(name.endsWith("_shard"))return "legacy:ItemShard";
-        if(name.startsWith("primal_ring_"))return "legacy:ItemBaubleBlanks";
-        return id.toString();
+    static Function<RandomSource,ItemStack> mod(String key,int min,int extra){return r->mod(key,min+(extra>0?r.nextInt(extra):0));}
+    static Function<RandomSource,ItemStack> item(net.minecraft.world.item.Item item,int min,int extra){return r->new ItemStack(item,min+(extra>0?r.nextInt(extra):0));}
+    static Function<RandomSource,ItemStack> emerald(int min,int extra){return item(Items.EMERALD,min,extra);}
+    static List<Offer> offers(boolean wizard){
+        if(wizard)return List.of(
+            new Offer(1,mod("coin",20,3),emerald(1,0)),new Offer(1,mod("tallow",4,3),emerald(1,0)),
+            new Offer(1,emerald(1,0),r->new ItemStack(TC4Modern.SHARDS.get(r.nextInt(6)).get(),2+r.nextInt(2))),
+            new Offer(2,mod("amber",4,3),emerald(1,0)),new Offer(2,emerald(1,0),mod("knowledge_fragment",1,0)),new Offer(2,emerald(1,0),mod("alumentum",1,0)),
+            new Offer(3,mod("chicken_nugget",24,8),emerald(1,0)),new Offer(3,mod("beef_nugget",24,8),emerald(1,0)),
+            new Offer(3,item(Items.BOOK,4,3),mod("knowledge_fragment",1,0)),new Offer(3,emerald(1,0),mod("nitor",1,0)),new Offer(3,emerald(1,0),mod("mana_bean",1,2)),
+            new Offer(4,emerald(5,3),mod("bath_salts",1,0)),new Offer(4,emerald(5,3),mod("runic_ring_lesser",1,0)),
+            new Offer(5,emerald(5,3),mod("vis_amulet_lesser",1,0)),
+            new Offer(5,emerald(5,3),r->mod("primal_ring_"+thaumcraft.api.aspects.Aspect.getPrimalAspects().get(r.nextInt(6)).getTag(),1)));
+        return List.of(
+            new Offer(1,mod("coin",20,3),emerald(1,0)),new Offer(1,mod("coin",2,2),item(Items.ARROW,1,0)),new Offer(1,mod("coin",2,2),item(Items.COAL,1,0)),new Offer(1,mod("coin",3,2),item(Items.PAPER,1,0)),
+            new Offer(2,mod("coin",6,3),item(Items.WHITE_WOOL,1,0)),new Offer(2,mod("coin",6,3),item(Items.IRON_INGOT,1,0)),new Offer(2,mod("coin",7,3),item(Items.BOOK,1,0)),
+            new Offer(3,mod("coin",9,4),item(Items.GLOWSTONE,1,0)),new Offer(3,mod("coin",10,3),mod("thaumium_ingot",1,0)),
+            new Offer(4,mod("coin",16,5),item(Items.EXPERIENCE_BOTTLE,1,0)),new Offer(4,mod("coin",25,8),item(Items.SADDLE,1,0)),
+            new Offer(5,mod("coin",22,3),item(Items.DIAMOND,1,0)));
     }
-    static boolean same(MerchantOffer a,MerchantOffer b){return family(a.getBaseCostA()).equals(family(b.getBaseCostA()))&&family(a.getResult()).equals(family(b.getResult()));}
-    static void merge(net.minecraft.world.item.trading.MerchantOffers offers,MerchantOffer candidate){
-        for(int i=0;i<offers.size();i++)if(same(candidate,offers.get(i))){if(candidate.getBaseCostA().getCount()<offers.get(i).getBaseCostA().getCount())offers.set(i,candidate);return;}
-        offers.add(candidate);
+    @SubscribeEvent static void trades(VillagerTradesEvent event){
+        for(boolean wizard:new boolean[]{true,false})if(event.getType()==(wizard?VillageContent.WIZARD_PROFESSION:VillageContent.BANKER_PROFESSION).get())
+            for(var offer:offers(wizard))event.getTrades().get(offer.level()).add(offer);
     }
 }

@@ -552,5 +552,7 @@
   "tc.aspect.help.corpus": "плоть",
   "item.tc4modern.tin_cluster": "Самородное олово",
   "item.tc4modern.silver_cluster": "Самородное серебро",
-  "item.tc4modern.lead_cluster": "Самородный свинец"
+  "item.tc4modern.lead_cluster": "Самородный свинец",
+  "entity.minecraft.villager.wizard": "Волшебник",
+  "entity.minecraft.villager.banker": "Банкир"
 }
