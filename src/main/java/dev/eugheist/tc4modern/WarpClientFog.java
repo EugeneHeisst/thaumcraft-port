@@ -10,6 +10,8 @@ import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 /** Client lifetime of the original fog envelope; rendering consumes its density separately. */
 @EventBusSubscriber(modid = TC4Modern.MODID, value = Dist.CLIENT)
 public final class WarpClientFog {
+    /** Positive marker beyond vanilla view distance; never pass a negative section-culling radius to renderers. */
+    public static final float EXP_FOG_END = 16384f;
     private static WarpFogState state = new WarpFogState();
     private WarpClientFog() {}
     public static WarpFogState state() { return state; }
@@ -20,7 +22,7 @@ public final class WarpClientFog {
     @SubscribeEvent public static void renderFog(net.neoforged.neoforge.client.event.ViewportEvent.RenderFog event) {
         if (!state.active() || state.density() <= 0) return;
         event.setNearPlaneDistance(-state.density());
-        event.setFarPlaneDistance(-420f);
+        event.setFarPlaneDistance(EXP_FOG_END);
         // Minecraft 1.7.10 selects GL_NV_fog_distance EYE_RADIAL_NV when available.
         event.setFogShape(com.mojang.blaze3d.shaders.FogShape.SPHERE);
         event.setCanceled(true);

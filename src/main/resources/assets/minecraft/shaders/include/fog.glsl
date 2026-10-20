@@ -1,8 +1,8 @@
 #version 150
 
 vec4 linear_fog(vec4 inColor, float vertexDistance, float fogStart, float fogEnd, vec4 fogColor) {
-    // TC4 GL_EXP bridge: negative far-plane sentinel, near-plane encodes -density.
-    if (fogEnd == -420.0) {
+    // TC4 GL_EXP bridge: positive far-plane marker (safe for renderer section culling), near-plane encodes -density.
+    if (fogEnd == 16384.0 && fogStart < 0.0) {
         float visibility = clamp(exp(-max(vertexDistance, 0.0) * -fogStart), 0.0, 1.0);
         return vec4(mix(fogColor.rgb, inColor.rgb, visibility), inColor.a);
     }
@@ -15,7 +15,7 @@ vec4 linear_fog(vec4 inColor, float vertexDistance, float fogStart, float fogEnd
 }
 
 float linear_fog_fade(float vertexDistance, float fogStart, float fogEnd) {
-    if (fogEnd == -420.0) {
+    if (fogEnd == 16384.0 && fogStart < 0.0) {
         return clamp(exp(-max(vertexDistance, 0.0) * -fogStart), 0.0, 1.0);
     }
     if (vertexDistance <= fogStart) {
