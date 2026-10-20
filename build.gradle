@@ -334,6 +334,12 @@ neoForge {
             programArgument "--nogui"
             systemProperty "tc4modern.taintedLandAudit", "true"
         }
+        arcaneRecipeIdAudit {
+            server()
+            gameDirectory = project.file('run-arcane-id-audit')
+            programArgument '--nogui'
+            systemProperty 'tc4modern.arcaneRecipeIdAudit', 'true'
+        }
         aspectAudit {
             server()
             gameDirectory = project.file('run-aspect-audit')

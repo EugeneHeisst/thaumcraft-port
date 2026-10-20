@@ -23,6 +23,8 @@ public final class TravellerBoots {
   Boots(){super(TC4Modern.SPECIAL_MATERIAL,Type.BOOTS,new Properties().durability(350).rarity(Rarity.RARE));}
   @Override public int getRunicCharge(ItemStack s){return 0;}
   @Override public boolean isValidRepairItem(ItemStack s,ItemStack repair){return false;}
+  /** Issue #9/#10: crafted from leather boots, so they walk on powder snow like them (freeze immunity via the vanilla item tag). */
+  @Override public boolean canWalkOnPowderedSnow(ItemStack s,LivingEntity wearer){return true;}
   @Override public ResourceLocation getArmorTexture(ItemStack s,Entity e,EquipmentSlot slot,ArmorMaterial.Layer layer,boolean inner){return AlchemyContent.id("textures/models/bootstraveler.png");}
  }
  @SubscribeEvent static void tick(net.neoforged.neoforge.event.tick.PlayerTickEvent.Pre e){var p=e.getEntity();var step=p.getAttribute(Attributes.STEP_HEIGHT);

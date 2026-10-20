@@ -115,7 +115,12 @@ public class BasicWandItem extends Item {
         }
         if(level.getBlockState(pos).is(Blocks.CAULDRON) || level.getBlockState(pos).is(Blocks.WATER_CAULDRON)
                 || level.getBlockState(pos).is(Blocks.LAVA_CAULDRON) || level.getBlockState(pos).is(Blocks.POWDER_SNOW_CAULDRON)){
-            if(!level.isClientSide)level.setBlock(pos,TC4Modern.CRUCIBLE.get().defaultBlockState(),3);
+            // WandManager.createCrucible: thaumcraft:wand at full volume and the crucible's block event 1 sparkle (-9999, 5).
+            if(!level.isClientSide){
+                level.setBlock(pos,TC4Modern.CRUCIBLE.get().defaultBlockState(),3);
+                level.playSound(null,pos,net.minecraft.sounds.SoundEvent.createVariableRangeEvent(AlchemyContent.id("wand")),net.minecraft.sounds.SoundSource.BLOCKS,1,1);
+                FociWorld.sparkle((net.minecraft.server.level.ServerLevel)level,pos,-9999,5);
+            }
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
         if(level.getBlockEntity(pos) instanceof AuraNodeEntity && context.getPlayer()!=null){context.getPlayer().startUsingItem(context.getHand());return InteractionResult.CONSUME;}

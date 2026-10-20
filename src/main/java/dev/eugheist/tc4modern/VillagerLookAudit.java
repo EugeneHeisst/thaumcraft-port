@@ -30,6 +30,7 @@ final class VillagerLookAudit {
             var seen=new java.util.ArrayList<net.minecraft.world.entity.npc.Villager>();for(var e:mc.level.entitiesForRendering())if(e instanceof net.minecraft.world.entity.npc.Villager v)seen.add(v);
             check(seen.size()==5,"five fixture villagers reach the client: "+seen.size()+" "+seen.stream().map(v->v.getVillagerData().getProfession()+"@"+v.blockPosition()).toList()+" player="+mc.player.blockPosition());
             check(net.minecraft.client.resources.language.I18n.exists("entity.minecraft.villager.wizard")&&net.minecraft.client.resources.language.I18n.exists("entity.minecraft.villager.banker"),"job titles translated: "+net.minecraft.client.resources.language.I18n.get("entity.minecraft.villager.wizard")+" / "+net.minecraft.client.resources.language.I18n.get("entity.minecraft.villager.banker"));
+            check(ArcaneRecipeIds.enabled()!=null&&ArcaneRecipeIds.enabled().size()==108&&ArcaneRecipes.entries().size()>=108,"client received all 108 arcane recipe ids over the network: "+(ArcaneRecipeIds.enabled()==null?null:ArcaneRecipeIds.enabled().size()));
             for(String job:new String[]{"wizard","banker"})check(mc.getResourceManager().getResource(AlchemyContent.id("textures/entity/villager/profession/"+job+".png")).isPresent(),job+" profession layer texture is packaged");
         }
         if(ticks==140){LiquidDeathAudit.shot(mc,"villager-professions.png");System.out.println("TC4_VILLAGER_LOOK ALL PASS modern villager professions rendered");mc.stop();}
