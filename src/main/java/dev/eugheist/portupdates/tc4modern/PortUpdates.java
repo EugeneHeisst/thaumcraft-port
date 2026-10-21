@@ -32,6 +32,7 @@ public final class PortUpdates {
     private static boolean started;
     private static Button menuButton;
     private static Boolean autoEnabled;
+    private static String menuLabel = "";
     private static Path game() { return Minecraft.getInstance().gameDirectory.toPath().toAbsolutePath().normalize(); }
     private static boolean ru() { return Minecraft.getInstance().options.languageCode.startsWith("ru"); }
     private static net.minecraft.network.chat.MutableComponent text(String ru, String en) { return Component.literal(ru() ? ru : en); }
@@ -75,13 +76,55 @@ public final class PortUpdates {
     }
     @SubscribeEvent public static void init(ScreenEvent.Init.Post event) {
         if (!(event.getScreen() instanceof TitleScreen) || !ownsMenu()) return;
-        menuButton = Button.builder(label(), b -> Minecraft.getInstance().setScreen(new UpdatesScreen(event.getScreen())))
-            .bounds(4, 4, Math.min(190, event.getScreen().width - 8), 20).build();
+        menuButton = new UpdateIconButton(b -> Minecraft.getInstance().setScreen(new UpdatesScreen(event.getScreen())));
+        positionMenuButton(event.getScreen().children(), event.getScreen());
+        updateMenuLabel();
         event.addListener(menuButton);
         if (!started) { started = true; if (automatic()) refresh(); }
     }
     @SubscribeEvent public static void render(ScreenEvent.Render.Post event) {
-        if (event.getScreen() instanceof TitleScreen && menuButton != null && ownsMenu()) menuButton.setMessage(label());
+        if (event.getScreen() instanceof TitleScreen && menuButton != null && ownsMenu()) {
+            positionMenuButton(event.getScreen().children(), event.getScreen());
+            updateMenuLabel();
+        }
+    }
+    private static void positionMenuButton(java.util.List<? extends net.minecraft.client.gui.components.events.GuiEventListener> widgets, Screen screen) {
+        String language = Component.translatable("options.language").getString();
+        for (var listener : widgets) {
+            if (listener instanceof net.minecraft.client.gui.components.AbstractWidget widget
+                    && widget != menuButton && widget.getMessage().getString().equals(language)) {
+                menuButton.setSize(widget.getWidth(), widget.getHeight());
+                menuButton.setPosition(widget.getX(), widget.getY() - widget.getHeight() - 4);
+                return;
+            }
+        }
+        // Vanilla/NeoForge position when a menu mod replaces the language widget.
+        menuButton.setPosition(screen.width / 2 - 124, screen.height / 4 + (Minecraft.getInstance().isDemo() ? 92 : 114));
+    }
+    private static void updateMenuLabel() {
+        Component description = label();
+        if (!menuLabel.equals(description.getString()) || menuButton.getTooltip() == null) {
+            menuLabel = description.getString();
+            menuButton.setMessage(description);
+            menuButton.setTooltip(net.minecraft.client.gui.components.Tooltip.create(description));
+        }
+    }
+    /** Native button background and focus/narration; compact download icon instead of clipped text. */
+    private static final class UpdateIconButton extends Button {
+        UpdateIconButton(OnPress press) { super(0, 0, 20, 20, label(), press, DEFAULT_NARRATION); }
+        @Override public void renderString(GuiGraphics graphics, net.minecraft.client.gui.Font font, int color) {
+            int x = getX() + getWidth() / 2, y = getY() + getHeight() / 2;
+            graphics.fill(x - 1, y - 6, x + 1, y, color);
+            graphics.fill(x - 4, y - 2, x + 4, y, color);
+            graphics.fill(x - 3, y, x + 3, y + 1, color);
+            graphics.fill(x - 2, y + 1, x + 2, y + 2, color);
+            graphics.fill(x - 1, y + 2, x + 1, y + 3, color);
+            graphics.fill(x - 5, y + 3, x - 3, y + 6, color);
+            graphics.fill(x + 3, y + 3, x + 5, y + 6, color);
+            graphics.fill(x - 5, y + 5, x + 5, y + 6, color);
+            if (!check.updates().isEmpty()) graphics.fill(getX() + getWidth() - 5, getY() + 2,
+                getX() + getWidth() - 2, getY() + 5, (color & 0xFF000000) | 0x70FF70);
+        }
     }
     private static Component label() {
         return text("Обновления портов", "Port updates").append(checking ? " …" : check.updates().isEmpty() ? "" : " (" + check.updates().size() + ")");
