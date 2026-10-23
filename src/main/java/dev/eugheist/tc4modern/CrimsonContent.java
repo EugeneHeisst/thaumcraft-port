@@ -90,8 +90,8 @@ public final class CrimsonContent {
             for (var material : List.of(PLATE, ROBE))
                 for (var type : List.of(ArmorItem.Type.HELMET, ArmorItem.Type.CHESTPLATE, ArmorItem.Type.LEGGINGS))
                     h.register(AlchemyContent.id((material == PLATE ? "cultist_plate_" : "cultist_robe_") + type.getName()),
-                        new CultistArmor(material, type, new Item.Properties().durability(type.getDurability(12)), material == PLATE ? "cultist_plate_armor" : "cultist_robe_armor"));
-            h.register(AlchemyContent.id("cultist_boots"), new CultistArmor(PLATE, ArmorItem.Type.BOOTS, new Item.Properties().durability(12 * 13), "cultistboots"));
+                        new CultistArmor(material, type, new Item.Properties().durability(type.getDurability(12)).rarity(Rarity.UNCOMMON), material == PLATE ? "cultist_plate_armor" : "cultist_robe_armor", material == ROBE));
+            h.register(AlchemyContent.id("cultist_boots"), new CultistArmor(PLATE, ArmorItem.Type.BOOTS, new Item.Properties().durability(12 * 13).rarity(Rarity.UNCOMMON), "cultistboots", true));
             h.register(OBSIDIAN_TILE.getId(), new BlockItem(OBSIDIAN_TILE.get(), new Item.Properties()));
             h.register(BANNER.getId(), new CrimsonBanner.Item(BANNER.get(), new Item.Properties()));
         });
@@ -106,12 +106,25 @@ public final class CrimsonContent {
         event.put(CLERIC.get(), CultistEntity.attributes(30).build());
     }
 
-    /** getArmorTexture: every cultist piece uses one sheet for both layers (cultist_robe_armor, cultist_plate_armor, cultistboots). */
-    public static final class CultistArmor extends ArmorItem {
+    /**
+     * getArmorTexture: every cultist piece uses one sheet for both layers (cultist_robe_armor, cultist_plate_armor, cultistboots).
+     * ItemCultistRobeArmor and ItemCultistBoots add 1 warp and a 1% vis discount; ItemCultistPlateArmor has neither.
+     */
+    public static final class CultistArmor extends ArmorItem implements thaumcraft.api.IRepairable, thaumcraft.api.IRunicArmor,
+            thaumcraft.api.IVisDiscountGear, thaumcraft.api.IWarpingGear {
         private final net.minecraft.resources.ResourceLocation texture;
-        CultistArmor(net.minecraft.core.Holder<ArmorMaterial> material, Type type, Properties properties, String texture) {
+        private final boolean cleric;
+        CultistArmor(net.minecraft.core.Holder<ArmorMaterial> material, Type type, Properties properties, String texture, boolean cleric) {
             super(material, type, properties);
             this.texture = AlchemyContent.id("textures/models/" + texture + ".png");
+            this.cleric = cleric;
+        }
+        public int getRunicCharge(ItemStack stack) { return 0; }
+        public int getVisDiscount(ItemStack stack, net.minecraft.world.entity.player.Player player, thaumcraft.api.aspects.Aspect aspect) { return cleric ? 1 : 0; }
+        public int getWarp(ItemStack stack, net.minecraft.world.entity.player.Player player) { return cleric ? 1 : 0; }
+        @Override public void appendHoverText(ItemStack stack, TooltipContext context, List<net.minecraft.network.chat.Component> lines, net.minecraft.world.item.TooltipFlag flag) {
+            if (cleric) lines.add(net.minecraft.network.chat.Component.translatable("tc.visdiscount").append(": 1%").withStyle(net.minecraft.ChatFormatting.DARK_PURPLE));
+            super.appendHoverText(stack, context, lines, flag);
         }
         @Override public net.minecraft.resources.ResourceLocation getArmorTexture(ItemStack stack, net.minecraft.world.entity.Entity entity,
                 net.minecraft.world.entity.EquipmentSlot slot, ArmorMaterial.Layer layer, boolean inner) { return texture; }
