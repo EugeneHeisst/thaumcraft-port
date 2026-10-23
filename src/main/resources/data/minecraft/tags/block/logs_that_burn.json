@@ -3,6 +3,10 @@
  "values": [
   "tc4modern:silverwood_log",
   "tc4modern:silverwood_knot",
-  "tc4modern:greatwood_log"
+  "tc4modern:greatwood_log",
+  "tc4modern:stripped_greatwood_log",
+  "tc4modern:stripped_greatwood_wood",
+  "tc4modern:stripped_silverwood_log",
+  "tc4modern:stripped_silverwood_wood"
  ]
 }

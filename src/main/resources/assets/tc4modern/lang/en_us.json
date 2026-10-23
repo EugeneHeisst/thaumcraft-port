@@ -554,5 +554,9 @@
   "item.tc4modern.silver_cluster": "Native Silver Cluster",
   "item.tc4modern.lead_cluster": "Native Lead Cluster",
   "entity.minecraft.villager.wizard": "Wizard",
-  "entity.minecraft.villager.banker": "Banker"
+  "entity.minecraft.villager.banker": "Banker",
+  "block.tc4modern.stripped_greatwood_log": "Stripped Greatwood Log",
+  "block.tc4modern.stripped_greatwood_wood": "Stripped Greatwood Wood",
+  "block.tc4modern.stripped_silverwood_log": "Stripped Silverwood Log",
+  "block.tc4modern.stripped_silverwood_wood": "Stripped Silverwood Wood"
 }

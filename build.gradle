@@ -626,3 +626,8 @@ tasks.register("legacyCommandTest", JavaExec) {
     mainClass = "dev.eugheist.tc4modern.LegacyCommandTest"
 }
 tasks.named("check") { dependsOn "legacyCommandTest" }
+
+// Targeted model corrections take precedence over the externally imported resource pack.
+tasks.named('processResources', ProcessResources).configure {
+    from('src/main/resource-overrides') { duplicatesStrategy = DuplicatesStrategy.INCLUDE }
+}

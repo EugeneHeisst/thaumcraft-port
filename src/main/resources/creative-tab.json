@@ -2290,5 +2290,25 @@
   "translation": "item.tc4modern.lead_cluster",
   "original": "item.ItemNugget.20.name",
   "order": 330.8
+ },
+ {
+  "id": "stripped_greatwood_log",
+  "translation": "block.tc4modern.stripped_greatwood_log",
+  "order": 12.01
+ },
+ {
+  "id": "stripped_greatwood_wood",
+  "translation": "block.tc4modern.stripped_greatwood_wood",
+  "order": 12.02
+ },
+ {
+  "id": "stripped_silverwood_log",
+  "translation": "block.tc4modern.stripped_silverwood_log",
+  "order": 13.01
+ },
+ {
+  "id": "stripped_silverwood_wood",
+  "translation": "block.tc4modern.stripped_silverwood_wood",
+  "order": 13.02
  }
 ]

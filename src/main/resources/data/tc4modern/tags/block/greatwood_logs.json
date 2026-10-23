@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "tc4modern:greatwood_log",
+    "tc4modern:stripped_greatwood_log",
+    "tc4modern:stripped_greatwood_wood"
+  ]
+}

@@ -160,6 +160,7 @@ public class TC4Modern {
     public TC4Modern(IEventBus bus, net.neoforged.fml.ModContainer container) {
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.COMMON, WarpConfig.SPEC);
         container.registerConfig(net.neoforged.fml.config.ModConfig.Type.CLIENT, WarpClientConfig.SPEC);
+        StrippedWood.bootstrap();
         SOUNDS.register(bus);
         AspectContainerHosts.register();
         thaumcraft.common.entities.monster.EntityTaintSwarm.goo=TAINTED_GOO;

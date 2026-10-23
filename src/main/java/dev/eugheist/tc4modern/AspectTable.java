@@ -17,6 +17,8 @@ public final class AspectTable {
         if(objectId.equals("tc4modern:taint"))return Map.of("arbor",1,"vitium",3);
         if(objectId.equals("tc4modern:taint_fibres"))return Map.of("victus",1,"vitium",2);
         objectId=switch(objectId){
+            case "tc4modern:stripped_greatwood_log", "tc4modern:stripped_greatwood_wood" -> "tc4modern:greatwood_log";
+            case "tc4modern:stripped_silverwood_log", "tc4modern:stripped_silverwood_wood" -> "tc4modern:silverwood_log";
             case "tc4modern:taint_soil" -> "tc4modern:taint#variant=1";
             case "tc4modern:taint_grass" -> "tc4modern:taint_fibres#variant=1";
             case "tc4modern:taint_plant" -> "tc4modern:taint_fibres#variant=2";

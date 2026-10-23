@@ -19,6 +19,10 @@
     "tc4modern:greatwood_slab",
     "tc4modern:greatwood_stairs",
     "tc4modern:silverwood_slab",
-    "tc4modern:silverwood_stairs"
+    "tc4modern:silverwood_stairs",
+    "tc4modern:stripped_greatwood_log",
+    "tc4modern:stripped_greatwood_wood",
+    "tc4modern:stripped_silverwood_log",
+    "tc4modern:stripped_silverwood_wood"
   ]
 }

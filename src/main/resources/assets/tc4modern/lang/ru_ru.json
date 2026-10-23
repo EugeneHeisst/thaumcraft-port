@@ -554,5 +554,9 @@
   "item.tc4modern.silver_cluster": "Самородное серебро",
   "item.tc4modern.lead_cluster": "Самородный свинец",
   "entity.minecraft.villager.wizard": "Волшебник",
-  "entity.minecraft.villager.banker": "Банкир"
+  "entity.minecraft.villager.banker": "Банкир",
+  "block.tc4modern.stripped_greatwood_log": "Обтёсанное бревно великого дерева",
+  "block.tc4modern.stripped_greatwood_wood": "Обтёсанная древесина великого дерева",
+  "block.tc4modern.stripped_silverwood_log": "Обтёсанное бревно серебряного дерева",
+  "block.tc4modern.stripped_silverwood_wood": "Обтёсанная древесина серебряного дерева"
 }

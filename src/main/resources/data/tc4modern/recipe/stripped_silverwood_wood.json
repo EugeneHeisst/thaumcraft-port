@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LL",
+    "LL"
+  ],
+  "key": {
+    "L": {
+      "item": "tc4modern:stripped_silverwood_log"
+    }
+  },
+  "result": {
+    "id": "tc4modern:stripped_silverwood_wood",
+    "count": 3
+  }
+}
