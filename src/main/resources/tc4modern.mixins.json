@@ -19,6 +19,7 @@
   },
   "client": [
     "ElementalAxeClientBreakMixin",
+    "EntityRenderersLockMixin",
     "HoverLandingMixin",
     "MagicalForestColorMixin",
     "SodiumFogShaderMixin"

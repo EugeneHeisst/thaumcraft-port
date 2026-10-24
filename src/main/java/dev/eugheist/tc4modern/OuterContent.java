@@ -43,7 +43,9 @@ public final class OuterContent {
         @Override protected java.util.List<ItemStack> getDrops(BlockState state,net.minecraft.world.level.storage.loot.LootParams.Builder builder){return List.of(new ItemStack(BasicsContent.KNOWLEDGE_FRAGMENT.get()));}
         @Override public int getExpDrop(BlockState state,LevelAccessor level,BlockPos pos,net.minecraft.world.level.block.entity.BlockEntity entity,Entity breaker,ItemStack tool){return 1+level.getRandom().nextInt(4);}
     }
-    public static final class VoidEntity extends net.minecraft.world.level.block.entity.BlockEntity {VoidEntity(BlockPos p,BlockState s){super(VOID_ENTITY.get(),p,s);}}
+    public static final class VoidEntity extends net.minecraft.world.level.block.entity.BlockEntity {VoidEntity(BlockPos p,BlockState s){super(VOID_ENTITY.get(),p,s);}
+        /** Client render cache: bit per Direction ordinal of faces that border neither an opaque block nor more void. */
+        int faces=-1;long facesChecked;}
     static final class VoidBlock extends BaseEntityBlock {
         VoidBlock(Properties p){super(p);}
         @Override protected com.mojang.serialization.MapCodec<? extends BaseEntityBlock> codec(){return simpleCodec(VoidBlock::new);}

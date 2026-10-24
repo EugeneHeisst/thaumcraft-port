@@ -18,11 +18,13 @@ public final class WarpPostEffects {
     private static final PostChain[] CHAINS = new PostChain[4];
     private static final boolean[] FAILED = new boolean[4];
     private static int width, height;
+    /** Issue #14: VulkanMod replaces OpenGL and has no values for these programs' custom uniforms, so PostChain.process throws an NPE every frame. */
+    private static final boolean UNSUPPORTED_RENDERER = net.neoforged.fml.ModList.get().isLoaded("vulkanmod");
     private WarpPostEffects() {}
     @SubscribeEvent
     public static void render(RenderGuiEvent.Pre event) {
         var mc = Minecraft.getInstance();
-        if (mc.player == null || mc.level == null || !WarpClientConfig.shaders()) { reset(); return; }
+        if (UNSUPPORTED_RENDERER || mc.player == null || mc.level == null || !WarpClientConfig.shaders()) { reset(); return; }
         boolean[] wanted = {mc.player.hasEffect(WarpEffects.DEATH_GAZE), mc.player.hasEffect(WarpEffects.BLURRED_VISION),
             mc.player.hasEffect(WarpEffects.UNNATURAL_HUNGER), mc.player.hasEffect(WarpEffects.SUN_SCORNED)};
         int nextWidth = mc.getWindow().getWidth(), nextHeight = mc.getWindow().getHeight();
@@ -40,7 +42,12 @@ public final class WarpPostEffects {
             }
             if (CHAINS[i] != null) {
                 if (width != nextWidth || height != nextHeight) CHAINS[i].resize(nextWidth, nextHeight);
-                CHAINS[i].process(event.getPartialTick().getGameTimeDeltaPartialTick(true));
+                try {
+                    CHAINS[i].process(event.getPartialTick().getGameTimeDeltaPartialTick(true));
+                } catch (RuntimeException exception) {
+                    close(i); FAILED[i] = true;
+                    LOG.error("Disabled original warp shader {} after a render failure", NAMES[i], exception);
+                }
             }
         }
         width = nextWidth; height = nextHeight;
