@@ -21,7 +21,7 @@ public final class UpdateService {
         "tc4modern", "thaumcraft-port", "ic2", "industrialcraft-port",
         "ttinkerer", "thaumic-tinkerer-port", "thaumicenergistics", "thaumic-energistics-port",
         "advanced_solar_panels", "advanced-solar-panels-port", "emt", "electro-magic-tools-port",
-        "gravisuite", "gravisuite-port");
+        "gravisuite", "gravisuite-port", "forbiddenmagic", "forbidden-magic-reforged");
     private static final long LIMIT = 128L * 1024 * 1024;
     private final HttpClient http = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(15))
         .followRedirects(HttpClient.Redirect.NEVER).build();
