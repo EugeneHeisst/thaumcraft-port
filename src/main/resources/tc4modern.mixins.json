@@ -7,6 +7,8 @@
     "TravellerAirSpeedMixin",
     "HoverFloatCounterAccessor",
     "BoneArrowKnockbackMixin",
+    "CrabProjectileHitMixin",
+    "CrabArrowCollisionMixin",
     "ElementalAxeBreakMixin",
     "ElementalSwordBlockMixin",
     "FortressArmorMixin",

@@ -48,7 +48,7 @@ public final class InventoryScanning {
                 x=startX+(index%columns)*28;y=startY+(index/columns)*20;index++;
                 var aspect=thaumcraft.api.aspects.Aspect.getAspect(entry.getKey());int color=aspect.getColor();
                 com.mojang.blaze3d.systems.RenderSystem.setShaderColor(((color>>16)&255)/255f,((color>>8)&255)/255f,(color&255)/255f,1);
-                gui.blit(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID,"textures/aspects/"+entry.getKey()+".png"),x,y,0,0,16,16,16,16);
+                gui.blit(aspect.getImage(),x,y,0,0,16,16,16,16);
                 com.mojang.blaze3d.systems.RenderSystem.setShaderColor(1,1,1,1);
                 gui.drawString(mc.font,Integer.toString(entry.getValue()),x+17,y+5,0xFFFFFF);
             }

@@ -23,6 +23,8 @@ public final class EldritchCrab extends Monster {
  @Override public boolean doHurtTarget(Entity target){if(super.doHurtTarget(target)){playSound(CrabContent.CLAW.get(),1,.9f+random.nextFloat()*.2f);return true;}return false;}
  @Override public boolean canBeAffected(net.minecraft.world.effect.MobEffectInstance effect){return !effect.is(net.minecraft.world.effect.MobEffects.POISON)&&super.canBeAffected(effect);}
  @Override public boolean isAlliedTo(Entity e){return e instanceof EldritchCrab||super.isAlliedTo(e);}
+ /** A hostile crab on the player's head must remain selectable by that player. */
+ @Override public boolean canRiderInteract(){return true;}
  @Override public boolean canBeLeashed(){return false;}
  @Override public int getAmbientSoundInterval(){return 160;}
  @Override protected net.minecraft.sounds.SoundEvent getAmbientSound(){return CrabContent.TALK.get();}

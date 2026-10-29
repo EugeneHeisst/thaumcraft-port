@@ -187,7 +187,7 @@ public final class ThaumometerFirstPerson {
     private static void drawTag(Font font, PoseStack pose, MultiBufferSource buffers, int x, int y, String tag, int amount, int light) {
         var aspect = thaumcraft.api.aspects.Aspect.getAspect(tag);
         int color = aspect == null ? 0xFFFFFF : aspect.getColor();
-        var out = buffers.getBuffer(NodeRenderTypes.additive(ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID, "textures/aspects/" + tag + ".png")));
+        var out = buffers.getBuffer(NodeRenderTypes.additive(aspect == null ? ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID, "textures/aspects/_unknown.png") : aspect.getImage()));
         var m = pose.last().pose();
         int argb = 0xFF000000 | color;
         out.addVertex(m, x, y + 16, 0.01f).setUv(0, 1).setColor(argb);

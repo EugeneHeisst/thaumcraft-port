@@ -94,7 +94,7 @@ public final class DeconstructorRenderer implements BlockEntityRenderer<Deconstr
             pose.mulPose(Axis.XP.rotationDegrees(90));
             pose.mulPose(Axis.ZP.rotationDegrees(ticks % 360));
             pose.scale(.024f, .024f, .024f);
-            var out = buffers.getBuffer(NodeRenderTypes.additive(ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID, "textures/aspects/" + aspect.getTag() + ".png")));
+            var out = buffers.getBuffer(NodeRenderTypes.additive(aspect.getImage()));
             var m = pose.last().pose();
             int c = aspect.getColor(), r = c >> 16 & 255, g = c >> 8 & 255, b = c & 255, a = (int) (.8f * 255);
             out.addVertex(m, -8, 8, 0).setUv(0, 1).setColor(r, g, b, a);

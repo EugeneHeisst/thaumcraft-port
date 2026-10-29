@@ -1,0 +1,11 @@
+allprojects { afterEvaluate {
+    if (file('src/main/java/dev/eugheist/compat').isDirectory()) {
+        neoForge.runs.create('issues29') {
+            client()
+            gameDirectory = file(providers.gradleProperty('issuesRun').get())
+            programArguments.addAll '--width','1100','--height','760','--quickPlaySingleplayer','Showcase'
+            systemProperty 'issues29.variant',providers.gradleProperty('issuesVariant').get()
+            systemProperty 'issues29.out',providers.gradleProperty('issuesOut').get()
+        }
+    }
+} }

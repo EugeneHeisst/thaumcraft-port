@@ -34,7 +34,7 @@ public final class ThaumometerHud {
                     var aspect = thaumcraft.api.aspects.Aspect.getAspect(entry.getKey());
                     int color = aspect == null ? 0xFFFFFF : aspect.getColor();
                     com.mojang.blaze3d.systems.RenderSystem.setShaderColor(((color >> 16) & 255) / 255f, ((color >> 8) & 255) / 255f, (color & 255) / 255f, 1);
-                    gui.blit(ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID, "textures/aspects/" + entry.getKey() + ".png"), x, cy + 38, 0, 0, 16, 16, 16, 16);
+                    gui.blit(aspect == null ? ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID, "textures/aspects/_unknown.png") : aspect.getImage(), x, cy + 38, 0, 0, 16, 16, 16, 16);
                     com.mojang.blaze3d.systems.RenderSystem.setShaderColor(1, 1, 1, 1);
                     gui.drawString(mc.font, Integer.toString(entry.getValue()), x + 17, cy + 44, 0xFFFFFF);
                     x += 28;

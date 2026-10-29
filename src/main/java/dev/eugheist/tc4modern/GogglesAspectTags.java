@@ -82,7 +82,7 @@ public final class GogglesAspectTags {
             pose.translate(shift, 0, 0);
             pose.mulPose(Axis.ZP.rotationDegrees(180));
             pose.scale(tagscale, tagscale, tagscale);
-            var texture = ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID, "textures/aspects/" + (discovered ? tag.getTag() : "_unknown") + ".png");
+            var texture = discovered ? tag.getImage() : ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID, "textures/aspects/_unknown.png");
             var quad = buffers.getBuffer(Types.tag(texture));
             var m = pose.last().pose();
             int r = color >> 16 & 255, g = color >> 8 & 255, b = color & 255, a = (int) (.75f * 255);
