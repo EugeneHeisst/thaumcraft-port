@@ -1,6 +1,6 @@
 from pathlib import Path
 import os,shutil,subprocess,sys
-r=Path(os.environ.get('TC4_COMPAT_WORKSPACE',Path(__file__).resolve().parents[3]/'compat-test'));out=r/'issues-20261029';out.mkdir(exist_ok=True)
+r=Path(os.environ.get('TC4_COMPAT_WORKSPACE',Path(__file__).resolve().parents[4]/'compat-test'));out=r/'issues-20261029';out.mkdir(exist_ok=True)
 jars={
 'old': [r.parent/'thaumcraft4-modern/versions/0.17.190/tc4modern-0.17.190.jar',r.parent/'thaumic-tinkerer-modern/versions/0.1.13/thaumic-tinkerer-modern-0.1.13.jar',r.parent/'forbidden-magic-modern/versions/0.1.2/forbidden-magic-0.1.2.jar'],
 'new': [r.parent/'thaumcraft4-modern/build/libs/tc4modern-0.17.191.jar',r.parent/'thaumic-tinkerer-issues-oct29/build/libs/thaumic-tinkerer-modern-0.1.14.jar',r.parent/'forbidden-magic-modern/build/libs/forbidden-magic-0.1.3.jar']}
