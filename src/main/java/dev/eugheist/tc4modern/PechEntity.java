@@ -252,7 +252,14 @@ public final class PechEntity extends Monster implements RangedAttackMob {
     }
 
     public static boolean canSpawn(EntityType<PechEntity> type, ServerLevelAccessor level, MobSpawnType reason, BlockPos pos, net.minecraft.util.RandomSource random) {
-        return ManaPodBlock.magical(level, pos) && Monster.checkMonsterSpawnRules(type, level, reason, pos, random)
+        var biome = level.getBiome(pos);
+        // EntityPech.getCanSpawnHere: outside the Overworld, only the two original forest biomes qualify.
+        // Outer Lands also carry MAGICAL, but their corridors must never spawn Pechs.
+        boolean nativeForest = biome.is(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID, "magical_forest"))
+                || biome.is(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID, "eerie"));
+        return (level.getLevel().dimension() == Level.OVERWORLD || nativeForest)
+                && !biome.is(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(TC4Modern.MODID, "tainted_land"))
+                && ManaPodBlock.magical(level, pos) && Monster.checkMonsterSpawnRules(type, level, reason, pos, random)
                 && level.getLevel().getEntitiesOfClass(PechEntity.class, new net.minecraft.world.phys.AABB(pos).inflate(16)).size() < 4;
     }
 

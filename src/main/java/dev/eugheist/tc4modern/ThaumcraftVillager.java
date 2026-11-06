@@ -12,7 +12,10 @@ public final class ThaumcraftVillager extends Villager {
     @Override public void tick(){
         if(!level().isClientSide&&!isRemoved()){
             boolean wizard=wizard();var converted=convertTo(EntityType.VILLAGER,true);
-            if(converted!=null)converted.setVillagerData(converted.getVillagerData().setProfession((wizard?VillageContent.WIZARD_PROFESSION:VillageContent.BANKER_PROFESSION).get()).setLevel(1));
+            if(converted!=null){
+                converted.setVillagerData(converted.getVillagerData().setProfession((wizard?VillageContent.WIZARD_PROFESSION:VillageContent.BANKER_PROFESSION).get()).setLevel(1));
+                converted.refreshBrain((net.minecraft.server.level.ServerLevel)level());
+            }
             // Original professions were permanent: one experience point keeps the job until a job site is found.
             if(converted!=null)converted.setVillagerXp(1);
             return;

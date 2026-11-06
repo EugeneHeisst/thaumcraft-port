@@ -1,0 +1,11 @@
+allprojects { afterEvaluate {
+    if (file('src/main/java/dev/eugheist/compat').isDirectory()) {
+        neoForge.runs.create('issuesNov06') {
+            server()
+            gameDirectory = file(providers.gradleProperty('issuesRun').get())
+            programArgument '--nogui'
+            systemProperty 'issuesnov06.variant',providers.gradleProperty('issuesVariant').get()
+            systemProperty 'issuesnov06.out',providers.gradleProperty('issuesOut').get()
+        }
+    }
+} }

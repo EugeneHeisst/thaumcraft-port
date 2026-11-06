@@ -18,6 +18,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.CustomData;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -119,6 +120,37 @@ public final class WardedJarBlock extends BaseEntityBlock {
     /** BlockJarItem/ItemJarFilled: tooltip lists contents for known aspects. */
     public static final class JarItem extends BlockItem {
         public JarItem(Block block, Item.Properties properties) { super(block, properties); }
+        /** BlockMetalDevice's original jar interaction, before the alembic's knock or block placement. */
+        @Override public InteractionResult onItemUseFirst(ItemStack stack, UseOnContext context) {
+            var player = context.getPlayer();
+            var level = context.getLevel();
+            if (player == null || player.isShiftKeyDown()
+                    || !(level.getBlockEntity(context.getClickedPos()) instanceof AlembicEntity alembic)
+                    || alembic.state.amount <= 0 || alembic.state.aspect == null) return InteractionResult.PASS;
+            var aspect = alembic.state.aspect;
+            var contents = EssentiaItems.getAspects(stack);
+            var data = stack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag();
+            var filter = Aspect.getAspect(data.getString("AspectFilter"));
+            // A refused transfer must not fall through to placing the held jar beside the alembic.
+            if ((contents != null && (contents.size() != 1 || contents.getAmount(aspect) <= 0))
+                    || (filter != null && filter != aspect)) return InteractionResult.FAIL;
+            int stored = contents == null ? 0 : contents.getAmount(aspect);
+            boolean voidJar = getBlock() == AlchemyMachines.VOID_JAR.get();
+            int taken = voidJar ? alembic.state.amount : Math.min(64 - stored, alembic.state.amount);
+            if (taken <= 0) return InteractionResult.FAIL;
+            if (!level.isClientSide) {
+                var filled = stack.copyWithCount(1);
+                EssentiaItems.setAspects(filled, new AspectList().add(aspect, Math.min(64, stored + taken)));
+                alembic.state.takeFromContainer(aspect, taken);
+                alembic.changed();
+                stack.shrink(1);
+                if (stack.isEmpty()) player.setItemInHand(context.getHand(), filled);
+                else EssentiaItems.giveOrDrop(player, level, context.getClickedPos(), filled);
+                level.playSound(null, context.getClickedPos(), SoundEvents.GENERIC_SWIM, SoundSource.BLOCKS, .5f, 1f);
+                player.inventoryMenu.broadcastChanges();
+            }
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        }
         @Override public void appendHoverText(ItemStack stack, TooltipContext context, java.util.List<Component> lines, TooltipFlag flag) {
             EssentiaItems.tooltip(stack, lines);
             var data = stack.get(DataComponents.CUSTOM_DATA);
