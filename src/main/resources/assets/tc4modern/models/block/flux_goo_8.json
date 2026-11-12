@@ -1,0 +1,1 @@
+{"render_type": "minecraft:translucent", "textures": {"all": "tc4modern:blocks/fluxgoo", "particle": "tc4modern:blocks/fluxgoo"}, "elements": [{"from": [0, 0, 0], "to": [16, 16, 16], "faces": {"up": {"texture": "#all"}, "down": {"texture": "#all"}, "north": {"texture": "#all"}, "south": {"texture": "#all"}, "east": {"texture": "#all"}, "west": {"texture": "#all"}}}]}

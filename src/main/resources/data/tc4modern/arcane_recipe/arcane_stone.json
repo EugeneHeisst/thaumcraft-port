@@ -1,0 +1,25 @@
+{
+  "key": "ArcaneStone1",
+  "research": "ARCANESTONE",
+  "pattern": [
+    "SSS",
+    "SCS",
+    "SSS"
+  ],
+  "key_items": {
+    "S": {
+      "tag": "c:stones"
+    },
+    "C": {
+      "tag": "tc4modern:shards"
+    }
+  },
+  "result": {
+    "id": "tc4modern:arcane_stone",
+    "count": 9
+  },
+  "aspects": {
+    "terra": 1,
+    "ignis": 1
+  }
+}

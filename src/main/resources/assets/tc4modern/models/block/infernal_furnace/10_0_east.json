@@ -1,0 +1,83 @@
+{
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "tc4modern:blocks/furnace13",
+    "plane0": "tc4modern:blocks/furnace13",
+    "plane1": "tc4modern:blocks/furnace15",
+    "plane2": "tc4modern:blocks/original_fire_layer_0"
+  },
+  "elements": [
+    {
+      "from": [
+        6.0,
+        0,
+        0
+      ],
+      "to": [
+        6.0,
+        16,
+        16
+      ],
+      "shade": false,
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#plane0"
+        }
+      }
+    },
+    {
+      "from": [
+        3.1999999999999993,
+        0,
+        0
+      ],
+      "to": [
+        3.1999999999999993,
+        16,
+        16
+      ],
+      "shade": false,
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#plane1"
+        }
+      }
+    },
+    {
+      "from": [
+        1.5999999999999996,
+        0,
+        0
+      ],
+      "to": [
+        1.5999999999999996,
+        24,
+        16
+      ],
+      "shade": false,
+      "faces": {
+        "east": {
+          "uv": [
+            0,
+            0,
+            16,
+            16
+          ],
+          "texture": "#plane2"
+        }
+      }
+    }
+  ]
+}

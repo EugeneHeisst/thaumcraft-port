@@ -1,0 +1,29 @@
+{
+ "key": "FocusFrost",
+ "research": "FOCUSFROST",
+ "pattern": [
+  "CQC",
+  "Q#Q",
+  "CQC"
+ ],
+ "key_items": {
+  "#": {
+   "item": "minecraft:diamond"
+  },
+  "Q": {
+   "item": "minecraft:quartz"
+  },
+  "C": {
+   "item": "tc4modern:water_shard"
+  }
+ },
+ "result": {
+  "id": "tc4modern:focus_frost",
+  "count": 1
+ },
+ "aspects": {
+  "aqua": 10,
+  "ordo": 10,
+  "perditio": 10
+ }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "variant=0": {
+      "model": "tc4modern:block/taint_0"
+    },
+    "variant=1": {
+      "model": "tc4modern:block/taint_1"
+    },
+    "variant=2": {
+      "model": "tc4modern:block/taint_2"
+    }
+  }
+}

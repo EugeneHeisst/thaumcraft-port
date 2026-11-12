@@ -44,7 +44,6 @@ repo/
 /Baubles*.jar
 
 /local-backups/
-/tc4-local-resources.zip
 
 # Standalone Minecraft/NBT checks write local Log4j output.
 /logs/

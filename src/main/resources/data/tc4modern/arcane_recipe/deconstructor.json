@@ -1,0 +1,29 @@
+{
+  "key": "Deconstructor",
+  "research": "DECONSTRUCTOR",
+  "pattern": [
+    " T ",
+    "awb"
+  ],
+  "key_items": {
+    "T": {
+      "item": "tc4modern:thaumometer"
+    },
+    "a": {
+      "item": "minecraft:golden_axe"
+    },
+    "w": {
+      "item": "tc4modern:table"
+    },
+    "b": {
+      "item": "minecraft:golden_pickaxe"
+    }
+  },
+  "result": {
+    "id": "tc4modern:deconstructor",
+    "count": 1
+  },
+  "aspects": {
+    "perditio": 20
+  }
+}

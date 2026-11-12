@@ -1,0 +1,22 @@
+{
+  "key": "WandCapGold",
+  "research": "CAP_gold",
+  "pattern": [
+    "NNN",
+    "N N"
+  ],
+  "key_items": {
+    "N": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "result": {
+    "id": "tc4modern:gold_cap",
+    "count": 1
+  },
+  "aspects": {
+    "ordo": 3,
+    "ignis": 3,
+    "aer": 3
+  }
+}

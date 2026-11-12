@@ -1,0 +1,67 @@
+package thaumcraft.common.config;
+import java.util.List;
+import thaumcraft.api.aspects.*;
+/** Original complex object registrations; legacy item names mapped using MCP stable12. */
+public final class ConfigComplexAspects {
+    public record Entry(String id,String inherited,AspectList additional) {}
+    public static final List<Entry> ENTRIES=List.of(
+        new Entry("tc4modern:triple_meat_treat","",new AspectList().add(Aspect.HEAL,1).remove(Aspect.HUNGER,1)),
+        new Entry("minecraft:sandstone","",new AspectList().add(Aspect.EARTH, 1).remove(Aspect.EARTH, 1)),
+        new Entry("minecraft:melon","",new AspectList().add(Aspect.CROP, 2).remove(Aspect.HUNGER, 4)),
+        new Entry("minecraft:paper","",new AspectList().add(Aspect.MIND, 1)),
+        new Entry("minecraft:book","",new AspectList().add(Aspect.MIND, 3)),
+        new Entry("minecraft:enchanted_book","minecraft:book",new AspectList()),
+        new Entry("minecraft:bookshelf","",new AspectList().add(Aspect.MIND, 8)),
+        new Entry("minecraft:ender_eye","",new AspectList().add(Aspect.SENSES, 4)),
+        new Entry("minecraft:arrow","",new AspectList().add(Aspect.WEAPON, 1)),
+        new Entry("minecraft:glass_bottle","",new AspectList().add(Aspect.VOID, 1)),
+        new Entry("minecraft:chest","",new AspectList().add(Aspect.VOID, 4)),
+        new Entry("minecraft:golden_apple","",new AspectList().add(Aspect.MAGIC, 2).add(Aspect.HEAL, 4)),
+        new Entry("minecraft:enchanted_golden_apple","",new AspectList().add(Aspect.MAGIC, 4).add(Aspect.HEAL, 8)),
+        new Entry("minecraft:bowl","",new AspectList().add(Aspect.VOID, 1)),
+        new Entry("minecraft:mushroom_stew","",new AspectList().add(Aspect.HUNGER, 4)),
+        new Entry("minecraft:minecart","",new AspectList().add(Aspect.MECHANISM, 2).add(Aspect.TRAVEL, 4)),
+        new Entry("minecraft:iron_door","",new AspectList().add(Aspect.MECHANISM, 2).add(Aspect.MOTION, 1)),
+        new Entry("minecraft:oak_door","",new AspectList().add(Aspect.MECHANISM, 1).add(Aspect.MOTION, 1)),
+        new Entry("minecraft:oak_boat","",new AspectList().add(Aspect.WATER, 4).add(Aspect.TRAVEL, 4)),
+        new Entry("minecraft:flint_and_steel","",new AspectList().add(Aspect.FIRE, 4)),
+        new Entry("minecraft:fishing_rod","",new AspectList().add(Aspect.WATER, 1).add(Aspect.TOOL, 1)),
+        new Entry("minecraft:brewing_stand","",new AspectList().add(Aspect.CRAFT, 2).add(Aspect.WATER, 2)),
+        new Entry("minecraft:stone_button","",new AspectList().add(Aspect.MECHANISM, 1)),
+        new Entry("minecraft:rail","",new AspectList().add(Aspect.METAL, 1).add(Aspect.TRAVEL, 1)),
+        new Entry("minecraft:detector_rail","",new AspectList().add(Aspect.MECHANISM, 1).add(Aspect.SENSES, 1)),
+        new Entry("minecraft:powered_rail","",new AspectList().add(Aspect.MECHANISM, 1).add(Aspect.ENERGY, 1)),
+        new Entry("minecraft:activator_rail","",new AspectList().add(Aspect.MECHANISM, 2)),
+        new Entry("minecraft:oak_fence_gate","",new AspectList().add(Aspect.MECHANISM, 1).add(Aspect.TRAVEL, 1)),
+        new Entry("minecraft:oak_pressure_plate","",new AspectList().add(Aspect.MECHANISM, 1).add(Aspect.SENSES, 1)),
+        new Entry("minecraft:stone_pressure_plate","",new AspectList().add(Aspect.MECHANISM, 1).add(Aspect.SENSES, 1)),
+        new Entry("minecraft:light_weighted_pressure_plate","",new AspectList().add(Aspect.MECHANISM, 1).add(Aspect.SENSES, 1)),
+        new Entry("minecraft:heavy_weighted_pressure_plate","",new AspectList().add(Aspect.MECHANISM, 1).add(Aspect.SENSES, 1)),
+        new Entry("minecraft:lever","",new AspectList().add(Aspect.MECHANISM, 1)),
+        new Entry("minecraft:redstone_torch","",new AspectList().add(Aspect.MECHANISM, 2)),
+        new Entry("minecraft:piston","",new AspectList().add(Aspect.MECHANISM, 2).add(Aspect.MOTION, 4)),
+        new Entry("minecraft:sticky_piston","",new AspectList().add(Aspect.MECHANISM, 2).add(Aspect.MOTION, 4)),
+        new Entry("minecraft:jukebox","",new AspectList().add(Aspect.SENSES, 4).add(Aspect.MECHANISM, 2).add(Aspect.AIR, 4)),
+        new Entry("minecraft:note_block","",new AspectList().add(Aspect.SENSES, 4).add(Aspect.MECHANISM, 1).add(Aspect.AIR, 4)),
+        new Entry("minecraft:oak_trapdoor","",new AspectList().add(Aspect.MOTION, 1)),
+        new Entry("minecraft:lit_furnace","",new AspectList().add(Aspect.FIRE, 4)),
+        new Entry("minecraft:furnace","",new AspectList().add(Aspect.FIRE, 2)),
+        new Entry("minecraft:enchanting_table","",new AspectList().add(Aspect.MAGIC, 8).add(Aspect.CRAFT, 4)),
+        new Entry("minecraft:clock","",new AspectList().add(Aspect.MECHANISM, 2)),
+        new Entry("minecraft:beacon","",new AspectList().add(Aspect.AURA, 2).add(Aspect.MAGIC, 2).add(Aspect.EXCHANGE, 2)),
+        new Entry("minecraft:oak_button","",new AspectList().add(Aspect.MECHANISM, 1)),
+        new Entry("minecraft:carrot_on_a_stick","",new AspectList().add(Aspect.TRAVEL, 4)),
+        new Entry("minecraft:flower_pot","",new AspectList().add(Aspect.VOID, 1).add(Aspect.PLANT, 1)),
+        new Entry("minecraft:golden_carrot","",new AspectList().add(Aspect.SENSES, 2)),
+        new Entry("minecraft:ender_chest","",new AspectList().merge(Aspect.EXCHANGE, 2).merge(Aspect.TRAVEL, 2).merge(Aspect.VOID, 4)),
+        new Entry("minecraft:hopper","",new AspectList().merge(Aspect.MECHANISM, 1).merge(Aspect.EXCHANGE, 1).merge(Aspect.VOID, 1)),
+        new Entry("minecraft:dropper","",new AspectList().merge(Aspect.MECHANISM, 1).merge(Aspect.EXCHANGE, 1).merge(Aspect.VOID, 1)),
+        new Entry("minecraft:dispenser","",new AspectList().merge(Aspect.MECHANISM, 1).merge(Aspect.EXCHANGE, 1).merge(Aspect.VOID, 1)),
+        new Entry("minecraft:daylight_detector","",new AspectList().merge(Aspect.SENSES, 2).merge(Aspect.LIGHT, 3).merge(Aspect.MECHANISM, 3)),
+        new Entry("tc4modern:table","",new AspectList().add(Aspect.TOOL,1)),
+        new Entry("tc4modern:research_table","tc4modern:table",new AspectList().add(Aspect.MIND,4)),
+        new Entry("tc4modern:arcane_workbench","tc4modern:table",new AspectList().add(Aspect.CRAFT,4))
+    );
+    public static Entry get(String id){Entry found=null;for(var entry:ENTRIES)if(entry.id().equals(id))found=entry;return found;}
+    private ConfigComplexAspects() {}
+}

@@ -1,0 +1,28 @@
+{
+  "key": "AlchemyFurnace",
+  "research": "DISTILESSENTIA",
+  "pattern": [
+    "SCS",
+    "SFS",
+    "SSS"
+  ],
+  "key_items": {
+    "C": {
+      "item": "tc4modern:crucible"
+    },
+    "F": {
+      "item": "minecraft:furnace"
+    },
+    "S": {
+      "item": "tc4modern:arcane_stone"
+    }
+  },
+  "result": {
+    "id": "tc4modern:alchemical_furnace",
+    "count": 1
+  },
+  "aspects": {
+    "ignis": 5,
+    "aqua": 5
+  }
+}

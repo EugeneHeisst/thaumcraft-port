@@ -1,0 +1,31 @@
+{
+  "key": "Bellows",
+  "research": "BELLOWS",
+  "pattern": [
+    "WW ",
+    "LCI",
+    "WW "
+  ],
+  "key_items": {
+    "W": {
+      "tag": "minecraft:planks"
+    },
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "C": {
+      "item": "tc4modern:air_shard"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "id": "tc4modern:bellows",
+    "count": 1
+  },
+  "aspects": {
+    "aer": 10,
+    "ordo": 5
+  }
+}

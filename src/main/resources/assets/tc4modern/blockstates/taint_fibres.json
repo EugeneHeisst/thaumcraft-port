@@ -1,0 +1,86 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "tc4modern:block/taint_fibres_west"
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "tc4modern:block/taint_fibres_east"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "tc4modern:block/taint_fibres_north"
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "tc4modern:block/taint_fibres_south"
+      }
+    },
+    {
+      "when": {
+        "down": "true"
+      },
+      "apply": {
+        "model": "tc4modern:block/taint_fibres_down"
+      }
+    },
+    {
+      "when": {
+        "up": "true"
+      },
+      "apply": {
+        "model": "tc4modern:block/taint_fibres_up"
+      }
+    },
+    {
+      "when": {
+        "variant": "1",
+        "down": "true"
+      },
+      "apply": {
+        "model": "tc4modern:block/taint_fibres_1"
+      }
+    },
+    {
+      "when": {
+        "variant": "2",
+        "down": "true"
+      },
+      "apply": {
+        "model": "tc4modern:block/taint_fibres_2"
+      }
+    },
+    {
+      "when": {
+        "variant": "3"
+      },
+      "apply": {
+        "model": "tc4modern:block/taint_fibres_3"
+      }
+    },
+    {
+      "when": {
+        "variant": "4"
+      },
+      "apply": {
+        "model": "tc4modern:block/taint_fibres_4"
+      }
+    }
+  ]
+}

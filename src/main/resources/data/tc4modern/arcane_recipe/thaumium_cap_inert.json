@@ -1,0 +1,22 @@
+{
+ "key": "WandCapThaumiumInert",
+ "research": "CAP_thaumium",
+ "pattern": [
+  "NNN",
+  "N N"
+ ],
+ "key_items": {
+  "N": {
+   "item": "tc4modern:thaumium_nugget"
+  }
+ },
+ "result": {
+  "id": "tc4modern:thaumium_cap_inert",
+  "count": 1
+ },
+ "aspects": {
+  "ordo": 6,
+  "ignis": 6,
+  "aer": 6
+ }
+}

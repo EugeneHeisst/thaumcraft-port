@@ -1,0 +1,23 @@
+{
+  "key": "Filter",
+  "research": "DISTILESSENTIA",
+  "pattern": [
+    "GWG"
+  ],
+  "key_items": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "W": {
+      "item": "tc4modern:silverwood_planks"
+    }
+  },
+  "result": {
+    "id": "tc4modern:vis_filter",
+    "count": 2
+  },
+  "aspects": {
+    "ordo": 5,
+    "aqua": 5
+  }
+}

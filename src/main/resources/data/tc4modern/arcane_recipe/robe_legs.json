@@ -1,0 +1,21 @@
+{
+  "key": "RobeLegs",
+  "research": "ENCHFABRIC",
+  "pattern": [
+    "III",
+    "I I",
+    "I I"
+  ],
+  "key_items": {
+    "I": {
+      "item": "tc4modern:enchanted_fabric"
+    }
+  },
+  "result": {
+    "id": "tc4modern:robe_legs",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 5
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "key": "Goggles",
+  "research": "GOGGLES",
+  "pattern": [
+    "LGL",
+    "L L",
+    "TGT"
+  ],
+  "key_items": {
+    "L": {
+      "item": "minecraft:leather"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "T": {
+      "item": "tc4modern:thaumometer"
+    }
+  },
+  "result": {
+    "id": "tc4modern:goggles",
+    "count": 1
+  },
+  "aspects": {
+    "aer": 5,
+    "ignis": 5,
+    "aqua": 5,
+    "terra": 5,
+    "perditio": 3,
+    "ordo": 3
+  }
+}

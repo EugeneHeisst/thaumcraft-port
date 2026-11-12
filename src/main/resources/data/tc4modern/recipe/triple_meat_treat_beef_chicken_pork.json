@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "tc4modern:beef_nugget"
+    },
+    {
+      "item": "tc4modern:chicken_nugget"
+    },
+    {
+      "item": "tc4modern:pork_nugget"
+    }
+  ],
+  "result": {
+    "id": "tc4modern:triple_meat_treat",
+    "count": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "key": "EnchantedFabric",
+  "research": "ENCHFABRIC",
+  "pattern": [
+    " S ",
+    "SCS",
+    " S "
+  ],
+  "key_items": {
+    "S": {
+      "item": "minecraft:string"
+    },
+    "C": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "result": {
+    "id": "tc4modern:enchanted_fabric",
+    "count": 1
+  },
+  "aspects": {
+    "aer": 1,
+    "terra": 1,
+    "ignis": 1,
+    "aqua": 1,
+    "ordo": 1,
+    "perditio": 1
+  }
+}

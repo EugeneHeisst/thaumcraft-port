@@ -1,0 +1,28 @@
+{
+ "key": "FocusFire",
+ "research": "FOCUSFIRE",
+ "pattern": [
+  "CQC",
+  "Q#Q",
+  "CQC"
+ ],
+ "key_items": {
+  "#": {
+   "item": "minecraft:fire_charge"
+  },
+  "Q": {
+   "item": "minecraft:quartz"
+  },
+  "C": {
+   "item": "tc4modern:fire_shard"
+  }
+ },
+ "result": {
+  "id": "tc4modern:focus_fire",
+  "count": 1
+ },
+ "aspects": {
+  "ignis": 20,
+  "perditio": 10
+ }
+}

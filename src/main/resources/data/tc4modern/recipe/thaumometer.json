@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "GCG",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "tag": "tc4modern:shards"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "C": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "id": "tc4modern:thaumometer",
+    "count": 1
+  }
+}

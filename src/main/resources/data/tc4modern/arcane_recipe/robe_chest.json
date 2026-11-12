@@ -1,0 +1,21 @@
+{
+  "key": "RobeChest",
+  "research": "ENCHFABRIC",
+  "pattern": [
+    "I I",
+    "III",
+    "III"
+  ],
+  "key_items": {
+    "I": {
+      "item": "tc4modern:enchanted_fabric"
+    }
+  },
+  "result": {
+    "id": "tc4modern:robe_chest",
+    "count": 1
+  },
+  "aspects": {
+    "aer": 5
+  }
+}

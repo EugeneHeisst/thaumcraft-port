@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "tc4modern:blocks/greatwoodtop",
+    "side": "tc4modern:blocks/greatwoodside"
+  }
+}

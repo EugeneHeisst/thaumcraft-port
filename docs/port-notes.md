@@ -2,15 +2,15 @@
 
 Port of Thaumcraft 4.2.3.5 to Minecraft Java 1.21.1 / NeoForge. The implementation now includes research and scanning, wand/focus systems, alchemy and essentia machinery, infusion and equipment, golems, warp and taint, original mobs/champions/bosses, the Outer Lands, natural decorations and original village traders/buildings. Complete source parity and a full fresh-world survival progression are not yet certified.
 
-0.17.134 checks the creative tab against the actual original 4.2.3.5 tab and the modern item registry. It restores nine missing block item forms, sixteen coloured banners, original relative ordering and Russian/English item names. Technical/multiblock-only blocks keep their existing acquisition paths; legacy duplicate wand items remain represented by component-based wands and the cheat book remains configuration-gated. Creative inventory scanning now handles its client-only item picker/cursor. `/tc debug all` also reveals all item scans, including component variants. Creative aura nodes use the original random generation helper instead of six fixed 40-point aspects; eye-height billboard rotation and insertion order prevent the previous misplaced/reordered layers, and the item preview uses the original four primals and opacity. Baubles no longer paints over its original empty-slot silhouettes. See [creative audit details](docs/creative-tab-audit.md).
+0.17.134 checks the creative tab against the actual original 4.2.3.5 tab and the modern item registry. It restores nine missing block item forms, sixteen coloured banners, original relative ordering and Russian/English item names. Technical/multiblock-only blocks keep their existing acquisition paths; legacy duplicate wand items remain represented by component-based wands and the cheat book remains configuration-gated. Creative inventory scanning now handles its client-only item picker/cursor. `/tc debug all` also reveals all item scans, including component variants. Creative aura nodes use the original random generation helper instead of six fixed 40-point aspects; eye-height billboard rotation and insertion order prevent the previous misplaced/reordered layers, and the item preview uses the original four primals and opacity. Baubles no longer paints over its original empty-slot silhouettes. See [creative audit details](creative-tab-audit.md).
 
-Build with Java 21 through `./dev.sh build -x test --console=plain`. This runs twelve custom test tasks in addition to compilation and packaging. Native audits run sequentially in isolated game directories; client audits use hidden Xvfb/Mesa displays. Controlled crafting/combat fixtures include supplied ingredients or research; fresh ordinary-world generation checks separately cover magical forest, tainted land and villages.
+Build with Java 21 through `./gradlew build`. This runs twelve custom test tasks in addition to compilation and packaging. Native audits run sequentially in isolated game directories; client audits use hidden Xvfb/Mesa displays. Controlled crafting/combat fixtures include supplied ingredients or research; fresh ordinary-world generation checks separately cover magical forest, tainted land and villages.
 
 0.17.136 adds greatwood/silverwood planks to vanilla item/block planks tags, allowing ordinary tag-based wooden recipes.
 
 0.17.135 embeds all imported textures, sounds, models and translations in the mod JAR. Players install only the JAR; no separate resource ZIP is required or automatically loaded.
 
-The original JAR, adapted reference sources/resources and imported asset archive are supplied separately from Git. The default reference directory is `related/thaumcraft4-reference`; set `TC4_REFERENCE_ROOT` or `-Ptc4ReferenceDir` to choose another directory. `-Ptc4PortSources` and `-Ptc4PortResources` override the `ported-src` and `ported-resources` subdirectories individually. Builds read `tc4-local-resources.zip` in the project root; `-Ptc4ResourcePack` can select a different archive. Only the resulting mod JAR is needed in `mods`. Cross-mod silver/tin/lead recipes are outside the standalone scope.
+As of 0.17.194, adapted Java sources, converted JSON resources and the root `tc4-local-resources.zip` archive are included in the repository. A normal Gradle build uses those checked-in inputs; the original JARs and decompiled reference models are needed only for optional converter regeneration. `-Ptc4ResourcePack` selects an alternative prepared archive. Only the resulting mod JAR is needed in `mods`. Cross-mod silver/tin/lead recipes are outside the standalone scope.
 
 ## Historical implementation notes
 
@@ -81,17 +81,28 @@ Remaining fidelity work includes bellows, full legacy fluid corner rendering, ta
 
 ## Build and local assets
 
-`./dev.sh build` selects existing Java 21 without changing system Java. Checks run the original aspect/knowledge logic and research puzzle generation/NBT/connections/validation.
-
-Gradle compiles `ported-src` and packages adapted recipe JSON from `ported-resources` within the configured reference directory. Overrides: `-Ptc4ReferenceDir=... -Ptc4PortSources=... -Ptc4PortResources=...`.
-
-Build the asset archive from an original JAR:
+Use Java 21 and the included Gradle wrapper:
 
 ```sh
-python tools/import_tc4_resources.py Thaumcraft-1.7.10-4.2.3.5.jar .
+./gradlew build
 ```
 
-The converter also reads the original decompiled Java models in `related/thaumcraft4-reference` (`TC4_REFERENCE_ROOT` or `--reference` overrides this). Generate `tc4-local-resources.zip` into the project root for Gradle to embed its `assets/**` entries in the JAR. Original PNG/audio and converted OBJ assets stay outside Git but are included in the built mod. Adapted original Java model classes are compiled into the local mod.
+The first build downloads the declared public Gradle dependencies. The checkout contains 112 adapted original Java sources under `src/main/java`, 243 converted JSON resources under `src/main/resources`, and `tc4-local-resources.zip` at the repository root. Gradle compiles the sources, packages the JSON resources and embeds the archive's `assets/**` entries in the mod JAR. No external reference directory or original JAR is required for this build. `-Ptc4ResourcePack=path/to/resources.zip` selects a different prepared asset archive. `./dev.sh build` is an optional helper for selecting an existing Java 21 installation.
+
+Checks run the original aspect/knowledge logic and research puzzle generation, NBT, connections and validation.
+
+### Optional resource regeneration
+
+The resource converter can regenerate the bundled archive from the original Thaumcraft JAR, original Baubles/Minecraft assets and decompiled model sources:
+
+```sh
+python tools/import_tc4_resources.py path/to/Thaumcraft-1.7.10-4.2.3.5.jar . \
+  --reference path/to/reference \
+  --baubles-jar path/to/Baubles-1.7.10-1.0.1.10.jar \
+  --minecraft-jar path/to/minecraft-1.7.10-client.jar
+```
+
+The reference directory defaults to `related/thaumcraft4-reference`; set `TC4_REFERENCE_ROOT` or pass `--reference` to choose another directory. This reference setting is used by the converter, not by the standard Gradle build. The command writes `tc4-local-resources.zip` to the selected output directory (`.` above). Original PNG/audio and converted OBJ assets are already present in the checked-in archive and are embedded in the mod; adapted Java model classes are already part of `src/main/java`.
 
 Restart the game after replacing the installed mod JAR. Keep a backup of the world before updating.
 
@@ -257,8 +268,8 @@ The one gameplay correction restores original flux-event placement: flux goo/gas
 
 Validation: 0.17.132 occupied-block baseline reproduces both skipped flux placements; 0.17.133 hidden native audit ALL PASS, including all38 stabiliser variants,48000 seeded cycle comparisons, original damage/effect/warp consequences, occupied-block flux replacement, and a naturally completed traveller-boots recipe consuming all six components and exactly50essentia without ingredient drops. All twelve custom build tests passed (19 Gradle tasks total).
 
-## 0.17.193 build and network compatibility
+## 0.17.193–0.17.194 build and network compatibility
 
-The build and resource converters share a configurable reference root. Provenance paths in `port-manifest.json` are relative to the repository root. The Portable Hole audit accepts `JEI_JAR` or `-PjeiLocalJar` instead of selecting an installed game profile.
+Version 0.17.194 builds from the checked-in adapted sources, converted JSON and root resource archive. Optional converter regeneration retains its configurable reference root. Provenance paths in `port-manifest.json` are relative to the repository root. The Portable Hole audit accepts `JEI_JAR` or `-PjeiLocalJar` instead of selecting an installed game profile.
 
-Focus and infusion payload protocol versions are `foci-1` and `infusion-1`; packet types and codecs are unchanged. **Clients and servers must both update Thaumcraft to 0.17.193. Mixed 0.17.192/0.17.193 connections are rejected by NeoForge protocol negotiation.**
+Focus and infusion payload protocol versions are `foci-1` and `infusion-1`; packet types and codecs are unchanged between 0.17.193 and 0.17.194. **Clients and servers must use 0.17.193 or newer; 0.17.193 and 0.17.194 are compatible with each other. Connections between 0.17.192 and 0.17.193/0.17.194 are rejected by NeoForge protocol negotiation.**

@@ -1,0 +1,35 @@
+{
+  "key": "NodeStabilizer",
+  "research": "NODESTABILIZER",
+  "pattern": [
+    " G ",
+    "QPQ",
+    "SNS"
+  ],
+  "key_items": {
+    "S": {
+      "item": "tc4modern:arcane_stone_bricks"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "P": {
+      "item": "minecraft:piston"
+    },
+    "Q": {
+      "item": "minecraft:quartz_block"
+    },
+    "N": {
+      "item": "tc4modern:nitor"
+    }
+  },
+  "result": {
+    "id": "tc4modern:node_stabilizer",
+    "count": 1
+  },
+  "aspects": {
+    "aqua": 32,
+    "terra": 32,
+    "ordo": 32
+  }
+}

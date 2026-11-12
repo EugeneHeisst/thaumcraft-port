@@ -1,0 +1,29 @@
+{
+ "key": "FocusShock",
+ "research": "FOCUSSHOCK",
+ "pattern": [
+  "CQC",
+  "Q#Q",
+  "CQC"
+ ],
+ "key_items": {
+  "#": {
+   "item": "minecraft:potato"
+  },
+  "Q": {
+   "item": "minecraft:quartz"
+  },
+  "C": {
+   "item": "tc4modern:air_shard"
+  }
+ },
+ "result": {
+  "id": "tc4modern:focus_shock",
+  "count": 1
+ },
+ "aspects": {
+  "aer": 10,
+  "ordo": 10,
+  "perditio": 10
+ }
+}

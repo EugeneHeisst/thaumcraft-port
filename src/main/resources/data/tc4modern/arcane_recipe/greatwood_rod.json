@@ -1,0 +1,20 @@
+{
+  "key": "WandRodGreatwood",
+  "research": "ROD_greatwood",
+  "pattern": [
+    " G",
+    "G "
+  ],
+  "key_items": {
+    "G": {
+      "item": "tc4modern:greatwood_log"
+    }
+  },
+  "result": {
+    "id": "tc4modern:greatwood_rod",
+    "count": 1
+  },
+  "aspects": {
+    "perditio": 3
+  }
+}

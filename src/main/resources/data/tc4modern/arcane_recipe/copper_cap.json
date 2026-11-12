@@ -1,0 +1,22 @@
+{
+ "key": "WandCapCopper",
+ "research": "CAP_copper",
+ "pattern": [
+  "NNN",
+  "N N"
+ ],
+ "key_items": {
+  "N": {
+   "item": "tc4modern:copper_nugget"
+  }
+ },
+ "result": {
+  "id": "tc4modern:copper_cap",
+  "count": 1
+ },
+ "aspects": {
+  "ordo": 2,
+  "ignis": 2,
+  "aer": 2
+ }
+}

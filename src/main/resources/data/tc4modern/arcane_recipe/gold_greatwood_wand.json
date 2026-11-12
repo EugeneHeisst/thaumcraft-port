@@ -1,0 +1,30 @@
+{
+  "key": "WandGoldGreatwood",
+  "research": "ROD_greatwood",
+  "mirrored": false,
+  "pattern": [
+    "  C",
+    " R ",
+    "C  "
+  ],
+  "key_items": {
+    "C": {
+      "item": "tc4modern:gold_cap"
+    },
+    "R": {
+      "item": "tc4modern:greatwood_rod"
+    }
+  },
+  "result": {
+    "id": "tc4modern:gold_capped_greatwood_wand",
+    "count": 1
+  },
+  "aspects": {
+    "aer": 9,
+    "terra": 9,
+    "ignis": 9,
+    "aqua": 9,
+    "ordo": 9,
+    "perditio": 9
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S  ",
+    "SS ",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "tc4modern:arcane_stone_bricks"
+    }
+  },
+  "result": {
+    "id": "tc4modern:arcane_stone_stairs",
+    "count": 4
+  }
+}

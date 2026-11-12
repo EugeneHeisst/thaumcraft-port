@@ -4,738 +4,1582 @@
   "target": "Minecraft 1.21.1 / NeoForge",
   "local_adapted_sources": [
     {
+      "class": "dev.eugheist.tc4modern.InfernalFurnaceClient",
+      "path": "src/main/java/dev/eugheist/tc4modern/InfernalFurnaceClient.java",
+      "sha256": "5d229451c664c8392299ca811b80b35560891f6fb5ff65998b74919b3d033838"
+    },
+    {
+      "class": "dev.eugheist.tc4modern.NodeExplosion",
+      "path": "src/main/java/dev/eugheist/tc4modern/NodeExplosion.java",
+      "sha256": "9d1448078003ce66c9a1f6c0beaada2fa11eaf6f6f01b36c6f1d7321139b3196"
+    },
+    {
       "class": "dev.eugheist.tc4modern.ShardOreFeature",
-      "path": "related/thaumcraft4-reference/ported-src/dev/eugheist/tc4modern/ShardOreFeature.java",
-      "sha256": "10dc021cc8611540d06a3a8e9e0a0fbe03670ffc5458411ff52231d4d757aeb4"
+      "path": "src/main/java/dev/eugheist/tc4modern/ShardOreFeature.java",
+      "sha256": "e9b80e21e10d4245015cc83fdc2ecc5cd3fa0d9a82879d492fa308ab0dcdaa94"
     },
     {
       "class": "thaumcraft.api.IGoggles",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/IGoggles.java",
+      "path": "src/main/java/thaumcraft/api/IGoggles.java",
       "sha256": "12548c12ebee4ba07af802165dd79998b2effc1ccd52e27feedbd75797e524fc"
     },
     {
       "class": "thaumcraft.api.IRunicArmor",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/IRunicArmor.java",
+      "path": "src/main/java/thaumcraft/api/IRunicArmor.java",
       "sha256": "74ecd9d37eadcb048da10a7f2711d790199b688b3a5d8fbdd28cd1a551fc6ff4"
     },
     {
       "class": "thaumcraft.api.IVisDiscountGear",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/IVisDiscountGear.java",
+      "path": "src/main/java/thaumcraft/api/IVisDiscountGear.java",
       "sha256": "719460841f12f13b9fd3a6dd48737bdfb610bdae80445734fc57e6cedbabe21a"
     },
     {
       "class": "thaumcraft.api.ThaumcraftApiHelper",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/ThaumcraftApiHelper.java",
+      "path": "src/main/java/thaumcraft/api/ThaumcraftApiHelper.java",
       "sha256": "0d2f69dc2a4fd736c5dc64bb6c98e3fb277e6d8b455997cae97f4fb206c746ec"
     },
     {
       "class": "thaumcraft.api.aspects.Aspect",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/aspects/Aspect.java",
+      "path": "src/main/java/thaumcraft/api/aspects/Aspect.java",
       "sha256": "1324a5e43ab021d6d9038a62b204bc058af089524f5deaacd253f78552c5860f"
     },
     {
       "class": "thaumcraft.api.aspects.AspectList",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/aspects/AspectList.java",
+      "path": "src/main/java/thaumcraft/api/aspects/AspectList.java",
       "sha256": "62c6583b8180d952a2d289dcfa529be7ee54fb6a2a22f7afb34ebda27b967b0d"
     },
     {
+      "class": "thaumcraft.api.aspects.IEssentiaTransport",
+      "path": "src/main/java/thaumcraft/api/aspects/IEssentiaTransport.java",
+      "sha256": "2244934fa70047d8161088138a7f3a62ff28223ebf42c3bc1b41b2c3d2d303d9"
+    },
+    {
       "class": "thaumcraft.api.crafting.ArcanePattern",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/crafting/ArcanePattern.java",
-      "sha256": "b5bb314ed9ad206526bc4a83e9e87f3dd9fa4d4845fdd83ec5500ea211538064"
+      "path": "src/main/java/thaumcraft/api/crafting/ArcanePattern.java",
+      "sha256": "2f0c1f454963c9c4521424c9a6d51f52d45278bad63b41abe4f4fea85d3f6810"
     },
     {
       "class": "thaumcraft.api.crafting.CrucibleRecipe",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/crafting/CrucibleRecipe.java",
+      "path": "src/main/java/thaumcraft/api/crafting/CrucibleRecipe.java",
       "sha256": "a6daea157ed22a4b93150601968077b5e4e8d422a91ba051e48f458de15daf6e"
     },
     {
       "class": "thaumcraft.api.entities.ITaintedMob",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/entities/ITaintedMob.java",
+      "path": "src/main/java/thaumcraft/api/entities/ITaintedMob.java",
       "sha256": "d4339b8aaf0b06d3db2462beec5e5de16e3e59588c72669f08769df9ad9aa9ea"
     },
     {
       "class": "thaumcraft.api.nodes.IRevealer",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/nodes/IRevealer.java",
+      "path": "src/main/java/thaumcraft/api/nodes/IRevealer.java",
       "sha256": "04ac379aacbeee00d38435a39150b913515b5c178046c1e206ed7d26a7303f60"
     },
     {
       "class": "thaumcraft.api.nodes.NodeModifier",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/nodes/NodeModifier.java",
+      "path": "src/main/java/thaumcraft/api/nodes/NodeModifier.java",
       "sha256": "b5aaab58d8b9944d3de145440e1f4cb81d7b461db2d6c7ce5af1f17afc29a6ca"
     },
     {
       "class": "thaumcraft.api.nodes.NodeType",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/nodes/NodeType.java",
+      "path": "src/main/java/thaumcraft/api/nodes/NodeType.java",
       "sha256": "13ebc4dda9bd7932b578da3c4c04a708264d6711f2e8968003bd8118e7afdf3d"
     },
     {
       "class": "thaumcraft.api.potions.PotionFluxTaint",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/potions/PotionFluxTaint.java",
+      "path": "src/main/java/thaumcraft/api/potions/PotionFluxTaint.java",
       "sha256": "ea36fcd9b84f7af627c7c12c42c406a487fe6907344a83c3857d1894011d4fd6"
     },
     {
       "class": "thaumcraft.api.potions.PotionVisExhaust",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/potions/PotionVisExhaust.java",
+      "path": "src/main/java/thaumcraft/api/potions/PotionVisExhaust.java",
       "sha256": "8f495a261590067eb691af86e23bac9c3f4a910560483798ee3e32f4028b8a60"
     },
     {
       "class": "thaumcraft.api.research.ResearchCategories",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/research/ResearchCategories.java",
+      "path": "src/main/java/thaumcraft/api/research/ResearchCategories.java",
       "sha256": "84154852f84cb540798dd84b4559abdfa7e27989f7f806fda240e569f37b098c"
     },
     {
       "class": "thaumcraft.api.research.ResearchCategoryList",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/research/ResearchCategoryList.java",
+      "path": "src/main/java/thaumcraft/api/research/ResearchCategoryList.java",
       "sha256": "582d76d518e6d4a22900d1b3219d5801c2811b22d21072df81ac134f15997bbb"
     },
     {
       "class": "thaumcraft.api.research.ResearchItem",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/research/ResearchItem.java",
+      "path": "src/main/java/thaumcraft/api/research/ResearchItem.java",
       "sha256": "38dc5eba87993c23ef254119f98eec551257147689e3da25af396d5805283815"
     },
     {
       "class": "thaumcraft.api.research.ResearchPage",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/api/research/ResearchPage.java",
+      "path": "src/main/java/thaumcraft/api/research/ResearchPage.java",
       "sha256": "5d6a34e94e72a6dc6af2080f7cb78e2e683ad0533450684b5675aaede59b4aee"
     },
     {
+      "class": "thaumcraft.api.visnet.VisDrainRules",
+      "path": "src/main/java/thaumcraft/api/visnet/VisDrainRules.java",
+      "sha256": "984184f37080d20426f3b93f3a72f97f2a9f515b3a3c8411aef49ab8c0db1ae4"
+    },
+    {
+      "class": "thaumcraft.api.visnet.VisNearbyRules",
+      "path": "src/main/java/thaumcraft/api/visnet/VisNearbyRules.java",
+      "sha256": "e7a2aa50a9a95926c9258521c2fc8aea54986c01c45a42994b417d2bc26d9c57"
+    },
+    {
+      "class": "thaumcraft.api.visnet.VisParentRules",
+      "path": "src/main/java/thaumcraft/api/visnet/VisParentRules.java",
+      "sha256": "25d39f543658c69f67d328e10f5fd6b88f5f12942f590413af9884cf5c0310f0"
+    },
+    {
+      "class": "thaumcraft.client.fx.WRMat4",
+      "path": "src/main/java/thaumcraft/client/fx/WRMat4.java",
+      "sha256": "fc0c1e98739b21b51062d44901615cf14ef3bfa4abc320c91b246319042e4cb3"
+    },
+    {
+      "class": "thaumcraft.client.fx.WRVector3",
+      "path": "src/main/java/thaumcraft/client/fx/WRVector3.java",
+      "sha256": "cac6ce2f1bdce6cc74c89ebf4d416af38ce52351b2d09def85ca24ae041c40ff"
+    },
+    {
+      "class": "thaumcraft.client.fx.beams.BeamPowerState",
+      "path": "src/main/java/thaumcraft/client/fx/beams/BeamPowerState.java",
+      "sha256": "f8445efd1d066ae2b68e913b5561ff76af1aef1737fd960cc39bb8d208a18f87"
+    },
+    {
+      "class": "thaumcraft.client.fx.bolt.FXLightningBoltCommon",
+      "path": "src/main/java/thaumcraft/client/fx/bolt/FXLightningBoltCommon.java",
+      "sha256": "75ad314cde203b149975cd581fbd913f3b56d1ecf1239b5ba36667f1300cb3bc"
+    },
+    {
       "class": "thaumcraft.client.fx.particles.AlumentumSparkle",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/client/fx/particles/AlumentumSparkle.java",
+      "path": "src/main/java/thaumcraft/client/fx/particles/AlumentumSparkle.java",
       "sha256": "6552f7c73244a0757b611723ca6aa61594488b3067cd3879f09c5722136cd896"
     },
     {
       "class": "thaumcraft.client.fx.particles.FXBubble",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/client/fx/particles/FXBubble.java",
+      "path": "src/main/java/thaumcraft/client/fx/particles/FXBubble.java",
       "sha256": "a40989f54252e518a61af04a26b8cd8ad3c2d964873881aeb1f405d8da907d88"
     },
     {
       "class": "thaumcraft.client.fx.particles.SwarmBuzz",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/client/fx/particles/SwarmBuzz.java",
+      "path": "src/main/java/thaumcraft/client/fx/particles/SwarmBuzz.java",
       "sha256": "425d53ec92c8720ad0e77e2045a99b61673b9e55d5d8b85e61bc7c60524c431c"
     },
     {
       "class": "thaumcraft.client.fx.particles.SwarmEscape",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/client/fx/particles/SwarmEscape.java",
+      "path": "src/main/java/thaumcraft/client/fx/particles/SwarmEscape.java",
       "sha256": "7b380cdc4e5572f241ff78638ed3cca63c35a251c33c2139ba5bb477703be4a6"
     },
     {
       "class": "thaumcraft.client.fx.particles.SwarmMotion",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/client/fx/particles/SwarmMotion.java",
+      "path": "src/main/java/thaumcraft/client/fx/particles/SwarmMotion.java",
       "sha256": "a2fc4ee22c5ff008477c9d80a6b9baabe1acdd86e696b23bb45fa87b67967505"
     },
     {
+      "class": "thaumcraft.client.lib.ResearchBookLayout",
+      "path": "src/main/java/thaumcraft/client/lib/ResearchBookLayout.java",
+      "sha256": "655377ba0f722df36b06be2991f32b4a918835fe5d1b711fdd61b8faa885353b"
+    },
+    {
       "class": "thaumcraft.client.renderers.models.BellowsGeometry",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/client/renderers/models/BellowsGeometry.java",
+      "path": "src/main/java/thaumcraft/client/renderers/models/BellowsGeometry.java",
       "sha256": "1da218c8dabb767e9345d2f2b90fb03a18df9b6ba7bc42b6e3ae749034179da5"
     },
     {
       "class": "thaumcraft.client.renderers.models.entities.ModelTaintSpore",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/client/renderers/models/entities/ModelTaintSpore.java",
+      "path": "src/main/java/thaumcraft/client/renderers/models/entities/ModelTaintSpore.java",
       "sha256": "2f6269ad77424e2fba5bfafcd6b5ef430dbff9e60d06c545601a5fdb5657a866"
     },
     {
       "class": "thaumcraft.client.renderers.models.entities.TaintSpiderGeometry",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/client/renderers/models/entities/TaintSpiderGeometry.java",
+      "path": "src/main/java/thaumcraft/client/renderers/models/entities/TaintSpiderGeometry.java",
       "sha256": "b0e3ce77dd0820fb5d7562aa39e13a56d3a272df2f0267cb995ef6c62269b6fb"
     },
     {
       "class": "thaumcraft.client.renderers.models.gear.ModelRobe",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/client/renderers/models/gear/ModelRobe.java",
+      "path": "src/main/java/thaumcraft/client/renderers/models/gear/ModelRobe.java",
       "sha256": "fc80d0b11be4ccbb90a5a02cbbbdc5a34a8665d145b44b0c873420ca492acc7d"
     },
     {
       "class": "thaumcraft.common.blocks.CrucibleFlux",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/CrucibleFlux.java",
+      "path": "src/main/java/thaumcraft/common/blocks/CrucibleFlux.java",
       "sha256": "b522c82a096478a877b428597c137c1d2e0e485ec47f7b875612c356b68e9df2"
     },
     {
       "class": "thaumcraft.common.blocks.FiniteFlux",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/FiniteFlux.java",
-      "sha256": "812ffdebdcdc7b11065341400c3d2ffe5a8578e4181a952fad6769ab673754b7"
+      "path": "src/main/java/thaumcraft/common/blocks/FiniteFlux.java",
+      "sha256": "38f4663d8ea283cdf8fe7ba21047316b727cdc2e6822a377dd044a994396f509"
     },
     {
       "class": "thaumcraft.common.blocks.FluxGooDecay",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/FluxGooDecay.java",
+      "path": "src/main/java/thaumcraft/common/blocks/FluxGooDecay.java",
       "sha256": "efded38d522e47fecf304102d68c01db7a297b6577f75e2827baa5e8b68cbcc1"
     },
     {
+      "class": "thaumcraft.common.blocks.InfernalFurnaceRestoration",
+      "path": "src/main/java/thaumcraft/common/blocks/InfernalFurnaceRestoration.java",
+      "sha256": "4d812f8f2808191d4c2de93c45dcd80b830198e6e85aaca427872aa5167ecfe3"
+    },
+    {
+      "class": "thaumcraft.common.blocks.InfernalFurnaceTextures",
+      "path": "src/main/java/thaumcraft/common/blocks/InfernalFurnaceTextures.java",
+      "sha256": "dbcf2e5e7c7a1f26a5cb71401723e40bc015ef6a20735e8fa0ac4009f6709dc7"
+    },
+    {
       "class": "thaumcraft.common.blocks.TaintBlockDecay",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/TaintBlockDecay.java",
+      "path": "src/main/java/thaumcraft/common/blocks/TaintBlockDecay.java",
       "sha256": "7580b06b1c7ba5f589d4abfe93fa1c0e418e5236275d6262316b8dd857e3c0fd"
     },
     {
       "class": "thaumcraft.common.blocks.TaintBlockState",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/TaintBlockState.java",
+      "path": "src/main/java/thaumcraft/common/blocks/TaintBlockState.java",
       "sha256": "973338c509b2257f54046fc6afbde2b36be06d861cc582d30f612d8bed51bc4e"
     },
     {
       "class": "thaumcraft.common.blocks.TaintFallingRules",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/TaintFallingRules.java",
+      "path": "src/main/java/thaumcraft/common/blocks/TaintFallingRules.java",
       "sha256": "0895a9f903150c25b81db5fed374a02e2a67fc30347c68ada0adbe6e4b519f37"
     },
     {
       "class": "thaumcraft.common.blocks.TaintFibresSpread",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/TaintFibresSpread.java",
+      "path": "src/main/java/thaumcraft/common/blocks/TaintFibresSpread.java",
       "sha256": "b49808e9affc5ed665847d6331c3ef67dbd9552b1c7add275981f2b0e37ad0dc"
     },
     {
       "class": "thaumcraft.common.blocks.TaintRules",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/blocks/TaintRules.java",
+      "path": "src/main/java/thaumcraft/common/blocks/TaintRules.java",
       "sha256": "48beaa496323b4a30742279d4f25802997f3c2939827e1b3233460e942af2131"
     },
     {
       "class": "thaumcraft.common.config.ConfigAspects",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/config/ConfigAspects.java",
+      "path": "src/main/java/thaumcraft/common/config/ConfigAspects.java",
       "sha256": "8642567eb00e039994cbda01c4b5b1a5880b645d28ded678d50c947d074b6a75"
     },
     {
       "class": "thaumcraft.common.config.ConfigComplexAspects",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/config/ConfigComplexAspects.java",
+      "path": "src/main/java/thaumcraft/common/config/ConfigComplexAspects.java",
       "sha256": "2d714bb5ceded8a55a7820f8149c3f93d56d0503f8b99362778053070fe83423"
     },
     {
       "class": "thaumcraft.common.config.ConfigCrucibleRecipes",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/config/ConfigCrucibleRecipes.java",
-      "sha256": "6a86a32d70acb438e7a9f95b5c85495da946bf1984fea75c79f4a1da2f64840e"
+      "path": "src/main/java/thaumcraft/common/config/ConfigCrucibleRecipes.java",
+      "sha256": "36dcc7de7af9066affb0c3b7eea7f36d5bc3ae99fae62d296bf9d9f0834dc52e"
     },
     {
       "class": "thaumcraft.common.config.ConfigEntityAspects",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/config/ConfigEntityAspects.java",
+      "path": "src/main/java/thaumcraft/common/config/ConfigEntityAspects.java",
       "sha256": "c578cb6007d7df08d1f4bc738a387d343592d1723095e3380c8ddaa6a000061f"
     },
     {
       "class": "thaumcraft.common.config.ConfigOreAspects",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/config/ConfigOreAspects.java",
+      "path": "src/main/java/thaumcraft/common/config/ConfigOreAspects.java",
       "sha256": "274e2c4c47caac542f2ee20af8030045ab279f72b387187a99ee5a7f152af031"
     },
     {
       "class": "thaumcraft.common.config.ConfigResearchData",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/config/ConfigResearchData.java",
-      "sha256": "66394b6209a9d9c5ffcbd104d79cfe337311e76f8cf4fdab5dae8e4e89fbe4b7"
+      "path": "src/main/java/thaumcraft/common/config/ConfigResearchData.java",
+      "sha256": "d876a049eced9ebbaa3cfc5aa4eefa9176a5440c0ba84981bc996f92c6b480f6"
     },
     {
       "class": "thaumcraft.common.entities.EntityFallingTaint",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/entities/EntityFallingTaint.java",
+      "path": "src/main/java/thaumcraft/common/entities/EntityFallingTaint.java",
       "sha256": "9ec6e73c41865eba574451d782bde52c4a02a6c0f4a1e1613530b5c74f285fce"
     },
     {
       "class": "thaumcraft.common.entities.EntitySpecialItem",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/entities/EntitySpecialItem.java",
+      "path": "src/main/java/thaumcraft/common/entities/EntitySpecialItem.java",
       "sha256": "065f73a1bfa8608d62c4730b39f1403f16b728194d5ef8d975eae10632c237ee"
     },
     {
       "class": "thaumcraft.common.entities.LegacyBlockEscape",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/entities/LegacyBlockEscape.java",
+      "path": "src/main/java/thaumcraft/common/entities/LegacyBlockEscape.java",
       "sha256": "51ff85bc04b2e685522f204fd462a19867eafa805d592f1db8474b28aefef778"
     },
     {
       "class": "thaumcraft.common.entities.monster.EntityTaintSpider",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/EntityTaintSpider.java",
+      "path": "src/main/java/thaumcraft/common/entities/monster/EntityTaintSpider.java",
       "sha256": "6f9d0dfae2eaad9e079b3c3574f8b27be258ae7b4d9b014869e17b83a0e070a0"
     },
     {
       "class": "thaumcraft.common.entities.monster.EntityTaintSpore",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/EntityTaintSpore.java",
+      "path": "src/main/java/thaumcraft/common/entities/monster/EntityTaintSpore.java",
       "sha256": "700e8331e91b831157b82ce9307d6a21372e8afbfe1141e9ce63b298f75d057c"
     },
     {
       "class": "thaumcraft.common.entities.monster.EntityTaintSporeSwarmer",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/EntityTaintSporeSwarmer.java",
+      "path": "src/main/java/thaumcraft/common/entities/monster/EntityTaintSporeSwarmer.java",
       "sha256": "0cacb473c83219a9999c5287c8b26a337bf92ac55a364d81cb2fb681b217ab50"
     },
     {
       "class": "thaumcraft.common.entities.monster.EntityTaintSwarm",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/EntityTaintSwarm.java",
+      "path": "src/main/java/thaumcraft/common/entities/monster/EntityTaintSwarm.java",
       "sha256": "d80536ab9c079d9b35550a6bb41d8278092fef70196ff1aa7ba205d337dedf47"
     },
     {
       "class": "thaumcraft.common.entities.monster.EntityThaumicSlime",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/EntityThaumicSlime.java",
+      "path": "src/main/java/thaumcraft/common/entities/monster/EntityThaumicSlime.java",
       "sha256": "945a5e329f7bf9fe112c1f6da97fe2402fac0f3b6dbe20cd6715efc966135fa1"
     },
     {
       "class": "thaumcraft.common.entities.monster.TaintSwarmFlight",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/TaintSwarmFlight.java",
+      "path": "src/main/java/thaumcraft/common/entities/monster/TaintSwarmFlight.java",
       "sha256": "72b345b225e2aece20c62d13d4615fae4439daa54ce5ca486fee25134efd3401"
     },
     {
       "class": "thaumcraft.common.entities.monster.ThaumicSlimeState",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/entities/monster/ThaumicSlimeState.java",
+      "path": "src/main/java/thaumcraft/common/entities/monster/ThaumicSlimeState.java",
       "sha256": "fd3d3f1d7b84166bee9da04c44ac992101e6b3502cdf362c3aa0881e392feca9"
     },
     {
       "class": "thaumcraft.common.entities.projectile.EntityAlumentum",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/entities/projectile/EntityAlumentum.java",
+      "path": "src/main/java/thaumcraft/common/entities/projectile/EntityAlumentum.java",
       "sha256": "ef8ab9849dbe8db3d3a2f72ffbbcd31fa8c343bc6fc845a44df4b5e797f4395e"
     },
     {
       "class": "thaumcraft.common.items.ItemAlumentum",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/items/ItemAlumentum.java",
+      "path": "src/main/java/thaumcraft/common/items/ItemAlumentum.java",
       "sha256": "43744e900271f8148294a73af8c3d1c50fd70235191aa341813d76024a3c2936"
     },
     {
       "class": "thaumcraft.common.items.ItemNitor",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/items/ItemNitor.java",
+      "path": "src/main/java/thaumcraft/common/items/ItemNitor.java",
       "sha256": "9ccb668b275a06f30ee1aa7ca2a44e58f5d3614beb720d45a6c9dbec37b865ac"
     },
     {
+      "class": "thaumcraft.common.items.ItemNuggetEdible",
+      "path": "src/main/java/thaumcraft/common/items/ItemNuggetEdible.java",
+      "sha256": "6ffcc12d4846e65de2cb89b745d83892ded1a56600772064f7167b6be9cbcbbe"
+    },
+    {
+      "class": "thaumcraft.common.items.ItemTripleMeatTreat",
+      "path": "src/main/java/thaumcraft/common/items/ItemTripleMeatTreat.java",
+      "sha256": "1454b7942d53bcb1ccc1ebf6ca20eae0317bb22c5e7d76fb5d984f7bc2f3b6a8"
+    },
+    {
       "class": "thaumcraft.common.items.armor.ItemGoggles",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/items/armor/ItemGoggles.java",
+      "path": "src/main/java/thaumcraft/common/items/armor/ItemGoggles.java",
       "sha256": "305e427d6a22e62a9a84a451e3231ac085ade1f01140e64480976fe3869151cf"
     },
     {
       "class": "thaumcraft.common.items.armor.ItemRobeArmor",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/items/armor/ItemRobeArmor.java",
+      "path": "src/main/java/thaumcraft/common/items/armor/ItemRobeArmor.java",
       "sha256": "f62401aecaabb3fc02218f0be5c371af1a4ce384756ee8efeff0ee759fc59dec"
     },
     {
       "class": "thaumcraft.common.items.armor.RecipesRobeArmorDyes",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/items/armor/RecipesRobeArmorDyes.java",
+      "path": "src/main/java/thaumcraft/common/items/armor/RecipesRobeArmorDyes.java",
       "sha256": "4fdefd7406ded15e9cd4770cc6e0cbaac372c00efe9244e0f7341a7b17877083"
     },
     {
       "class": "thaumcraft.common.items.armor.RobeDyeColors",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/items/armor/RobeDyeColors.java",
+      "path": "src/main/java/thaumcraft/common/items/armor/RobeDyeColors.java",
       "sha256": "fddf3f2ec301560cff7575b5834769cdd659178885bed270d35901e48275343d"
     },
     {
+      "class": "thaumcraft.common.items.baubles.AmuletVisRules",
+      "path": "src/main/java/thaumcraft/common/items/baubles/AmuletVisRules.java",
+      "sha256": "3ff9b98b34dc8fb33c1bff45d3bd91d29d865148b6c133b89f987b7195aa825b"
+    },
+    {
       "class": "thaumcraft.common.lib.crafting.RecipeAspectMath",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/crafting/RecipeAspectMath.java",
+      "path": "src/main/java/thaumcraft/common/lib/crafting/RecipeAspectMath.java",
       "sha256": "cf28936a98decd42a6cd832301c2e853ad7ae9052d703328bd076827d72159d5"
     },
     {
+      "class": "thaumcraft.common.lib.crafting.StackAspectRules",
+      "path": "src/main/java/thaumcraft/common/lib/crafting/StackAspectRules.java",
+      "sha256": "05fae1ad574343ce0758ee665e5c58cb6f1aaf6cff4fb0d2a4da4f85b70a5c61"
+    },
+    {
+      "class": "thaumcraft.common.lib.events.CommandThaumcraft",
+      "path": "src/main/java/thaumcraft/common/lib/events/CommandThaumcraft.java",
+      "sha256": "5781713d52084eafe100513369f54cc36ccf6009c06c6c3c4dd3560bda9c5ade"
+    },
+    {
       "class": "thaumcraft.common.lib.research.PlayerKnowledge",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/research/PlayerKnowledge.java",
+      "path": "src/main/java/thaumcraft/common/lib/research/PlayerKnowledge.java",
       "sha256": "867eff909c798647d200877e996d3af4cd59fa5c112181fb9febe85807417403"
     },
     {
       "class": "thaumcraft.common.lib.research.ResearchManager",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/research/ResearchManager.java",
+      "path": "src/main/java/thaumcraft/common/lib/research/ResearchManager.java",
       "sha256": "57c0d6a9ecdce56d06059fbc985dc01389959ac1f7a8b5447a0291c4887fd743"
     },
     {
       "class": "thaumcraft.common.lib.research.ResearchNoteData",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/research/ResearchNoteData.java",
+      "path": "src/main/java/thaumcraft/common/lib/research/ResearchNoteData.java",
       "sha256": "a00af7fb9f0cecd563372ec0546eca96323987270053f55f232eb2291ce34903"
     },
     {
       "class": "thaumcraft.common.lib.research.ScanManager",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/research/ScanManager.java",
+      "path": "src/main/java/thaumcraft/common/lib/research/ScanManager.java",
       "sha256": "a2850c79a9e415a76cf0b4814c292203d1a60ad017c0e8e55d682c8348f0a050"
     },
     {
       "class": "thaumcraft.common.lib.utils.HexUtils",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/utils/HexUtils.java",
+      "path": "src/main/java/thaumcraft/common/lib/utils/HexUtils.java",
       "sha256": "1f3594fad3b3043257ccc9ae559a05f710d6c42c0c0220b82d90f4a74cb47463"
     },
     {
       "class": "thaumcraft.common.lib.vis.ArcaneCostVisuals",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/ArcaneCostVisuals.java",
+      "path": "src/main/java/thaumcraft/common/lib/vis/ArcaneCostVisuals.java",
       "sha256": "fd81571dc31f3d1a1031b4400a4b023bcdc7978f8dda16493321acbcf975206d"
     },
     {
       "class": "thaumcraft.common.lib.vis.BiomeAura",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/BiomeAura.java",
+      "path": "src/main/java/thaumcraft/common/lib/vis/BiomeAura.java",
       "sha256": "423b8b97b4d1ab6e8f624035e34721ec9a4efee0143cae4031d13d1d630c98b7"
     },
     {
       "class": "thaumcraft.common.lib.vis.NodeBeam",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/NodeBeam.java",
+      "path": "src/main/java/thaumcraft/common/lib/vis/NodeBeam.java",
       "sha256": "eb351fa9cc99846416f0a04b50993162e37a23b2c9b77a36c9d07585d1f3212b"
     },
     {
       "class": "thaumcraft.common.lib.vis.NodeGenerator",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/NodeGenerator.java",
-      "sha256": "6e27cd9718217637e7fab25f77af58c3518d21caf0b5b5f358708d558d672302"
+      "path": "src/main/java/thaumcraft/common/lib/vis/NodeGenerator.java",
+      "sha256": "7fe933ac746748c6d280e51d512bab926038a2a33164e9e17edbae4300fe41b6"
     },
     {
       "class": "thaumcraft.common.lib.vis.NodeReservoir",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/NodeReservoir.java",
+      "path": "src/main/java/thaumcraft/common/lib/vis/NodeReservoir.java",
       "sha256": "7771a483a8ccf26a0ca44ab514959f2783c53afe251d6bc275b4b459b4c341bc"
     },
     {
       "class": "thaumcraft.common.lib.vis.NodeVisuals",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/NodeVisuals.java",
+      "path": "src/main/java/thaumcraft/common/lib/vis/NodeVisuals.java",
       "sha256": "731f90a167371f29a0c7b539b2291f6cb1ab5878b1f964f3fbcfb5a1dd617200"
     },
     {
       "class": "thaumcraft.common.lib.vis.ShardPalette",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/ShardPalette.java",
+      "path": "src/main/java/thaumcraft/common/lib/vis/ShardPalette.java",
       "sha256": "36e1bef42d8948442ce85720d5f96f7bf0af1cc74b36b581c1fd1fde664978c6"
     },
     {
       "class": "thaumcraft.common.lib.vis.VisGearDiscount",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/VisGearDiscount.java",
+      "path": "src/main/java/thaumcraft/common/lib/vis/VisGearDiscount.java",
       "sha256": "916b65b31cee6d3dcb67f9882ad85b732737c3a0130f9a3a2a981d1fdbb2c869"
     },
     {
       "class": "thaumcraft.common.lib.vis.VisStorage",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/vis/VisStorage.java",
+      "path": "src/main/java/thaumcraft/common/lib/vis/VisStorage.java",
       "sha256": "516bc57393af32b375a63575ea241746f9c3f8025c8fb74623841777b3949d9f"
     },
     {
+      "class": "thaumcraft.common.lib.world.BigMagicTreeGenerator",
+      "path": "src/main/java/thaumcraft/common/lib/world/BigMagicTreeGenerator.java",
+      "sha256": "6c3774a0f5ea4281d9c5850c299a2201244292945ebc5f8c151e384d388cc053"
+    },
+    {
+      "class": "thaumcraft.common.lib.world.GreatwoodLeafDecay",
+      "path": "src/main/java/thaumcraft/common/lib/world/GreatwoodLeafDecay.java",
+      "sha256": "d8f0f1d253bd210ad7c3e29fd18efbc0c79fef0f3524a234711e76ec249722c1"
+    },
+    {
+      "class": "thaumcraft.common.lib.world.GreatwoodTreeGenerator",
+      "path": "src/main/java/thaumcraft/common/lib/world/GreatwoodTreeGenerator.java",
+      "sha256": "a6367412c1f57d7fe08b3f30bce29e66ecfa5a7a3f36d0f9b53b8611a3e5489d"
+    },
+    {
+      "class": "thaumcraft.common.lib.world.SilverwoodTreeGenerator",
+      "path": "src/main/java/thaumcraft/common/lib/world/SilverwoodTreeGenerator.java",
+      "sha256": "d193b972c04f8acba5106f2ef1b6161c7848fc50231e1e353ac79123c02dcb88"
+    },
+    {
       "class": "thaumcraft.common.tiles.BellowsState",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/BellowsState.java",
+      "path": "src/main/java/thaumcraft/common/tiles/BellowsState.java",
       "sha256": "876e1bc1f01adf3a93f3dda94ca05b76e7d6b4a31c127d43ae9fd75a178eeddb"
     },
     {
       "class": "thaumcraft.common.tiles.CrucibleState",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/CrucibleState.java",
+      "path": "src/main/java/thaumcraft/common/tiles/CrucibleState.java",
       "sha256": "a022972c6a4c87107edbf2bab8c75a0df340f01b04abc5dc13ab2eb7a72cf1f0"
     },
     {
-      "class": "thaumcraft.common.tiles.NitorWisp",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/NitorWisp.java",
-      "sha256": "6978a7c937dcdb797fe5dd459d6c18ba5e3f716c436a57bac9d3ef74e7800b03"
-    },
-    {
-      "class": "thaumcraft.common.tiles.ResearchTableBonus",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/ResearchTableBonus.java",
-      "sha256": "0f252d90a719f77fc3468939388201bf87d0391140a2df50ccb40883328e11bb"
-    },
-    {
-      "class": "thaumcraft.common.lib.crafting.StackAspectRules",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/crafting/StackAspectRules.java",
-      "sha256": "05fae1ad574343ce0758ee665e5c58cb6f1aaf6cff4fb0d2a4da4f85b70a5c61"
-    },
-    {
-      "class": "thaumcraft.client.lib.ResearchBookLayout",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/client/lib/ResearchBookLayout.java",
-      "sha256": "655377ba0f722df36b06be2991f32b4a918835fe5d1b711fdd61b8faa885353b"
-    },
-    {
-      "class": "thaumcraft.common.lib.events.CommandThaumcraft",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/events/CommandThaumcraft.java",
-      "sha256": "5781713d52084eafe100513369f54cc36ccf6009c06c6c3c4dd3560bda9c5ade"
-    },
-    {
       "class": "thaumcraft.common.tiles.DeconstructionState",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/DeconstructionState.java",
+      "path": "src/main/java/thaumcraft/common/tiles/DeconstructionState.java",
       "sha256": "e7961791ea8e549c12d9f11304a53f4db0a62d2d10ab48419bb2c1aafa5e816c"
     },
     {
-      "class": "thaumcraft.common.lib.world.BigMagicTreeGenerator",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/lib/world/BigMagicTreeGenerator.java",
-      "sha256": "6c3774a0f5ea4281d9c5850c299a2201244292945ebc5f8c151e384d388cc053"
+      "class": "thaumcraft.common.tiles.EnergizedNodeState",
+      "path": "src/main/java/thaumcraft/common/tiles/EnergizedNodeState.java",
+      "sha256": "a29b1c9ce418cace055ba13de986976813bcccd03a85e89ef7c70532ee291507"
     },
     {
-      "class": "thaumcraft.common.tiles.essentia.JarState",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/essentia/JarState.java",
-      "sha256": "8c9a15774d947a00c795587a0a852767bb14398146e569758e921a3d1815035b"
+      "class": "thaumcraft.common.tiles.InfernalFurnaceInventory",
+      "path": "src/main/java/thaumcraft/common/tiles/InfernalFurnaceInventory.java",
+      "sha256": "0cc24e8bd150b8cc87ec7e5b24f49466690889acb17147d79e3dd3349f838d58"
     },
     {
-      "class": "thaumcraft.common.tiles.essentia.VoidJarState",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/essentia/VoidJarState.java",
-      "sha256": "b0423acd45c100e5e4020265eb150e377709221a42212d079836fe752c13404e"
+      "class": "thaumcraft.common.tiles.InfernalFurnaceOutput",
+      "path": "src/main/java/thaumcraft/common/tiles/InfernalFurnaceOutput.java",
+      "sha256": "0d08766241b1cebbc959fcdd98f70e810f28d66549f247931f0c3d071b64b85a"
+    },
+    {
+      "class": "thaumcraft.common.tiles.InfernalFurnaceState",
+      "path": "src/main/java/thaumcraft/common/tiles/InfernalFurnaceState.java",
+      "sha256": "cc3e911bf26b8933aa670236ee8a3c0b9ae717d91ad19bae5052198b33e947b3"
+    },
+    {
+      "class": "thaumcraft.common.tiles.InfernalFurnaceStructure",
+      "path": "src/main/java/thaumcraft/common/tiles/InfernalFurnaceStructure.java",
+      "sha256": "34268b39f55e974cf7d74103701c808c4cf9da5d545ef9a2822265c78c9aa9c9"
+    },
+    {
+      "class": "thaumcraft.common.tiles.NitorWisp",
+      "path": "src/main/java/thaumcraft/common/tiles/NitorWisp.java",
+      "sha256": "6978a7c937dcdb797fe5dd459d6c18ba5e3f716c436a57bac9d3ef74e7800b03"
+    },
+    {
+      "class": "thaumcraft.common.tiles.NodeConverterState",
+      "path": "src/main/java/thaumcraft/common/tiles/NodeConverterState.java",
+      "sha256": "0769c81e6915836d80ac0598a54d36411435ccefddfe9a2949024d3a55ee26ce"
+    },
+    {
+      "class": "thaumcraft.common.tiles.ResearchTableBonus",
+      "path": "src/main/java/thaumcraft/common/tiles/ResearchTableBonus.java",
+      "sha256": "0f252d90a719f77fc3468939388201bf87d0391140a2df50ccb40883328e11bb"
+    },
+    {
+      "class": "thaumcraft.common.tiles.VisRelayState",
+      "path": "src/main/java/thaumcraft/common/tiles/VisRelayState.java",
+      "sha256": "132ea3aee9f9c1f8d0e0874f952c804944ff955da1583c3037dd7f40cba0ea89"
+    },
+    {
+      "class": "thaumcraft.common.tiles.essentia.AlchemyFurnaceState",
+      "path": "src/main/java/thaumcraft/common/tiles/essentia/AlchemyFurnaceState.java",
+      "sha256": "522d5ac549522d0f8aa20087c06f48d6930918099145800cf8782e7967ba8682"
     },
     {
       "class": "thaumcraft.common.tiles.essentia.AlchemyMachineState",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/essentia/AlchemyMachineState.java",
+      "path": "src/main/java/thaumcraft/common/tiles/essentia/AlchemyMachineState.java",
       "sha256": "5870d4722c57c51e175e082b1a538cb204c3c2b8aae6f8760a7e460cf81336ef"
     },
     {
+      "class": "thaumcraft.common.tiles.essentia.AlembicState",
+      "path": "src/main/java/thaumcraft/common/tiles/essentia/AlembicState.java",
+      "sha256": "61450fa66fd8902ee87a3124aa093452b4bcf6433ea76c0ef33deeeb5209927c"
+    },
+    {
+      "class": "thaumcraft.common.tiles.essentia.AspectOrder",
+      "path": "src/main/java/thaumcraft/common/tiles/essentia/AspectOrder.java",
+      "sha256": "2607738318506d9053dced02625622eaf368f8fcf70b52cb963689bb9a08f82e"
+    },
+    {
+      "class": "thaumcraft.common.tiles.essentia.JarState",
+      "path": "src/main/java/thaumcraft/common/tiles/essentia/JarState.java",
+      "sha256": "8c9a15774d947a00c795587a0a852767bb14398146e569758e921a3d1815035b"
+    },
+    {
       "class": "thaumcraft.common.tiles.essentia.ThaumatoriumState",
-      "path": "related/thaumcraft4-reference/ported-src/thaumcraft/common/tiles/essentia/ThaumatoriumState.java",
+      "path": "src/main/java/thaumcraft/common/tiles/essentia/ThaumatoriumState.java",
       "sha256": "f04bfc24487e7dceacbaf9a1f4bf32d65fd987ca15a488f0663f8b6e8c49f03a"
+    },
+    {
+      "class": "thaumcraft.common.tiles.essentia.TubeBufferState",
+      "path": "src/main/java/thaumcraft/common/tiles/essentia/TubeBufferState.java",
+      "sha256": "d4c8a204d23a1987a436500b0a9480ff7a791dfbc19b8dd3eed0bd834b83c0e2"
+    },
+    {
+      "class": "thaumcraft.common.tiles.essentia.TubeState",
+      "path": "src/main/java/thaumcraft/common/tiles/essentia/TubeState.java",
+      "sha256": "9394d440ad0c5869bca1808588904386de4bc945f56953343eb3502f6baf76fa"
+    },
+    {
+      "class": "thaumcraft.common.tiles.essentia.TubeVariants",
+      "path": "src/main/java/thaumcraft/common/tiles/essentia/TubeVariants.java",
+      "sha256": "2185c27f82c51c6e4a5b9c30f8895d0134d21724b57f2cb5f454b9f67d53c742"
+    },
+    {
+      "class": "thaumcraft.common.tiles.essentia.VoidJarState",
+      "path": "src/main/java/thaumcraft/common/tiles/essentia/VoidJarState.java",
+      "sha256": "b0423acd45c100e5e4020265eb150e377709221a42212d079836fe752c13404e"
     }
   ],
   "local_adapted_resources": [
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/bellows.json",
+      "path": "src/main/resources/assets/tc4modern/blockstates/bellows.json",
       "sha256": "9270dfb1192253d5137e66c367a3b8f7bfb30bc5467e4444b8c79c48a78abdf0"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/crucible.json",
+      "path": "src/main/resources/assets/tc4modern/blockstates/crucible.json",
       "sha256": "2cf74d7a5e4d1ecba4bcc92c02622dd43c40e9e0de999ca553d9f173e37e8463"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/flux_gas.json",
+      "path": "src/main/resources/assets/tc4modern/blockstates/flux_gas.json",
       "sha256": "e876f57e677adc20b8bdd73cf08a1fcc70995c78a49d45ec835df9101461dab2"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/flux_goo.json",
+      "path": "src/main/resources/assets/tc4modern/blockstates/flux_goo.json",
       "sha256": "777ba525980b4092b63195b2c3bd77d125d23313b3f6c4c4eb6aaab0756b8d8a"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/nitor.json",
+      "path": "src/main/resources/assets/tc4modern/blockstates/greatwood_leaves.json",
+      "sha256": "f0000ced19f916f8eb6f92ea3f1cffac51260bf6c50d07f5de34b6be78a264bf"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/blockstates/greatwood_log.json",
+      "sha256": "fbd15119173617ed67b4d4b3d629537cc61c46d5afbff3e878d96417f5086d26"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/blockstates/greatwood_sapling.json",
+      "sha256": "3be1e015edf37ee14cd2f4252497905b085338c9181e6dcc52a3b597893b9266"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/blockstates/infernal_furnace.json",
+      "sha256": "d2b1e1e74abd52d8f6e71b1ddda1c9e149b71272ebd72a058623e06213a5b550"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/blockstates/nitor.json",
       "sha256": "d9b0f6954e755c820fe41ef7ecfe168fb80eaa2416ca517a571ac73be9190124"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/taint.json",
+      "path": "src/main/resources/assets/tc4modern/blockstates/taint.json",
       "sha256": "626d385740d121cdd087f048ca9962a7cd2f4dafb1f7f730ecf43e9e566fc3e7"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/blockstates/taint_fibres.json",
+      "path": "src/main/resources/assets/tc4modern/blockstates/taint_fibres.json",
       "sha256": "02ed5791aa68e2769cdac94ba7e2510b355937eb4c9347b8394e59d7cfdc0bd2"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/bellows.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/bellows.json",
       "sha256": "608542d517b67779297ee9edf00f8669b03b207d2b4208a45f736edaf32fd010"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/crucible.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/crucible.json",
       "sha256": "0637b42a0b60ba8cfc8bc9e00f602f708f6dc982e5775f3e2322f2d0ace58dc2"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_1.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_gas_1.json",
       "sha256": "23f3a39f63298ccd56f470c9b19b4a95d47ae8f7212480db9f79f45200a1dd3c"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_2.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_gas_2.json",
       "sha256": "cfd6018e598d803775da49b606e7c178e89c9a9d0d41491209c848ff13935e80"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_3.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_gas_3.json",
       "sha256": "327f44c3384a527cd4085422f8ce3194fd5144d97da30edf7d36bbd4e7753e48"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_4.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_gas_4.json",
       "sha256": "fa4f59a006a8b325bb62c259a8e4522f6c1e5f77bc42fe76316ff8335130459d"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_5.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_gas_5.json",
       "sha256": "1a7ad69cca7862244de7e426f69e381585f5b348db9e851ad3155b64b53b809f"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_6.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_gas_6.json",
       "sha256": "4b2883c1b19b88920f92a20a787100873981cdd27a33993bbe61a3c23c6a4061"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_7.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_gas_7.json",
       "sha256": "33c94823c0dbc7734770979d1f1d8af7084f2477b264369a1b8dd7c1ac8f8d44"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_gas_8.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_gas_8.json",
       "sha256": "99b96a8da475b0f3c1cbd9208d1945ee5f990732f85af8615d2eae2aa0a08a69"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_1.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_goo_1.json",
       "sha256": "edf49369c824a77b0f3b5f9a5fc72fec9865aac73a81914b32718986d3f75807"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_2.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_goo_2.json",
       "sha256": "a92bd859b944f2b66a5f453baf26b3db93cf92b51d563277a2e49c899c0cc411"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_3.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_goo_3.json",
       "sha256": "243173c0c2b113a7843e07fba84fa3c743a822c86b7a3290c94adf92e93f321b"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_4.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_goo_4.json",
       "sha256": "0245b98eda26fb4342fcb7981ca21184c5edf206ce39e6bcc6577220c4cf9a56"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_5.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_goo_5.json",
       "sha256": "0fb79385208f316145647f47a57ff4cf690e37adfe92078f7cd5569e17dcd76c"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_6.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_goo_6.json",
       "sha256": "3dd46e409eb31489d9ee630addeff80a0f798dcb468751a5006fabe1c31329f8"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_7.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_goo_7.json",
       "sha256": "76da7ad62607d3a14427cbc86b53ebfbb2e7bc3cb0a9cf0e16c66854ddb5da39"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/flux_goo_8.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/flux_goo_8.json",
       "sha256": "f96aad7ee4c99c0171a709d20822379cbc338b184dc505cc665508913afed3e6"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/nitor.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/greatwood_leaves.json",
+      "sha256": "515dcea11a6dfbd2fba709cbcc7f07eba8b55c21754132e5718e3a45c12b13c2"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/greatwood_log.json",
+      "sha256": "9b47ede21d4b4cb9c35dc813c065e44bb9bd1a383d50e936ea2ccd7bf6906643"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/greatwood_sapling.json",
+      "sha256": "dd70fec3804221a8c961de9c50c5ae2d38ed676444ca75972436b06625567a9f"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/0_0_east.json",
+      "sha256": "162964914d8431b126c7a836f722ea504603056b59d59519eeb47c9572cfbca3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/0_0_north.json",
+      "sha256": "162964914d8431b126c7a836f722ea504603056b59d59519eeb47c9572cfbca3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/0_0_south.json",
+      "sha256": "162964914d8431b126c7a836f722ea504603056b59d59519eeb47c9572cfbca3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/0_0_west.json",
+      "sha256": "162964914d8431b126c7a836f722ea504603056b59d59519eeb47c9572cfbca3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/0_1_east.json",
+      "sha256": "162964914d8431b126c7a836f722ea504603056b59d59519eeb47c9572cfbca3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/0_1_north.json",
+      "sha256": "162964914d8431b126c7a836f722ea504603056b59d59519eeb47c9572cfbca3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/0_1_south.json",
+      "sha256": "162964914d8431b126c7a836f722ea504603056b59d59519eeb47c9572cfbca3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/0_1_west.json",
+      "sha256": "162964914d8431b126c7a836f722ea504603056b59d59519eeb47c9572cfbca3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/0_2_east.json",
+      "sha256": "162964914d8431b126c7a836f722ea504603056b59d59519eeb47c9572cfbca3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/0_2_north.json",
+      "sha256": "162964914d8431b126c7a836f722ea504603056b59d59519eeb47c9572cfbca3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/0_2_south.json",
+      "sha256": "162964914d8431b126c7a836f722ea504603056b59d59519eeb47c9572cfbca3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/0_2_west.json",
+      "sha256": "162964914d8431b126c7a836f722ea504603056b59d59519eeb47c9572cfbca3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/10_0_east.json",
+      "sha256": "0baa39da182f910d6b107ff78b4f183bdb2f629bc15005b75c8f49b633742a17"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/10_0_north.json",
+      "sha256": "1d4425d0c211495865872adf240d1f8807c7c5671b8076ab915fdc42c5e8cb13"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/10_0_south.json",
+      "sha256": "44a983b928b92bb6e331fdf9fe52ef1af91bc36b4f285745d891e3e785b5ce90"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/10_0_west.json",
+      "sha256": "774b1722c490c508f899f81afabb3e5085a760166a0642c5273e30ef448ebbfe"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/10_1_east.json",
+      "sha256": "0baa39da182f910d6b107ff78b4f183bdb2f629bc15005b75c8f49b633742a17"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/10_1_north.json",
+      "sha256": "1d4425d0c211495865872adf240d1f8807c7c5671b8076ab915fdc42c5e8cb13"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/10_1_south.json",
+      "sha256": "44a983b928b92bb6e331fdf9fe52ef1af91bc36b4f285745d891e3e785b5ce90"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/10_1_west.json",
+      "sha256": "774b1722c490c508f899f81afabb3e5085a760166a0642c5273e30ef448ebbfe"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/10_2_east.json",
+      "sha256": "0baa39da182f910d6b107ff78b4f183bdb2f629bc15005b75c8f49b633742a17"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/10_2_north.json",
+      "sha256": "1d4425d0c211495865872adf240d1f8807c7c5671b8076ab915fdc42c5e8cb13"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/10_2_south.json",
+      "sha256": "44a983b928b92bb6e331fdf9fe52ef1af91bc36b4f285745d891e3e785b5ce90"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/10_2_west.json",
+      "sha256": "774b1722c490c508f899f81afabb3e5085a760166a0642c5273e30ef448ebbfe"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/1_0_east.json",
+      "sha256": "d981b68b49cc2df569e871a028d55ee70a7b19c77d91e49301061db2c21a86f3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/1_0_north.json",
+      "sha256": "d981b68b49cc2df569e871a028d55ee70a7b19c77d91e49301061db2c21a86f3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/1_0_south.json",
+      "sha256": "d981b68b49cc2df569e871a028d55ee70a7b19c77d91e49301061db2c21a86f3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/1_0_west.json",
+      "sha256": "d981b68b49cc2df569e871a028d55ee70a7b19c77d91e49301061db2c21a86f3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/1_1_east.json",
+      "sha256": "ef1ef598a90b1ad072859bab09e477c8f838d342e1ab96572faa34289d9759f1"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/1_1_north.json",
+      "sha256": "ef1ef598a90b1ad072859bab09e477c8f838d342e1ab96572faa34289d9759f1"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/1_1_south.json",
+      "sha256": "ef1ef598a90b1ad072859bab09e477c8f838d342e1ab96572faa34289d9759f1"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/1_1_west.json",
+      "sha256": "ef1ef598a90b1ad072859bab09e477c8f838d342e1ab96572faa34289d9759f1"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/1_2_east.json",
+      "sha256": "dbfaa54aef1c620901ba3a4dd6333f96cc32540dfe2de843511b2d10eaee5a16"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/1_2_north.json",
+      "sha256": "dbfaa54aef1c620901ba3a4dd6333f96cc32540dfe2de843511b2d10eaee5a16"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/1_2_south.json",
+      "sha256": "dbfaa54aef1c620901ba3a4dd6333f96cc32540dfe2de843511b2d10eaee5a16"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/1_2_west.json",
+      "sha256": "dbfaa54aef1c620901ba3a4dd6333f96cc32540dfe2de843511b2d10eaee5a16"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/2_0_east.json",
+      "sha256": "31378f0ce497963d79d8aafae4b19b0420b4b982284170e201ec0c1e0c0a1ee0"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/2_0_north.json",
+      "sha256": "31378f0ce497963d79d8aafae4b19b0420b4b982284170e201ec0c1e0c0a1ee0"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/2_0_south.json",
+      "sha256": "31378f0ce497963d79d8aafae4b19b0420b4b982284170e201ec0c1e0c0a1ee0"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/2_0_west.json",
+      "sha256": "31378f0ce497963d79d8aafae4b19b0420b4b982284170e201ec0c1e0c0a1ee0"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/2_1_east.json",
+      "sha256": "cdcfea96ceec982d16c8f5808f287ecac19f217c36a6309401c22a239ddea635"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/2_1_north.json",
+      "sha256": "cdcfea96ceec982d16c8f5808f287ecac19f217c36a6309401c22a239ddea635"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/2_1_south.json",
+      "sha256": "cdcfea96ceec982d16c8f5808f287ecac19f217c36a6309401c22a239ddea635"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/2_1_west.json",
+      "sha256": "cdcfea96ceec982d16c8f5808f287ecac19f217c36a6309401c22a239ddea635"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/2_2_east.json",
+      "sha256": "de012e88876c29046d0ec8df22dd2012655b77efba0877b6bf9555713275f237"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/2_2_north.json",
+      "sha256": "de012e88876c29046d0ec8df22dd2012655b77efba0877b6bf9555713275f237"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/2_2_south.json",
+      "sha256": "de012e88876c29046d0ec8df22dd2012655b77efba0877b6bf9555713275f237"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/2_2_west.json",
+      "sha256": "de012e88876c29046d0ec8df22dd2012655b77efba0877b6bf9555713275f237"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/3_0_east.json",
+      "sha256": "8c52337844688aa3be3534f894435499b3902045b12bad48da07fd72a757ee8b"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/3_0_north.json",
+      "sha256": "8c52337844688aa3be3534f894435499b3902045b12bad48da07fd72a757ee8b"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/3_0_south.json",
+      "sha256": "8c52337844688aa3be3534f894435499b3902045b12bad48da07fd72a757ee8b"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/3_0_west.json",
+      "sha256": "8c52337844688aa3be3534f894435499b3902045b12bad48da07fd72a757ee8b"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/3_1_east.json",
+      "sha256": "6a4e5bb53a2b76d39d36c34ec7ebf564df15935f431befe650a63d8f612e30a6"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/3_1_north.json",
+      "sha256": "6a4e5bb53a2b76d39d36c34ec7ebf564df15935f431befe650a63d8f612e30a6"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/3_1_south.json",
+      "sha256": "6a4e5bb53a2b76d39d36c34ec7ebf564df15935f431befe650a63d8f612e30a6"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/3_1_west.json",
+      "sha256": "6a4e5bb53a2b76d39d36c34ec7ebf564df15935f431befe650a63d8f612e30a6"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/3_2_east.json",
+      "sha256": "835a6e66eb3bfdefe0e80993f986890448cd7dd5191c689524094d937ee15fb9"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/3_2_north.json",
+      "sha256": "835a6e66eb3bfdefe0e80993f986890448cd7dd5191c689524094d937ee15fb9"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/3_2_south.json",
+      "sha256": "835a6e66eb3bfdefe0e80993f986890448cd7dd5191c689524094d937ee15fb9"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/3_2_west.json",
+      "sha256": "835a6e66eb3bfdefe0e80993f986890448cd7dd5191c689524094d937ee15fb9"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/4_0_east.json",
+      "sha256": "fff221223fd01e5f452c6b7335ed0c567bdadb5edbc306ab70acdfc8a24e894f"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/4_0_north.json",
+      "sha256": "fff221223fd01e5f452c6b7335ed0c567bdadb5edbc306ab70acdfc8a24e894f"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/4_0_south.json",
+      "sha256": "fff221223fd01e5f452c6b7335ed0c567bdadb5edbc306ab70acdfc8a24e894f"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/4_0_west.json",
+      "sha256": "fff221223fd01e5f452c6b7335ed0c567bdadb5edbc306ab70acdfc8a24e894f"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/4_1_east.json",
+      "sha256": "5a72269aad059b3a4a4b235e0991c4bb9b8ce95417e17a9d7d8ccd128355f48d"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/4_1_north.json",
+      "sha256": "5a72269aad059b3a4a4b235e0991c4bb9b8ce95417e17a9d7d8ccd128355f48d"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/4_1_south.json",
+      "sha256": "5a72269aad059b3a4a4b235e0991c4bb9b8ce95417e17a9d7d8ccd128355f48d"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/4_1_west.json",
+      "sha256": "5a72269aad059b3a4a4b235e0991c4bb9b8ce95417e17a9d7d8ccd128355f48d"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/4_2_east.json",
+      "sha256": "0a920315935610fa37bd249b0070640c94bb2f9943682a50d5986f963e0360a6"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/4_2_north.json",
+      "sha256": "0a920315935610fa37bd249b0070640c94bb2f9943682a50d5986f963e0360a6"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/4_2_south.json",
+      "sha256": "0a920315935610fa37bd249b0070640c94bb2f9943682a50d5986f963e0360a6"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/4_2_west.json",
+      "sha256": "0a920315935610fa37bd249b0070640c94bb2f9943682a50d5986f963e0360a6"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/5_0_east.json",
+      "sha256": "dd8ea94c3044b54ab878e0f40dd1af4f607dff07041b9a61693e82934583dcb3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/5_0_north.json",
+      "sha256": "dd8ea94c3044b54ab878e0f40dd1af4f607dff07041b9a61693e82934583dcb3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/5_0_south.json",
+      "sha256": "dd8ea94c3044b54ab878e0f40dd1af4f607dff07041b9a61693e82934583dcb3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/5_0_west.json",
+      "sha256": "dd8ea94c3044b54ab878e0f40dd1af4f607dff07041b9a61693e82934583dcb3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/5_1_east.json",
+      "sha256": "6096b0154cfb57114d969e63bc9ac133b5da19edefeb984bd226b8464c9c5095"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/5_1_north.json",
+      "sha256": "6096b0154cfb57114d969e63bc9ac133b5da19edefeb984bd226b8464c9c5095"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/5_1_south.json",
+      "sha256": "6096b0154cfb57114d969e63bc9ac133b5da19edefeb984bd226b8464c9c5095"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/5_1_west.json",
+      "sha256": "6096b0154cfb57114d969e63bc9ac133b5da19edefeb984bd226b8464c9c5095"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/5_2_east.json",
+      "sha256": "dd8ea94c3044b54ab878e0f40dd1af4f607dff07041b9a61693e82934583dcb3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/5_2_north.json",
+      "sha256": "dd8ea94c3044b54ab878e0f40dd1af4f607dff07041b9a61693e82934583dcb3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/5_2_south.json",
+      "sha256": "dd8ea94c3044b54ab878e0f40dd1af4f607dff07041b9a61693e82934583dcb3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/5_2_west.json",
+      "sha256": "dd8ea94c3044b54ab878e0f40dd1af4f607dff07041b9a61693e82934583dcb3"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/6_0_east.json",
+      "sha256": "b971cebe5c361180af55fdf19d81eb61b7876e69b909e0c557ab574084ae5c86"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/6_0_north.json",
+      "sha256": "b971cebe5c361180af55fdf19d81eb61b7876e69b909e0c557ab574084ae5c86"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/6_0_south.json",
+      "sha256": "b971cebe5c361180af55fdf19d81eb61b7876e69b909e0c557ab574084ae5c86"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/6_0_west.json",
+      "sha256": "b971cebe5c361180af55fdf19d81eb61b7876e69b909e0c557ab574084ae5c86"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/6_1_east.json",
+      "sha256": "33c279aacd6f32df561a3033b02fcb042b25a19e63a09cf3525c61537ab30ece"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/6_1_north.json",
+      "sha256": "33c279aacd6f32df561a3033b02fcb042b25a19e63a09cf3525c61537ab30ece"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/6_1_south.json",
+      "sha256": "33c279aacd6f32df561a3033b02fcb042b25a19e63a09cf3525c61537ab30ece"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/6_1_west.json",
+      "sha256": "33c279aacd6f32df561a3033b02fcb042b25a19e63a09cf3525c61537ab30ece"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/6_2_east.json",
+      "sha256": "ecc4b504272b811089a79ded35c10e788ff732e9ee6059ef165f3503e6e41a88"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/6_2_north.json",
+      "sha256": "ecc4b504272b811089a79ded35c10e788ff732e9ee6059ef165f3503e6e41a88"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/6_2_south.json",
+      "sha256": "ecc4b504272b811089a79ded35c10e788ff732e9ee6059ef165f3503e6e41a88"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/6_2_west.json",
+      "sha256": "ecc4b504272b811089a79ded35c10e788ff732e9ee6059ef165f3503e6e41a88"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/7_0_east.json",
+      "sha256": "df76986c4c1fa2eba2c84a0553a10049154a4f73dd95dac1405f6d12bf62deb7"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/7_0_north.json",
+      "sha256": "df76986c4c1fa2eba2c84a0553a10049154a4f73dd95dac1405f6d12bf62deb7"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/7_0_south.json",
+      "sha256": "df76986c4c1fa2eba2c84a0553a10049154a4f73dd95dac1405f6d12bf62deb7"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/7_0_west.json",
+      "sha256": "df76986c4c1fa2eba2c84a0553a10049154a4f73dd95dac1405f6d12bf62deb7"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/7_1_east.json",
+      "sha256": "16087a926448820c83e339a531067e927934803595c8219211a7e8e3b9e8a108"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/7_1_north.json",
+      "sha256": "16087a926448820c83e339a531067e927934803595c8219211a7e8e3b9e8a108"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/7_1_south.json",
+      "sha256": "16087a926448820c83e339a531067e927934803595c8219211a7e8e3b9e8a108"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/7_1_west.json",
+      "sha256": "16087a926448820c83e339a531067e927934803595c8219211a7e8e3b9e8a108"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/7_2_east.json",
+      "sha256": "6562bec75d8b2571a3fd0cea7e278fce9a2214d832fce774a85aa955679d1b35"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/7_2_north.json",
+      "sha256": "6562bec75d8b2571a3fd0cea7e278fce9a2214d832fce774a85aa955679d1b35"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/7_2_south.json",
+      "sha256": "6562bec75d8b2571a3fd0cea7e278fce9a2214d832fce774a85aa955679d1b35"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/7_2_west.json",
+      "sha256": "6562bec75d8b2571a3fd0cea7e278fce9a2214d832fce774a85aa955679d1b35"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/8_0_east.json",
+      "sha256": "3709896af673bb2f595db73f4c5faaf54b48115ede7e89ef0b4f739ae514289c"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/8_0_north.json",
+      "sha256": "3709896af673bb2f595db73f4c5faaf54b48115ede7e89ef0b4f739ae514289c"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/8_0_south.json",
+      "sha256": "3709896af673bb2f595db73f4c5faaf54b48115ede7e89ef0b4f739ae514289c"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/8_0_west.json",
+      "sha256": "3709896af673bb2f595db73f4c5faaf54b48115ede7e89ef0b4f739ae514289c"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/8_1_east.json",
+      "sha256": "27615bdc95d9e3561d6b74fd78fed91cb485424c239e58fd2cbe134257c06b94"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/8_1_north.json",
+      "sha256": "27615bdc95d9e3561d6b74fd78fed91cb485424c239e58fd2cbe134257c06b94"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/8_1_south.json",
+      "sha256": "27615bdc95d9e3561d6b74fd78fed91cb485424c239e58fd2cbe134257c06b94"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/8_1_west.json",
+      "sha256": "27615bdc95d9e3561d6b74fd78fed91cb485424c239e58fd2cbe134257c06b94"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/8_2_east.json",
+      "sha256": "2f37e712c95b855b8fcd2bbc2c79c48cd5cd0f61f2c7ce947e50d0c7713682e8"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/8_2_north.json",
+      "sha256": "2f37e712c95b855b8fcd2bbc2c79c48cd5cd0f61f2c7ce947e50d0c7713682e8"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/8_2_south.json",
+      "sha256": "2f37e712c95b855b8fcd2bbc2c79c48cd5cd0f61f2c7ce947e50d0c7713682e8"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/8_2_west.json",
+      "sha256": "2f37e712c95b855b8fcd2bbc2c79c48cd5cd0f61f2c7ce947e50d0c7713682e8"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/9_0_east.json",
+      "sha256": "33e4d353221d0ef869cec937c42ec8e7634544291c96e606d910913eea02f15f"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/9_0_north.json",
+      "sha256": "33e4d353221d0ef869cec937c42ec8e7634544291c96e606d910913eea02f15f"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/9_0_south.json",
+      "sha256": "33e4d353221d0ef869cec937c42ec8e7634544291c96e606d910913eea02f15f"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/9_0_west.json",
+      "sha256": "33e4d353221d0ef869cec937c42ec8e7634544291c96e606d910913eea02f15f"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/9_1_east.json",
+      "sha256": "b1362a8b5d012c69bcc7e591641a6e6fb121c5a05d9717cf936ff3981efc72c6"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/9_1_north.json",
+      "sha256": "b1362a8b5d012c69bcc7e591641a6e6fb121c5a05d9717cf936ff3981efc72c6"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/9_1_south.json",
+      "sha256": "b1362a8b5d012c69bcc7e591641a6e6fb121c5a05d9717cf936ff3981efc72c6"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/9_1_west.json",
+      "sha256": "b1362a8b5d012c69bcc7e591641a6e6fb121c5a05d9717cf936ff3981efc72c6"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/9_2_east.json",
+      "sha256": "f0773e64dee3fc3f914d8c20f00b3fb90fd38037d2165411fd6677941f18af9b"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/9_2_north.json",
+      "sha256": "f0773e64dee3fc3f914d8c20f00b3fb90fd38037d2165411fd6677941f18af9b"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/9_2_south.json",
+      "sha256": "f0773e64dee3fc3f914d8c20f00b3fb90fd38037d2165411fd6677941f18af9b"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/infernal_furnace/9_2_west.json",
+      "sha256": "f0773e64dee3fc3f914d8c20f00b3fb90fd38037d2165411fd6677941f18af9b"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/block/nitor.json",
       "sha256": "b20b4be20e3e23b67eb53f4ab7a86039ac19d4a6e5a4924959b6d3392a339d40"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_0.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_0.json",
       "sha256": "fcc1c03d193261961e57ecf4cdf7181c78d0e98892417c0f1ccdbedae88a777b"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_1.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_1.json",
       "sha256": "a7a140289a3901bd3441af26119a1e3a05c438b4d2825cc35e9128720c364640"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_2.json",
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_2.json",
       "sha256": "77f1c9d484952d03d2db0a6b71f6ffeca302504c770093088d9444e640a50298"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_1.json",
-      "sha256": "767f0f99a738589f26017280df1436256bcd0b775bf333105ed1fe4ff06d09af"
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_fibres_1.json",
+      "sha256": "623a6609e3f12b6d193e12917c89d5211db58f4f1cf0986177b47dab869abbe7"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_2.json",
-      "sha256": "c79da87b0f66f69177bc1a9b6b3f858579b90a95bd1aa5d03bb2aec8068a6774"
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_fibres_2.json",
+      "sha256": "996ec7025fb8996253dc96b7c8f27d105a34526e13d119c064443ea84a103856"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_3.json",
-      "sha256": "4f56094e7dbbe37058a000a9980ac38d81c2fb5987cc78ff8bcc4cfe0b8253f8"
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_fibres_3.json",
+      "sha256": "ba0deb662a820632851c50541908b0b714faea0d91ec93f2a7a60ef3a97cbb06"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_4.json",
-      "sha256": "8ad62ad2a05fd6b35536eb69de7dda71d3f6d81179994cab8af3dd4760b02487"
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_fibres_4.json",
+      "sha256": "e269a67f2e2a81ea3546ba4ce1c9c2d98b303270d4a3bc09924f6e1abc39ceae"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_down.json",
-      "sha256": "d4f4908c89e495905ac8c5675d65cab6500733c5b9cf330abe6421d7663c2697"
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_fibres_down.json",
+      "sha256": "1e26f5efc8eabdb6b12f0ace5361928808907d0dd17b35551797b485c093ea4d"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_east.json",
-      "sha256": "6c5ae233091d667e135161f24709491af69002fd9b4162f4f64cfbe35ce01874"
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_fibres_east.json",
+      "sha256": "ff7eb837651febd57e0911b957aebb2438cb24548c86025a661da6c4f49dfbb5"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_north.json",
-      "sha256": "d84b5d1febd23be23eec666f6ab9a99650a128e67160e9a97b098630a8fe6c83"
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_fibres_north.json",
+      "sha256": "3cf8a26c6e12f3f228c05dc1643fb5aa52a019933c7928dd4986ec89e43f3ea7"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_south.json",
-      "sha256": "d3732935f4979b31c482f7f9411113bc028090b61db4e04f919f7dadfbe033c3"
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_fibres_south.json",
+      "sha256": "060d83f3ff8bb4168ea20015ec37507008456a0409c6b168717d00a757de3d0f"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_up.json",
-      "sha256": "d2fc9a84fc321bcdefc4cf66c733a5d71a72d4337a1cd3a3247c3c6fe41035cf"
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_fibres_up.json",
+      "sha256": "c5223135e57015ed54785d6214669d2afa93d96d774442376ea1f49e14ae0115"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/block/taint_fibres_west.json",
-      "sha256": "58a546f8891a02a7152839ebaff7c85c2813b6f7a1af6813de4203246092f60c"
+      "path": "src/main/resources/assets/tc4modern/models/block/taint_fibres_west.json",
+      "sha256": "6c9343d55113ec0b541c55937c1ee23505abf11f330f6981cbd46a2e3713670f"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/alumentum.json",
+      "path": "src/main/resources/assets/tc4modern/models/item/alumentum.json",
       "sha256": "28af65e75aa6a7a7833ad2949bf315e98e76ee057c490b7840e07f18179f3f33"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/balanced_shard.json",
+      "path": "src/main/resources/assets/tc4modern/models/item/balanced_shard.json",
       "sha256": "2f586895aba65d5c5f2a1c78f27670b8792c7310417fd776027cee23afa33a5c"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/bellows.json",
+      "path": "src/main/resources/assets/tc4modern/models/item/bellows.json",
       "sha256": "766d3c104835513aa53d283a482f71f6021077f527444e3d5f21f0d6ad23d54e"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/crucible.json",
+      "path": "src/main/resources/assets/tc4modern/models/item/crucible.json",
       "sha256": "3663e7ba9d3d26d5f275431728e7b96307b8d9ea5a3698d8afcdcb61e93c2153"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/nitor.json",
+      "path": "src/main/resources/assets/tc4modern/models/item/greatwood_log.json",
+      "sha256": "d34e55c118a228875f5e47e774aee4d8ca2d3fec5b17074f754f21b5330ed9bc"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/item/greatwood_sapling.json",
+      "sha256": "bace746febab001f8a97c3ab5612ba715b211f90d726d91be5dc77807bb99e67"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/item/nitor.json",
       "sha256": "fbc436a4e5211078b3481ec414bb56dea026bd99588043e93bae9b37055e90cf"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/tainted_goo.json",
+      "path": "src/main/resources/assets/tc4modern/models/item/node_converter.json",
+      "sha256": "54bf27dca0ffd26683eb5e1f4f64f0c3a8cdc4ab574fb1217748add3a9619421"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/item/node_stabilizer.json",
+      "sha256": "3ded86c901b11936b29fd57b8c0e0829fe47147b3c5f3ec0e7f06a187c4c18f4"
+    },
+    {
+      "path": "src/main/resources/assets/tc4modern/models/item/tainted_goo.json",
       "sha256": "b081bacf0e8abf87d501ae06b6ff82a647135454b268df35d6c3f7fcb9516fd8"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/tainted_tendril.json",
+      "path": "src/main/resources/assets/tc4modern/models/item/tainted_tendril.json",
       "sha256": "c756379a6f461e8fc18f54a0f3a47c42e8ebc793be0c0db7130b38830418a43d"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/tallow.json",
+      "path": "src/main/resources/assets/tc4modern/models/item/tallow.json",
       "sha256": "76e02ad0ac05f5a865480c720f27a6af637a938f8dce0282ed22b9b75e064b04"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/assets/tc4modern/models/item/thaumium_ingot.json",
+      "path": "src/main/resources/assets/tc4modern/models/item/thaumium_ingot.json",
       "sha256": "6f30c1cb498f8019016c1da300d0d97da17ea2e5e49e4a46a87ed65a7ea55dbb"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/minecraft/tags/damage_type/bypasses_armor.json",
+      "path": "src/main/resources/data/minecraft/tags/block/leaves.json",
+      "sha256": "9dfb6ca95ef15886eb054556a710de26f809a541d2ae027da2e20fb20756211c"
+    },
+    {
+      "path": "src/main/resources/data/minecraft/tags/block/logs.json",
+      "sha256": "62d4519f693a299611a8875b5616109dae8a8ba83fbc412c5921386a16199ba2"
+    },
+    {
+      "path": "src/main/resources/data/minecraft/tags/damage_type/bypasses_armor.json",
+      "sha256": "03e89fb081fb2d52bdc388b13616d7d96526d7040d888a54aa3d262d773ab545"
+    },
+    {
+      "path": "src/main/resources/data/minecraft/tags/damage_type/bypasses_shield.json",
       "sha256": "0e115332c00c554ad1ce7233e1b6d60e49abee732ffa4d3b463b2f15053960fa"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/minecraft/tags/damage_type/bypasses_shield.json",
+      "path": "src/main/resources/data/minecraft/tags/damage_type/witch_resistant_to.json",
       "sha256": "0e115332c00c554ad1ce7233e1b6d60e49abee732ffa4d3b463b2f15053960fa"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/minecraft/tags/damage_type/witch_resistant_to.json",
-      "sha256": "0e115332c00c554ad1ce7233e1b6d60e49abee732ffa4d3b463b2f15053960fa"
+      "path": "src/main/resources/data/minecraft/tags/item/logs.json",
+      "sha256": "4e3dd4661f982f0bf44745ee44f553127f93374f466fa7b0169e7d1cefeeae34"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/arcane_stone.json",
+      "path": "src/main/resources/data/minecraft/tags/item/wolf_food.json",
+      "sha256": "71b8ac24a2220e3054c88892b56cc2195b543f2689530b6c8d8b6707f12038fe"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/alchemical_furnace.json",
+      "sha256": "1e39ca98500be98ea68caf3609a1523a5e6ace7e3fe1335825d6c607fa07f92a"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/alembic.json",
+      "sha256": "74a91a6c214cb454306acd1c5a1f5c335f6c2e124cb8b04f2be440bb21a7b688"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/arcane_stone.json",
       "sha256": "13ab892c1ee63af573433dbea8dc0e4480a3610061b91f1fdca8703c02fd6888"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/bellows.json",
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/bellows.json",
       "sha256": "c14f4520570568db33db5123ac6f5f33ff4754bfc27a185ca4a342d7f94f1c25"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/enchanted_fabric.json",
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/copper_cap.json",
+      "sha256": "abbede1e3dea1545a3958ce26c8c52fed594d1a50ba633e604ef383a26bff5d2"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/deconstructor.json",
+      "sha256": "18f73bfd6baebd17254d2367f4cb10d16e277376421e549531c044e345972cdb"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/enchanted_fabric.json",
       "sha256": "d8017f25a552749fcc7592e407c4e31e35fa8bf5fc66135982abe39230c71671"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/goggles.json",
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/essentia_tube.json",
+      "sha256": "26ee8e62832dd1a69811562c7cc323e016b391059c40cc32b54d7d64ccab37d9"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/focus_fire.json",
+      "sha256": "70daf7ccbdd5e7d717d0e3bb26a2d52f4a78b67e214876bfc24ef5db116213dc"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/focus_frost.json",
+      "sha256": "a8760c91dec57efe4ae8178c08e10f27ffbbfa13ac90d0f42e4bdf2a228484c5"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/focus_shock.json",
+      "sha256": "b088600400357439323c0dff6202dff90d5b34148db529766871dd5596754971"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/goggles.json",
       "sha256": "c2458d35f517572016bac6276c4f924bd19627ad8f90bf95ec576dee7e22494b"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/robe_boots.json",
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/gold_cap.json",
+      "sha256": "adc99748c50b7d44dc4c83847b7e702150f9444b53eaca872116a9467e287fae"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/gold_greatwood_wand.json",
+      "sha256": "5bab761ca33af20023484708def89908bbb00820e4ad96d23f036cba546cfaf6"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/greatwood_rod.json",
+      "sha256": "d4b748ed5f8b0973d0c3590121e3a54af0334ae390ee3749a316f868550b49a6"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/node_converter.json",
+      "sha256": "af7a356f27542b203365f2f97c6ba6e486503f4e3c19f71207240af28d102c16"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/node_stabilizer.json",
+      "sha256": "344a96bad159486d11f855d0e035185aed62d3f87c18748f3119b0e0c138671a"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/robe_boots.json",
       "sha256": "203ace719b5842b6e2bd3d952d283919fb667c75b501f2e91d9078082d567987"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/robe_chest.json",
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/robe_chest.json",
       "sha256": "568d188bdbcc980b6fd9e9e71eabdd2a5f7defd17d92f9f828aa3308c7a531bb"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/robe_legs.json",
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/robe_legs.json",
       "sha256": "905e4e833b360ea325e6fb9caa867394e6b88b02a571a87bfbcbecf0da324f55"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/damage_type/taint.json",
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/thaumium_cap_inert.json",
+      "sha256": "e2f291cec44238bf25f2ffe9b572b783f499fe40f83c2c42f6cb12385e9f518a"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/vis_filter.json",
+      "sha256": "1a312c459fc8882a3e4573b8e4987cbc378f28e130a3438721e0d8d27b0abd72"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/vis_relay.json",
+      "sha256": "7ddd022b1f715ad07a9828246c038324e15c072b05548121afbef7959e43122f"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/arcane_recipe/warded_jar.json",
+      "sha256": "42051b5b2a612bf4a1c0cdad0adcc006c609402949133aae2404847d2a17c10f"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/damage_type/taint.json",
       "sha256": "df36a1298a74e099d1d6b9da83ebbc365a2e28690922a19cc9d289b1083680ed"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/loot_table/blocks/bellows.json",
+      "path": "src/main/resources/data/tc4modern/loot_table/blocks/bellows.json",
       "sha256": "bea1ccecdd916ea2a0fe57c5a2309bf8edffa4c08ba8a7583779e9142b9b3134"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/loot_table/blocks/nitor.json",
+      "path": "src/main/resources/data/tc4modern/loot_table/blocks/greatwood_log.json",
+      "sha256": "7a5518628bd8f4c94b6d3ca3568921e965d916e0973e9d3f050122104f6d9384"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/loot_table/blocks/greatwood_sapling.json",
+      "sha256": "9982d96d1f10d577dd76caf2706e09a307a9227d8f9a6d7d4abf0c17ae1829d5"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/loot_table/blocks/infernal_furnace.json",
+      "sha256": "0bcfd5c5ded077ef8c3960983faadcfaa55e89dbd6cd30e09266ba08648766c8"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/loot_table/blocks/nitor.json",
       "sha256": "490c33d6cfeeace0846217d4b3e2c6693a1a4a8acd9297f64c5633976e3ac929"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/loot_table/blocks/taint.json",
+      "path": "src/main/resources/data/tc4modern/loot_table/blocks/taint.json",
       "sha256": "7c849ec13b90b70c932ebdf0b47c1c8b541bcc7b4a6475a607b431881872c650"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/arcane_stone_bricks.json",
+      "path": "src/main/resources/data/tc4modern/recipe/arcane_stone_bricks.json",
       "sha256": "1e7406f49df374f02903516fa886073aa0b78752656bc95339903e251d3a1c80"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/arcane_stone_slab.json",
+      "path": "src/main/resources/data/tc4modern/recipe/arcane_stone_slab.json",
       "sha256": "756fe403d566caf7f02985dbd092b87d674ca60de32875e688fc6b5220682286"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/arcane_stone_stairs.json",
+      "path": "src/main/resources/data/tc4modern/recipe/arcane_stone_stairs.json",
       "sha256": "4ab8b4ac207fc1ade76c04c843b40a2444ee65abec43a4d58ad6fcce2f8bfe12"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/iron_cap.json",
+      "path": "src/main/resources/data/tc4modern/recipe/iron_cap.json",
       "sha256": "3f1fa6a850b3292a5e6b0c8ff3c779b9ae7bb0652bc1472b47f41f5ba9eddff0"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/iron_capped_wooden_wand.json",
+      "path": "src/main/resources/data/tc4modern/recipe/iron_capped_wooden_wand.json",
       "sha256": "4bbcd0372f968d33207b979addac9a7758feb84b1a88df57db781fcac1160d3e"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/robe_dye.json",
+      "path": "src/main/resources/data/tc4modern/recipe/robe_dye.json",
       "sha256": "0222e82d3883b16a544f18da7aa95899be5c10a9642f115bdd1c49d3fdecb0c5"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/scribing_tools.json",
+      "path": "src/main/resources/data/tc4modern/recipe/scribing_tools.json",
       "sha256": "c2af9eedff8b95572073740370ab07fb61b1d56364f0300cf08546e43251cf81"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/scribing_tools_refill.json",
+      "path": "src/main/resources/data/tc4modern/recipe/scribing_tools_refill.json",
       "sha256": "d92bc3ded9fce3711725f768bbbcb79690b10edd2496a714e682283c34a2de9e"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/table.json",
+      "path": "src/main/resources/data/tc4modern/recipe/table.json",
       "sha256": "acc686eb433b1c594dcad3c6808b07fd5531f9cc8a2ff672b4752239be3739e0"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/recipe/thaumometer.json",
+      "path": "src/main/resources/data/tc4modern/recipe/thaumometer.json",
       "sha256": "feb50f2daac989c189d4a920e0b027cba5ba3eddb7cf87e493e928c2c9048a7f"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/worldgen/biome/tainted_land.json",
-      "sha256": "f442d3a0711f5fc5b770e0ecfad200e922276de9364a8e4725d4e71b4860133a"
+      "path": "src/main/resources/data/tc4modern/recipe/triple_meat_treat_beef_chicken_fish.json",
+      "sha256": "b265f5b3a56f728a8cec3d8fb353e023207e231249af893eb54819b1390757fe"
     },
     {
-      "path": "related/thaumcraft4-reference/ported-resources/data/tc4modern/arcane_recipe/deconstructor.json",
-      "sha256": "18f73bfd6baebd17254d2367f4cb10d16e277376421e549531c044e345972cdb"
+      "path": "src/main/resources/data/tc4modern/recipe/triple_meat_treat_beef_chicken_pork.json",
+      "sha256": "b102b905e201a4d21ac9529e717f18325d37c895415f105325bc5cb29e26f422"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/recipe/triple_meat_treat_beef_pork_fish.json",
+      "sha256": "b5f1e3f8e02c30472d54e825b1512c2186c556f8b22703fe8f4898166126e51f"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/recipe/triple_meat_treat_chicken_pork_fish.json",
+      "sha256": "dbf2cb0ac83d3f3e2ff570591d531ab2ee6a81345c664b4a1056919555c258e3"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/worldgen/biome/tainted_land.json",
+      "sha256": "41110d750e5e92793b796f1571c1eee9e1b0c2fab99b372f6e026a3fc54e340a"
+    },
+    {
+      "path": "src/main/resources/data/tc4modern/worldgen/configured_feature/greatwood.json",
+      "sha256": "15447ac6897392b2f86c564d998a4e2ade50e9c503ad9ac43d6667fdf0ab351f"
     }
   ],
-  "path_base": "repository root; tc4ReferenceDir/TC4_REFERENCE_ROOT can override the reference directory for builds"
+  "path_base": "repository root; adapted source and resource hashes describe the current checkout",
+  "bundled_resource_archive": {
+    "path": "tc4-local-resources.zip",
+    "sha256": "66a59434638deaf1e6bffff07d693a3341b97a26423b2e44b2c3ae2889b553f0",
+    "entries": 1483
+  }
 }

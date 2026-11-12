@@ -1,0 +1,31 @@
+{
+  "key": "Tube",
+  "research": "TUBES",
+  "pattern": [
+    " Q ",
+    "IGI",
+    " B "
+  ],
+  "key_items": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "B": {
+      "item": "minecraft:gold_nugget"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "Q": {
+      "item": "tc4modern:quicksilver_drop"
+    }
+  },
+  "result": {
+    "id": "tc4modern:essentia_tube",
+    "count": 8
+  },
+  "aspects": {
+    "aqua": 5,
+    "ordo": 5
+  }
+}
