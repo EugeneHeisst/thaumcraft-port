@@ -1,16 +1,16 @@
-# TC4 Modern 0.17.136 — local original-code port
+# Thaumcraft UNOFFICIAL PORT — implementation notes
 
-Local standalone port of the user's Thaumcraft 4.2.3.5 to Minecraft Java 1.21.1 / NeoForge. The implementation now includes research and scanning, wand/focus systems, alchemy and essentia machinery, infusion and equipment, golems, warp and taint, original mobs/champions/bosses, the Outer Lands, natural decorations and original village traders/buildings. Complete source parity and a full fresh-world survival progression are not yet certified.
+Port of Thaumcraft 4.2.3.5 to Minecraft Java 1.21.1 / NeoForge. The implementation now includes research and scanning, wand/focus systems, alchemy and essentia machinery, infusion and equipment, golems, warp and taint, original mobs/champions/bosses, the Outer Lands, natural decorations and original village traders/buildings. Complete source parity and a full fresh-world survival progression are not yet certified.
 
 0.17.134 checks the creative tab against the actual original 4.2.3.5 tab and the modern item registry. It restores nine missing block item forms, sixteen coloured banners, original relative ordering and Russian/English item names. Technical/multiblock-only blocks keep their existing acquisition paths; legacy duplicate wand items remain represented by component-based wands and the cheat book remains configuration-gated. Creative inventory scanning now handles its client-only item picker/cursor. `/tc debug all` also reveals all item scans, including component variants. Creative aura nodes use the original random generation helper instead of six fixed 40-point aspects; eye-height billboard rotation and insertion order prevent the previous misplaced/reordered layers, and the item preview uses the original four primals and opacity. Baubles no longer paints over its original empty-slot silhouettes. See [creative audit details](docs/creative-tab-audit.md).
 
-Build with Java 21 through `./dev.sh build -x test --console=plain`. This runs twelve custom test tasks in addition to compilation and packaging. Native audits run sequentially in isolated game directories; client audits use hidden Xvfb/Mesa displays. The user's running Prism game must remain untouched. Controlled crafting/combat fixtures include supplied ingredients or research; fresh ordinary-world generation checks separately cover magical forest, tainted land and villages.
+Build with Java 21 through `./dev.sh build -x test --console=plain`. This runs twelve custom test tasks in addition to compilation and packaging. Native audits run sequentially in isolated game directories; client audits use hidden Xvfb/Mesa displays. Controlled crafting/combat fixtures include supplied ingredients or research; fresh ordinary-world generation checks separately cover magical forest, tainted land and villages.
 
 0.17.136 adds greatwood/silverwood planks to vanilla item/block planks tags, allowing ordinary tag-based wooden recipes.
 
 0.17.135 embeds all imported textures, sounds, models and translations in the mod JAR. Players install only the JAR; no separate resource ZIP is required or automatically loaded.
 
-The original JAR and imported resource archive are local build inputs and are not bundled into Git. Some adapted source and generated resources still live under `/home/eugheist/thaumcraft4-reference/ported-src` and `ported-resources`, as configured in Gradle. Keep those directories when reproducing this local build. Builds read `tc4-local-resources.zip` in the project root (override with `-Ptc4ResourcePack=/absolute/path/to/archive.zip`). Install only the checked mod JAR in `mods`; `tl-backups` contains the preceding JAR/resource-pack pairs. Cross-mod silver/tin/lead recipes are intentionally outside the standalone scope.
+The original JAR, adapted reference sources/resources and imported asset archive are supplied separately from Git. The default reference directory is `related/thaumcraft4-reference`; set `TC4_REFERENCE_ROOT` or `-Ptc4ReferenceDir` to choose another directory. `-Ptc4PortSources` and `-Ptc4PortResources` override the `ported-src` and `ported-resources` subdirectories individually. Builds read `tc4-local-resources.zip` in the project root; `-Ptc4ResourcePack` can select a different archive. Only the resulting mod JAR is needed in `mods`. Cross-mod silver/tin/lead recipes are outside the standalone scope.
 
 ## Historical implementation notes
 
@@ -18,7 +18,7 @@ The notes below describe the state at each earlier release. Statements that a fe
 
 Release 0.16.3 adds thaumium tools, armour, nuggets and blocks with original tool attack damage. Native checks verify tool damage, pickaxe crafting and ingredient consumption, armour rendering and defence, and actual ingot repair on an anvil. Repair/Haste infusion enchantments remain pending. All eight build checks passed.
 
-Release 0.16.2 combines the vis relay, distillation, silverwood and infusion ports with original wand control of tube connections and original vent smoke. All eight build checks passed; isolated native checks cover tube close/reopen, facing changes, save/reload persistence and naturally triggered coloured smoke. The checked JAR and combined local resource pack are installed in the local Prism 1.21.1 instance. Keep the required original pack in `resourcepacks` updated alongside the JAR.
+Release 0.16.2 combines the vis relay, distillation, silverwood and infusion ports with original wand control of tube connections and original vent smoke. All eight build checks passed; isolated native checks cover tube close/reopen, facing changes, save/reload persistence and naturally triggered coloured smoke. Original assets are embedded in the current single-JAR distribution.
 
 Release 0.16.7 restores the original quicksilver scan trigger for Brain in a Jar. Native scanning reveals the clue; the book shows the entry and requires Infusion, with no point spending on a locked click. All eight clean checks passed. The jar itself and its recipe remain pending.
 
@@ -70,7 +70,7 @@ Original-derived flux, taint poison, thaumic slimes, taint fibres/crust/soil/fle
 
 Remaining fidelity work includes bellows, full legacy fluid corner rendering, taint biome decoration and natural-spread verification, swarm legacy navigation, particle buzz and some render layers. The modern taint biome bridge operates at Minecraft's four-block biome resolution. Full essentia, infusion, golems, warp and most higher-tier recipes are still being ported.
 
-## 0.15.0 thaumometer, resources and essentia distillation (Claude session, 2026-10-09)
+## 0.15.0 thaumometer, resources and essentia distillation (2026-10-09)
 
 - Thaumometer first person is a literal replay of the 1.7.10 GL chain (vanilla item placement, Forge -0.5 offset, ItemThaumometerRenderer): the hex frame held up with both arms, the unchanged original scanner OBJ, the blue scan screen with its original light flicker and the scanned object's name, node type and aspects drawn on the device. Scanning shows the original rune particles and camera ticks. Left main arm mirrors the grip; the third-person pose is solved from the original chain. Second hand is hidden while the device is held (both hands are on it).
 - Table and research table item models fit inventory slots (original +90° inventory rotation); placed blocks are unchanged.
@@ -83,17 +83,17 @@ Remaining fidelity work includes bellows, full legacy fluid corner rendering, ta
 
 `./dev.sh build` selects existing Java 21 without changing system Java. Checks run the original aspect/knowledge logic and research puzzle generation/NBT/connections/validation.
 
-Gradle compiles `/home/eugheist/thaumcraft4-reference/ported-src` and packages adapted recipe JSON from `../thaumcraft4-reference/ported-resources`. Overrides: `-Ptc4PortSources=... -Ptc4PortResources=...`.
+Gradle compiles `ported-src` and packages adapted recipe JSON from `ported-resources` within the configured reference directory. Overrides: `-Ptc4ReferenceDir=... -Ptc4PortSources=... -Ptc4PortResources=...`.
 
-Build a local pack from the user's original JAR:
+Build the asset archive from an original JAR:
 
 ```sh
 python tools/import_tc4_resources.py Thaumcraft-1.7.10-4.2.3.5.jar .
 ```
 
-The converter also reads the original decompiled Java models in the sibling `thaumcraft4-reference` directory (`--reference` overrides this). Generate `tc4-local-resources.zip` into the project root for Gradle to embed its `assets/**` entries in the JAR. Original PNG/audio and converted OBJ assets stay outside Git but are included in the built mod. Adapted original Java model classes are compiled into the local mod.
+The converter also reads the original decompiled Java models in `related/thaumcraft4-reference` (`TC4_REFERENCE_ROOT` or `--reference` overrides this). Generate `tc4-local-resources.zip` into the project root for Gradle to embed its `assets/**` entries in the JAR. Original PNG/audio and converted OBJ assets stay outside Git but are included in the built mod. Adapted original Java model classes are compiled into the local mod.
 
-Prism instance: `/home/eugheist/.local/share/PrismLauncher/instances/1.21.1/minecraft`. Restart the client after an installed update. Older local builds and resource packs are archived in `local-backups`.
+Restart the game after replacing the installed mod JAR. Keep a backup of the world before updating.
 
 Development commands: `/give @s tc4modern:thaumometer`, `/give @s tc4modern:thaumonomicon`, `/tc4 aspects`. The temporary `/tc4 combine` remains available while the broader port is under construction.
 
@@ -130,7 +130,7 @@ All original TC4 4.2.3.5 debug/admin actions are available with operator permiss
 
 Research keys are case-sensitive. A single research grant recursively completes ordinary/hidden parents and siblings; new completions award original research warp. `all` includes hidden and lost entries. `reset` preserves auto-unlocked research and leaves aspects, scan history and warp unchanged. Aspect grants add points without the scanning cap; tags/names accept original case handling, with amount at least 1 and original short conversion. Warp defaults to normal/sticky; PERM and TEMP select the other buckets. `set` accepts nonnegative integers, `add` accepts -100 through 100 and can reduce permanent warp. Command updates preserve the event counter and work regardless of wuss mode, as in the original lower-level mutators. Players must be online; modern single-player selectors such as `@s` also work.
 
-`./dev.sh runCommandAudit -Pneo_version=21.1.249` checks the actual dedicated-server dispatcher with ephemeral players in `run-command-audit`, separate from Prism. Result: `command-audit.txt`. Existing `/tc4` and `/tc4dev` development helpers remain available.
+`./dev.sh runCommandAudit -Pneo_version=21.1.249` checks the actual dedicated-server dispatcher with ephemeral players in `run-command-audit` in a disposable world. Result: `command-audit.txt`. Existing `/tc4` and `/tc4dev` development helpers remain available.
 
 
 ## 0.17.91 Outer Lands
@@ -238,7 +238,7 @@ Release 0.17.130 adds optional JEI 19 integration for NeoForge 1.21.1. Arcane, c
 
 JEI stays external and optional: the port does not bundle it. Compile APIs resolve from the official JEI Maven repository; use `-PwithJei=true` for development runtime inclusion. If Maven is unavailable, `-PjeiLocalJar=/absolute/path/to/jei-1.21.1-neoforge-19.57.0.451.jar` supplies the matching external JAR at compile time and, only with `withJei=true`, at runtime. `runJeiAudit` uses `run-jei-audit`, a copied inspection save named `JeiInspection`, and the existing root `tc4-local-resources.zip`. Run it on hidden Xvfb/Mesa. With JEI it checks actual recipe registration, R/U focus lookups, negative phial subtype matches, composite wand matching, fish variants, station catalysts and rendered recipe pages; without JEI it checks native client startup and production recipe availability. The inspected JEI run contains 286 arcane recipes, 48 crucible recipes and 2009 infusion displays (including item/enchantment/level variants, not 2009 distinct original recipes).
 
-Validation for 0.17.130: final hidden JEI client audit ALL PASS, native client without JEI ALL PASS, all twelve custom build tests passed (19 Gradle tasks total). Original-texture screenshots of arcane, crucible, infusion, composite wand and infusion enchantment pages were inspected. No user game was restarted or moved.
+Validation for 0.17.130: final hidden JEI client audit ALL PASS, native client without JEI ALL PASS, all twelve custom build tests passed (19 Gradle tasks total). Original-texture screenshots of arcane, crucible, infusion, composite wand and infusion enchantment pages were inspected.
 
 
 Release 0.17.131 fixes bell selection disappearing in creative mode. Vanilla Player.interactOn passes a disposable ItemStack copy to fallback item interactions when instabuild is enabled; the old bell handler played a sound and wrote its selected golem into that discarded copy. StrawGolem.mobInteract now delegates bell interaction using the actual held stack before returning an action result. The same path supports either hand and preserves the existing sneaking/item behavior. A hidden native regression uses actual client entity/block interaction packets: baseline 0.17.130 reproduces lost creative selection; the fixed client verifies creative and survival selection, server marker changes and synchronized bell data, rendered home/marker/ribbon effects, and unchanged left-click retrieval. The audit uses isolated `run-bell-interaction-audit`, a copied save `BellInspection`, root original resource ZIP and `runBellInteractionAudit`.
@@ -255,4 +255,10 @@ Release 0.17.133 audits infusion instability against the local original TileInfu
 Missing essentia rolls the original 100-3*recipe-instability escalation; missing components may replenish essentia and roll 50-2*recipe-instability. These increases are capped at25. Rechecking surroundings changes symmetry, but does not reduce already accumulated instability mid-craft, as in the original. Traveller boots retain base instability1,25Volatus,25Iter and six components.
 The one gameplay correction restores original flux-event placement: flux goo/gas replace the occupied block above an affected pedestal, rather than silently skipping it. This does not increase the event frequency. Original taint lasts120ticks; vis exhaustion lasts2400ticks and cannot be cured with milk (already correct). New hidden runInfusionStabilityAudit compares48000 seeded production-cycle cases against independent original Java Random rolls, checks all38 registered stabilising block variants and range/symmetry boundaries, invokes all original instability consequence handlers on real entities/pedestals, and completes a naturally ticked, supplied traveller-boots recipe with exact essence/component consumption. Its copied save and resources are isolated in run-infusion-stability-audit; no Focal audit flag is enabled.
 
-Validation: 0.17.132 occupied-block baseline reproduces both skipped flux placements; 0.17.133 hidden native audit ALL PASS, including all38 stabiliser variants,48000 seeded cycle comparisons, original damage/effect/warp consequences, occupied-block flux replacement, and a naturally completed traveller-boots recipe consuming all six components and exactly50essentia without ingredient drops. All twelve custom build tests passed (19 Gradle tasks total). Main Prism game and saves were untouched.
+Validation: 0.17.132 occupied-block baseline reproduces both skipped flux placements; 0.17.133 hidden native audit ALL PASS, including all38 stabiliser variants,48000 seeded cycle comparisons, original damage/effect/warp consequences, occupied-block flux replacement, and a naturally completed traveller-boots recipe consuming all six components and exactly50essentia without ingredient drops. All twelve custom build tests passed (19 Gradle tasks total).
+
+## 0.17.193 build and network compatibility
+
+The build and resource converters share a configurable reference root. Provenance paths in `port-manifest.json` are relative to the repository root. The Portable Hole audit accepts `JEI_JAR` or `-PjeiLocalJar` instead of selecting an installed game profile.
+
+Focus and infusion payload protocol versions are `foci-1` and `infusion-1`; packet types and codecs are unchanged. **Clients and servers must both update Thaumcraft to 0.17.193. Mixed 0.17.192/0.17.193 connections are rejected by NeoForge protocol negotiation.**

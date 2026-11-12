@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Prepare the local resource archive from the user's TC4 JAR for embedding at build time."""
+"""Prepare the local resource archive from an original TC4 JAR for embedding at build time."""
 import argparse
+import os
 import json
 import io
 from PIL import Image
@@ -11,7 +12,7 @@ from convert_tc4_model import convert
 parser = argparse.ArgumentParser()
 parser.add_argument('jar', type=Path)
 parser.add_argument('game_directory', type=Path)
-parser.add_argument('--reference', type=Path, default=Path(__file__).resolve().parents[2] / 'thaumcraft4-reference')
+parser.add_argument('--reference', type=Path, default=Path(os.environ.get('TC4_REFERENCE_ROOT', Path(__file__).resolve().parents[1] / 'related/thaumcraft4-reference')))
 parser.add_argument('--baubles-jar', type=Path, default=Path(__file__).resolve().parents[1] / 'Baubles-1.7.10-1.0.1.10.jar', help='Original Baubles 1.7.10 JAR for the expanded inventory and Miner\'s Ring')
 parser.add_argument('--minecraft-jar', type=Path, help='Original Minecraft 1.7.10 client JAR for the crucible water texture')
 args = parser.parse_args()

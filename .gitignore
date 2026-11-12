@@ -125,3 +125,12 @@ versions/
 /audits/issue-1-hole/
 /run-villager-look-audit/
 /run-arcane-id-audit/
+
+# Local development context and interpreter caches.
+AGENTS.md
+CLAUDE.md
+CLAUDE.local.md
+CODEX_HANDOFF.md
+.claude/
+.codex/
+*.py[cod]

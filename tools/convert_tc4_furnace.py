@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Convert literal BlockArcaneFurnace/renderer texture indices and planes into local models."""
 import json
+import os
 from pathlib import Path
-root=Path(__file__).resolve().parents[2]/'thaumcraft4-reference/ported-resources/assets/tc4modern'
+reference=Path(os.environ.get('TC4_REFERENCE_ROOT', Path(__file__).resolve().parents[1]/'related/thaumcraft4-reference'))
+root=reference/'ported-resources/assets/tc4modern'
 faces=['down','up','north','south','west','east']
 directions={'north':(0,-1),'south':(0,1),'west':(-1,0),'east':(1,0)}
 def icon(part,layer,side,outlet):

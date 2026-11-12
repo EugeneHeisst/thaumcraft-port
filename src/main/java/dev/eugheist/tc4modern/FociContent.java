@@ -251,7 +251,7 @@ public final class FociContent {
     }
     @SubscribeEvent
     static void payloads(RegisterPayloadHandlersEvent event) {
-        var registrar = event.registrar("claude-foci-1");
+        var registrar = event.registrar("foci-1");
         registrar.playToServer(FocusChange.TYPE, FocusChange.CODEC, (p, ctx) -> ctx.enqueueWork(() -> {
             if (ctx.player() instanceof ServerPlayer player && WandData.isWand(player.getMainHandItem()) && !WandParts.isSceptre(player.getMainHandItem())) changeFocus(player.getMainHandItem(), player, p.key());
         }));

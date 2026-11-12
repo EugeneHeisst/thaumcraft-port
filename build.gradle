@@ -402,8 +402,9 @@ dependencies {
     implementation "com.github.glitchfiend:TerraBlender-neoforge:1.21.1-4.1.0.8"
     jarJar "com.github.glitchfiend:TerraBlender-neoforge:1.21.1-4.1.0.8"
     // A supplied matching JEI JAR also allows development when Maven is unavailable.
-    def localJei = providers.gradleProperty('jeiLocalJar').orNull
+    def localJei = providers.gradleProperty('jeiLocalJar').orElse(providers.environmentVariable('JEI_JAR')).orNull
     if (localJei != null) {
+        if (!file(localJei).isFile()) throw new GradleException("JEI dependency does not exist: $localJei")
         compileOnly files(localJei)
         if (providers.gradleProperty('withJei').getOrElse('false').toBoolean()) localRuntime files(localJei)
     } else {
@@ -497,8 +498,13 @@ tasks.named('test') {
     failOnNoDiscoveredTests = false
 }
 
-// Local adapted TC4 source lives outside Git alongside the reference JAR/decompiles.
-sourceSets.main.java.srcDir providers.gradleProperty('tc4PortSources').orElse('related/thaumcraft4-reference/ported-src')
+// Original build inputs are supplied separately; all paths can be configured per checkout.
+def tc4ReferenceDir = providers.gradleProperty('tc4ReferenceDir')
+        .orElse(providers.environmentVariable('TC4_REFERENCE_ROOT'))
+        .getOrElse('related/thaumcraft4-reference')
+def tc4PortSourcesDir = providers.gradleProperty('tc4PortSources').getOrElse("${tc4ReferenceDir}/ported-src")
+def tc4PortResourcesDir = providers.gradleProperty('tc4PortResources').getOrElse("${tc4ReferenceDir}/ported-resources")
+sourceSets.main.java.srcDir tc4PortSourcesDir
 
 tasks.register('originalPortTest', JavaExec) {
     dependsOn testClasses
@@ -515,13 +521,13 @@ tasks.register('researchPuzzleTest', JavaExec) {
 tasks.named('check') { dependsOn 'researchPuzzleTest' }
 
 // Locally adapted original recipes, alongside the original Java port.
-sourceSets.main.resources.srcDir providers.gradleProperty("tc4PortResources").orElse("related/thaumcraft4-reference/ported-resources")
+sourceSets.main.resources.srcDir tc4PortResourcesDir
 
 // Embed the imported assets in every build, including development clients.
 // This local build input stays outside Git; import_tc4_resources.py regenerates it.
 def bundledTc4Pack = layout.projectDirectory.file(providers.gradleProperty('tc4ResourcePack').getOrElse('tc4-local-resources.zip'))
 def bundledLanguageDir = layout.buildDirectory.dir('generated/bundledLanguages')
-def baseLanguageFiles = files('src/main/resources/assets/tc4modern/lang', providers.gradleProperty('tc4PortResources').getOrElse('related/thaumcraft4-reference/ported-resources') + '/assets/tc4modern/lang')
+def baseLanguageFiles = files('src/main/resources/assets/tc4modern/lang', tc4PortResourcesDir + '/assets/tc4modern/lang')
 def mergeBundledLanguages = tasks.register('mergeBundledLanguages') {
     inputs.file(bundledTc4Pack)
     inputs.files(baseLanguageFiles)

@@ -1,12 +1,13 @@
 from pathlib import Path
 import os, shutil, subprocess, sys, json
 
-root = Path(os.environ.get('TC4_COMPAT_WORKSPACE', str(Path(__file__).resolve().parent)))
+project = Path(__file__).resolve().parents[3]
+root = Path(os.environ.get('TC4_COMPAT_WORKSPACE', str(project.parent / 'compat-test'))).resolve()
 if not (root / 'audit-mod').is_dir():
-    root = Path.home() / 'Project/compat-test'
+    raise SystemExit('Set TC4_COMPAT_WORKSPACE to a compatibility workspace containing audit-mod/')
 out = Path(os.environ.get('ISSUES_NOV06_OUTPUT', str(root / 'issues-20261106')))
 out.mkdir(exist_ok=True)
-tc = root.parent / 'thaumcraft4-modern'
+tc = Path(os.environ.get('TC4_PROJECT_ROOT', str(project))).resolve()
 for variant in sys.argv[1:] or ['old', 'new']:
     folder = out / variant
     if folder.exists():
@@ -16,7 +17,9 @@ for variant in sys.argv[1:] or ['old', 'new']:
     pack.mkdir(parents=True)
     run.mkdir()
     # Exact current production mod set, with only Thaumcraft replaced in the candidate.
-    production = tc / 'related/thaumcraft4-server/mods'
+    production = Path(os.environ.get('TC4_MOD_PACK', str(root / 'full-client-mods')))
+    if not production.is_dir():
+        raise SystemExit('Set TC4_MOD_PACK to the compatible mod set directory')
     for source in production.glob('*.jar'):
         if not source.name.startswith('tc4modern-'):
             shutil.copy2(source, pack / source.name)

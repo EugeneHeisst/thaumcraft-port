@@ -96,7 +96,7 @@ public final class InfusionContent {
     }
     @SubscribeEvent
     static void payloads(RegisterPayloadHandlersEvent event) {
-        event.registrar("claude-infusion-1").playToClient(FxPayload.TYPE, FxPayload.CODEC, (payload, context) -> context.enqueueWork(() -> InfusionFx.handle(payload)));
+        event.registrar("infusion-1").playToClient(FxPayload.TYPE, FxPayload.CODEC, (payload, context) -> context.enqueueWork(() -> InfusionFx.handle(payload)));
     }
     static void sendFx(Level level, BlockPos near, FxPayload payload) {
         if (level instanceof ServerLevel server) PacketDistributor.sendToPlayersNear(server, null, near.getX(), near.getY(), near.getZ(), 32, payload);

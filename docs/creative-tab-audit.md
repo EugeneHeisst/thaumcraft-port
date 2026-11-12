@@ -1,6 +1,6 @@
 # Creative inventory parity — 0.17.134
 
-The reference is the actual `Thaumcraft.tabTC` population in the user's original Thaumcraft 4.2.3.5 client, captured through `CreativeTabs.displayAllReleventItems` with cheat sheets disabled: 453 stacks, including metadata/NBT variants. Capture: `/tmp/tc4-creative-original/creative.tsv`; original JAR SHA256 is recorded in `port-manifest.json`. No reference-world changes were made.
+The reference is the actual `Thaumcraft.tabTC` population in the original Thaumcraft 4.2.3.5 client, captured through `CreativeTabs.displayAllReleventItems` with cheat sheets disabled: 453 stacks, including metadata/NBT variants. The original JAR SHA-256 is recorded in `port-manifest.json`.
 
 `src/main/resources/creative-tab.json` records modern IDs, original translation keys and reference positions. The port sorts existing original counterparts by these positions. Modern-only entries, such as separate spawn eggs, follow the original groups; optional copper entries stay within their original item families. Registry fallback ensures future items cannot silently disappear. The cheat Thaumonomicon is shown immediately after the ordinary book only when enabled. Two obsolete wand IDs are represented by actual component-based wands; research-note internal forms remain hidden.
 
@@ -14,4 +14,4 @@ Native checks (isolated Xvfb clients, copied inspection save):
 
 Node generation calls the same original-derived helper used for natural nodes; it does not invent a new distribution. Rendering keeps original per-aspect layers: fixes concern the eye-position rotation axis, modern quad reordering and the item preview's four fixed aspects/opacity. It does not remove the original animation layers. Screenshots are inspected; this is not a claim of exhaustive pixel equality for every node/viewpoint.
 
-The user's main Prism client and world are not restarted or altered by audits. Earlier paused progression audit edits are excluded from this release.
+Each audit uses its own disposable game directory.
