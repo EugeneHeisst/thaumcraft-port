@@ -1,20 +1,31 @@
 name: Telegram release announcement
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
+    inputs:
+      message:
+        description: Full announcement text
+        required: true
+        type: string
+      confirm:
+        description: Publish this message to Telegram
+        required: true
+        default: false
+        type: boolean
 
 permissions: {}
 
 jobs:
   notify:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.confirm == true }}
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - name: Post release to Telegram
+      - name: Post announcement to Telegram
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_MESSAGE: ${{ inputs.message }}
         shell: python
         run: |
           import json
@@ -22,22 +33,18 @@ jobs:
           import urllib.error
           import urllib.request
 
+          message = os.environ.get("TELEGRAM_MESSAGE", "")
+          if not message.strip() or len(message) > 4096:
+              raise SystemExit("Announcement text must contain 1 to 4096 characters.")
+
           token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
           chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
           if not token or not chat_id:
               raise SystemExit("Set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in repository secrets.")
 
-          with open(os.environ["GITHUB_EVENT_PATH"], encoding="utf-8") as event_file:
-              release = json.load(event_file)["release"]
-
-          title = (release.get("name") or release["tag_name"])[:200]
-          notes = (release.get("body") or "").strip()
-          if len(notes) > 1200:
-              notes = notes[:1200] + "\n… Полное описание — по ссылке ниже."
-          parts = ["Новый релиз: " + title, notes, release["html_url"]]
           payload = {
               "chat_id": chat_id,
-              "text": "\n\n".join(part for part in parts if part),
+              "text": message,
               "link_preview_options": {"is_disabled": True},
           }
           request = urllib.request.Request(
